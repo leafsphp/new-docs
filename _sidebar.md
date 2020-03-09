@@ -15,7 +15,6 @@
 	* [Middleware](2.0/routing/middleware.md)
 	* [Optional Sub patterns](2.0/routing/sub-patterns.md)
 	* [Using Controllers](2.0/routing/controller.md)
-	* [Library ](2.0/routing/library-integration.md)
 	* [Sub folder support](2.0/routing/sub-folder.md)
 
 * HTTP
@@ -24,6 +23,7 @@
 	* [Session](2.0/http/session.md)
 	* [Utilities](2.0/http/util.md)
 	* [Cookies](2.0/http/cookies.md)
+	* [Headers](2.0/http/headers.md)
 
 * Leaf Views
 	* [Default Views](2.0/views/default.md)
