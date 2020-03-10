@@ -50,9 +50,9 @@ Technically, an application mode is merely a string of text - like “developmen
 
 ## How do I set the application mode?
 ### Use an environment variable
-If Leaf sees an environment variable named “SLIM_MODE”, it will set the application mode to that variable’s value.
+If Leaf sees an environment variable named “LEAF_MODE”, it will set the application mode to that variable’s value.
 ```js
-$_ENV['SLIM_MODE'] = 'production';
+$_ENV['LEAF_MODE'] = 'production';
 ```
 
 ### Use application setting

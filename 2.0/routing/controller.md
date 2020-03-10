@@ -46,6 +46,7 @@ $leaf->setNamespace('\App\Controllers');
 $leaf->get('/users/(\d+)', 'User@showProfile');
 $leaf->get('/cars/(\d+)', 'Car@showProfile');
 ```
+
 <br>
 <hr>
 
