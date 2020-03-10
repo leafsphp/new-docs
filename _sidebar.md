@@ -21,7 +21,6 @@
 	* [Request](2.0/http/request.md)
 	* [Response](2.0/http/response.md)
 	* [Session](2.0/http/session.md)
-	* [Utilities](2.0/http/util.md)
 	* [Cookies](2.0/http/cookies.md)
 	* [Headers](2.0/http/headers.md)
 

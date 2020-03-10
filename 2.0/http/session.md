@@ -88,7 +88,9 @@ $leaf->session->unset('name');
 ```
 
 ### Removing multiple values <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+
 In v2.0, `unset` can also take in an array if you wish to unset multiple values or just want to use one.
+
 ```js
 $leaf->session->unset(["username", "mobile_number"]);
 ```
@@ -96,7 +98,9 @@ $leaf->session->unset(["username", "mobile_number"]);
 <hr>
 
 ## reset()
+
 `reset()` simply re-initialises a session.
+
 ```js
 $leaf->post('/session/reset', function() use($session) {
   	$session->reset();
@@ -111,10 +115,11 @@ $leaf->post('/session/reset', function() use($session) {
 ```js
 $id = $leaf->session->id();
 ```
+
 So if the session id is not set, this will generate and return a new session id. However, if the session id is already set, it will just return it.
 
-
 You can also set your own session id with this syntax below. It will be returned as well, so you can keep it in a variable.
+
 ```js
 $id = $leaf->session->id("new session id");
 ```
