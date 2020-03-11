@@ -80,15 +80,15 @@ If the custom view is not discoverable by a registered autoloader, it must be re
 <?php
 require 'CustomView.php';
 
-$app = new \Leaf\Leaf(array(
+$leaf = new \Leaf\Leaf(array(
     'view' => new CustomView()
 ));
 
-$app->get('/books/:id', function ($id) use ($app) {
-    $app->render('show.php', array('name' => 'Michael'));
+$leaf->get('/books/:id', function ($id) use ($leaf) {
+    $leaf->render('show.php', array('name' => 'Michael'));
 });
 
-$app->run();
+$leaf->run();
 ```
 
 <hr>
@@ -103,13 +103,13 @@ The view object’s `setData()` and `appendData()` methods inject data into the 
 The view object’s `setData()` instance method will overwrite existing view data. You may use this method to set a single variable to a given value:
 
 ```js
-$app->view->setData('color', 'red');
+$leaf->view->setData('color', 'red');
 ```
 
 The view’s data will now contain a key “color” with value “red”. You may also use the view’s `setData()` method to batch assign an entire array of data:
 
 ```js
-$app->view->setData([
+$leaf->view->setData([
     'color' => 'red',
     'size' => 'medium'
 ]);
@@ -121,7 +121,7 @@ Remember, the view’s `setData()` method will replace all previous data.
 The view object also has a `appendData()` method that appends data to the view’s existing data. This method accepts an array as its one and only argument:
 
 ```js
-$app->view->appendData([
+$leaf->view->appendData([
     'foo' => 'bar'
 ]);
 ```
@@ -132,8 +132,8 @@ $app->view->appendData([
 <a href="#/2.0/http/request" style="margin: 0px">Request</a>
 <a href="#/2.0/http/response" style="margin: 0px 10px;">Response</a>
 <a href="#/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.0/database/intro" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.0/database/intro" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.0/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/2.0/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

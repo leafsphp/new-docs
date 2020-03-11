@@ -28,6 +28,11 @@
 	* [Default Views](2.0/views/default.md)
 	* [Leaf Veins](2.0/views/veins.md)
 	* [Leaf Blade](2.0/views/blade.md)
+
+* Leaf DB
+	* [Leaf DB Intro](2.0/database)
+	* [Retrieving Data](2.0/database/select)
+	* [Inserting Data](2.0/database/insert)
 	
 * Versions
 	* [Version 1.2.0](https://leaf-docs.netlify.com/v1.2.0/index.html)
