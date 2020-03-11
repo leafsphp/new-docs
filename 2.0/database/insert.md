@@ -66,32 +66,31 @@ So, we pass in the entire request body, which contains the username, email and p
 
 #### Validation
 
-`choose` also has inbuilt validation which validates parameters according to set rules. This uses the [`Leaf\Form->validate`](2.0/form) method. You can check it out for more information on validation.
+`add` also has inbuilt validation which validates parameters according to set rules. This uses the [`Leaf\Form->validate`](2.0/form) method. You can check it out for more information on validation.
 
-`choose` takes in a fifth parameter which is a boolean, this is whether of not to validate the data passed into `choose` using the default checks. 
+`add` takes in a 4th parameter which is a boolean, this is whether of not to validate the data passed into `add` using the default checks. 
 
-By default, `choose` validates values with the keys: `email`, `username` and any other field is marked as `required`. If any of the validations fail, an error is raised. You can turn this feature off:
+By default, `add` validates values with the keys: `email`, `username` and any other field is marked as `required`. If any of the validations fail, an error is raised. You can turn this feature off:
 
 ```js
-$db->choose("books", "*", ["author" => "mychi.darko", "published" => "2019"], "LIMIT 5", false);
+$db->add("posts", ["title" => "Post One", "body" => "..."], ["title"], false);
 ```
 
 #### Custom Validation
 
-This is the sixth parameter of `choose`. These are custom rules that you set to validate.
+This is the 5th parameter of `add`. These are custom rules that you set to validate.
 
 ```js
-$db->choose("books", "*", ["author" => "mychi.darko", "published" => "2019"], "LIMIT 5", false, [
-	"author" => "validUsername",
-	"published" => "number"
+$db->add("posts", ["title" => "Post One", "body" => "..."], ["title"], false, [
+	"author" => "validUsername"
 ]);
 ```
-Here, we're telling `choose` that the **author** parameter should be a valid username, and the **published** param should contain only numbers. If any of these conditions(rules) are not met, the application throws an error and breaks.
+Here, we're telling `add` that the **author** parameter should be a valid username. If thiscondition(rule) is not met, the application throws an error and breaks.
 
 You can view all validation rules [here](2.0/form?id=validation)
 
 ```js
-$db->choose($table, $fields, $params, $options, $defaultChecks, $validation);
+$db->add($table, $params, $uniques, $defaultChecks, $validation);
 ```
 
 <br>
