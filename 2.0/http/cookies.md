@@ -1,19 +1,19 @@
 # Cookies <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
 
-The Slim application provides helper methods to send cookies with the HTTP response.
+The Leaf application provides helper methods to send cookies with the HTTP response.
 
 ## Set Cookie
 
-This example demonstrates how to use the Slim application’s `setCookie()` method to create an HTTP cookie to be sent with the HTTP response:
+This example demonstrates how to use the Leaf application’s `setCookie()` method to create an HTTP cookie to be sent with the HTTP response:
 
 ```js
-$app->setCookie('foo', 'bar', '2 days');
+$leaf->setCookie('foo', 'bar', '2 days');
 ```
 
-This creates an HTTP cookie with the name `“foo”` and value `“bar”` that expires two days from now. You may also provide additional cookie properties, including its path, domain, secure, and httponly settings. The Slim application’s setCookie() method uses the same signature as PHP’s native setCookie() function.
+This creates an HTTP cookie with the name `“foo”` and value `“bar”` that expires two days from now. You may also provide additional cookie properties, including its path, domain, secure, and httponly settings. The Leaf application’s setCookie() method uses the same signature as PHP’s native setCookie() function.
 
 ```js
-$app->setCookie(
+$leaf->setCookie(
     $name,
     $value,
     $expiresAt,
@@ -28,12 +28,12 @@ $app->setCookie(
 
 ## Set Encrypted Cookie
 
-You can tell Slim to encrypt the response cookies by setting the app’s cookies.encrypt setting to true. When this setting is true, Slim will encrypt the response cookies automatically before they are returned to the HTTP client.
+You can tell Leaf to encrypt the response cookies by setting the app’s cookies.encrypt setting to true. When this setting is true, Leaf will encrypt the response cookies automatically before they are returned to the HTTP client.
 
-Here are the available Slim app settings used for cookie encryption:
+Here are the available Leaf app settings used for cookie encryption:
 
 ```js
-$app = new \Slim\App([
+$leaf = new \Leaf\App([
     'cookies.encrypt' => true,
     'cookies.secret_key' => 'my_secret_key',
     'cookies.cipher' => MCRYPT_RIJNDAEL_256,
@@ -45,21 +45,21 @@ $app = new \Slim\App([
 
 ## Delete Cookie
 
-You can delete a cookie using the Slim application’s `deleteCookie()` method. This will remove the cookie from the HTTP client before the next HTTP request. This method accepts the same signature as the Slim application’s `setCookie()` instance method, without the `$expires` argument. Only the first argument is required.
+You can delete a cookie using the Leaf application’s `deleteCookie()` method. This will remove the cookie from the HTTP client before the next HTTP request. This method accepts the same signature as the Leaf application’s `setCookie()` instance method, without the `$expires` argument. Only the first argument is required.
 
 ```js
-$app->deleteCookie('foo');
+$leaf->deleteCookie('foo');
 ```
 
 If you need to also specify the path and domain:
 
 ```js
-$app->deleteCookie('foo', '/', 'foo.com');
+$leaf->deleteCookie('foo', '/', 'foo.com');
 ```
 You may also further specify the secure and httponly properties:
 
 ```js
-$app->deleteCookie('foo', '/', 'foo.com', true, true);
+$leaf->deleteCookie('foo', '/', 'foo.com', true, true);
 ```
 
 <hr>
