@@ -1,7 +1,7 @@
 # Leaf Response
 The response object is an abstraction of your Leaf application’s HTTP response that is returned to the HTTP client. In v2.0, the response object has been directly bound to the main Leaf object, so there's no need to instanciate it anymore. 
 
-**Note:** In version 2, `\Leaf\Core\Http\Response` has been shortened to `\Leaf\Http\Response`. Also the response object is available on `$leaf->response`.
+**Note:** In version 2, `\Leaf\Http\Response` has been shortened to `\Leaf\Http\Response`. Also the response object is available on `$leaf->response`.
 
 ## Using Response
 ### Response on the Leaf Instance <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
@@ -16,7 +16,7 @@ $leaf->get("/text", function() use($leaf) {
 Although we've added this, we don't want to force you to do stuff in only one way, so you can still use the `v1.x` method.
 
 ### Initialising the Response object
-With this method, you manually initialise the Response object, and then pass it into your route. Note that in version 2, `\Leaf\Core\Http\Response` has been shortened to `\Leaf\Http\Response`.
+With this method, you manually initialise the Response object, and then pass it into your route. Note that in version 2, `\Leaf\Http\Response` has been shortened to `\Leaf\Http\Response`.
 ```js
 $leaf = new Leaf\App();
 $response = new Leaf\Http\Response();

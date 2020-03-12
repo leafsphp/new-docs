@@ -1,7 +1,7 @@
 # Leaf Request
 The request object is an abstraction of the current HTTP request and allows you to easily interact with any data passed into your application. In v2.0, the request object has been directly bound to the main Leaf object, so there's no need to instanciate it anymore. 
 
-**Note:** In version 2, `\Leaf\Core\Http\Request` has been shortened to `\Leaf\Http\Request`. Also the request object is available on `$leaf->request`.
+**Note:** In version 2, `\Leaf\Http\Request` has been shortened to `\Leaf\Http\Request`. Also the request object is available on `$leaf->request`.
 
 ## Using Request
 ### Request on the Leaf Instance <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
@@ -16,7 +16,7 @@ $leaf->post("/user/change-username", function() use($leaf) {
 Although we've added this, we don't want to force you to do stuff in only one way, so you can still use the `v1.x` method.
 
 ### Initialising the Request object
-With this method, you manually initialise the Request object, and then pass it into your route. Note that in version 2, `\Leaf\Core\Http\Request` has been shortened to `\Leaf\Http\Request`.
+With this method, you manually initialise the Request object, and then pass it into your route. Note that in version 2, `\Leaf\Http\Request` has been shortened to `\Leaf\Http\Request`.
 ```js
 $leaf = new Leaf\App();
 $request = new Leaf\Http\Request();

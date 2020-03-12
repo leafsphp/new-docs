@@ -21,7 +21,7 @@ First, let's look at Normal Controllers.
 <?php
     namespace App\Controllers;
 
-    use Leaf\Core\Controller;
+    use Leaf\Controller;
 
     class ClassName extends Controller {
         public function __construct() {
@@ -52,8 +52,8 @@ Resource Controllers contain methods to handle CRUD functionality.
 
 namespace App\Controllers;
 
-use Leaf\Core\Controller;
-use Leaf\Core\Http\Request;
+use Leaf\Controller;
+use Leaf\Http\Request;
 
 class ClassName extends Controller {
     public function __construct() {
@@ -123,7 +123,7 @@ php leaf g:controller <ControllerName> --resource
 <?php
     namespace App\Controllers;
 
-    use Leaf\Core\ApiController;
+    use Leaf\ApiController;
 
     class ClassName extends ApiController {
         public function __construct() {

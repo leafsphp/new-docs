@@ -17,6 +17,17 @@
 	* [Using Controllers](2.0/routing/controller.md)
 	* [Sub folder support](2.0/routing/sub-folder.md)
 
+* Core
+	* [Leaf Forms](2.0/core/forms.md)
+	* [Simple Auth](2.0/core/auth.md)
+	* [Leaf Date](2.0/core/date.md)
+	* [Leaf FS](2.0/core/fs.md)
+	* [Leaf Token](2.0/core/token.md)
+	* [Controllers](2.0/core/controllers.md)
+	* [API Controllers](2.0/core/api-controllers.md)
+	* [Models](2.0/core/models.md)
+	* [Authentication](2.0/core/authentication.md)
+
 * HTTP
 	* [Request](2.0/http/request.md)
 	* [Response](2.0/http/response.md)
@@ -30,7 +41,7 @@
 	* [Leaf Blade](2.0/views/blade.md)
 
 * Leaf DB
-	* [Leaf DB Intro](2.0/database)
+	* [Leaf DB Intro](2.0/database/)
 	* [Retrieving Data](2.0/database/select)
 	* [Inserting Data](2.0/database/insert)
 	

@@ -1,7 +1,7 @@
 # Leaf Sessions
 Leaf offers simple session management to help you quickly build your apps and APIs.
 
-**Note:** In version 2, `\Leaf\Core\Http\Session` has been shortened to `\Leaf\Http\Session`. Also the session object is available on `$leaf->session`.
+**Note:** In version 2, `\Leaf\Http\Session` has been shortened to `\Leaf\Http\Session`. Also the session object is available on `$leaf->session`.
 
 ## Using Session
 ### Session on the Leaf Instance <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
@@ -16,7 +16,7 @@ $leaf->get("/text", function() use($leaf) {
 Although we've added this, we don't want to force you to do stuff in only one way, so you can still use the `v1.x` method.
 
 ### Initialising the Session object
-With this method, you manually initialise the Session object, and then pass it into your route. Note that in version 2, `\Leaf\Core\Http\Session` has been shortened to `\Leaf\Http\Session`.
+With this method, you manually initialise the Session object, and then pass it into your route. Note that in version 2, `\Leaf\Http\Session` has been shortened to `\Leaf\Http\Session`.
 ```js
 $leaf = new Leaf\App();
 $session = new Leaf\Http\Session();

@@ -16,11 +16,11 @@ $leaf->db->connect();
 Leaf DB has 2 different packages, 1 for mysqli and the other for PDO. So you can import which ever package you wish to use. **Leaf recommends using the mysqli package.**
 
 ```js
-use Leaf\Core\Db\Mysqli;
+use Leaf\Db\Mysqli;
 
 $db = new Mysqli();
 
-use Leaf\Core\Db\PDO;
+use Leaf\Db\PDO;
 
 $db = new PDO();
 ```
@@ -42,7 +42,7 @@ $leaf->db->connect($host, $user, $password, $dbname);
 
 #### DB Mysqli
 ```js
-use Leaf\Core\Db\Mysqli;
+use Leaf\Db\Mysqli;
 
 $db = new Mysqli();
 $db->connect($host, $user, $password, $dbname);
@@ -50,7 +50,7 @@ $db->connect($host, $user, $password, $dbname);
 
 #### DB 
 ```js
-use Leaf\Core\Db\PDO;
+use Leaf\Db\PDO;
 
 $db = new PDO();
 $db->connect($host, $dbname, $user, $password);
@@ -88,6 +88,73 @@ We've looked at making queries, but then `query()` still makes you type out what
 <hr>
 
 ### [Retrieving Data](2.0/database/select)
+
+<hr>
+
+### [Inserting Data](2.0/database/insert)
+
+<hr>
+
+### Updating Data
+This operation uses UPDATE. With Leaf DB:
+
+```js
+$db->update();
+```
+
+##### Update
+We use Leaf DB's update method which takes in a "table", a "column-value" to update and "conditions".
+
+```js
+$db->update("posts", "title = 'Post 1'", "title = 'Post One'");
+```
+
+This will look for a post with the title of "Post One" and change it to "Post 1".
+You can also have multiple conditions:
+
+```js
+$db->update("posts", "title = 'Post 1' AND author = 'Mychi Darko'", "title = 'Post One'");
+```
+
+##### With Parameter Binding
+
+```js
+$db->update("posts", "title = ? AND author = ?", "title = ?", ["Post 1", "Mychi Darko", "Post One"]);
+```
+
+<hr>
+
+### Deleting Data
+This operation uses DELETE. With Leaf DB:
+
+```js
+$db->delete();
+```
+
+##### Delete
+We use Leaf DB's delete method which takes in a "table", and "conditions".
+
+```js
+$db->delete("posts", "title = 'Post 1'");
+```
+
+This will look for a post with the title of "Post 1" and delete it.
+
+
+## Others
+### Row Count
+Get the number of rows from select
+
+```js
+$db->select("posts")->count();
+```
+
+### Connection Close
+Close the connection
+
+```js
+$db->close();
+```
 
 <br>
 <hr>

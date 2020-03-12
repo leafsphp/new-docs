@@ -58,7 +58,7 @@ That's it. Now, let's look at our controller
 ```javascript
 <?php
 namespace App\Controllers;
-use Leaf\Core\Controller;
+use Leaf\Controller;
 
 class PagesController extends Controller {
 	public function index() {
@@ -162,10 +162,10 @@ php leaf g:model Post -m
 <?php
     namespace App\Models;
 
-    use Leaf\Core\Database;
+    use Leaf\Database;
     new Database();
 
-    use Leaf\Core\Model;
+    use Leaf\Model;
 
     class Post extends Model {
         /**
@@ -191,8 +191,8 @@ When we look in `app/controllers/PostsController`, we see:
 
 namespace App\Controllers;
 
-use Leaf\Core\Controller;
-use Leaf\Core\Http\Request;
+use Leaf\Controller;
+use Leaf\Http\Request;
 
 class PostsController extends Controller {
     public function __construct() {
@@ -259,8 +259,8 @@ So let's say we have a database named `blog` with a table named `posts` which ha
 
 namespace App\Controllers;
 
-use Leaf\Core\Controller;
-use Leaf\Core\Http\Request;
+use Leaf\Controller;
+use Leaf\Http\Request;
 
 // our model
 use App\Models\Post;
