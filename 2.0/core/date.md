@@ -2,7 +2,7 @@
 Leaf Date makes formating date/time really easier, though the method names may appear weird, they're actually very easy to remeber😂
 
 ```js
-$date = new Leaf\Core\Date();
+$date = new Leaf\Date();
 ```
 
 <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span> The Date object has been directly bound to the Leaf object, so we can use it without initialising it.

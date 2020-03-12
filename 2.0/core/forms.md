@@ -4,7 +4,7 @@ Since v1.5.0 Leaf Form has totally replaced Simple Validation from v1.2.0 which 
 To use Leaf Form, you simply have to import it:
 
 ```js
-$form = new Leaf\Core\Form;
+$form = new Leaf\Form;
 ```
 
 ## Leaf Form Methods
