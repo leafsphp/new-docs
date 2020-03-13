@@ -44,6 +44,9 @@
 	* [Leaf DB Intro](2.0/database/)
 	* [Retrieving Data](2.0/database/select)
 	* [Inserting Data](2.0/database/insert)
+
+* Code Labs
+	* [Intro](2.0/codelabs/)
 	
 * Versions
 	* [Version 1.2.0](https://leaf-docs.netlify.com/v1.2.0/index.html)
