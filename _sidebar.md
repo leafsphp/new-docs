@@ -23,9 +23,9 @@
 	* [Leaf Date](2.0/core/date.md)
 	* [Leaf FS](2.0/core/fs.md)
 	* [Leaf Token](2.0/core/token.md)
-	* [Controllers](2.0/core/controllers.md)
-	* [API Controllers](2.0/core/api-controllers.md)
-	* [Models](2.0/core/models.md)
+	* [Controller](2.0/core/controller.md)
+	* [API Controller](2.0/core/api-controller.md)
+	* [Model](2.0/core/model.md)
 	* [Authentication](2.0/core/authentication.md)
 
 * HTTP

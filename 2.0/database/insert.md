@@ -53,10 +53,10 @@ $db->add("users", ["name" => "mychi", "email" => "m@m.com", "pass" => "1234"], [
 So, we're telling `add` to alert us if someone has already registered with the name `mychi` or the email `m@m.com`. This is because we passed `["name", "email"]` as the 3rd param to `add`
 
 **With uniques, you can cut down on your whole app:**
-For instance, if you know the exact data you'll be receiving in your app, let's say a username, email and password from a login form, you can do something like this:
+For instance, if you know the exact data you'll be receiving in your app, let's say a username, email and password from a register form, you can do something like this:
 
 ```js
-$leaf->post("/login", function() use($leaf) {
+$leaf->post("/register", function() use($leaf) {
 	$leaf->db->add("users", $leaf->request->getBody(), ["username", "email"]);
 });
 ```

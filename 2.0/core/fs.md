@@ -102,13 +102,24 @@ $fs->createFile("items.txt");
 $fs->createFile("home/items.txt");
 ```
 
+##### upload <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span>
+upload is for simple file uploads. It takes in 3 parameters, the path to save the file, the file and the file type(optional). It returns an array `[true, $filename]` if successful and `[false, $error]` if the upload fails.
+
+```js
+$profilePic = $_FILES["profile_pic"];
+// file upload
+$fs->upload("./images/", $profilePic);
+// file upload with file type
+$fs->upload("./images/", $profilePic, "image");
+```
+
 ##### writeFile
 `writeFile` is used to add content to a file, if the file already has content, all the content in there is replaced with the new content. Also, if the file doesn't exist, it will be created and all the content will be added to it. It takes in 2 parameters, the name/path+name of the file and the content;
 
 ```js
 $fs->writeFile("items.txt", "Hello");
 $fs->writeFile("items.txt", [
-  "name" => "Item 1"
+  	"name" => "Item 1"
 ]);
 $fs->writeFile("items.txt", 1);
 ```
