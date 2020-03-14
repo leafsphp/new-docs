@@ -72,47 +72,48 @@ It takes time to contribute to documentation, and if you spend the time to submi
 
 
 ## Code Lab Experiments
-* Configuration
-	* [Overview](2.0/codelabs/config/)
-	* [Settings](2.0/codelabs/config/settings.md)
-	* [Names, Scopes and Modes](2.0/codelabs/config/nsm.md)
+<!-- * Configuration
+* [Overview](2.0/codelabs/config/)
+* [Settings](2.0/codelabs/config/settings.md)
+* [Names, Scopes and Modes](2.0/codelabs/config/nsm.md) -->
 
 * Routing
 	* [Basic Routing & 404](2.0/codelabs/routing/)
-	* [Sub Routing](2.0/codelabs/routing/sub-routing.md)
-	* [Dynamic Routing](2.0/codelabs/routing/dynamic.md)
-	* [Middleware](2.0/codelabs/routing/middleware.md)
-	* [Optional Sub patterns](2.0/codelabs/routing/sub-patterns.md)
-	* [Using Controllers](2.0/codelabs/routing/controller.md)
-	* [Sub folder support](2.0/codelabs/routing/sub-folder.md)
+	* [Server Side Rendering](2.0/codelabs/routing/server-side-rendering/)
 
-* Core
+
+<!-- * [Sub Routing](2.0/codelabs/routing/sub-routing.md)
+* [Dynamic Routing](2.0/codelabs/routing/dynamic.md)
+* [Middleware](2.0/codelabs/routing/middleware.md)
+* [Optional Sub patterns](2.0/codelabs/routing/sub-patterns.md)
+* [Using Controllers](2.0/codelabs/routing/controller.md)
+* [Sub folder support](2.0/codelabs/routing/sub-folder.md) -->
+
+* Forms
 	* [Leaf Forms](2.0/codelabs/core/forms.md)
-	* [Simple Auth](2.0/codelabs/core/auth.md)
-	* [Leaf Date](2.0/codelabs/core/date.md)
-	* [Leaf FS](2.0/codelabs/core/fs.md)
-	* [Leaf Token](2.0/codelabs/core/token.md)
-	* [Controller](2.0/codelabs/core/controller.md)
-	* [API Controller](2.0/codelabs/core/api-controller.md)
-	* [Model](2.0/codelabs/core/model.md)
-	* [Authentication](2.0/codelabs/core/authentication.md)
+
+
+<!-- * [Simple Auth](2.0/codelabs/core/auth.md)
+* [Leaf Date](2.0/codelabs/core/date.md)
+* [Leaf FS](2.0/codelabs/core/fs.md)
+* [Leaf Token](2.0/codelabs/core/token.md)
+* [Controller](2.0/codelabs/core/controller.md)
+* [API Controller](2.0/codelabs/core/api-controller.md)
+* [Model](2.0/codelabs/core/model.md)
+* [Authentication](2.0/codelabs/core/authentication.md) -->
 
 * HTTP
-	* [Request](2.0/codelabs/http/request.md)
-	* [Response](2.0/codelabs/http/response.md)
-	* [Session](2.0/codelabs/http/session.md)
-	* [Cookies](2.0/codelabs/http/cookies.md)
-	* [Headers](2.0/codelabs/http/headers.md)
+	* [Session](2.0/codelabs/http/session/)
+	* [Cookies](2.0/codelabs/http/cookies/)
+	* [Headers](2.0/codelabs/http/headers/)
 
 * Leaf Views
-	* [Default Views](2.0/codelabs/views/default.md)
-	* [Leaf Veins](2.0/codelabs/views/veins.md)
-	* [Leaf Blade](2.0/codelabs/views/blade.md)
+	* [Default Views](2.0/codelabs/views/default/)
+	* [Leaf Veins](2.0/codelabs/views/veins/)
+	* [Leaf Blade](2.0/codelabs/views/blade/)
 
 * Leaf DB
-	* [Leaf DB Intro](2.0/codelabs/database/)
-	* [Retrieving Data](2.0/codelabs/database/select)
-	* [Inserting Data](2.0/codelabs/database/insert)
+	* [Leaf DB](2.0/codelabs/db/)
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
