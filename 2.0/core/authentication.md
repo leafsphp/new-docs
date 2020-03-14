@@ -95,10 +95,15 @@ if ($payload == false) {
 ```
 
 ### getBearerToken()
-This method is used to get the bearer token from an authorization header. It returns `null` if there's no token. 
+This method is used to get the bearer token from an authorization header. It returns `false` if there's no token. You can then use the `errors` method to retrieve any errors.
 
 ```js
 $token = $authentication->getBearerToken();
+
+// if there are any errors
+if ($token == false) {
+	echo $authentication->errors();
+}
 ```
 
 ### getAuthorizationHeader()

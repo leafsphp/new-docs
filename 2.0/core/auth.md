@@ -14,10 +14,23 @@ $auth = new Leaf\Auth;
 ## Authentication methods:
 
 ### login() <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
-Login is used to create a simple, secure user login. It takes in a table for to search for users(so it's no longer limited to the users table) and a set of parameters for the login. If there's a problem with the credentials, `login` returns `false`, else it returns the user data and a generated JSON Web Token.
+Login is used to create a simple, secure user login. It takes in a table for to search for users(so it's no longer limited to the users table) and a set of parameters for the login.
 
 ```js
 $user = $auth->login("users", ["username" => "mychi.darko", "password" => md5("test")]);
+```
+
+If the user is successfully found, the user data is returned, if not, `false` is returned. You can get any error by calling the `errors` method.
+
+```js
+$user = $auth->login("users", [
+	"username" => "mychi.darko",
+	"password" => md5("test")
+]); // returns false if failed
+
+if ($user == false) {
+	$response->throwErr($auth->errors());
+}
 ```
 
 example success response:
@@ -53,7 +66,19 @@ $auth->register("users", [
 ]);
 ```
 
-If the user is successfully saved, `true` is returned, if not, `false`.
+If the user is successfully saved, the user data is returned, if not, `false` is returned. You can get any error by calling the `errors` method.
+
+```js
+$user = $auth->register("users", [
+	"username" => "mychi.darko",
+	"email" => "mickdd22@gmail.com",
+	"field" => "value"
+]); // returns false if failed
+
+if ($user == false) {
+	$response->throwErr($auth->errors());
+}
+```
 
 
 ##### Uniques
