@@ -15,7 +15,7 @@ Composer is a dependency manager for PHP, just like npm for javascript and ruby 
 
 After downloading composer, you can run this command to install leaf in your project folder
 ```bash
-composer require leafs/leaf
+composer require leafs/leaf ^v2.0-beta
 ```
 
 ### Install with Github
