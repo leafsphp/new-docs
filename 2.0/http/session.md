@@ -1,19 +1,18 @@
 # Leaf Sessions
 Leaf offers simple session management to help you quickly build your apps and APIs.
 
-**Note:** In version 2, `\Leaf\Http\Session` has been shortened to `\Leaf\Http\Session`. Also the session object is available on `$leaf->session`.
+**Note:** In version 2, `\Leaf\Core\Http\Session` has been shortened to `\Leaf\Http\Session`.
 
 ## Using Session
-### Session on the Leaf Instance <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
-Since Session is already bound to the Leaf instance, you can do this:
+
 ```js
 $leaf = new Leaf\App();
+$session = new Leaf\Http\Session();
 
-$leaf->get("/text", function() use($leaf) {
-	$leaf->session->set("name", "Michael Darko");
+$leaf->get("/text", function() use($session) {
+	$session->set("name", "Michael Darko");
 });
 ```
-Although we've added this, we don't want to force you to do stuff in only one way, so you can still use the `v1.x` method.
 
 ### Initialising the Session object
 With this method, you manually initialise the Session object, and then pass it into your route. Note that in version 2, `\Leaf\Http\Session` has been shortened to `\Leaf\Http\Session`.
@@ -30,14 +29,11 @@ $leaf->post("/login", function() use($session) {
 <hr>
 
 ## Starting a new session
-Starting a new session with leaf is actually very simple😅..
+A new session is started or an old one continued when you instanciate the `Leaf\Session`
 
 ```js
-// new in v2
-$leaf->session;
-
 // more direct method
-new Leaf\Http\Session;
+$session = new Leaf\Http\Session;
 ```
 This line of code checks for an active session....if none is found, it creates a new session, if one is running, it just instanciates the Session object to be used in Leaf
 
@@ -53,7 +49,7 @@ $session->set("username", $username);
 #### Setting multiple values <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
 In v2.0, `set` can take in an array if you wish to set multiple values or just want to use one.
 ```js
-$leaf->session->set(["username" => $username, "mobile_number" => $mobile_number]);
+$session->set(["username" => $username, "mobile_number" => $mobile_number]);
 ```
 
 #### Security Fixes <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
@@ -64,7 +60,7 @@ $leaf->session->set(["username" => $username, "mobile_number" => $mobile_number]
 ## get()
 get is a simple method that returns a session value. It takes in one parameter: the name of the param passed into the app through the session It works just like how `$_SESSION['key']` does
 ```js
-$username = $leaf-->session>get("username");
+$username = $session>get("username");
 ```
 
 <hr>
@@ -73,7 +69,7 @@ $username = $leaf-->session>get("username");
 getBody() returns the key => value pairs of all the session data including any CSRF data as an associative array.
 
 ```js
-$bosy = $leaf->session->getBody();
+$body = $session->getBody();
 ```
 
 <hr>
@@ -84,7 +80,7 @@ $bosy = $leaf->session->getBody();
 `unset()` simply deletes a session variable.
 
 ```js
-$leaf->session->unset('name');
+$session->unset('name');
 ```
 
 ### Removing multiple values <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
@@ -92,7 +88,7 @@ $leaf->session->unset('name');
 In v2.0, `unset` can also take in an array if you wish to unset multiple values or just want to use one.
 
 ```js
-$leaf->session->unset(["username", "mobile_number"]);
+$session->unset(["username", "mobile_number"]);
 ```
 
 <hr>
@@ -113,7 +109,7 @@ $leaf->post('/session/reset', function() use($session) {
 `id()` sets and/or returns the current session id. It takes in an **optional** parameter: the ID to overwrite the session id.
 
 ```js
-$id = $leaf->session->id();
+$id = $session->id();
 ```
 
 So if the session id is not set, this will generate and return a new session id. However, if the session id is already set, it will just return it.
@@ -121,7 +117,7 @@ So if the session id is not set, this will generate and return a new session id.
 You can also set your own session id with this syntax below. It will be returned as well, so you can keep it in a variable.
 
 ```js
-$id = $leaf->session->id("new session id");
+$id = $session->id("new session id");
 ```
 
 <hr>
@@ -130,8 +126,8 @@ $id = $leaf->session->id("new session id");
 regenerate() simply generates a new session id. It takes in a boolean parameter which indicates whether to delete all session data or not(has a default of false)
 
 ```js
-$leaf->session->regenerate(false);
-$leaf->session->regenerate(true); // will clear all session data
+$session->regenerate(false);
+$session->regenerate(true); // will clear all session data
 ```
 
 <hr>
