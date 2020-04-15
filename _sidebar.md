@@ -18,15 +18,20 @@
 	* [Sub folder support](2.0/routing/sub-folder.md)
 
 * Core
-	* [Leaf Forms](2.0/core/forms.md)
-	* [Simple Auth](2.0/core/auth.md)
-	* [Leaf Date](2.0/core/date.md)
-	* [Leaf FS](2.0/core/fs.md)
-	* [Leaf Token](2.0/core/token.md)
-	* [Controller](2.0/core/controller.md)
-	* [API Controller](2.0/core/api-controller.md)
-	* [Model](2.0/core/model.md)
-	* [Authentication](2.0/core/authentication.md)
+	* **Utilities**
+		* [Leaf Forms](2.0/core/forms.md)
+		* [Leaf Mail](2.0/core/mail.md)
+		* [Leaf Date](2.0/core/date.md)
+		* [Leaf FS](2.0/core/fs.md)
+		* [Leaf Scripts](2.0/core/scripts.md)
+	* **User**
+		* [Simple Auth](2.0/core/auth.md)
+		* [Leaf Token](2.0/core/token.md)
+		* [Authentication](2.0/core/authentication.md)
+	* **App Architecture**
+		* [Controller](2.0/core/controller.md)
+		* [API Controller](2.0/core/api-controller.md)
+		* [Model](2.0/core/model.md)
 
 * HTTP
 	* [Request](2.0/http/request.md)
