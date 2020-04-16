@@ -42,7 +42,7 @@ $token = $authentication->generateToken($payload, "secret phrase");
 This method is used to confirm the identity of a token from an authorization header.
 
 ```js
-$payload = $authentication->validateToken();
+$payload = $authentication->validateToken("SECRET PHRASE");
 ```
 
 If the token is valid, it returns the decoded `payload`. So if we encode a payload:
@@ -60,7 +60,7 @@ $payload = [
 We can retrieve this payload by calling
 
 ```js
-$payload = $authentication->validateToken();
+$payload = $authentication->validateToken("SECRET PHRASE");
 
 $username = $payload["username"];
 ```
@@ -68,7 +68,7 @@ $username = $payload["username"];
 If the validation fails, it returns `false`, you can get any error by calling the `errors` method.
 
 ```js
-$payload = $authentication->validateToken(); // returns false if failed
+$payload = $authentication->validateToken("SECRET PHRASE"); // returns false if failed
 
 if ($payload == false) {
 	$response->throwErr($authentication->errors());
@@ -76,10 +76,11 @@ if ($payload == false) {
 ```
 
 ### validate() <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span>
+
 This method is used to confirm the identity of a token. Unlike `validateToken`, the token to validate is directly passed into it. Just like `validateToken`, it returns the token's `payload`
 
 ```js
-$payload = $authentication->validate($token);
+$payload = $authentication->validate($token, "SECRET PHRASE");
 
 $username = $payload["username"];
 ```
@@ -87,7 +88,7 @@ $username = $payload["username"];
 If the validation fails, it returns `false`, you can get any error by calling the `errors` method.
 
 ```js
-$payload = $authentication->validate($token); // returns false if failed
+$payload = $authentication->validate($token, "SECRET PHRASE"); // returns false if failed
 
 if ($payload == false) {
 	$response->throwErr($authentication->errors());

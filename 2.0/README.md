@@ -1,86 +1,59 @@
-# Leaf
-
-Leaf is a PHP framework that helps you create clean, simple but powerful web apps and APIs quickly. Leaf introduces a cleaner and much simpler structure to the PHP language while maintaining it's flexibility. With a simple structure and a shallow learning curve, it's an excellent way to rapidly build powerful and high performant web apps and APIs. 
-
 # Getting Started
+## What is Leaf?
+Leaf is a PHP framework that helps you create clean, simple but powerful web apps and APIs quickly. Leaf introduces a cleaner and much simpler structure to the PHP language while maintaining it's flexibility. 
+
+With a simple structure and a shallow learning curve, it's an excellent way to rapidly build powerful and high performant web apps and APIs.
+
+Simply install Leaf, and you're good to go.
+
+
 ## Installation
-With LeafMVC, you can whip up a full MVC app in a couple of seconds. Leaf MVC's recommended mode of installation is with [composer](https://getcomposer.org).
+Leaf's has a very simple installation method. You can install directly with composer or clone our repo on github. (both methods require composer)
+
+### Install with composer
+Composer is a dependency manager for PHP, just like npm for javascript and ruby gems. Therefore, you need to have PHP installed on your system. If you don't already have composer installed, you can download it [here](https://getcomposer.org/)
+
+After downloading composer, you can run this command to install leaf in your project folder
 ```bash
-composer create-project leafs/mvc <project-name>
+composer require leafs/leaf ^v2.0-beta
 ```
-This will create a LeafMVC project and install all dependencies. Also, a `.env` file will be created for you.
-You can serve your project with 
+
+### Install with Github
+Download from github and run `composer install` to get all dependencies
 ```bash
-php leaf serve
+git clone --single-branch --branch 2.0 https://github.com/leafsphp/leaf.git
 ```
+OR
+<div style="border: 1px solid rgba(10, 230, 150, 0.8); border-radius: 4px; background: rgba(10, 230, 150, 0.05); padding: 10px 30px; padding-bottom: 22px;">
+	<div style="font-weight: bolder; font-size: 25px; margin-bottom: -18px !important;">Setup</div>
+	<p style="color: rgb(5, 160, 70); font-size: 18px;">
+		You can directly clone or download the git repo here.
+	</p>
+	<a href="https://github.com/leafsphp/leaf/" style="background: #202020; color: white; text-decoration: none; padding: 8px 15px; border-radius: 3px;">Download Repo</a>
+</div>
 
-## Folder Structure
+
+### Build with MVC
+You can also try out our [LeafMVC](https://leafmvc.netlify.com) package. This is a simple yet powerful MVC framework wrapped around the `Leaf` package which helps you build with Leaf in an MVC setup. It comes with a custom terminal, scafffolding, migrations, an ORM and many more features. You can install it with this command.
+
 ```bash
-C:.
-├───app
-│   ├───console
-│   ├───controllers
-│   │   └───Auth
-│   ├───database
-│   │   ├───factories
-│   │   ├───migrations
-│   │   └───seeds
-│   ├───helpers
-│   ├───models
-│   ├───routes
-│   └───views
-│       ├───assets
-│       │   ├───css
-│       │   ├───images
-│       │   └───js
-│       ├───components
-│       └───pages
-│           └───errors
-├───config
-├───public
-├───storage
-│   ├───app
-│   │   └───public
-│   ├───framework
-│   │   └───views
-│   └───logs
-└───vendor
+composer create-project leafs/mvc
 ```
-In LeafMVC, ***app*** is where all your development goes on. “app” contains all your **models**, **views**(templates), **controllers**, **routes**, **custom console commands**, **helpers** and database related stuff(**migrations**, **seeds…**).
 
 
-***config*** contains all the app configurations…configuration for routes, database, the leaf console, error handling, session, templating…however, you normally have no business with this folder
+### Build with API
+You can also try out our [LeafAPI](https://github.com/leafsphp/leafAPI) package. This is another framework built around the `Leaf` package. Leaf API provides you with tools to quickly and efficiently build an API. Leaf APIis built with what we call MRRC(Model Request Response Controller) architecture which is pretty much MVC without the V. It also has scaffolding, a custom terminal, migrations, an ORM and other cool features. 
 
-
-***public*** holds web configuration😅😅.
-
-
-***storage*** holds all the app data, it contains both framework data and user files. For instance, uploaded files and pictures are kept in storage/app/public
-
-
-***vendor*** holds all of leafMVC’s dependencies
-
-
-## Basic Usage
-LeafMVC is created with Leaf Core, hence, you can still use the Leaf Code you're used to.<br>
-`app/routes/routes.php`
-```javascript
-<?php
-$leaf->get('/home', function() use($response) {
-  $response->respond(['Message' => 'Hello World']);
-});
+```bash
+composer create-project leafs/api-starter
 ```
-Just enter this code and run `php leaf serve` and navigate to localhost:3000
-It's that simple to build with LeafMVC
 
 <br>
-<br>
+<hr>
 
-# <a href="#/first-app/">Building your first leaf app</a>
-# <a href="#/cmd/">Leaf CMD</a>
-# <a href="#/routing/">Routing</a>
-# <a href="#/controllers/">Controllers</a>
-# <a href="#/models/">Models</a>
+<a href="#/2.0/intro/htaccess" style="margin: 0px;">Re-routing to index</a>
+<a href="#/2.0/intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
+<a href="#/2.0/routing/" style="margin: 0px 10px;">Routing</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

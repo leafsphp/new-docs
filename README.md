@@ -43,20 +43,43 @@ Leaf 2.0 introduces a container as the core of Leaf. This container allows you t
 This container also allows you to register custom/external packages on the current leaf instance for global use with `$leaf->register()`
 
 ```js
-	$leaf = new Leaf\App();
+$leaf = new Leaf\App();
 
-	// register a new package
-	$leaf->register("purple", function() {
-		return new Purple\Leaf();
-	});
+// register a new package
+$leaf->register("purple", function() {
+	return new Purple\Leaf();
+});
 
-	$leaf->get("/home", function() use($leaf) {
-		// use the purple package
-		$something = $leaf->purple->doSomething();
-		$leaf->response->respond($something);
-	});
+$leaf->get("/home", function() use($leaf) {
+	// use the purple package
+	$something = $leaf->purple->doSomething();
+	$leaf->response->respond($something);
+});
 ```
-**View [container docs](2.0/core/container)**
+
+<hr>
+
+## Leaf Mail
+A new simple package added to Leaf in v2. Leaf Mail takes out all the stress associated with Mailing. It is built on the powerful PHPMailer library but offers an improved and better experience for developers
+
+```js
+$mail = new Leaf\Mail('smtp.gmail.com', 587, [
+	'username' => 'user@gmail.com', 
+	'password' => '*********'
+]);
+
+$mail->write([
+	"subject" => "Email Subject",
+	"template" => "./template.html",
+	"recepient_email" => "receiver@mail.com",
+	"sender_name" => "Leaf PHP Framework",
+	"attachment" => "./../README.MD"
+]);
+
+$mail->send();
+```
+
+[Learn more about Leaf Mail](2.0/core/mail)
 
 <hr>
 
@@ -64,33 +87,34 @@ This container also allows you to register custom/external packages on the curre
 More db methods have been added to Leaf's db packages. These methods provide a simpler and a much more concise way of interacting with your database. Also, the mysqli package has been directly integrated into Leaf core, so you can use it globally without having to instanciate it yourself.
 
 ```js
-	$leaf = new Leaf\App();
-	$form = new Leaf\Form();
+$leaf = new Leaf\App();
+$form = new Leaf\Form();
 
-	// db connection
-	$leaf->db->connect("host", "username", "password", "dbname");
+// db connection
+$leaf->db->connect("host", "username", "password", "dbname");
 
-	$leaf->post("/articles/add", function() use($leaf, $form) {
-		// validate the data passed in
-		$form->validate([
-			"title" => "text",
-			"author" => "ValidUsername",
-			"email" => "email",
-			"description" => "text"
-		]);
+$leaf->post("/articles/add", function() use($leaf) {
+	// validate, check for a duplicate identifier and insert the data into 
+	// database.articles, it's sanitised and arranged automatically
+	$leaf->db->add("articles", $leaf->request->getBody(), ["identifier"], false, [
+		"title" => "text",
+		"author" => "ValidUsername",
+		"email" => "email",
+		"description" => "text",
+		"identifier" => "number"
+	]);
 
-		// insert the data into database, it's sanitised and arranged automatically
-		$leaf->db->add("articles", $leaf->request->getBody());
-
-		// return json encoded data
-		$leaf->response->respond(
-			// same as select * from articles where author = ... with mysqli_fetch_all()
-			$leaf->db->choose("articles", ["author" => $form->get("author")])->fetchAll()
-		);
-	});
+	// return json encoded data
+	$leaf->response->respond(
+		// fetch all articles belonging to an author
+		$leaf->db->choose("articles", "*", [
+			"author" => $leaf->request->get("author")
+		])->fetchAll()
+	);
+});
 ```
 
-[Learn more about Leaf Db packages](2.0/db/)
+[Learn more about Leaf Db packages](2.0/database/)
 
 <hr>
 
@@ -119,11 +143,10 @@ In this case the script is just output to the user as a string.
 <br>
 <hr>
 
-<a href="#/first-app/" style="margin: 0px;">Building your first leaf app</a>
-<a href="#/cmd/" style="margin: 0px 10px;">Leaf CMD</a>
-<a href="#/routing/" style="margin: 0px 10px;">Routing</a>
-<a href="#/controllers/" style="margin: 0px 10px;">Controllers</a>
-<a href="#/models/" style="margin: 0px;">Models</a>
+<a href="#/2.0/intro/first" style="margin-right: 10px;">Building your first leaf app</a>
+<a href="#/2.0/routing/" style="margin: 0px 10px;">Routing</a>
+<a href="#/2.0/core/controller" style="margin: 0px 10px;">Controllers</a>
+<a href="#/2.0/core/model" style="margin: 0px 10px;">Models</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

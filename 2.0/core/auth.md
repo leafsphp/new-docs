@@ -47,15 +47,44 @@ example success response:
 ```
 
 ##### Password Encoding
+
 If you use an `md5` encoded password, and the name of your password field is `password`, you can simply leave the password encoding to `login`. For now, only md5 is supported, don't worry, later versions of Leaf will support more encodings.
 
 ```js
 $user = $auth->login("users", ["username" => "mychi.darko", "password" => "test"], "md5");
 ```
 
+##### Default Checks
+
+Generally speaking, most logins/signups require a (username/email) + password combination, default checks allow you to validate data entered into these fields without you having to write any validation yourself.
+
+Default checks look for a `username` field and test it against the [ValidUsername](2.0/core/forms?id=validate) rule, an `email` against the [email](2.0/core/forms?id=validate) rule and a `password` field against the [required](2.0/core/forms?id=validate) rule.
+
+To use default checks, you simply have to pass `true` as the 4th parameter to login
+
+```js
+$user = $auth->login("users", [
+	"username" => "mychi.darko", 
+	"password" => "test"
+], "md5", true);
+```
+
+To get any errors, you need to call the `errors` method
+
+```js
+$user = $auth->login("users", [
+	"username" => "mychi.darko", 
+	"password" => "test"
+], "md5", true);
+
+if ($user == false) {
+	$app->response->throwErr($auth->errors());
+}
+```
 <hr>
 
 ### register() <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+
 Register is a simple method used to create simple, secure user registrations. This option was `basicRegister` in earlier versions. It takes in a table to save users, the params(array) to save.
 
 ```js
@@ -97,7 +126,7 @@ For instance, if you know the exact data you'll be receiving in your app, let's 
 
 ```js
 $leaf->post("/register", function() use($leaf) {
-	$leaf->db->register("users", $leaf->request->getBody(), ["username", "email"]);
+	$auth->register("users", $leaf->request->getBody(), ["username", "email"]);
 });
 ```
 
@@ -108,21 +137,55 @@ If you use an `md5` encoded password, and the name of your password field is `pa
 
 ```js
 $leaf->post("/register", function() use($leaf) {
-	$leaf->db->register("users", $leaf->request->getBody(), ["username", "email"], "md5");
+	$auth->register("users", $leaf->request->getBody(), ["username", "email"], "md5");
 });
+```
+
+##### Default Checks
+
+Generally speaking, most logins/signups require a (username/email) + password combination, default checks allow you to validate data entered into these fields without you having to write any validation yourself.
+
+Default checks look for a `username` field and test it against the [ValidUsername](2.0/core/forms?id=validate) rule, an `email` against the [email](2.0/core/forms?id=validate) rule and a `password` field against the [required](2.0/core/forms?id=validate) rule.
+
+To use default checks, you simply have to pass `true` as the 5th parameter to login
+
+```js
+$auth->register("users", $leaf->request->getBody(), ["username", "email"], "md5", true);
+```
+
+To get any errors, you need to call the `errors` method
+
+```js
+if ($auth->register("users", $leaf->request->getBody(), ["username", "email"], "md5", true) == false) {
+	$app->response->throwErr($auth->errors());
+}
 ```
 
 <hr>
 
 ### [Leaf Authentication Methods](2.0/core/authentication) <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
 
-This provides a simple way to work with manual authentication and tokens. All methods here are now available in `Leaf\Auth`, but are only accessible on the `$this` object.
+Leaf Auth now uses the `Leaf\Authentication` package to provide solutions for token authentication. This provides a simple way to work with manual authentication and tokens. All methods here are now available in `Leaf\Auth`, but are only accessible on the `$this` object.
 
 ```js
 $payload = $this->validate($token);
 ```
 
 Read [authentication](2.0/core/authentication) for more info
+
+<hr>
+
+### Token Secrets <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+
+Token Secrets are basically simple `strings` which are encoded into your Tokens to prevent others from logging into accounts with fake tokens. You simply need to set your own token secrets while encoding and decoding tokens.
+
+#### Basic Usage
+
+```js
+$auth->setSecretKey("tH1$_iS_MY_$3¢Ret");
+
+$auth->token->generateSimpleToken($user_id, $auth->getSecretKey());
+```
 
 <br>
 <hr>

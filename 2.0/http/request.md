@@ -43,17 +43,20 @@ $id = $leaf->request->get('id');
 
 <hr>
 
-### getBody()
-`getBody()` is another general purpose method which retrieves the key => value pairs of the entire request body. In simpler terms, it works like `$_POST` but works for all request types.
+### body()
+
+**Previously `getBody()`**
+
+`body()` is another general purpose method which retrieves the key => value pairs of the entire request body. In simpler terms, it works like `$_POST` but works for all request types.
 
 ```js
 $leaf->post('/name/add', function() use($leaf) {
-  $body = $leaf->request->getBody();
+  $body = $leaf->request->body();
 });
 ```
 
 #### Security Fixes <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 12px;">New in v2</span></sup>
-`getBody()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application.
+`body()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application.
 
 <hr>
 

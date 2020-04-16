@@ -18,20 +18,19 @@
 	* [Sub folder support](2.0/routing/sub-folder.md)
 
 * Core
-	* **Utilities**
-		* [Leaf Forms](2.0/core/forms.md)
-		* [Leaf Mail](2.0/core/mail.md)
-		* [Leaf Date](2.0/core/date.md)
-		* [Leaf FS](2.0/core/fs.md)
-		* [Leaf Scripts](2.0/core/scripts.md)
-	* **User**
-		* [Simple Auth](2.0/core/auth.md)
-		* [Leaf Token](2.0/core/token.md)
-		* [Authentication](2.0/core/authentication.md)
-	* **App Architecture**
-		* [Controller](2.0/core/controller.md)
-		* [API Controller](2.0/core/api-controller.md)
-		* [Model](2.0/core/model.md)
+	* [Leaf Forms](2.0/core/forms.md)
+	* [Leaf Mail](2.0/core/mail.md)
+	* [Leaf Date](2.0/core/date.md)
+	* [Leaf FS](2.0/core/fs.md)
+	* [Leaf Scripts](2.0/core/scripts.md)
+	
+	* [Simple Auth](2.0/core/auth.md)
+	* [Leaf Token](2.0/core/token.md)
+	* [Authentication](2.0/core/authentication.md)
+	
+	* [Controller](2.0/core/controller.md)
+	* [API Controller](2.0/core/api-controller.md)
+	* [Model](2.0/core/model.md)
 
 * HTTP
 	* [Request](2.0/http/request.md)
@@ -50,8 +49,10 @@
 	* [Retrieving Data](2.0/database/select)
 	* [Inserting Data](2.0/database/insert)
 
-<!-- * Code Labs
-	* [Intro](2.0/codelabs/) -->
+* Code Labs
+	* [Intro](codelabs/)
+	* [Login Form Validation](codelabs/v2.x/form-validation/login/)
+	* [AJAX Request Validation](codelabs/v2.x/form-validation/ajax/)
 	
 * Versions
 	* [Version 1.2.0](https://leaf-docs.netlify.com/v1.2.0/index.html)
