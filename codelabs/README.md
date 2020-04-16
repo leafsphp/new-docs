@@ -1,6 +1,15 @@
 # Leaf Code Labs
 Unlike the rest of the docs, Code Lab goes into details on features and builds real world examples with them as opposed to the simple examples given in the docs. So, in short, you can say Code Lab has a greater depth than the rest of the docs.
 
+## Code Lab Experiments
+
+* Forms
+	* [Login Form Validation](codelabs/v2.x/form-validation/login/)
+	* [Ajax Request Validation](codelabs/v2.x/form-validation/ajax/)
+
+* Mail
+	* [Sending Dynamic Emails From A Template](codelabs/v2.x/mail/dynamic-mail-templating/)
+
 ## Code Lab Contributions
 
 ### What we’re looking for
@@ -69,13 +78,6 @@ If you're still not sure, you can take a look at our [experiment template](codel
 
 **Thank you**
 It takes time to contribute to documentation, and if you spend the time to submit a PR to this section of our docs, you do so with our gratitude.
-
-
-## Code Lab Experiments
-
-* Forms
-	* [Login Form Validation](codelabs/v2.x/form-validation/login/)
-	* [Ajax Request Validation](codelabs/v2.x/form-validation/ajax/)
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

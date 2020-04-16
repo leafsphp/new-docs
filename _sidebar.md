@@ -53,6 +53,7 @@
 	* [Intro](codelabs/)
 	* [Login Form Validation](codelabs/v2.x/form-validation/login/)
 	* [AJAX Request Validation](codelabs/v2.x/form-validation/ajax/)
+	* [Dynamic Mailing](codelabs/v2.x/mail/dynamic-mail-templating/)
 	
 * Versions
 	* [Version 1.2.0](https://leaf-docs.netlify.com/v1.2.0/index.html)
