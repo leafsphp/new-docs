@@ -57,6 +57,26 @@ To retrieve the validation errors, we simply have to call `$form->errors()` and 
 
 Dont forget to check [Leaf Form's documentation](2.0/core/forms)
 
+So at the end, we have an app looking like this.
+
+```js
+require "vendor/autoload.php";
+
+$app = new Leaf\App;
+$form = new Leaf\Form;
+
+$app->post("/validate", function() use($app, $form) {
+	$validation = $form->validate([
+		"email" => "email",
+		"password" => "required"
+	]);
+
+	if ($validation == false) $app->response->throwErr($form->errors());
+});
+
+$app->run();
+```
+
 <br>
 
 Experiment by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

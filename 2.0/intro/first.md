@@ -19,7 +19,7 @@ $leaf->run();
 ```
 That's all. It's this simple.
 
-This is a very basic example, if you want to explore deeper, more useful examples, you can check out our [code labs](2.0/codelabs) section
+This is a very basic example, if you want to explore deeper, more useful examples, you can check out our [code labs](codelabs/) section
 
 <br>
 <hr>
