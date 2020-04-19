@@ -49,6 +49,9 @@
 	* [Retrieving Data](2.0/database/select)
 	* [Inserting Data](2.0/database/insert)
 
+* Beta Zone
+	* [Intro](2.0/beta-zone/)
+
 * Code Labs
 	* [Intro](codelabs/)
 	* [Login Form Validation](codelabs/v2.x/form-validation/login/)

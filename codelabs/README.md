@@ -1,4 +1,5 @@
 # Leaf Code Labs
+
 Unlike the rest of the docs, Code Lab goes into details on features and builds real world examples with them as opposed to the simple examples given in the docs. So, in short, you can say Code Lab has a greater depth than the rest of the docs.
 
 ## Code Lab Experiments
@@ -33,6 +34,7 @@ Experiments should generally:
 We request that you follow the template below. We understand, however, that there are times when you may necessarily need to deviate for clarity or flow. Either way, all experiments should at some point discuss the nuance of the choice made using this pattern, preferably in the form of the alternative patterns section.
 
 #### Base Example
+
 *required*
 
 1. Articulate the problem in a sentence or two.
@@ -41,40 +43,36 @@ We request that you follow the template below. We understand, however, that ther
 1. Explain what this accomplishes in a sentence.
 
 #### Details about the Value
-*required*
 
+*required*
 Address common questions that one might have while looking at the example. (Blockquotes are great for this)
 Show examples of common missteps and how they can be avoided.
 Show very simple code samples of good and bad patterns.
 Discuss why this may be a compelling pattern. Links for reference are not required but encouraged.
 
 #### Real-World Example
-*required*
 
+*required*
 Demonstrate the code that would power a common or interesting use case, by:
 
 Walking through a few terse examples of setup
 
-
 #### Additional Context
-*optional*
 
+*optional*
 It’s extremely helpful to write a bit about this pattern, where else it would apply, why it works well, and run through a bit of code as you do so or give people further reading materials here.
 
-
 #### When To Avoid This Pattern
-*optional*
 
+*optional*
 This section is not required, but heavily recommended. It won’t make sense to write it for something very simple such as toggling classes based on state change, but for more advanced patterns like mixins it’s vital. The answer to most questions about development is “It depends!”, this section embraces that. Here, we’ll take an honest look at when the pattern is useful and when it should be avoided, or when something else makes more sense.
 
-
 #### Alternative Patterns
-*required*
 
+*required*
 This section is required when you’ve provided the section above about avoidance. It’s important to explore other methods so that people told that something is an antipattern in certain situations are not left wondering. In doing so, consider that the web is a big tent and that many people have different codebase structures and are solving different goals. Is the app large or small? Are they integrating Leaf into an existing project, or are they building from scratch? Are their users only trying to achieve one goal or many? Is there a lot of asynchronous data? All of these concerns will impact alternative implementations. A good code lab experiment gives developers this context.
 
 If you're still not sure, you can take a look at our [experiment template](codelabs/experiment/)
-
 
 **Thank you**
 It takes time to contribute to documentation, and if you spend the time to submit a PR to this section of our docs, you do so with our gratitude.
