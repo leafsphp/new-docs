@@ -7,6 +7,7 @@ If you're attempting to use this, you've probably seen or used `SELECT` statemen
 ## db select
 
 #### Getting all rows from a table
+
 To do this, we use the `select()` methode. All that we have to do is to pass in the table we want to retrieve. For example, to get all users from the "users" table, we simply do:
 
 ```js
@@ -20,6 +21,7 @@ $db->select("users")->fetchAll();
 ```
 
 #### Getting a column from a table
+
 Getting a single column, eg: getting all usernames from the users table
 
 ```js
@@ -40,6 +42,7 @@ $db->select("users", "*")->fetchAll();
 ```
 
 #### Getting a particular row from a table
+
 Getting a particular row, eg: getting the user with the id of 1 from the users table. You acan achieve this with:
 
 ```js
@@ -55,6 +58,7 @@ $db->select("users", "username, email", "id = 2")->fetchObj();
 ```
 
 #### Limit data
+
 Limiting data is also very simple with Leaf DB
 
 ```js
@@ -66,6 +70,7 @@ $books = $leaf->db->select("books", "*", "author = ? ORDER BY id DESC LIMIT 5", 
 ```
 
 #### Using Prepared Statements
+
 Prepared statements help protect against SQL injection,...
 
 ```js
@@ -89,6 +94,7 @@ $db->select("users", "username, email")->fetchAll();
 ```
 
 #### Getting a particular row from a table
+
 Getting a particular row, eg: getting the user with the id of 2 from the users table. You acan achieve this with:
 
 ```js
@@ -133,6 +139,7 @@ $db->choose("books", "*", ["author" => "mychi.darko", "published" => "2019"], "L
 	"published" => "number"
 ]);
 ```
+
 Here, we're telling `choose` that the **author** parameter should be a valid username, and the **published** param should contain only numbers. If any of these conditions(rules) are not met, the application throws an error and breaks.
 
 You can view all validation rules [here](2.0/form?id=validation)
