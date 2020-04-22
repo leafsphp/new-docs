@@ -1,16 +1,19 @@
 # Leaf Authentication
-Authentication provides simple methods to help with manual authentication and working with tokens. If you want a much simpler way, you can check out [Simple Auth](2.0/core/auth).
+
+Authentication provides simple methods to help with manual authentication and working with tokens. In v2, Authentication has been added to Leaf Heplers, so it's now just an authentication helper. If you want a much simpler way, you can check out [Simple Auth](2.0/core/auth).
 
 ## Working with tokens
+
 Leaf provides you with the `JWT` object which includes various methods for creating and parsing token data....but we do not advice directly using the `JWT` object. For this reason, this object has been created to work with all the `JWT` data. You simply have to initialise it:
 
 ```js
-$authentication = new Leaf\Authentication();
+$authentication = new Leaf\Helpers\Authentication();
 ```
 
-## Authentication methods:
+## Authentication methods
 
 ### generateSimpleToken()
+
 This method generates a new JSON Web Token. It takes 2 arguments. check out JWT for more info on JWT params
 
 - (int) - A user id to encode
@@ -21,6 +24,7 @@ $token = $authentication->generateSimpleToken(24', 'LEAF PHP SECRET CODE 1442');
 ```
 
 ### generateToken()
+
 This method generates a new JSON Web Token: the same as `generateSimpleToken`, the only difference is that this method gives you more control over the token i.e. expiry time and custom fields. This method takes in 2 params, the entire `payload` of your JWT and a secret phrase. check out JWT for more info on JWT payload params.
 
 - (array) - JWT payload
@@ -39,6 +43,7 @@ $token = $authentication->generateToken($payload, "secret phrase");
 ```
 
 ### validateToken()
+
 This method is used to confirm the identity of a token from an authorization header.
 
 ```js
@@ -96,6 +101,7 @@ if ($payload == false) {
 ```
 
 ### getBearerToken()
+
 This method is used to get the bearer token from an authorization header. It returns `false` if there's no token. You can then use the `errors` method to retrieve any errors.
 
 ```js
@@ -108,6 +114,7 @@ if ($token == false) {
 ```
 
 ### getAuthorizationHeader()
+
 This method is used to an authorization header. Returns `null` if anything goes wrong.
 
 ```js
