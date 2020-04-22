@@ -14,6 +14,49 @@ You might have guessed it😂. That's right, that's our `console.log`. It works 
 Leaf\JS\Scripts::c_log("Text", ["message" => "Arrays are formatted into JSON"]);
 ```
 
+### c_style
+
+This one lets you style data you've logged to the console
+
+```js
+Leaf\JS\Scripts::c_style("Data, can be an array too", "css");
+Leaf\JS\Scripts::c_style("c_style data", "color: gold; font-size: 50px;");
+```
+
+### c_table
+
+Tabulate array data in console **(console.table)**
+
+```js
+\Leaf\JS\Scripts::c_table([["name" => "Mychi", "age" => "18"], ["name" => "seth", "age" => "18"]]);
+```
+
+### c_debug
+
+**console.debug**.
+
+```js
+\Leaf\JS\Scripts::c_debug();
+```
+
+### c_clear
+
+**console.clear**.
+
+```js
+\Leaf\JS\Scripts::c_clear();
+```
+
+### c_trace
+
+**console.trace**.
+
+```js
+\Leaf\JS\Scripts::c_trace("trace message");
+```
+
+![c_style output](../../img/leaf_console_output.png)
+
 ### localstorage_set
 
 Our version of `localstorage.setItem` works the same way too. Arrays are made json by default.
