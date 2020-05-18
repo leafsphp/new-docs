@@ -57,7 +57,7 @@ For instance, if you know the exact data you'll be receiving in your app, let's 
 
 ```js
 $leaf->post("/register", function() use($leaf) {
-	$leaf->db->add("users", $leaf->request->getBody(), ["username", "email"]);
+	$leaf->db->add("users", $leaf->request->body(), ["username", "email"]);
 });
 ```
 
