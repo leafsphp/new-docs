@@ -1,4 +1,5 @@
 # Leaf Sessions
+
 Leaf offers simple session management to help you quickly build your apps and APIs.
 
 **Note:** In version 2, `\Leaf\Core\Http\Session` has been shortened to `\Leaf\Http\Session`.
@@ -15,7 +16,9 @@ $leaf->get("/text", function() use($session) {
 ```
 
 ### Initialising the Session object
+
 With this method, you manually initialise the Session object, and then pass it into your route. Note that in version 2, `\Leaf\Http\Session` has been shortened to `\Leaf\Http\Session`.
+
 ```js
 $leaf = new Leaf\App();
 $session = new Leaf\Http\Session();
@@ -29,17 +32,20 @@ $leaf->post("/login", function() use($session) {
 <hr>
 
 ## Starting a new session
+
 A new session is started or an old one continued when you instanciate the `Leaf\Session`
 
 ```js
 // more direct method
 $session = new Leaf\Http\Session;
 ```
+
 This line of code checks for an active session....if none is found, it creates a new session, if one is running, it just instanciates the Session object to be used in Leaf
 
 <hr>
 
 ## set()
+
 set() simply sets new native session variables for your app.
 
 ```js
@@ -47,17 +53,20 @@ $session->set("username", $username);
 ```
 
 #### Setting multiple values
+
 In v2.0, `set` can take in an array if you wish to set multiple values or just want to use one.
 ```js
 $session->set(["username" => $username, "mobile_number" => $mobile_number]);
 ```
 
 #### Security Fixes
+
 `set()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application.
 
 <hr>
 
 ## get()
+
 get is a simple method that returns a session value. It takes in one parameter: the name of the param passed into the app through the session It works just like how `$_SESSION['key']` does
 ```js
 $username = $session>get("username");
@@ -65,7 +74,24 @@ $username = $session>get("username");
 
 <hr>
 
+## retrieve()
+
+retrieve returns the requested value and removes it from the session, just like calling `get` first and then `unset` for the same key.
+
+It takes in two parameters:
+
+- the name of the param you want to get It works just like how `$_SESSION['key']` does
+
+- The default value to use if it doesn't exist.
+
+```js
+$username = $session>retrieve("username");
+```
+
+<hr>
+
 ## getBody()
+
 getBody() returns the key => value pairs of all the session data including any CSRF data as an associative array.
 
 ```js
@@ -75,6 +101,7 @@ $body = $session->getBody();
 <hr>
 
 ## unset()
+
 **NOTE: In v2, `remove` has been renamed to `unset`**
 
 `unset()` simply deletes a session variable.
@@ -106,6 +133,7 @@ $leaf->post('/session/reset', function() use($session) {
 <hr>
 
 ## id()
+
 `id()` sets and/or returns the current session id. It takes in an **optional** parameter: the ID to overwrite the session id.
 
 ```js
