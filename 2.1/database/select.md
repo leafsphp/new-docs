@@ -2,7 +2,7 @@
 
 If you're attempting to use this, you've probably seen or used `SELECT` statements before. Leaf DB has provided an even easier way to use select.
 
-<span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span> Leaf has provided a new method to make retrieving data even simpler and more organised. `choose`
+Leaf has provided a new method to make retrieving data even simpler and more organised. `choose`
 
 ## db select
 
@@ -79,7 +79,7 @@ $db->select("users", "*", "username = ? AND password = ?", [$username, $password
 
 <hr>
 
-## Db choose <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span>
+## Db choose
 
 `choose` simply offers a more consice, powerful way to retrieve data from a database. It also uses prepared statements by default, so you're safe in that respect.
 

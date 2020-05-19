@@ -46,13 +46,13 @@ set() simply sets new native session variables for your app.
 $session->set("username", $username);
 ```
 
-#### Setting multiple values <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+#### Setting multiple values
 In v2.0, `set` can take in an array if you wish to set multiple values or just want to use one.
 ```js
 $session->set(["username" => $username, "mobile_number" => $mobile_number]);
 ```
 
-#### Security Fixes <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+#### Security Fixes
 `set()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application.
 
 <hr>
@@ -83,7 +83,7 @@ $body = $session->getBody();
 $session->unset('name');
 ```
 
-### Removing multiple values <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+### Removing multiple values
 
 In v2.0, `unset` can also take in an array if you wish to unset multiple values or just want to use one.
 
@@ -132,7 +132,7 @@ $session->regenerate(true); // will clear all session data
 
 <hr>
 
-## Sesison Cookies <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+## Sesison Cookies 
 You may also use the `\Leaf\Middleware\SessionCookie` middleware to persist session data in encrypted, hashed HTTP cookies. To enable the session cookie middleware, add the `\Leaf\Middleware\SessionCookie` middleware to your Leaf application:
 
 ```js

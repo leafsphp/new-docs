@@ -10,7 +10,7 @@ A Leaf application will automatically parse all HTTP request headers. You can di
 $leaf->getRequestHeaders();
 ```
 
-### On the Request object <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+### On the Request object 
 
 You can access the request headers using the request object’s public `headers` property. The `headers` property is an instance of `\Leaf\Helper\Set`, meaning it provides a simple, standardized interface to interactive with the HTTP request headers.
 
@@ -28,7 +28,7 @@ The HTTP specification states that HTTP header names may be uppercase, lowercase
 
 <hr>
 
-## Response Headers <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+## Response Headers 
 
 The HTTP response returned to the HTTP client will have a header. The HTTP header is a list of keys and values that provide metadata about the HTTP response. You can use the Leaf application’s response object to set the HTTP response’s header. The response object has a public property `headers` that is an instance of `\Leaf\Helper\Set;` this provides a simple, standardized interface to manipulate the HTTP response headers.
 

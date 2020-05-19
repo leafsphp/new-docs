@@ -4,7 +4,7 @@ The response object is an abstraction of your Leaf application’s HTTP response
 **Note:** In version 2, `\Leaf\Http\Response` has been shortened to `\Leaf\Http\Response`. Also the response object is available on `$leaf->response`.
 
 ## Using Response
-### Response on the Leaf Instance <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+### Response on the Leaf Instance 
 Since Response is already bound to the Leaf instance, you can do this:
 ```js
 $leaf = new Leaf\App();
@@ -48,7 +48,7 @@ $leaf->get('/', function() use($leaf) {
 
 <hr>
 
-## Status <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+## Status 
 The HTTP response returned to the client will have a status code indicating the response’s type (e.g. 200 OK, 400 Bad Request, or 500 Server Error). You can use the Leaf application’s response object to set the HTTP response’s status like this:
 
 ```js
@@ -86,7 +86,7 @@ $leaf->post('/name', function() use($leaf) {
 
 <hr>
 
-## Headers <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+## Headers 
 The HTTP response returned to the HTTP client will have a header. The HTTP header is a list of keys and values that provide metadata about the HTTP response. You can use the Leaf application’s response object to set the HTTP response’s header. The response object has a public property `headers` that is an instance of `\Leaf\Helper\Set`; this provides a simple, standardized interface to manipulate the HTTP response headers.
 ```js
 $leaf = new \Leaf\App();
@@ -139,7 +139,7 @@ The reason is, Leaf has default headers which set the content type to JSON, in o
 
 <hr>
 
-## Helpers <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+## Helpers 
 The response object provides helper methods to inspect and interact with the underlying HTTP response.
 
 ### Finalize

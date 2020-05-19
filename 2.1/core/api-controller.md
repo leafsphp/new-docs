@@ -100,7 +100,6 @@ public function index() {
 
 Read more on Leaf Forms [here](2.1core/forms)
 
-
 <!-- <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span> -->
 <br>
 <hr>

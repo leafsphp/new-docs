@@ -1,6 +1,7 @@
-# Leaf Environment <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span>
+# Leaf Environment
 
 ## What is the Environment?
+
 A Leaf application’s “environment” is an associative array of settings that are parsed once and made accessible to the Leaf application and its middleware. You are free to modify the environment variables during runtime; changes will propagate immediately throughout the application.
 
 When you instantiate a Leaf application, the environment variables are derived from the `$_SERVER` superglobal; you do not need to set these yourself. However, you are free to modify or supplement these variables in Leaf middleware.

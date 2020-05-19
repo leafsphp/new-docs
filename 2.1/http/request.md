@@ -6,7 +6,7 @@ The request object is an abstraction of the current HTTP request and allows you 
 
 ## Using Request
 
-### Request on the Leaf Instance <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+### Request on the Leaf Instance 
 
 Since Request is already bound to the Leaf instance, you can do this:
 
@@ -47,7 +47,7 @@ $leaf->post('/name/add', function() use($leaf) {
 $id = $leaf->request->get('id');
 ```
 
-#### Security Fixes <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 12px;">New in v2</span></sup>
+#### Security Fixes
 
 `get()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application.
 
@@ -65,13 +65,13 @@ $leaf->post('/name/add', function() use($leaf) {
 });
 ```
 
-#### Security Fixes <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 12px;">New in v2</span></sup>
+#### Security Fixes
 
 `body()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application.
 
 <hr>
 
-## Headers <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+## Headers 
 
 A Leaf application will automatically parse all HTTP request headers. You can access the request headers using the request object’s public headers property. The headers property is an instance of \Leaf\Helper\Set, meaning it provides a simple, standardized interface to interactive with the HTTP request headers.
 
@@ -90,7 +90,7 @@ The HTTP specification states that HTTP header names may be uppercase, lowercase
 
 <hr>
 
-## Request Method <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+## Request Method 
 
 Every HTTP request has a method (e.g. GET or POST). You can obtain the current HTTP request method via the Leaf application’s request object:
 
@@ -152,7 +152,7 @@ $leaf->request->isAjax();
 
 <hr>
 
-## XHR <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+## XHR 
 
 When using a Javascript framework like MooTools or jQuery to execute an XMLHttpRequest, the XMLHttpRequest will usually be sent with a **X-Requested-With** HTTP header. The Leaf application will detect the HTTP request’s **X-Requested-With** header and flag the request as such. If for some reason an XMLHttpRequest cannot be sent with the **X-Requested-With** HTTP header, you can force the Leaf application to assume an HTTP request is an XMLHttpRequest by setting a GET, POST, or PUT parameter in the HTTP request named “isajax” with a truthy value.
 
@@ -165,7 +165,7 @@ $isXHR = $leaf->request->isXhr();
 
 <hr>
 
-## Helpers <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+## Helpers 
 
 The Leaf application’s request object provides several helper methods to fetch common HTTP request information:
 
@@ -297,7 +297,7 @@ $leaf->request->getUserAgent();
 
 <hr>
 
-## Paths <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+## Paths 
 
 Every HTTP request received by a Leaf application will have a root URI and a resource URI.
 

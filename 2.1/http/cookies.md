@@ -1,4 +1,4 @@
-# Cookies <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+# Cookies 
 
 The Leaf application provides helper methods to send cookies with the HTTP response.
 

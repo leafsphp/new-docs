@@ -36,7 +36,7 @@ $form->isNull($username); // error will be: This field cannot be null
 $form->isNull($username, "Username can't be null");
 ```
 
-### <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span> Form Submit
+### Form Submit
 
 This creates a form and submits it. You can call it a virtual form.  It takes in 3 parameters, the request type, the form action and the form data. Currently, it only supports GET and POST requests.
 
@@ -61,7 +61,7 @@ $form->validate([
 ]);
 ```
 
-##### <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span> Multiple Rule Validation
+##### Multiple Rule Validation
 
 You can now pass an array as the rule parameter. If there's more than one, rule, both of them will apply. Also, pls make sure not to use contradictory rules like `number` and `textOnly` or `validUsername` and `email`.
 
@@ -81,7 +81,7 @@ This is a list of all supported validate rules
 - validUsername: must only contain characters 0-9, A-Z and _
 - email: must be a valid email
 - NoSpaces: can't contain any spaces
-- <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 10px;">New in v2</span> text : must only contain text and spaces
+- text : must only contain text and spaces
 
 **Note that these rules aren't case-sensitive, so you can write them however you want, as long as the spelling is the same.**
 

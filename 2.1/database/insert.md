@@ -2,7 +2,7 @@
 
 Leaf DB has provided really simple, but very helpful methods for inserting data into the database.
 
-<!-- <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span> -->
+<!-- -->
 
 ## db insert
 
@@ -28,7 +28,7 @@ $db->insert("posts", "title, body", "?, ?", ["post One, This is the body of post
 
 <hr>
 
-## Db add <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+## Db add 
 
 `add` simply offers a more consice, powerful way to retrieve data from a database. It also uses prepared statements by default, so you're safe in that respect.
 

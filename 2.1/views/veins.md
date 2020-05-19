@@ -28,16 +28,19 @@ Remember, all vein files end with `.vein.php`
 To use veins, you can initialise the `Leaf\Veins` class, or call it directly since it's bound on the Leaf object.
 
 ### Leaf\Veins init
+
 ```js
 $veins = new Leaf\Veins();
 ```
 
-### With Leaf Object <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 12px;">New in v2</span></sup>
+### With Leaf Object
+
 ```js
 $veins = $leaf->veins;
 ```
 
 ## Quick Walk-through
+
 This is a simple "tutorial" to get you up and going with Leaf Veins. The whole idea is to be able to pass items into our view(template).
 
 Imagine this object

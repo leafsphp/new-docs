@@ -105,6 +105,7 @@ $leaf->patch('/post/{id}', function($id) {
 ```
 
 ### ALL requests
+
 You can add a route that handles all HTTP requests with the Leaf router's all() method. It accepts two arguments:
 
 - The route pattern (with optional named placeholders or PCRE based patterns)
@@ -116,7 +117,40 @@ $leaf->all('/post/{id}', function($id) {
 });
 ```
 
+### Resource Routes
+
+This section assumes you've read [working with controllers](2.1/routing/controller). In an MVC application, controllers play a major role as they're the bridge between your view and your model.
+
+A resource route simply creates all the routes needed to successfully handle a particular feature. This sounds a bit bleak, let's look at an example.
+
+```js
+$app = new Leaf\App;
+
+$app->resource("/posts", "PostsController");
+
+$app->run();
+```
+
+The code above is equivalent to this:
+
+```js
+$app = new Leaf\App;
+
+$this->match("GET|HEAD", "/posts", "$controller@index");
+$this->post("/posts", "$controller@store");
+$this->match("GET|HEAD", "/posts/create", "$controller@create");
+$this->match("POST|DELETE", "/posts/{id}/delete", "$controller@destroy");
+$this->match("POST|PUT|PATCH", "/posts/{id}/edit", "$controller@update");
+$this->match("GET|HEAD", "/posts/{id}/edit", "$controller@edit");
+$this->match("GET|HEAD", "/posts/{id}", "$controller@show");
+
+$app->run();
+```
+
+Resource routes are handled by a [resource controller](2.1/routing/controller?id=resource-controller).
+
 ### Route "Hooking"
+
 You can add a route that handles a couple of HTTP methods with the Leaf router's match() method. It accepts three arguments:
 
 - The HTTP method(s) seperated by |
@@ -130,6 +164,7 @@ $leaf->match('GET|POST', '/people', function() {
 ```
 
 ### Running your routes
+
 After setting all the routes, you'll need to dispatch the routes. This is achieved through Leaf's run() method.
 
 ```js
@@ -139,6 +174,7 @@ $leaf->run();
 <hr>
 
 # Handling 404
+
 Leaf's core router has specially prepared for 404 errors, and is bent on giving users full control over displaying this error
 
 For this reason, we've prepared the set404() method. In version 2, you can just call set404 without passing in any function, this will set the 404 handler to the default Leaf 404 page. You can change this at any time by passing in your custom page

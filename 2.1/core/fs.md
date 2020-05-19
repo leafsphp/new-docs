@@ -107,7 +107,7 @@ append_file is almost exactly the same as write_file, except that instead of rep
 $data = $fs->append_file("items.txt", "Item name");
 ```
 
-##### prepend_file <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+##### prepend_file
 
 prepend_file is almost exactly the same as write_file, except that instead of replacing the content in a file, it adds to the begining.
 
@@ -131,7 +131,7 @@ rename_file renames a file. It takes 2 parameter: the file name/path+file name t
 $data = $fs->rename_file("./home/items.txt", "home/products.txt");
 ```
 
-##### delete_file <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+##### delete_file
 
 delete_file deletes a file. It takes 2 parameter: the file name/path+file name to delete.
 
@@ -148,7 +148,7 @@ $data = $fs->copy_file("items.txt", "./home/");
 $data = $fs->copy_file("items.txt", "./home/", false);
 ```
 
-##### clone_file <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+##### clone_file
 
 clone_file also copies a file from the current directory to another directory, but unlike copy_file, clone_file includes the filename, and it takes in 2 parameters: the filename and the path+filename to clone to.
 
@@ -156,7 +156,7 @@ clone_file also copies a file from the current directory to another directory, b
 $data = $fs->clone_file("items.txt", "./home/products.txt");
 ```
 
-##### move_file <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+##### move_file
 
 move_file also moves a file from the current directory to another directory, it takes in 2 parameters: the filename and the path to move to.
 
@@ -164,7 +164,7 @@ move_file also moves a file from the current directory to another directory, it 
 $data = $fs->move_file("items.txt", "./home/");
 ```
 
-##### upload <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+##### upload
 
 upload is for simple file uploads. It takes in 3 parameters, the path to save the file, the file and the file type(optional). It returns an array `[true, $filename]` if successful and `[false, $error]` if the upload fails.
 
@@ -176,7 +176,7 @@ $fs->upload("./images/", $profilePic);
 $fs->upload("./images/", $profilePic, "image");
 ```
 
-##### chmod <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+##### chmod
 
 Get or set UNIX mode of a file or directory.
 
@@ -185,7 +185,7 @@ $mode = $fs->chmod("items.txt");
 $fs->chmod("items.txt", ...);
 ```
 
-<!-- ##### link <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+<!-- ##### link
 Create a symlink to the target file or directory. On Windows, a hard link is created if the target is a file.
 
 ```js

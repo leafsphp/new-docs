@@ -1,4 +1,4 @@
-# Leaf Mail <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+# Leaf Mail 
 Leaf mail is a cool feature added in Leaf v2 after the main beta test. Leaf Mail quickly let's you send emails both text and HTML, with attachments and a whole lot of various customizations quickly and efficiently. It is built on the [PHPMailer Library](https://github.com/PHPMailer/PHPMailer) as such, all it's methods also work in Leaf Mail.
 
 ## Basic Usage

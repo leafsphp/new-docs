@@ -1,11 +1,12 @@
 # Leaf Date
+
 Leaf Date makes formating date/time really easier, though the method names may appear weird, they're actually very easy to remeber😂.
 
 ```js
 $date = new Leaf\Date();
 ```
 
-<span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span> The Date object has been directly bound to the Leaf object, so we can use it without initialising it.
+The Date object has been directly bound to the Leaf object, so we can use it without initialising it.
 
 ```js
 $leaf = new Leaf\App();
@@ -62,6 +63,7 @@ $timeZone = $date->set_timezone('Timezone');
 You can get a list of all PHP supported timezones [here](https://www.w3schools.com/php/php_ref_timezones.asp)
 
 ### now
+
 now returns the timestamp of the current date and time. Now will return the date based on the timezone, therefore, it is recommended to use now together with `setTimeZone`
 
 ```js
@@ -69,7 +71,7 @@ $date->set_timezone('Africa/Accra');
 $timezone = $date->now();
 ```
 
-### days_ago <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+### days_ago
 
 This is used to get the date from some days ago.
 
@@ -84,7 +86,7 @@ You can also pass in a particular date as a second parameter. This will be the d
 echo $date->days_ago(10, "2020-04-13"); // returns 2020-04-03
 ```
 
-### months_ago <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+### months_ago
 
 This is used to get the date from some months ago.
 
@@ -99,7 +101,7 @@ You can also pass in a particular date as a second parameter. This will be the d
 echo $date->months_ago(10, "2020-04-13"); // returns 2019-06-13
 ```
 
-### years_ago <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+### years_ago
 
 This is used to get the date from some years ago.
 
@@ -154,7 +156,7 @@ This gets the time in the format `(HH:MM:SS)` from a timestamp
 $parsedDate = $date->ts_to_time($timestamp);
 ```
 
-### format <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+### format
 
 Format a timestamp based on your own rules
 
@@ -182,7 +184,7 @@ This gets the day in words from a number (1-7)
 $month = $date->int_to_day($number);
 ```
 
-### day <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+### day
 
 Get current day
 
@@ -190,7 +192,7 @@ Get current day
 $date = $date->day();
 ```
 
-### month <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+### month
 
 Get current month
 
@@ -198,7 +200,7 @@ Get current month
 $month = $date->month();
 ```
 
-### year <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
+### year
 
 Get current year
 

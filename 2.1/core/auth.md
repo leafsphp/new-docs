@@ -13,7 +13,8 @@ $auth = new Leaf\Auth;
 
 ## Authentication methods:
 
-### login() <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+### login()
+
 Login is used to create a simple, secure user login. It takes in a table for to search for users(so it's no longer limited to the users table) and a set of parameters for the login.
 
 ```js
@@ -83,7 +84,7 @@ if ($user == false) {
 ```
 <hr>
 
-### register() <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+### register()
 
 Register is a simple method used to create simple, secure user registrations. This option was `basicRegister` in earlier versions. It takes in a table to save users, the params(array) to save.
 
@@ -163,7 +164,7 @@ if ($auth->register("users", $leaf->request->getBody(), ["username", "email"], "
 
 <hr>
 
-### [Leaf Authentication Methods](2.1core/authentication) <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+### [Leaf Authentication Methods](2.1core/authentication)
 
 Leaf Auth now uses the `Leaf\Authentication` package to provide solutions for token authentication. This provides a simple way to work with manual authentication and tokens. All methods here are now available in `Leaf\Auth`, but are only accessible on the `$this` object.
 
@@ -175,7 +176,7 @@ Read [authentication](2.1core/authentication) for more info
 
 <hr>
 
-### Token Secrets <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
+### Token Secrets
 
 Token Secrets are basically simple `strings` which are encoded into your Tokens to prevent others from logging into accounts with fake tokens. You simply need to set your own token secrets while encoding and decoding tokens.
 

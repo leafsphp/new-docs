@@ -1,21 +1,22 @@
 # Working with controllers
-If you read [creating your first LeafMVC app](/first-app/), you should already have an idea on how to work with `controllers`, but in this section, we'll be going into details.
 
+If you read [creating your first LeafMVC app](/first-app/), you should already have an idea on how to work with `controllers`, but in this section, we'll be going into details.
 
 So basically, we'll be looking at different kinds of controllers, creating controllers and controller methods provided by Leaf Core.
 
-
 # Generating Controllers
+
 With LeafMVC, all controllers are kept in the `app/controllers` directory. So you can manually create your own Controller there, but the recommended method is to use the leaf CMD tool. So, in the root of your leaf MVC project, openup your console and type:
 ```bash
 php leaf g:controller <Name>
 ```
 
 # A deep look at controllers
+
 As mentioned before, LeafMVC has 3 types of controllers: API controllers, resource controllers and normal controllers. Though they're both controllers,  they offer different base methods for different purposes. For instance, The web controllers come pre-packaged with Leaf Veins.
 
-
 ## Normal Controllers
+
 First, let's look at Normal Controllers.
 ```javascript
 <?php
@@ -40,13 +41,15 @@ This is the default boilerplate generated for the web controller. As mentioned b
 
 
 To use this controller to resolve a route, you simply have to pass it into the route like this:
+
 ```javascript
 $leaf->get('/home', '\App\Controllers\ClassName@index');
 ```
 
-
 ## Resource Controllers
+
 Resource Controllers contain methods to handle CRUD functionality.
+
 ```javascript
 <?php
 
@@ -111,14 +114,15 @@ class ClassName extends Controller {
     }
 }
 ```
+
 To generate a resource controller, you can use
 
 ```bash
 php leaf g:controller <ControllerName> --resource
 ```
 
-
 ## API Controllers
+
 ```javascript
 <?php
     namespace App\Controllers;

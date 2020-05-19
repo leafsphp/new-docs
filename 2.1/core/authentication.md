@@ -80,7 +80,7 @@ if ($payload == false) {
 }
 ```
 
-### validate() <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span>
+### validate()
 
 This method is used to confirm the identity of a token. Unlike `validateToken`, the token to validate is directly passed into it. Just like `validateToken`, it returns the token's `payload`
 
