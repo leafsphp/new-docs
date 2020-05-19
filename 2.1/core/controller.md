@@ -1,10 +1,10 @@
-# Core API Controller
+# Core Controller
 
 ## Overview
-Instead of defining all of your request handling logic as Closures in route files, you may wish to organize this behavior using Controller classes. Controllers can group related request handling logic into a single class. This particular base controller is made specially for APIs, it's been stripped of anything that would not be used in an API.
+Instead of defining all of your request handling logic as Closures in route files, you may wish to organize this behavior using Controller classes. Controllers can group related request handling logic into a single class.
 
 ## Defining Controllers
-Below is an example of a basic API controller class. Note that the controller extends the base controller class included with Leaf(`Leaf\APIController`). The base class provides a few convenience methods 
+Below is an example of a basic controller class. Note that the controller extends the base controller class included with Leaf(`Leaf\Controller`). The base class provides a few convenience methods 
 <!-- such as the middleware method, which may be used to attach middleware to controller actions: -->
 
 ```js
@@ -13,9 +13,9 @@ Below is an example of a basic API controller class. Note that the controller ex
 // this is a model, view the model docx for more info
 require "User.php";
 
-use Leaf\ApiController;
+use Leaf\Controller;
 
-class UserController extends ApiController
+class UserController extends Controller
 {
     /**
      * Show the profile for the given user.
@@ -25,8 +25,8 @@ class UserController extends ApiController
      */
     public function show($id)
     {
-		$user = User::findOrFail($id);
-        $this->respond($user);
+		$this->set('user', User::findOrFail($id));
+        $this->render('profile');
     }
 }
 ```
@@ -46,6 +46,36 @@ Now, when a request matches the specified route URI, the `show` method on the `U
 
 ## Base Controller Features
 
+#### Default Templating
+Using the core controller, you already have access to templating with [Leaf Veins](2.1views/veins). You can simply configure and render your template whenever you want to.
+
+```js
+use Leaf\Controller;
+
+class NameController extends Controller {
+	// configure as soon as controller is invoked
+	public function __construct() {
+		$this->veins->configure([
+			"veins_dir" => "app/views/",
+			"cache_dir" => "app/views/build/"
+		]);
+	}
+
+	public function index() {
+		// set template data
+		$this->set([
+			"name" => "Mychi"
+		]);
+		// render your template
+		$this->render("index"); // refers to index.vein in the veins_dir
+	}
+}
+```
+
+You can view more info on Veins [here](2.1views/veins)
+
+<hr>
+
 #### Responses
 Leaf Core controller contains methods to appropriately return data to the user.
 
@@ -62,7 +92,7 @@ class NameController extends Controller {
 }
 ```
 
-You can view more on responses [here](2.0/http/response)
+You can view more on responses [here](2.1http/response)
 
 <hr>
 
@@ -98,18 +128,18 @@ public function index() {
 }
 ```
 
-Read more on Leaf Forms [here](2.0/core/forms)
+Read more on Leaf Forms [here](2.1core/forms)
 
 
 <!-- <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span> -->
 <br>
 <hr>
 
-<a href="#/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.0/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.1http/request" style="margin: 0px">Request</a>
+<a href="#/2.1http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/2.1http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/2.1environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/2.1database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
