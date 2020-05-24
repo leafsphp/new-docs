@@ -1,16 +1,16 @@
 # Getting Started
 
-## Leaf PHP v2.1
+## Leaf PHP v2.1 alpha
 
-Leaf v2.1 is the latest release of Leaf PHP Framework that comes along with a bunch of new features, better functionality and fixes from the previous version.
+Leaf v2.1 alpha is the latest release of Leaf PHP Framework that comes along with a bunch of new features, better functionality and fixes from the previous version.
 
 ## Installation
 
-You can view installation for Leaf v2.1 [here](2.1/intro/)
+You can view installation for Leaf v2.1 alpha [here](2.1-alpha/intro/)
 
 ## What's New
 
-### Leaf UI [BETA]
+<!-- ### Leaf UI [BETA]
 
 Leaf UI is a simple UI Framework for PHP. Okay, that sounds weird😂. Leaf UI simply lets you create user interfaces without leaving the comfort of PHP. With a [flutter](https://flutter.dev)-like structure, Leaf UI is really easy to pick up and use, even when compared with HTML.
 
@@ -54,9 +54,9 @@ $html = $ui::html([
 
 // render your Leaf UI
 $ui::render($html);
-```
+``` -->
 
-[Read Leaf UI Docs](2.1/views/ui/)
+[Read Leaf UI Docs](2.1-alpha/views/ui/)
 
 ### Route::resource
 
@@ -70,9 +70,23 @@ $app->resource("/posts", "PostController");
 $app->run();
 ```
 
-[Read Routing Docs](2.1/routing/controller)
+[Read Routing Docs](2.1-alpha/routing/controller)
 
 ### Session::retrieve
+
+Session retrieve allows you to return and immedietely remove a value from your session. This is like calling session `get` and `unset` immedietely.
+
+```js
+$session = new Leaf\Http\Session;
+
+$username = $session->retrieve("username");
+```
+
+`retrieve` also allows you to set a default value for the value you're trying to get from the session. So in case `username` hasn't been set in the session, we can pass in a value to return to us.
+
+```js
+$username = $session->retrieve("username", "mick"); // returns mick if username is not found
+```
 
 <br>
 <hr>

@@ -1,4 +1,4 @@
-# Leaf UI: Custom Elements <sup style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2.1</sup>
+# Leaf UI: Custom Elements <sup style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2.1 alpha</sup>
 
 Custom elements for Leaf UI are pre-created elements which combine a set of features from regular markup. They make it a lot easier to perform some UI tasks.
 
@@ -6,7 +6,7 @@ One distinguishing feature is that all custom elements start with `_`. Also, alt
 
 ## _style
 
-This is a custom element which provides a simpler a simpler way to use stylesheets in your Leaf UI. `_style` unlike [`create_styles`](2.1/views/ui/?id=create_styles) allows you to also import external styles.
+This is a custom element which provides a simpler a simpler way to use stylesheets in your Leaf UI. `_style` unlike [`create_styles`](2.1-alpha/views/ui/?id=create_styles) allows you to also import external styles.
 
 It takes in 2 parameters:
 
@@ -176,11 +176,11 @@ $ui::custom("_avatar", ["alt" => "User img"], [], $ui::SINGLE_TAG);
 <br>
 <hr>
 
-<a href="#/2.1/views/ui/basic-usage" style="margin: 0px">Basic Usage</a>
-<a href="#/2.1/views/ui/custom-elements" style="margin: 0px 10px;">Custom Elements</a>
-<a href="#/2.1/views/blade" style="margin: 0px; 10px;">Blade Templating</a>
-<a href="#/2.1/http/session" style="margin: 0px 10px;">Session</a>
-<a href="#/2.1/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.1-alpha/views/ui/basic-usage" style="margin: 0px">Basic Usage</a>
+<a href="#/2.1-alpha/views/ui/custom-elements" style="margin: 0px 10px;">Custom Elements</a>
+<a href="#/2.1-alpha/views/blade" style="margin: 0px; 10px;">Blade Templating</a>
+<a href="#/2.1-alpha/http/session" style="margin: 0px 10px;">Session</a>
+<a href="#/2.1-alpha/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

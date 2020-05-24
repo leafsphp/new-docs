@@ -1,4 +1,4 @@
-# Leaf UI <sup style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2.1</sup>
+# Leaf UI <sup style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2.1 alpha</sup>
 
 Leaf UI is a simple UI library for PHP. Leaf UI lets you quickly scaffold webpages without leaving the comfort of PHP; No more writing weird strings, no more weird formatting for HTML inside PHP. One thing to note is that all Leaf UI elements render plain HTML in the browser.
 
@@ -92,7 +92,7 @@ $ui::create_styles([
 ])
 ```
 
-Checkout [a simpler alternative to this](2.1/views/ui/custom-elements?id=_style)
+Checkout [a simpler alternative to this](2.1-alpha/views/ui/custom-elements?id=_style)
 
 ### Render
 
@@ -106,20 +106,20 @@ $ui::render($html);
 $ui::render($ui::body([...]));
 ```
 
-### [Basic Usage](2.1/views/ui/basic-usage)
+### [Basic Usage](2.1-alpha/views/ui/basic-usage)
 
-### [Custom Elements](2.1/views/ui/custom-elements)
+### [Custom Elements](2.1-alpha/views/ui/custom-elements)
 
-### [Creating Custom Elements](2.1/views/ui/custom-elements?id=creating-your-own-elements)
+### [Creating Custom Elements](2.1-alpha/views/ui/custom-elements?id=creating-your-own-elements)
 
 <br>
 <hr>
 
-<a href="#/2.1/views/ui/basic-usage" style="margin: 0px">Basic Usage</a>
-<a href="#/2.1/views/ui/custom-elements" style="margin: 0px 10px;">Custom Elements</a>
-<a href="#/2.1/views/blade" style="margin: 0px; 10px;">Blade Templating</a>
-<a href="#/2.1/http/session" style="margin: 0px 10px;">Session</a>
-<a href="#/2.1/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.1-alpha/views/ui/basic-usage" style="margin: 0px">Basic Usage</a>
+<a href="#/2.1-alpha/views/ui/custom-elements" style="margin: 0px 10px;">Custom Elements</a>
+<a href="#/2.1-alpha/views/blade" style="margin: 0px; 10px;">Blade Templating</a>
+<a href="#/2.1-alpha/http/session" style="margin: 0px 10px;">Session</a>
+<a href="#/2.1-alpha/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
