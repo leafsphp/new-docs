@@ -49,6 +49,10 @@
 	* [Retrieving Data](2.0/database/select)
 	* [Inserting Data](2.0/database/insert)
 
+* [**Leaf UI**](ui/)
+
+* [**Tilly**](tilly/)
+
 * Beta Zone
 	* [Intro](2.0/beta-zone/)
 

@@ -40,7 +40,6 @@
 	* [Headers](2.1-alpha/http/headers.md)
 
 * Leaf Views
-	* [Leaf UI](2.1-alpha/views/ui/)
 	* [Leaf Veins](2.1-alpha/views/veins.md)
 	* [Leaf Blade](2.1-alpha/views/blade.md)
 
@@ -49,8 +48,11 @@
 	* [Retrieving Data](2.1-alpha/database/select)
 	* [Inserting Data](2.1-alpha/database/insert)
 
-* Beta Zone
-	* [Intro](2.1-alpha/beta-zone/)
+* [**Leaf UI**](ui/)
+
+* [**Tilly**](tilly/)
+
+* [**Beta Zone**](2.1-alpha/beta-zone/)
 
 * Code Labs
 	* [Intro](codelabs/)

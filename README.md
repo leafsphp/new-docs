@@ -2,7 +2,7 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-$leaf = new Leaf\Leaf();
+$leaf = new Leaf\App;
 
 $leaf->set404();
 
@@ -27,7 +27,6 @@ $leaf->post('/books/add', function() use($leaf) {
 $leaf->run();
 ```
 
-
 # Quickly Create PHP Projects
 
 Leaf is a PHP framework that helps you create clean, simple but powerful web apps and APIs quickly. Leaf introduces a cleaner and much simpler structure to the PHP language while maintaining it's flexibility. With a simple structure and a shallow learning curve, it's an excellent way to rapidly build powerful and high performant web apps and APIs.💪
@@ -35,110 +34,73 @@ Leaf is a PHP framework that helps you create clean, simple but powerful web app
 <br>
 <br>
 
-# What's new in v2.0?
+## Installation
 
-## Leaf Container
-Leaf 2.0 introduces a container as the core of Leaf. This container allows you to use some core packages from leaf without haaving to instanciate them. In previous versions, every single package needed to be initialised. 
+You can quickly get leaf installed in your application using composer. Simply run:
 
-This container also allows you to register custom/external packages on the current leaf instance for global use with `$leaf->register()`
-
-```js
-$leaf = new Leaf\App();
-
-// register a new package
-$leaf->register("purple", function() {
-	return new Purple\Leaf();
-});
-
-$leaf->get("/home", function() use($leaf) {
-	// use the purple package
-	$something = $leaf->purple->doSomething();
-	$leaf->response->respond($something);
-});
+```bash
+composer require leafs/leaf
 ```
 
-<hr>
+You can then import leaf into your project and start building all your amazing projects. You can view your project using:
 
-## Leaf Mail
-A new simple package added to Leaf in v2. Leaf Mail takes out all the stress associated with Mailing. It is built on the powerful PHPMailer library but offers an improved and better experience for developers
+```bash
+php -S localhost:8080
+```
+
+## Working with MVC
+
+Although leaf on it's own isn't an MVC framework, it contains useful tools and packages which allow you to use Leaf as any other MVC framework.
+
+If however, you want an already built MVC setup with scaffolding and a whole lot of other amazing features, you can try out [Leaf MVC](//leafmvc.netlify.app).
+
+Leaf MVC provides an MVC wrapper around Leaf itself. So you can use all of Leaf's cool features alongside a nice set of development tools offered by Leaf MVC.
+
+Although Leaf MVC is useable, there's still a lot of work to be done on it. You can also help with it's development.
+
+**Checkout [Leaf MVC](//leafmvc.netlify.app).**
+
+## Leaf UI
+
+Leaf UI is a php framework for building user interfaces😅. As weird as this sounds, this is another project being actively developed.
+
+Leaf UI allows you to focus almost entirely on writing your php application. Instead of having to build interfaces with html, with weird formatting and string interpolations everywhere, Leaf UI gives you a PHP replacement.
+
+Not only does it allow you skip annoying HTML, but also with integrations like [wynter](https://github.com/leafsphp/leaf-ui/tree/wynter), you can write fully-powered Leaf UI apps without touching HTML, CSS or JavaScript. Amazing, right?
 
 ```js
-$mail = new Leaf\Mail('smtp.gmail.com', 587, [
-	'username' => 'user@gmail.com', 
-	'password' => '*********'
+$ui = new Leaf\UI\Template;
+
+$users = [
+	["name" => "User 1"],
+	["name" => "User 2"],
+	["name" => "User 3"]
+];
+
+$html = $ui::_template("Page Title", [
+	$ui::_container([
+		$ui::_row([
+			$ui::loop($users, function($user) use($ui) {
+				return $ui::div(["style" => "background: #fcfcfd;"], [
+					$ui::h3($user["name"])
+				]);
+			})
+		])
+	])
 ]);
 
-$mail->write([
-	"subject" => "Email Subject",
-	"template" => "./template.html",
-	"recepient_email" => "receiver@mail.com",
-	"sender_name" => "Leaf PHP Framework",
-	"attachment" => "./../README.MD"
-]);
-
-$mail->send();
+$ui::render($html);
 ```
 
-[Learn more about Leaf Mail](2.0/core/mail)
+**[Read the docs](ui/)**
 
-<hr>
+As amazing as Leaf UI is, it's still under development and has a whole lot of work left to be done. [Contribute to the Leaf UI project on github.](https://github.com/leafsphp/leaf-ui)
 
-## More concise DB Methods
-More db methods have been added to Leaf's db packages. These methods provide a simpler and a much more concise way of interacting with your database. Also, the mysqli package has been directly integrated into Leaf core, so you can use it globally without having to instanciate it yourself.
+## Leaf API
 
-```js
-$leaf = new Leaf\App();
-$form = new Leaf\Form();
+This is another project based on Leaf PHP. Just like Leaf MVC, Leaf API is a wrapper around Leaf which allows you use MVC features, but built with APIs in mind. This is like the [Lumen](https://lumen.laravel.com/) to [Laravel](https://laravel.com/)
 
-// db connection
-$leaf->db->connect("host", "username", "password", "dbname");
-
-$leaf->post("/articles/add", function() use($leaf) {
-	// validate, check for a duplicate identifier and insert the data into 
-	// database.articles, it's sanitised and arranged automatically
-	$leaf->db->add("articles", $leaf->request->getBody(), ["identifier"], false, [
-		"title" => "text",
-		"author" => "ValidUsername",
-		"email" => "email",
-		"description" => "text",
-		"identifier" => "number"
-	]);
-
-	// return json encoded data
-	$leaf->response->respond(
-		// fetch all articles belonging to an author
-		$leaf->db->choose("articles", "*", [
-			"author" => $leaf->request->get("author")
-		])->fetchAll()
-	);
-});
-```
-
-[Learn more about Leaf Db packages](2.0/database/)
-
-<hr>
-
-## Major Security Fixes
-Leaf 2.0 offers full protection from common web app security vulnerabilities like XSS. In Leaf v2, all input is automatically sanitized to make sure no weird scripts get into your application. Let's look at this example.
-
-Considering we have a script `<script>alert("hello");</script>`, we pass this script as a parameter into our app in a post request.
-
-```javascript
-$leaf->post('/users/update', function() use($leaf) {
-	// without leaf
-	echo $_POST["param"];
-});
-```
-In this case, the script is run and the XSS attack is successful.
-
-```javascript
-$leaf->post('/users/update', function() use($leaf) {
-	// using leaf
-	echo $leaf->request->get("param");
-});
-```
-In this case the script is just output to the user as a string.
-## [Read the changelog to find all updates in Leaf 2](https://github.com/leafsphp/leaf/blob/v2.0/CHANGELOG.md)
+**Contribute to [Leaf API](https://github.com/leafsphp/leafAPI).**
 
 <br>
 <hr>

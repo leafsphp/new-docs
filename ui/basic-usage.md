@@ -1,6 +1,6 @@
-# Leaf UI: Basic Usage <sup style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2.1 alpha</sup>
+# Leaf UI: Basic Usage
 
-This guide assumes you've read the [introduction to Leaf UI](2.1-alpha/views/ui/). As said before, Leaf UI is a library for building user interfaces with PHP. In this section we'll be looking at using basic "HTML tags".
+This guide assumes you've read the [introduction to Leaf UI](ui/). As said before, Leaf UI is a library for building user interfaces with PHP. In this section we'll be looking at using basic "HTML tags".
 
 A bunch of shorthand methods have been created which allow you use create elements with using the `create_element` we saw before. The mostly look like this:
 
@@ -12,9 +12,9 @@ $ui::div([attributes], [
 
 Now, let's look at our elements.
 
-## General HTML Stuff
+## Structural HTML Tags
 
-### HTML
+### html
 
 This is the equivalent of `<html>`, it also adds `<!doctype html>` at the begining of the page. It takes in 2 parameters:
 
@@ -25,9 +25,11 @@ This is the equivalent of `<html>`, it also adds `<!doctype html>` at the begini
 $ui::html([
 	// children here
 ]);
+
+$ui::html([...], ["lang" => "en-us"]);
 ```
 
-### Head
+### head
 
 This is the equivalent of `<head>`. It takes in 2 parameters:
 
@@ -40,46 +42,7 @@ $ui::head([
 ]);
 ```
 
-#### Title
-
-This is the equivalent of `<title>`. It takes in 2 parameters:
-
-- (string) Title
-- (array, optional) Attributes
-
-```js
-$ui::title("Home");
-```
-
-#### Meta
-
-This is the equivalent of `<meta>`. It takes in 3 parameters:
-
-- (string) name `<meta name="">`
-- (string) content `<meta content="">`
-- (array, optional) Attributes
-
-```js
-$ui::meta("viewport", "width=device-width;initial-scale=1");
-```
-
-#### Link
-
-This is the equivalent of `<link>`. It takes in 3 parameters:
-
-- (string) href `<link href="">`
-- (string) rel `<link rel="">`
-- (array, optional) Attributes
-
-```js
-$ui::link("./style.css", "stylesheet");
-```
-
-#### [Using Styles](2.1-alpha/views/ui/custom-elements?id=_style)
-
-#### [Using Scripts](2.1-alpha/views/ui/custom-elements?id=_script)
-
-### Body
+### body
 
 This is the equivalent of `<body>`. It takes in 2 parameters:
 
@@ -90,9 +53,11 @@ This is the equivalent of `<body>`. It takes in 2 parameters:
 $ui::body([
 	// children here
 ]);
+
+$ui::body([...], ["style" => "margin: 0;"]);
 ```
 
-### Header
+### header
 
 This is the equivalent of `<header>`. It takes in 2 parameters:
 
@@ -105,7 +70,20 @@ $ui::header([attributes], [
 ]);
 ```
 
-### Footer
+### nav
+
+This is the equivalent of `<nav>`. It takes in 2 parameters:
+
+- (array, optional) Attributes
+- (array) Children
+
+```js
+$ui::nav([attributes], [
+	// children here
+]);
+```
+
+### footer
 
 This is the equivalent of `<footer>`. It takes in 2 parameters:
 
@@ -118,7 +96,7 @@ $ui::footer([attributes], [
 ]);
 ```
 
-### Aside
+### aside
 
 This is the equivalent of `<aside>`. It takes in 2 parameters:
 
@@ -131,27 +109,24 @@ $ui::aside([attributes], [
 ]);
 ```
 
-### Img
+### br
 
-This is the equivalent of `<img>`. It takes in 1 parameter:
+This is the equivalent of `<br>`. It takes in just 1 parameter:
 
 - (array, optional) Attributes
 
 ```js
-$ui::img(["src" => "./img.jpg"]);
+$ui::br([attributes]);
 ```
 
-### Figure
+### hr
 
-This is the equivalent of `<figure>`. It takes in 2 parameters:
+This is the equivalent of `<hr>`. It takes in just 1 parameter:
 
 - (array, optional) Attributes
-- (array) Children
 
 ```js
-$ui::figure([attributes], [
-	// children here
-]);
+$ui::hr([attributes]);
 ```
 
 ### a
@@ -167,7 +142,7 @@ $ui::a([attributes], [
 ]);
 ```
 
-### Div
+### div
 
 This is the equivalent of `<div>`. It takes in 2 parameters:
 
@@ -206,6 +181,52 @@ $ui::section([attributes], [
 ]);
 ```
 
+### hgroup
+
+This is the equivalent of `<hgroup>`. It takes in 2 parameters:
+
+- (array) Children
+- (array, optional) Attributes
+
+```js
+$ui::hgroup([...], [attributes]);
+```
+
+### h1-h6
+
+This is the equivalent of `<h1>`...`<h6>`. It takes in 2 parameters:
+
+- (array) Children
+- (array, optional) Attributes
+
+```js
+$ui::h1([...], [attributes]);
+$ui::h3([...], [attributes]);
+$ui::h5([...], [attributes]);
+```
+
+### blockquote
+
+This is the equivalent of `<blockquote>`. It takes in 2 parameters:
+
+- (array) Children
+- (array, optional) Attributes
+
+```js
+$ui::blockquote([...], [attributes]);
+```
+
+### p
+
+This is the equivalent of `<p>`. It takes in 2 parameters:
+
+- (array) Children
+- (array, optional) Attributes
+
+```js
+$ui::p([...], [attributes]);
+```
+
 ### article
 
 This is the equivalent of `<article>`. It takes in 2 parameters:
@@ -219,38 +240,85 @@ $ui::article([attributes], [
 ]);
 ```
 
-### Typography
+### details
 
-#### h1-h6
-
-This is the equivalent of `<h1> - <h6>`. It takes in 2 parameters:
+This is the equivalent of `<details>`. It takes in 2 parameters:
 
 - (array, optional) Attributes
 - (array) Children
 
 ```js
-$ui::h1(["style" => "color: red"], [
-	// children here
-]);
-
-$ui::h6([attributes], [
+$ui::details([attributes], [
 	// children here
 ]);
 ```
 
-### blockquote
+### summary
 
-This is the equivalent of `<blockquote>`. It takes in 2 parameters:
+This is the equivalent of `<summary>`. It takes in 2 parameters:
 
-- (string|array) Child/Children
+- (array, optional) Attributes
+- (array) Children
+
+```js
+$ui::summary([attributes], [
+	// children here
+]);
+```
+
+## Meta-data HTML Tags
+
+### title
+
+This is the equivalent of `<title>`. It takes in 2 parameters:
+
+- (string) Title
 - (array, optional) Attributes
 
 ```js
-$ui::blockquote("This is a blockquote");
-$ui::blockquote([
-	$ui::b("Text Here")
-]);
+$ui::title("Home");
 ```
+
+### Meta
+
+This is the equivalent of `<meta>`. It takes in 3 parameters:
+
+- (string) name `<meta name="">`
+- (string) content `<meta content="">`
+- (array, optional) Attributes
+
+```js
+$ui::meta("viewport", "width=device-width;initial-scale=1");
+```
+
+### Link
+
+This is the equivalent of `<link>`. It takes in 3 parameters:
+
+- (string) href `<link href="">`
+- (string) rel `<link rel="">`
+- (array, optional) Attributes
+
+```js
+$ui::link("./style.css", "stylesheet");
+```
+
+### [Using Styles](ui/custom-elements?id=_style)
+
+### [Using Scripts](ui/custom-elements?id=_script)
+
+### base
+
+This is the equivalent of `<base>`. It takes in 2 parameters:
+
+- (string) href `<base href="">`
+- (array, optional) Attributes
+
+```js
+$ui::base("...");
+```
+
+## Formatting Tags
 
 ### tt
 
@@ -271,7 +339,7 @@ This is the equivalent of `<b>`. It takes in 2 parameters:
 - (array, optional) Attributes
 
 ```js
-$ui::b("This is a bold text", ["style" => "color: red;"]);
+$ui::b("...");
 ```
 
 ### i
@@ -282,7 +350,7 @@ This is the equivalent of `<i>`. It takes in 2 parameters:
 - (array, optional) Attributes
 
 ```js
-$ui::i("This is italics");
+$ui::i("...");
 ```
 
 ### u
@@ -293,7 +361,18 @@ This is the equivalent of `<u>`. It takes in 2 parameters:
 - (array, optional) Attributes
 
 ```js
-$ui::u("This is underlined txt");
+$ui::u("...");
+```
+
+### small
+
+This is the equivalent of `<small>`. It takes in 2 parameters:
+
+- (string|array) Child/Children
+- (array, optional) Attributes
+
+```js
+$ui::small("...");
 ```
 
 ### sub
@@ -304,7 +383,7 @@ This is the equivalent of `<sub>`. It takes in 2 parameters:
 - (array, optional) Attributes
 
 ```js
-$ui::sub("This is a subscript");
+$ui::sub("...");
 ```
 
 ### sup
@@ -315,45 +394,36 @@ This is the equivalent of `<sup>`. It takes in 2 parameters:
 - (array, optional) Attributes
 
 ```js
-$ui::sup("This is a superscript");
+$ui::sup("...");
 ```
 
-### uppercase
+## Embedded Content Tags
 
-Makes all takes uppercase. It takes in 2 parameters:
+### Figure
 
-- (string|array) Child/Children
+This is the equivalent of `<figure>`. It takes in 2 parameters:
+
+- (array, optional) Attributes
+- (array) Children
+
+```js
+$ui::figure([attributes], [
+	// children here
+]);
+```
+
+### Img
+
+This is the equivalent of `<img>`. It takes in 2 parameters:
+
+- The image to display
 - (array, optional) Attributes
 
 ```js
-$ui::uppercase("This is uppercase");
+$ui::img("./img.jpg", ["style" => "width: 80px;"]);
 ```
 
-### lowercase
-
-Makes all text lowercase. It takes in 2 parameters:
-
-- (string|array) Child/Children
-- (array, optional) Attributes
-
-```js
-$ui::lowercase("This is a lowercase");
-```
-
-### p
-
-This is the equivalent of `<p>`. It takes in 2 parameters:
-
-- (string|array) Child/Children
-- (array, optional) Attributes
-
-```js
-$ui::p("This is a paragraph");
-```
-
-## Form Elements
-
-This is a section that deals with form components.
+## Form Tags
 
 ### form
 
@@ -405,13 +475,24 @@ This is the equivalent of `<label>`. It takes in 3 parameters:
 $ui::label("Enter Your Password", "password");
 ```
 
-### [Custom Elements](2.1-alpha/views/ui/custom-elements)
+### button
+
+This is the equivalent of `<button>`. It takes in 2 parameters:
+
+- (string) Text on button
+- (array, optional) Attributes
+
+```js
+$ui::button("Click Me!", ["style" => "background: gold;"]);
+```
+
+### [Custom Elements](ui/custom-elements)
 
 <br>
 <hr>
 
-<a href="#/2.1-alpha/views/ui/basic-usage" style="margin: 0px">Basic Usage</a>
-<a href="#/2.1-alpha/views/ui/custom-elements" style="margin: 0px 10px;">Custom Elements</a>
+<a href="#/ui/basic-usage" style="margin: 0px">Basic Usage</a>
+<a href="#/ui/custom-elements" style="margin: 0px 10px;">Custom Elements</a>
 <a href="#/2.1-alpha/views/blade" style="margin: 0px; 10px;">Blade Templating</a>
 <a href="#/2.1-alpha/http/session" style="margin: 0px 10px;">Session</a>
 <a href="#/2.1-alpha/database" style="margin: 0px 10px;">Using a database</a>

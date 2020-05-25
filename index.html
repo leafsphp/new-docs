@@ -12,6 +12,10 @@
 	<link rel="stylesheet" href="prism.css">
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Gruppo');
+		.app-name-link > img {
+			width: 70px !important;
+			height: 70px !important;
+		}
 	</style>
 	<script id="flashWidgetScript" type="text/javascript" src="https://wallet.flashcoin.io/assets/widgets/donate.js"></script>
 </head>
@@ -26,7 +30,10 @@
 <script>
 	window.$docsify = {
 		coverpage: true,
+		coverpage: ['/', '/ui/'],
+		onlyCover: false,
 		loadSidebar: true,
+		logo: 'https://leaf-docs.netlify.app/images/logo.png',
 		ga: 'UA-150463804-1',
 		name: 'Leaf PHP',
 		repo: "leafsphp/leaf",

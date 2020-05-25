@@ -56,7 +56,7 @@ $html = $ui::html([
 $ui::render($html);
 ``` -->
 
-[Read Leaf UI Docs](2.1-alpha/views/ui/)
+[Read Leaf UI Docs](ui/)
 
 ### Route::resource
 

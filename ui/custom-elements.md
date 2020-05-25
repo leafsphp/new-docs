@@ -6,7 +6,7 @@ One distinguishing feature is that all custom elements start with `_`. Also, alt
 
 ## _style
 
-This is a custom element which provides a simpler a simpler way to use stylesheets in your Leaf UI. `_style` unlike [`create_styles`](2.1-alpha/views/ui/?id=create_styles) allows you to also import external styles.
+This is a custom element which provides a simpler a simpler way to use stylesheets in your Leaf UI. `_style` unlike [`create_styles`](ui/?id=create_styles) allows you to also import external styles.
 
 It takes in 2 parameters:
 
@@ -47,6 +47,28 @@ $ui::_script("./main.js");
 $ui::_script(["
 	alert('This is an alert');
 "]);
+```
+
+### _uppercase
+
+Makes all takes uppercase. It takes in 2 parameters:
+
+- (string|array) Child/Children
+- (array, optional) Attributes
+
+```js
+$ui::_uppercase("This is uppercase");
+```
+
+### _lowercase
+
+Makes all text lowercase. It takes in 2 parameters:
+
+- (string|array) Child/Children
+- (array, optional) Attributes
+
+```js
+$ui::_lowercase("This is a lowercase");
 ```
 
 ## _container
@@ -91,25 +113,44 @@ $ui::_column([], [
 ]);
 ```
 
-## _text
-
-This element creates really customizable text. It takes in 2 parameters:
-
-- (string) Text
-- (array, optional) `_text` styles. These are special attributes created for the `_text` element. Available attributes are (color, size, weight, family)
-- (array, optional) Container attributes eg: class, ...
-
-```js
-$ui::_text("This is text", ["color" => "#101009", "family" => "sans-serif"], [
-	"class" => "peoples-text"
-]);
-```
-
 ## Creating your own elements
 
-For now, these are the only "completed/working" custom elements. But that's not all, you can also create your own custom components (although this is an experimental feature).
+For now, these are the only "completed/working" custom elements. But that's not all, you can also create your own custom components.
 
-You can do this with the `make` method. It takes in 2 parameters:
+The first method is used when you want to create a new class. This method presents more control over your components. It also allows you to overwrite already built components, though that's not adviced.
+
+The second is an experimental feature which allows you to create custom components without starting a new instance of Leaf UI.
+
+### 1: Extending Leaf UI
+
+As mentioned before, with this method, you'd need to create a new class which extends Leaf UI. From there you can create methods which contain your custom components.
+
+**Note that your custom elements should render valid HTML, CSS or Javascript.**
+
+**It is recommended that your custom components names start with `_`**
+
+```js
+// creating components
+class MyUI extends Leaf\UI {
+	public static function _shadowBox($children, $props = []) {
+		return self::div([
+			"style" => "box-shadow: 1px 0px 4px #fafafa; padding: 10px 8px;",
+		], $children);
+	}
+}
+
+// using components
+$html = MyUI::_shadowBox([
+	MyUI::p("Nothing strange is happening here")
+]);
+
+// rendering components
+MyUI::render($html);
+```
+
+### 2: make()
+
+This method allows you to create custom elements on the current instance of Leaf UI. It takes in 2 parameters:
 
 - (string) The element name. **just a tip:** The custom element naming convention is to start with `_`
 
@@ -176,8 +217,8 @@ $ui::custom("_avatar", ["alt" => "User img"], [], $ui::SINGLE_TAG);
 <br>
 <hr>
 
-<a href="#/2.1-alpha/views/ui/basic-usage" style="margin: 0px">Basic Usage</a>
-<a href="#/2.1-alpha/views/ui/custom-elements" style="margin: 0px 10px;">Custom Elements</a>
+<a href="#/ui/basic-usage" style="margin: 0px">Basic Usage</a>
+<a href="#/ui/custom-elements" style="margin: 0px 10px;">Custom Elements</a>
 <a href="#/2.1-alpha/views/blade" style="margin: 0px; 10px;">Blade Templating</a>
 <a href="#/2.1-alpha/http/session" style="margin: 0px 10px;">Session</a>
 <a href="#/2.1-alpha/database" style="margin: 0px 10px;">Using a database</a>
