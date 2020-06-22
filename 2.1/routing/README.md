@@ -1,4 +1,5 @@
-# Routing
+# 📲 Routing
+
 As explained [before](2.1intro/htaccess), Leaf uses a single root file, to which all the server requests are redirected. Leaf then takes these requests and matches them to rules you have defined. The results are then displayed to the user. It's actually a very simple concept.
 
 The router module is tied directly to Leaf Core, so once you initialise leeaf, you can use routing
@@ -7,28 +8,34 @@ The router module is tied directly to Leaf Core, so once you initialise leeaf, y
 $leaf = new Leaf\App();
 ```
 
+## 👋 Using a different router
 
-## Using a different router
 Although Leaf provides you with a default router, you are free to import and use any router you want.
+
 1. Install whatever you want
+
 ```bash
 composer require imaginary/router
 ```
+
 2. Import and use it in your project
+
 ```js
 $leaf = new Leaf\App();
 // initialise imaginary router
 $imr = new Imaginary\Router();
 // you can still use leaf modules
 $imr->get("/", function() use($leaf) {
-	$leaf->response->respond(["title" => "hello"]);
+  $leaf->response->respond(["title" => "hello"]);
 });
 ```
 
-## Creating Routes
+## ⛳ Creating Routes
+
 Back to Leaf's router, You can define application routes using proxy methods on the Leaf\App instance. Leaf supports different types of requests, let's look at them.
 
 ### GET
+
 You can add a route that handles only GET HTTP requests with the Leaf router's get() method. It accepts two arguments:
 
 - The route pattern (with optional named placeholders or PCRE based patterns)
@@ -40,8 +47,8 @@ $leaf->get('/home', function() {
 });
 ```
 
-
 ### POST
+
 You can add a route that handles only POST HTTP requests with the Leaf router's post() method. It accepts two arguments:
 
 - The route pattern (with optional named placeholders or PCRE based patterns)
@@ -53,10 +60,12 @@ $leaf->post('/users/add', function() use($request) {
   // create a new user
 });
 ```
+
 Using Post Params
 View [Request](2.1http/request) for more info on handling params
 
 ### PUT requests
+
 You can add a route that handles only PUT HTTP requests with the Leaf router’s put() method. It accepts two arguments:
 
 - The route pattern (with optional named placeholders or PCRE based patterns)
@@ -69,6 +78,7 @@ $leaf->put('/book/edit/{id}', function($id) {
 ```
 
 ### DELETE requests
+
 You can add a route that handles only DELETE HTTP requests with the Leaf router's delete() method. It accepts two arguments:
 
 - The route pattern (with optional named placeholders or PCRE based patterns)
@@ -81,6 +91,7 @@ $leaf->delete('/quotes/{id}', function($id) {
 ```
 
 ### OPTIONS requests
+
 You can add a route that handles only OPTIONS HTTP requests with the Leaf router's options() method. It accepts two arguments:
 
 - The route pattern (with optional named placeholders or PCRE based patterns)
@@ -93,6 +104,7 @@ $leaf->options('/quotes/{id}', function($id) {
 ```
 
 ### PATCH requests
+
 You can add a route that handles only PATCH HTTP requests with the Leaf router's patch() method. It accepts two arguments:
 
 - The route pattern (with optional named placeholders or PCRE based patterns)
@@ -185,7 +197,7 @@ $leaf->set404();
 
 // custom 404 page
 $leaf->set404(function() use($leaf) {
-	$leaf->response->renderPage("./pages/404.html");
+  $leaf->response->renderPage("./pages/404.html");
 });
 ```
 

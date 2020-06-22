@@ -1,6 +1,7 @@
-# Dynamic Routing
+# 💠 Dynamic Routing
 
-## Named Params
+## 🐥 Named Params
+
 *This guide assumes you have read [Simple Routing](2.1routing)*
 
 Basically, Dynamic Placeholder-based Route Patterns are just another way to use routes dynamically. This type of Route Patterns are the same as Dynamic PCRE-based Route Patterns, but with one difference: they don't use regexes to do the pattern matching but they use the more easy placeholders instead. Placeholders are strings surrounded by curly braces, e.g. {name}. You don't need to add parens around placeholders.
@@ -18,7 +19,7 @@ $leaf->get('/movies/{movieId}/photos/{photoId}', function($movieId, $photoId) {
 });
 ```
 
-Note: the name of the placeholder does not need to match with the name of the parameter that is passed into the route handling function...although it's adviced:
+**Note:** the name of the placeholder does not need to match with the name of the parameter that is passed into the route handling function...although it's adviced:
 
 ```js
 $leaf->get('/movies/{foo}/photos/{bar}', function($movieId, $photoId) {
@@ -26,10 +27,10 @@ $leaf->get('/movies/{foo}/photos/{bar}', function($movieId, $photoId) {
 });
 ```
 
-
 <hr>
 
-## PCRE Based Params
+## 🧐 PCRE Based Params
+
 Basically, PCRE based patterns are just another way to use routes dynamically. This type of Route Patterns contain dynamic parts which can vary per request. The varying parts are named subpatterns and are defined using regular expressions.
 
 Examples
@@ -60,7 +61,8 @@ $leaf->get('/hello/(\w+)', function($name) {
     echo 'Hello ' . htmlentities($name);
 });
 ```
-**Note**: The leading / at the very beginning of a route pattern is not mandatory, but is recommended.
+
+**Note**: The leading `/` at the very beginning of a route pattern is not mandatory, but is recommended.
 
 When multiple subpatterns are defined, the resulting route handling parameters are passed into the route handling function in the order they are defined in:
 

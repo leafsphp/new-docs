@@ -1,15 +1,15 @@
-# Using Controllers
+# 🎮 Using Controllers
 
-Controllers are simply classes that serve as bridges between Models and the View part of your application. Don't think too much of controllers, they're nothing but a class. 
+Controllers are simply classes that serve as bridges between Models and the View part of your application. Don't think too much of controllers, they're nothing but a class.
 
 In this section, we'll be looking at how to handle a route with a controller. So let's make an example controller: **remember it's just a php class**
 
 ```js
 <?php
 class HomeController {
-	public function index() {
-		echo "This is the index function";
-	}
+  public function index() {
+    echo "This is the index function";
+  }
 }
 ```
 
@@ -66,7 +66,7 @@ class ClassName extends Controller {
         parent::__construct();
         $this->request = new Request;
     }
-    
+
     /**
      * Display a listing of the resource.
      */

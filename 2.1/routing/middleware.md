@@ -1,7 +1,9 @@
-# Middleware
+# 🕛 Middleware
+
 Middleware are just methods that run before your code runs, be it a particular route or your whole application. Unlike many other frameworks and systems, Leaf gives you the opportunity to set global middleware that run before any and every route.
 
-## Before Route Middlewares
+## ⏳ Before Route Middlewares
+
 Leaf's Core router supports Before Route Middlewares, which are executed before the route handling is processed.
 
 Like route handling functions, you hook a handling function to a combination of one or more HTTP request methods and a specific route pattern.
@@ -14,9 +16,11 @@ $leaf->before('GET|POST', '/admin/.*', function() {
     }
 });
 ```
+
 Unlike route handling functions, more than one before route middleware is executed when more than one route match is found.
 
-## Before Router Middlewares
+## ✨ Before Router Middlewares
+
 Before route middlewares are route specific. Using a general route pattern (viz. all URLs), they can become Before Router Middlewares (in other projects sometimes referred to as before app middlewares) which are always executed, no matter what the requested URL is.
 
 ```js
@@ -25,12 +29,14 @@ $leaf->before('GET', '/.*', function() {
 });
 ```
 
-## After Router Middleware / Run Callback
+## ⌛ After Router Middleware / Run Callback
+
 Run one (1) middleware function, name the After Router Middleware (in other projects sometimes referred to as after app middlewares) after the routing was processed. Just pass it along the $leaf->run() function. The run callback is route independent.
 
 ```js
 $leaf->run(function() { … });
 ```
+
 Note: If the route handling function has exit()ed the run callback won't be run.
 
 <br>
