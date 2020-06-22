@@ -326,3 +326,61 @@ $db->select("users")->where("id", "1")->add("tx_id", "d362d7t2366")->fetchObj();
 ```
 
 This is similar as the query above, except that this query is on the scale of a single user.
+
+#### bind
+
+We've already seen `bind` in action, but we've not actually talked about it. This method allows you to bind parameters into your query.
+
+```js
+$db->select("users WHERE username = ?")->bind("mychi")->fetchAssoc();
+```
+
+And yet again another syntax🧐 As said above, Leaf  Db is highly customizable, and allows you to write queries in a way that suits you. This statement above binds `mychi` to the username. There's also a second parameter which you really won't be using: the type of parameter.
+
+```js
+$db->select("users WHERE username = ?")->bind("mychi", "s")->fetchAssoc();
+```
+
+The `s` for the second parameter shows that the parameter you're binding to the username is a string.
+
+```js
+$db->select("users WHERE username = ?")->bind(["mychi" => "s"])->fetchAssoc();
+```
+
+You can also pass in an array with multiple values.
+
+#### 🚦 limit
+
+When retrieving data from your database for use in applications, you might want to show only a specific number of values.
+
+```js
+$itemsPerPage = 15;
+$items = $db->select("items")->limit($itemsPerPage)->fetchAll();
+```
+
+### 👎 error handling
+
+Errors come up all the time, user errors, that is. What happens when validation fails, or if someone has already registered a username. Leaf Db provides a simple way to track these errors.
+
+```js
+$res = $db->insert("users")->params("username", "mychi")->unique("username")->execute();
+if ($res === false) $app->response->throwErr($db->errors());
+```
+
+Using `$db->errors()` returns an array holding any errors which caused the query to fail. eg:
+
+```js
+[
+  "email" => "email already exists",
+  "username" => "username can only contain characters 0-9, A-z and _
+]
+```
+
+<br>
+
+[Auth](2.1/core/auth)
+[Response](2.1/http/response)
+[Request](2.1/http/request)
+[Session](2.1/http/session)
+
+Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
