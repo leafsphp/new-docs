@@ -1,4 +1,4 @@
-# Leaf FS
+# 📂 Leaf FS
 
 This is a simple functionality inspired by node js' FileSystem(fs) module. Leaf FS aims to make directory and file management much simpler than what you're currently used to, so as to speed up and ease the dev process.😊👌😎
 

@@ -1,6 +1,6 @@
-# Leaf Environment
+# 🎇 Leaf Environment
 
-## What is the Environment?
+## What is the Environment
 
 A Leaf application’s “environment” is an associative array of settings that are parsed once and made accessible to the Leaf application and its middleware. You are free to modify the environment variables during runtime; changes will propagate immediately throughout the application.
 

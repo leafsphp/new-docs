@@ -1,16 +1,19 @@
-# Core Model
+# 📕 Core Model
 
 ## Overview
+
 Leaf has provided a very simple core model for use in your applications. This core model is powered by the `Leaf ORM` and so all it's features are available for use in Leaf.
 
 This **model** provides a beautiful, simple ActiveRecord implementation for working with your database. Each database table has a corresponding "Model" which is used to interact with that table. Models allow you to query for data in your tables, as well as insert new records into the table.
 
 ## Defining Models
+
 To get started, let's create a simple model. If you are not using a Leaf framework like [Leaf MVC](https://leafmvc.netlify.com) or [Leaf API](https://github.com/leafsphp/leafAPI), you can create directory to hold all your application models. All your models should extend `Leaf\Model` class.
 
 Before getting started, be sure to configure a database connection with a `.env` file. You can take a look at this [example env file](https://gist.github.com/mr-phlames/cbc85b7e4fa8ce5474aea0aec277c7f6).
 
 ## Leaf Model Conventions
+
 Now, let's look at an example `Flight` model, which we will use to retrieve and store information from our `flights` database table:
 
 ```js
@@ -25,6 +28,7 @@ class Flight extends Model
 ```
 
 #### Table Names
+
 Note that we did not tell Leaf which table to use for our `Flight` model. By convention, the "snake case", plural name of the class will be used as the table name unless another name is explicitly specified. So, in this case, Leaf will assume the `Flight` model stores records in the `flights` table. You may specify a custom `table` by defining a table property on your model:
 
 ```js
@@ -44,6 +48,7 @@ class Flight extends Model
 ```
 
 #### Primary Keys
+
 Leaf will also assume that each table has a primary key column named id. You may define a protected `$primaryKey` property to override this convention:
 
 ```js
@@ -85,6 +90,7 @@ protected $keyType = 'string';
 ```
 
 #### Timestamps
+
 By default, Leaf expects `created_at` and `updated_at` columns to exist on your tables. If you do not wish to have these columns automatically managed by Leaf, set the $timestamps property on your model to false:
 
 ```js
@@ -125,6 +131,7 @@ class Flight extends Model
 ```
 
 #### Database Connection
+
 By default, all Leaf models will use the default database connection configured for your application. If you would like to specify a different connection for the model, use the `$connection` property:
 
 ```js
@@ -146,6 +153,7 @@ class Flight extends Model
 <hr>
 
 ## Default Attribute Values
+
 If you would like to define the default values for some of your model's attributes, you may define an $attributes property on your model:
 
 ```js
@@ -169,6 +177,7 @@ class Flight extends Model
 <hr>
 
 ## Retrieving Models
+
 Once you have created a model and its associated database table, you are ready to start retrieving data from your database. Think of each Leaf model as a powerful query builder allowing you to fluently query the database table associated with the model. For example:
 
 ```js
@@ -182,6 +191,7 @@ foreach ($flights as $flight) {
 ```
 
 #### Adding Additional Constraints
+
 The Leaf all method will return all of the results in the model's table. Since each Leaf model serves as a query builder, you may also add constraints to queries, and then use the get method to retrieve the results:
 
 ```js
@@ -191,6 +201,7 @@ $flights = Flight::where('active', 1)->orderBy('name', 'desc')->take(10)->get();
 > **You can check [here](https://laravel.com/docs/5.8/queries) for available queries on your models.**
 
 #### Refreshing Models
+
 You can refresh models using the `fresh` and `refresh` methods. The `fresh` method will re-retrieve the model from the database. The existing model instance will not be affected:
 
 ```js
@@ -245,8 +256,8 @@ class FlightController extends Controller
 
 In this example, we assign the name parameter from the incoming HTTP request to the name attribute of the `Flight` model instance. When we call the save method, a record will be inserted into the database. The created_at and updated_at timestamps will automatically be set when the save method is called, so there is no need to set them manually.
 
-
 ### Updates
+
 The save method may also be used to update models that already exist in the database. To update a model, you should retrieve it, set any attributes you wish to update, and then call the save method. Again, the updated_at timestamp will automatically be updated, so there is no need to manually set its value:
 
 ```js
