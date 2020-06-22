@@ -1,12 +1,12 @@
-# Leaf Request
+# 🧿 Leaf Request
 
-The request object is an abstraction of the current HTTP request and allows you to easily interact with any data passed into your application. In v2.0, the request object has been directly bound to the main Leaf object, so there's no need to instanciate it anymore. 
+The request object is an abstraction of the current HTTP request and allows you to easily interact with any data passed into your application. In v2.0, the request object has been directly bound to the main Leaf object, so there's no need to instanciate it anymore.
 
 **Note:** In version 2, `\Leaf\Http\Request` has been shortened to `\Leaf\Http\Request`. Also the request object is available on `$leaf->request`.
 
 ## Using Request
 
-### Request on the Leaf Instance 
+### 🎄 Request on the Leaf Instance
 
 Since Request is already bound to the Leaf instance, you can do this:
 
@@ -14,13 +14,13 @@ Since Request is already bound to the Leaf instance, you can do this:
 $leaf = new Leaf\App();
 
 $leaf->post("/user/change-username", function() use($leaf) {
-	echo $leaf->response->get("username");
+  echo $leaf->response->get("username");
 });
 ```
 
 Although we've added this, we don't want to force you to do stuff in only one way, so you can still use the `v1.x` method.
 
-### Initialising the Request object
+### 🎪 Initialising the Request object
 
 With this method, you manually initialise the Request object, and then pass it into your route. Note that in version 2, `\Leaf\Http\Request` has been shortened to `\Leaf\Http\Request`.
 
@@ -29,15 +29,16 @@ $leaf = new Leaf\App();
 $request = new Leaf\Http\Request();
 
 $leaf->post("/items/add", function() use($request) {
-	echo $request->get("username");
+  echo $request->get("username");
 });
 ```
 
-## Basic Usage
+## 📖 Basic Usage
 
 ### get()
 
 `get()` is a general purpose method which retrieves a particular item from the request body. In simpler terms, it works like `$_POST['key']` but works for all request types. It takes in one parameter: the key of the parameter you wish to get.
+
 ```js
 $leaf->post('/name/add', function() use($leaf) {
   $name = $leaf->request->get('name');
@@ -65,13 +66,13 @@ $leaf->post('/name/add', function() use($leaf) {
 });
 ```
 
-#### Security Fixes
+#### 🧐 Security Fixes
 
 `body()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application.
 
 <hr>
 
-## Headers 
+## Headers
 
 A Leaf application will automatically parse all HTTP request headers. You can access the request headers using the request object’s public headers property. The headers property is an instance of \Leaf\Helper\Set, meaning it provides a simple, standardized interface to interactive with the HTTP request headers.
 
@@ -90,7 +91,7 @@ The HTTP specification states that HTTP header names may be uppercase, lowercase
 
 <hr>
 
-## Request Method 
+## Request Method
 
 Every HTTP request has a method (e.g. GET or POST). You can obtain the current HTTP request method via the Leaf application’s request object:
 
@@ -152,7 +153,7 @@ $leaf->request->isAjax();
 
 <hr>
 
-## XHR 
+## XHR
 
 When using a Javascript framework like MooTools or jQuery to execute an XMLHttpRequest, the XMLHttpRequest will usually be sent with a **X-Requested-With** HTTP header. The Leaf application will detect the HTTP request’s **X-Requested-With** header and flag the request as such. If for some reason an XMLHttpRequest cannot be sent with the **X-Requested-With** HTTP header, you can force the Leaf application to assume an HTTP request is an XMLHttpRequest by setting a GET, POST, or PUT parameter in the HTTP request named “isajax” with a truthy value.
 
@@ -165,7 +166,7 @@ $isXHR = $leaf->request->isXhr();
 
 <hr>
 
-## Helpers 
+## Helpers
 
 The Leaf application’s request object provides several helper methods to fetch common HTTP request information:
 
@@ -297,7 +298,7 @@ $leaf->request->getUserAgent();
 
 <hr>
 
-## Paths 
+## Paths
 
 Every HTTP request received by a Leaf application will have a root URI and a resource URI.
 

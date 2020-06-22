@@ -1,4 +1,4 @@
-# Leaf Sessions
+# 😷 Leaf Sessions
 
 Leaf offers simple session management to help you quickly build your apps and APIs.
 
@@ -11,7 +11,7 @@ $leaf = new Leaf\App();
 $session = new Leaf\Http\Session();
 
 $leaf->get("/text", function() use($session) {
-	$session->set("name", "Michael Darko");
+  $session->set("name", "Michael Darko");
 });
 ```
 
@@ -24,8 +24,8 @@ $leaf = new Leaf\App();
 $session = new Leaf\Http\Session();
 
 $leaf->post("/login", function() use($session) {
-	...
-	$session->set("username", $username);
+  ...
+  $session->set("username", $username);
 });
 ```
 
@@ -55,6 +55,7 @@ $session->set("username", $username);
 #### Setting multiple values
 
 In v2.0, `set` can take in an array if you wish to set multiple values or just want to use one.
+
 ```js
 $session->set(["username" => $username, "mobile_number" => $mobile_number]);
 ```
@@ -68,6 +69,7 @@ $session->set(["username" => $username, "mobile_number" => $mobile_number]);
 ## get()
 
 get is a simple method that returns a session value. It takes in one parameter: the name of the param passed into the app through the session It works just like how `$_SESSION['key']` does
+
 ```js
 $username = $session>get("username");
 ```
@@ -126,7 +128,7 @@ $session->unset(["username", "mobile_number"]);
 
 ```js
 $leaf->post('/session/reset', function() use($session) {
-  	$session->reset();
+ $session->reset();
 });
 ```
 
@@ -151,6 +153,7 @@ $id = $session->id("new session id");
 <hr>
 
 ## regenerate()
+
 regenerate() simply generates a new session id. It takes in a boolean parameter which indicates whether to delete all session data or not(has a default of false)
 
 ```js
@@ -160,7 +163,8 @@ $session->regenerate(true); // will clear all session data
 
 <hr>
 
-## Sesison Cookies 
+## Sesison Cookies
+
 You may also use the `\Leaf\Middleware\SessionCookie` middleware to persist session data in encrypted, hashed HTTP cookies. To enable the session cookie middleware, add the `\Leaf\Middleware\SessionCookie` middleware to your Leaf application:
 
 ```js

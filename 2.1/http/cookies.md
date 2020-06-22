@@ -1,4 +1,4 @@
-# Cookies 
+# 🍪 Cookies
 
 The Leaf application provides helper methods to send cookies with the HTTP response.
 
@@ -56,6 +56,7 @@ If you need to also specify the path and domain:
 ```js
 $leaf->deleteCookie('foo', '/', 'foo.com');
 ```
+
 You may also further specify the secure and httponly properties:
 
 ```js
@@ -69,10 +70,10 @@ $leaf->deleteCookie('foo', '/', 'foo.com', true, true);
 <br>
 <hr>
 
-<a href="#/2.1http/response" style="margin: 0px">Response</a>
-<a href="#/2.1http/request" style="margin: 0px; 10px;">Request</a>
-<a href="#/2.1environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.1database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.1/http/response" style="margin: 0px">Response</a>
+<a href="#/2.1/http/request" style="margin: 0px; 10px;">Request</a>
+<a href="#/2.1/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/2.1/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
