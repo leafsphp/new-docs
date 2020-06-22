@@ -1,6 +1,6 @@
-# Getting Started
+# 📚 Getting Started
 
-## What is Leaf?
+## What is Leaf
 
 Leaf is a PHP framework that helps you create clean, simple but powerful web apps and APIs quickly. Leaf introduces a cleaner and much simpler structure to the PHP language while maintaining it's flexibility.
 
@@ -8,7 +8,7 @@ With a simple structure and a shallow learning curve, it's an excellent way to r
 
 Simply install Leaf, and you're good to go.
 
-## Installation
+## 📁 Installation
 
 Leaf's has a very simple installation method. You can install directly with composer or clone our repo on github. (both methods require composer)
 
@@ -32,7 +32,7 @@ git clone --single-branch --branch 2.0 https://github.com/leafsphp/leaf.git
 
 OR
 
-<div style="border: 1px solid rgba(10, 230, 150, 0.8); border-radius: 4px; background: rgba(10, 230, 150, 0.05); padding: 10px 30px; padding-bottom: 22px;">
+<div style="border: 1px solid rgba(10, 230, 150, 0.8); border-radius: 4px; background: rgba(10, 230, 150, 0.05); padding: 20px 30px; padding-bottom: 32px;">
 	<div style="font-weight: bolder; font-size: 25px; margin-bottom: -18px !important;">Setup</div>
 	<p style="color: rgb(5, 160, 70); font-size: 18px;">
 		You can directly clone or download the git repo here.
@@ -53,7 +53,7 @@ composer create-project leafs/mvc
 You can also try out our [LeafAPI](https://github.com/leafsphp/leafAPI) package. This is another framework built around the `Leaf` package. Leaf API provides you with tools to quickly and efficiently build an API. Leaf APIis built with what we call MRRC(Model Request Response Controller) architecture which is pretty much MVC without the V. It also has scaffolding, a custom terminal, migrations, an ORM and other cool features.
 
 ```bash
-composer create-project leafs/api-starter
+composer create-project leafs/api
 ```
 
 <br>
