@@ -47,7 +47,7 @@ Now, when a request matches the specified route URI, the `show` method on the `U
 ## Base Controller Features
 
 #### Default Templating
-Using the core controller, you already have access to templating with [Leaf Veins](2.1views/veins). You can simply configure and render your template whenever you want to.
+Using the core controller, you already have access to templating with [Leaf Veins](2.1/views/veins). You can simply configure and render your template whenever you want to.
 
 ```js
 use Leaf\Controller;
@@ -72,7 +72,7 @@ class NameController extends Controller {
 }
 ```
 
-You can view more info on Veins [here](2.1views/veins)
+You can view more info on Veins [here](2.1/views/veins)
 
 <hr>
 
@@ -92,7 +92,7 @@ class NameController extends Controller {
 }
 ```
 
-You can view more on responses [here](2.1http/response)
+You can view more on responses [here](2.1/http/response)
 
 <hr>
 
@@ -128,16 +128,16 @@ public function index() {
 }
 ```
 
-Read more on Leaf Forms [here](2.1core/forms)
+Read more on Leaf Forms [here](2.1/core/forms)
 
 <br>
 <hr>
 
-<a href="#/2.1http/request" style="margin: 0px">Request</a>
-<a href="#/2.1http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.1http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.1environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.1database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.1/http/request" style="margin: 0px">Request</a>
+<a href="#/2.1/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/2.1/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/2.1/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/2.1/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

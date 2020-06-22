@@ -121,7 +121,7 @@ We'd always advice you to use MD5 as the second encryption method because, MD5 s
 
 <hr>
 
-### [Back to beta zone](2.1beta-zone/)
+### [Back to beta zone](2.1/beta-zone/)
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

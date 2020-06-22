@@ -1,6 +1,6 @@
 # 📲 Routing
 
-As explained [before](2.1intro/htaccess), Leaf uses a single root file, to which all the server requests are redirected. Leaf then takes these requests and matches them to rules you have defined. The results are then displayed to the user. It's actually a very simple concept.
+As explained [before](2.1/intro/htaccess), Leaf uses a single root file, to which all the server requests are redirected. Leaf then takes these requests and matches them to rules you have defined. The results are then displayed to the user. It's actually a very simple concept.
 
 The router module is tied directly to Leaf Core, so once you initialise leeaf, you can use routing
 
@@ -62,7 +62,7 @@ $leaf->post('/users/add', function() use($request) {
 ```
 
 Using Post Params
-View [Request](2.1http/request) for more info on handling params
+View [Request](2.1/http/request) for more info on handling params
 
 ### PUT requests
 
@@ -204,11 +204,11 @@ $leaf->set404(function() use($leaf) {
 <br>
 <hr>
 
-<a href="#/2.1http/request" style="margin: 0px">Request</a>
-<a href="#/2.1http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.1http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.1environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.1database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.1/http/request" style="margin: 0px">Request</a>
+<a href="#/2.1/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/2.1/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/2.1/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/2.1/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
