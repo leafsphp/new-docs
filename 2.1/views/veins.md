@@ -1,4 +1,4 @@
-# Leaf Veins
+# 🥒 Leaf Veins
 
 Leaf Veins templating engine is the official templating engine of Leaf PHP. It focuses on keeping things simple and elegant. For those who have used **Smarty** before, this will be really easy to get used to.
 
