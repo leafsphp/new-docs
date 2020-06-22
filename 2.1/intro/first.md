@@ -1,5 +1,7 @@
-# Your First Leaf App
-## Hello World
+# 🥇 Your First Leaf App
+
+## 📄 Hello World
+
 First of all, we need to setup our .htaccess file. See [Re-routing to index.](2.1intro/htaccess)
 
 To create a hello world project with Leaf, you simply need to initialise Leaf. This will spin up Leaf's core packages. Amongst the core packages is Leaf's router. This simply takes all requests coming into the application and handles them based on rules you define. Enough talk, let's get dirty.
@@ -17,6 +19,7 @@ $leaf->get('/', function() {
 
 $leaf->run();
 ```
+
 That's all. It's this simple.
 
 This is a very basic example, if you want to explore deeper, more useful examples, you can check out our [code labs](codelabs/) section

@@ -1,5 +1,6 @@
-# Sub-routing
-Use `$leaf->mount($baseroute, $fn)` to mount a collection of routes onto a subroute pattern. The subroute pattern is prefixed onto all following routes defined in the scope. e.g. Mounting a callback $fn onto /movies will prefix /movies onto all following routes.
+# 🚇 Sub-routing
+
+Use `$leaf->mount($baseroute, $fn)` to mount a collection of routes onto a subroute pattern. The subroute pattern is prefixed onto all following routes defined in the scope. e.g. Mounting a callback $fn onto `/movies` will prefix `/movies` onto all following routes.
 
 ```js
 $leaf->mount('/movies', function() use ($leaf) {

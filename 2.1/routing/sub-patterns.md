@@ -1,15 +1,16 @@
-# Optional Route Subpatterns
+# 🎐 Optional Route Subpatterns
+
 *This guide assumes you have read [Simple Routing](2.1routing) and [dynamic routing](2.1routing/dynamic)*
 
 Route subpatterns can be made optional by making the subpatterns optional by adding a ? after them. Think of blog URLs in the form of /blog(/year)(/month)(/day)(/slug):
 
 ```js
 $leaf->get('/blog(/\d+)?(/\d+)?(/\d+)?(/[a-z0-9_-]+)?', function($year = null, $month = null, $day = null, $slug = null) {
-	if (!$year) { echo 'Blog overview'; return; }
-	if (!$month) { echo 'Blog year overview'; return; }
-	if (!$day) { echo 'Blog month overview'; return; }
-	if (!$slug) { echo 'Blog day overview'; return; }
-	echo 'Blogpost ' . htmlentities($slug) . ' detail';
+  if (!$year) { echo 'Blog overview'; return; }
+  if (!$month) { echo 'Blog year overview'; return; }
+  if (!$day) { echo 'Blog month overview'; return; }
+  if (!$slug) { echo 'Blog day overview'; return; }
+  echo 'Blogpost ' . htmlentities($slug) . ' detail';
 });
 ```
 
@@ -21,16 +22,17 @@ The code snipped above unfortunately also responds to URLs like /blog/foo and st
 
 ```js
 $leaf->get('/blog(/\d+(/\d+(/\d+(/[a-z0-9_-]+)?)?)?)?', function($year = null, $month = null, $day = null, $slug = null) {
-	// ...
+  // ...
 });
 ```
+
 **Note**: It is highly recommended to always define successive optional parameters.
 
 To make things complete use [quantifiers](http://www.php.net/manual/en/regexp.reference.repetition.php) to require the correct amount of numbers in the URL:
 
 ```js
 $leaf->get('/blog(/\d{4}(/\d{2}(/\d{2}(/[a-z0-9_-]+)?)?)?)?', function($year = null, $month = null, $day = null, $slug = null) {
-	// ...
+  // ...
 });
 ```
 
