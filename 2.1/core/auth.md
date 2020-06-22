@@ -1,6 +1,7 @@
-# Leaf Simple Auth
+# ✨ Leaf Simple Auth
 
 ## Intro
+
 Setting up a login and sign-up system can sometimes be a very unpleasant experience, especially for new devs. For pro devs, the challenge is "the standard". For this, Leaf has prepared something really simple.
 
 Leaf Leaf Auth allows you to set-up authentication in just one line of code😅😅. Literally 1 line😎. To use Leaf Auth, you simply need to initialise the Leaf Auth package.
@@ -11,7 +12,9 @@ $auth = new Leaf\Auth;
 
 **Note that `basicLogin`, `basicRegister` and our dev feature `emailLogin` have all been replaced with  simple `login` and `register` methods in v2.**
 
-## Authentication methods:
+**In v2.1, Auth has been re-written with Leaf\Db.**
+
+## Authentication methods
 
 ### login()
 
@@ -25,12 +28,12 @@ If the user is successfully found, the user data is returned, if not, `false` is
 
 ```js
 $user = $auth->login("users", [
-	"username" => "mychi.darko",
-	"password" => md5("test")
+  "username" => "mychi.darko",
+  "password" => md5("test")
 ]); // returns false if failed
 
 if ($user == false) {
-	$response->throwErr($auth->errors());
+  $response->throwErr($auth->errors());
 }
 ```
 
@@ -39,11 +42,11 @@ example success response:
 
 ```js
 [
-	"id" => 1,
-	"username" => "mychi.darko",
-	"email" => "mickdd22@gmail.com",
-	"created_at" => "2019-09-20 13:47:48",
-	"token" => "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NzYxMzUzMjgsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTU3NjEzNjIyOCwidXNlcklkIjoxfQ.7FODXGGJKioGQVX4ic0DJLoMIQTVUlsd4zFAJA4DAkg"
+  "id" => 1,
+  "username" => "mychi.darko",
+  "email" => "mickdd22@gmail.com",
+  "created_at" => "2019-09-20 13:47:48",
+  "token" => "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NzYxMzUzMjgsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTU3NjEzNjIyOCwidXNlcklkIjoxfQ.7FODXGGJKioGQVX4ic0DJLoMIQTVUlsd4zFAJA4DAkg"
 ]
 ```
 
@@ -65,8 +68,8 @@ To use default checks, you simply have to pass `true` as the 4th parameter to lo
 
 ```js
 $user = $auth->login("users", [
-	"username" => "mychi.darko", 
-	"password" => "test"
+"username" => "mychi.darko",
+"password" => "test"
 ], "md5", true);
 ```
 
@@ -74,14 +77,15 @@ To get any errors, you need to call the `errors` method
 
 ```js
 $user = $auth->login("users", [
-	"username" => "mychi.darko", 
-	"password" => "test"
+"username" => "mychi.darko", 
+"password" => "test"
 ], "md5", true);
 
 if ($user == false) {
-	$app->response->throwErr($auth->errors());
+$app->response->throwErr($auth->errors());
 }
 ```
+
 <hr>
 
 ### register()
@@ -90,9 +94,9 @@ Register is a simple method used to create simple, secure user registrations. Th
 
 ```js
 $auth->register("users", [
-	"username" => "mychi.darko",
-	"email" => "mickdd22@gmail.com",
-	"field" => "value"
+"username" => "mychi.darko",
+"email" => "mickdd22@gmail.com",
+"field" => "value"
 ]);
 ```
 
@@ -100,18 +104,18 @@ If the user is successfully saved, the user data is returned, if not, `false` is
 
 ```js
 $user = $auth->register("users", [
-	"username" => "mychi.darko",
-	"email" => "mickdd22@gmail.com",
-	"field" => "value"
+"username" => "mychi.darko",
+"email" => "mickdd22@gmail.com",
+"field" => "value"
 ]); // returns false if failed
 
 if ($user == false) {
-	$response->throwErr($auth->errors());
+$response->throwErr($auth->errors());
 }
 ```
 
-
 ##### Uniques
+
 Let's say you want to check whether the username a user just entered has been taken, you'd have to write a bunch of conditional code, making the code count larger and more error prone, right?
 
 Well, `register` solves this problem smoothly. `register` has a 3rd parameter: an array of unique values which makes sure that the same value can't be saved twice.
@@ -127,18 +131,19 @@ For instance, if you know the exact data you'll be receiving in your app, let's 
 
 ```js
 $leaf->post("/register", function() use($leaf) {
-	$auth->register("users", $leaf->request->getBody(), ["username", "email"]);
+$auth->register("users", $leaf->request->getBody(), ["username", "email"]);
 });
 ```
 
 So, we pass in the entire request body, which contains the username, email and password. Simple right?
 
 ##### Password Encoding
+
 If you use an `md5` encoded password, and the name of your password field is `password`, you can simply leave the password encoding to `register`. For now, only md5 is supported, don't worry, later versions of Leaf will support more encodings.
 
 ```js
 $leaf->post("/register", function() use($leaf) {
-	$auth->register("users", $leaf->request->getBody(), ["username", "email"], "md5");
+$auth->register("users", $leaf->request->getBody(), ["username", "email"], "md5");
 });
 ```
 
@@ -158,7 +163,7 @@ To get any errors, you need to call the `errors` method
 
 ```js
 if ($auth->register("users", $leaf->request->getBody(), ["username", "email"], "md5", true) == false) {
-	$app->response->throwErr($auth->errors());
+$app->response->throwErr($auth->errors());
 }
 ```
 

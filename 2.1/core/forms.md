@@ -1,4 +1,4 @@
-# Leaf Forms
+# 🎢 Leaf Forms
 
 Since v1.5.0 Leaf Form has totally replaced Simple Validation from v1.2.0 which was discontinued in v1.3.0. Leaf Form contains methods to simply and quickly handle input from the user.
 

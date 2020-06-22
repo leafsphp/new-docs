@@ -1,7 +1,9 @@
-# Leaf Mail 
+# 📮 Leaf Mail
+
 Leaf mail is a cool feature added in Leaf v2 after the main beta test. Leaf Mail quickly let's you send emails both text and HTML, with attachments and a whole lot of various customizations quickly and efficiently. It is built on the [PHPMailer Library](https://github.com/PHPMailer/PHPMailer) as such, all it's methods also work in Leaf Mail.
 
 ## Basic Usage
+
 Like most Leaf packages, you first need to import(initialise) Leaf Mail in order to use it, since it's not bound to the `Leaf` object.
 
 ```js
@@ -24,7 +26,6 @@ $mail = new Leaf\Mail('smtp host', 0000, ['username' => 'user', 'password' => '*
 
 There's also a fourth parameter which accepts `boolean` values. It determines whether to run in debug mode. If this is set to `true`,  it allows you to run other types of debug modes on Leaf Mail eg: server debug mode.
 
-
 ```js
 $mail = new Leaf\Mail('smtp host', 0000, [...], true);
 ```
@@ -38,7 +39,6 @@ $mail = new Leaf\Mail('smtp host', 0000, [...], true, true);
 **Note**: You must set the 4th param to `true` in order to use this feature.
 
 Although you can initialise your SMTP connection on initialisation, you may also not want to do so due to personal preference or maybe the use of a Dependency Injection Container. For such cases, a special `smtp_connect` method has been prepared.
-
 
 ## smtp_connect
 
@@ -64,25 +64,28 @@ $mail->smtp_connect('smtp.gmail.com', 587, true, 'user@gmail.com', 'password');
 After this, you can now use all Leaf Mail's features.
 
 ## Leaf Mail Features
+
 We'll take a look at the features Leaf Mail brings to the table.
 
 ### Basic Mail
-This allows you to quickly create a simple mail. It takes in 8 parameters: 
+
+This allows you to quickly create a simple mail. It takes in 8 parameters:
 
 - the email subject
 - the email content
 - the recepient's email
-- the sender's name 
+- the sender's name
 - the sender's email (optional)
 - carbon copy (optional)
 - blank carbon copy (optional)
 
-**SYNTAX**
+**SYNTAX:**
+
 ```js
 $mail->basic($subject, $body, $recepient_email, $sender_name, $sender_email, $cc, $bcc);
 ```
 
-**Example**
+**Example:**
 
 ```js
 // Only required fields
@@ -106,9 +109,9 @@ You can catch errors with `$mail->errors()`
 
 ```js
 if (!$mail->basic(...)) {
-	$mail->errors();
+  $mail->errors();
 } else {
-	$mail->send();
+  $mail->send();
 }
 ```
 
@@ -117,6 +120,7 @@ if (!$mail->basic(...)) {
 <hr>
 
 ### Write
+
 Write is a more customisable way of creating emails. It has a more readable and understandable syntax as it's in key value form.
 
 Write takes in only one parameter which is an array containing key - value pairs of the email details
@@ -134,11 +138,11 @@ Only specific values are accepted, any other values entered will be ignored. The
 
 ```js
 $email->write([
-	"subject" => "This is a full Write Test",
-	"template" => "./template.html",
-	"recepient_email" => "mychi.darko@gmail.com",
-	"sender_name" => "Leaf PHP Framework",
-	"attachment" => "./../attachment.txt"
+  "subject" => "This is a full Write Test",
+  "template" => "./template.html",
+  "recepient_email" => "mychi.darko@gmail.com",
+  "sender_name" => "Leaf PHP Framework",
+  "attachment" => "./../attachment.txt"
 ]);
 ```
 
@@ -154,6 +158,7 @@ $email->send();
 <hr>
 
 ### loadTemplate
+
 Load Template is a method that allows you to use a prepared template as the email body. It takes in 2 parameters:
 
 - The name and/or PATH of the template
@@ -170,6 +175,7 @@ $template = $mail->loadTemplate("./template.txt", true);
 <hr>
 
 ### attach
+
 This is a method that allows you to add attachments to the email
 
 ```js
@@ -185,12 +191,13 @@ As with any other script, something might go wrong, not with Leaf Mail per sey, 
 ### Mail::errors
 
 This method gives you a simple way to track errors caused by either the developer or the user. Let's look at this example.
+
 ```js
 $email->write([
-	"subject" => "This is a full Write Test",
-	"template" => "./template.html",
-	"sender_name" => "Leaf PHP Framework",
-	"attachment" => "./../attachment.txt"
+  "subject" => "This is a full Write Test",
+  "template" => "./template.html",
+  "sender_name" => "Leaf PHP Framework",
+  "attachment" => "./../attachment.txt"
 ]);
 ```
 
@@ -198,14 +205,14 @@ You notice that the `recepient_email` field is absent. Running this code will re
 
 ```js
 $email = $mail->write([
-	"subject" => "This is a full Write Test",
-	"template" => "./template.html",
-	"sender_name" => "Leaf PHP Framework",
-	"attachment" => "./../attachment.txt"
+  "subject" => "This is a full Write Test",
+  "template" => "./template.html",
+  "sender_name" => "Leaf PHP Framework",
+  "attachment" => "./../attachment.txt"
 ]);
 
 if (!$email) {
-	$app->response->throwErr($mail->errors());
+  $app->response->throwErr($mail->errors());
 }
 
 $email->send();
@@ -232,15 +239,15 @@ $email->loadTemplate("./template.html");
 $email->attach("./docs.md");
 
 try {
-	$email->send();
+  $email->send();
 } catch (\Throwable $th) {
-	throw $email->errors();
+  throw $email->errors();
 }
 ```
 
-
 ## Other Methods
-Since Leaf Mail is built on [PHPMailer](https://github.com/PHPMailer/PHPMailer), all PHPMailer methods and variables are also valid on the `Leaf\Mail` object. 
+
+Since Leaf Mail is built on [PHPMailer](https://github.com/PHPMailer/PHPMailer), all PHPMailer methods and variables are also valid on the `Leaf\Mail` object.
 
 ```js
 $mail = new Leaf\Mail;
@@ -259,7 +266,6 @@ use Leaf\Mail\Exception;
 For all other methods, check out [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 
 For more examples, check out [PHP Mailer's examples](https://github.com/leafsphp/leaf-mailer/tree/master/examples)
-
 
 <br>
 <hr>

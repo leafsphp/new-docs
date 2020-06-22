@@ -1,7 +1,9 @@
-# Leaf Console 
+# 💻 Leaf Console
+
 This is a simple tool to help with project scaffolding. With this tool, you don't have to write your own models, migrations...from scratch. This console uses the `php` console, so you should have php path defined😉
 
 ## Console Commands
+
 In your console, you can run `php leaf` or `php leaf list` to view all supported commands. Alternatively, here are all supported commands:
 
 ```bash

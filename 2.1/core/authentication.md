@@ -1,4 +1,4 @@
-# Leaf Authentication
+# 🧨 Leaf Authentication
 
 Authentication provides simple methods to help with manual authentication and working with tokens. In v2, Authentication has been added to Leaf Heplers, so it's now just an authentication helper. If you want a much simpler way, you can check out [Simple Auth](2.1/core/auth).
 
@@ -32,11 +32,11 @@ This method generates a new JSON Web Token: the same as `generateSimpleToken`, t
 
 ```js
 $payload = [
-	'iat' => time(),
-	'iss' => 'localhost',
-	'exp' => time() + (15*60),
-	'userId' => $user_id,
-	'username' => $username
+  'iat' => time(),
+  'iss' => 'localhost',
+  'exp' => time() + (15*60),
+  'userId' => $user_id,
+  'username' => $username
 ];
 
 $token = $authentication->generateToken($payload, "secret phrase");
@@ -54,11 +54,11 @@ If the token is valid, it returns the decoded `payload`. So if we encode a paylo
 
 ```js
 $payload = [
-	'iat' => time(),
-	'iss' => 'localhost',
-	'exp' => time() + (15*60),
-	'userId' => $user_id,
-	'username' => $username
+  'iat' => time(),
+  'iss' => 'localhost',
+  'exp' => time() + (15*60),
+  'userId' => $user_id,
+  'username' => $username
 ];
 ```
 
@@ -76,7 +76,7 @@ If the validation fails, it returns `false`, you can get any error by calling th
 $payload = $authentication->validateToken("SECRET PHRASE"); // returns false if failed
 
 if ($payload == false) {
-	$response->throwErr($authentication->errors());
+  $response->throwErr($authentication->errors());
 }
 ```
 
@@ -96,7 +96,7 @@ If the validation fails, it returns `false`, you can get any error by calling th
 $payload = $authentication->validate($token, "SECRET PHRASE"); // returns false if failed
 
 if ($payload == false) {
-	$response->throwErr($authentication->errors());
+  $response->throwErr($authentication->errors());
 }
 ```
 
@@ -109,7 +109,7 @@ $token = $authentication->getBearerToken();
 
 // if there are any errors
 if ($token == false) {
-	echo $authentication->errors();
+  echo $authentication->errors();
 }
 ```
 

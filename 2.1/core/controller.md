@@ -1,10 +1,12 @@
-# Core Controller
+# 🎮 Core Controller
 
 ## Overview
+
 Instead of defining all of your request handling logic as Closures in route files, you may wish to organize this behavior using Controller classes. Controllers can group related request handling logic into a single class.
 
 ## Defining Controllers
-Below is an example of a basic controller class. Note that the controller extends the base controller class included with Leaf(`Leaf\Controller`). The base class provides a few convenience methods 
+
+Below is an example of a basic controller class. Note that the controller extends the base controller class included with Leaf(`Leaf\Controller`). The base class provides a few convenience methods
 <!-- such as the middleware method, which may be used to attach middleware to controller actions: -->
 
 ```js
@@ -25,7 +27,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-		$this->set('user', User::findOrFail($id));
+        $this->set('user', User::findOrFail($id));
         $this->render('profile');
     }
 }
@@ -47,28 +49,29 @@ Now, when a request matches the specified route URI, the `show` method on the `U
 ## Base Controller Features
 
 #### Default Templating
+
 Using the core controller, you already have access to templating with [Leaf Veins](2.1/views/veins). You can simply configure and render your template whenever you want to.
 
 ```js
 use Leaf\Controller;
 
 class NameController extends Controller {
-	// configure as soon as controller is invoked
-	public function __construct() {
-		$this->veins->configure([
-			"veins_dir" => "app/views/",
-			"cache_dir" => "app/views/build/"
-		]);
-	}
+  // configure as soon as controller is invoked
+  public function __construct() {
+    $this->veins->configure([
+      "veins_dir" => "app/views/",
+      "cache_dir" => "app/views/build/"
+    ]);
+  }
 
-	public function index() {
-		// set template data
-		$this->set([
-			"name" => "Mychi"
-		]);
-		// render your template
-		$this->render("index"); // refers to index.vein in the veins_dir
-	}
+  public function index() {
+    // set template data
+    $this->set([
+      "name" => "Mychi"
+    ]);
+    // render your template
+    $this->render("index"); // refers to index.vein in the veins_dir
+  }
 }
 ```
 
@@ -77,18 +80,20 @@ You can view more info on Veins [here](2.1/views/veins)
 <hr>
 
 #### Responses
+
 Leaf Core controller contains methods to appropriately return data to the user.
 
-**respond**
+**respond:**
+
 ```js
 use Leaf\Controller;
 
 class NameController extends Controller {
-	public function index() {
-		$this->respond([
-			"message" => "hello"
-		]);
-	}
+  public function index() {
+    $this->respond([
+      "message" => "hello"
+    ]);
+  }
 }
 ```
 
@@ -97,34 +102,36 @@ You can view more on responses [here](2.1/http/response)
 <hr>
 
 #### file_upload
+
 file_upload is for simple file uploads. It takes in 3 parameters, the path to save the file, the file and the file type(optional). It returns an array `[true, $filename]` if successful and `[false, $error]` if the upload fails.
 
 ```js
 use Leaf\Controller;
 
 class NameController extends Controller {
-	public function index() {
-		$profilePic = $_FILES["profile_pic"];
-		// file upload
-		$this->file_upload("./images/", $profilePic);
-		// file upload with file type
-		$this->file_upload("./images/", $profilePic, "image");
-	}
+  public function index() {
+    $profilePic = $_FILES["profile_pic"];
+    // file upload
+    $this->file_upload("./images/", $profilePic);
+    // file upload with file type
+    $this->file_upload("./images/", $profilePic, "image");
+  }
 }
 ```
 
 <hr>
 
 #### Forms
+
 The base controller also gives you a simple way to handle form data
 
 ```js
 public function index() {
-	$name = $this->form->get("name");
+  $name = $this->form->get("name");
 
-	$this->validate([
-		"name" => "text"
-	]);
+  $this->validate([
+    "name" => "text"
+  ]);
 }
 ```
 
