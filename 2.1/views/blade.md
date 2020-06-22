@@ -1,4 +1,4 @@
-# Blade Templating 
+# 🔪 Blade Templating
 
 This is Leaf's implementation of Laravel's blade templating engine. It is an independent package, but has been added and bound to Leaf Core. So just like other packages, you don't need to instanciate it if you don't want to.
 
@@ -13,14 +13,16 @@ $blade = new Leaf\Blade();
 ```
 
 ## Usage
-To further understand blade, you can view the official documentation http://laravel.com/docs/5.8/blade.
+
+To further understand blade, you can view the official documentation [http://laravel.com/docs/5.8/blade](http://laravel.com/docs/5.8/blade).
 
 Leaf Blade only supports directory configurations, which can be passed as params on initialisation.
+
 ```js
 use Leaf\Blade;
 
 // Blade("template dir", "cache dir");
-$blade = new Blade('app/views', 'app/views/cache'); 
+$blade = new Blade('app/views', 'app/views/cache');
 ```
 
 Not to worry, you can configure blade at a later time after initialisation.
