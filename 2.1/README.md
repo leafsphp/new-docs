@@ -1,92 +1,46 @@
-# Getting Started
+# 📚 Getting Started
 
-## Leaf PHP v2.1 alpha
+## Leaf PHP v2.1
 
-Leaf v2.1 alpha is the latest release of Leaf PHP Framework that comes along with a bunch of new features, better functionality and fixes from the previous version.
+Leaf v2.1 is the latest release of Leaf PHP Framework that comes along with a bunch of new features, better functionality and fixes from the previous version.
 
-## Installation
+## 📁 Installation
 
-You can view installation for Leaf v2.1 alpha [here](2.1-alpha/intro/)
+You can view installation for Leaf v2.1 [here](2.1/intro/)
 
 ## What's New
 
-<!-- ### Leaf UI [BETA]
+### 📑Leaf Db <sup><small style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2.1</small></sup>
 
-Leaf UI is a simple UI Framework for PHP. Okay, that sounds weird😂. Leaf UI simply lets you create user interfaces without leaving the comfort of PHP. With a [flutter](https://flutter.dev)-like structure, Leaf UI is really easy to pick up and use, even when compared with HTML.
+Leaf Db is a new lightweight but powerful query builder which allows you quickly write dynamic queries, validate and seperate data in just a single line of code.
 
 ```js
-// Leaf UI Package (Not necessary to initialise)
-$ui = new Leaf\UI;
+$db = new Leaf\Db;
+$db->auto_connect();
 
-// Create your Leaf UI
-$html = $ui::html([
-	$ui::head([
-		$ui::title("Home"),
-		$ui::meta("viewport", "width=device-width;initial-scale=1"),
-		$ui::_style("./style.css"),
-		$ui::_style([
-			"@media only screen and (max-width: 600px)" => [
-				".ui:row" => "flex-direction: column;"
-			]
-		])
-	]),
-	$ui::body(["style" => "background: #cecece;"], [
-		$ui::_row([], [
-			$ui::_column(["style" => "width: 50%"], [
-				// Information Here
-			]),
-			$ui::_column(["style" => "width: 50%"], [
-				$ui::form("method", "action", [
-					$ui::input("text", "username", [
-						"placeholder" => "mychi.darko",
-						"label" => "Enter Your Username"
-					]),
-					$ui::input("password", "password", [
-						"placeholder" => "********",
-						"label" => "Enter Your Password"
-					]),
-					$ui::button("LOGIN NOW", ["type" => "submit"])
-				])
-			])
-		])
-	])
-]);
+$user = $db->select("users")
+   ->where("username", $username)
+   ->validate("username", "validUsername")
+   ->hidden("password")
+   ->fetchObj()
+```
 
-// render your Leaf UI
-$ui::render($html);
-``` -->
+[Read Leaf Db Docs](2.1/db/)
 
-[Read Leaf UI Docs](ui/)
+### 🛫Cors Bypass
 
-### Route::resource
-
-This is a new method inspired by [laravel](http://laravel.com/)'s resource route. This simply let's you create a route handled by a resource controller.
+Just a little handy tool especially useful when building APIs. CORS errors are a very common thing for developers who work with APIs, and this method is just a basic bypass for these errors.
 
 ```js
 $app = new Leaf\App();
+$app->response->cors();
 
-$app->resource("/posts", "PostController");
+// your code...
 
 $app->run();
 ```
 
-[Read Routing Docs](2.1-alpha/routing/controller)
-
-### Session::retrieve
-
-Session retrieve allows you to return and immedietely remove a value from your session. This is like calling session `get` and `unset` immedietely.
-
-```js
-$session = new Leaf\Http\Session;
-
-$username = $session->retrieve("username");
-```
-
-`retrieve` also allows you to set a default value for the value you're trying to get from the session. So in case `username` hasn't been set in the session, we can pass in a value to return to us.
-
-```js
-$username = $session->retrieve("username", "mick"); // returns mick if username is not found
-```
+[Read Response Docs](2.1/http/response)
 
 <br>
 <hr>
