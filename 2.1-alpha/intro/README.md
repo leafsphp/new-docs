@@ -53,7 +53,7 @@ composer create-project leafs/mvc
 You can also try out our [LeafAPI](https://github.com/leafsphp/leafAPI) package. This is another framework built around the `Leaf` package. Leaf API provides you with tools to quickly and efficiently build an API. Leaf APIis built with what we call MRRC(Model Request Response Controller) architecture which is pretty much MVC without the V. It also has scaffolding, a custom terminal, migrations, an ORM and other cool features.
 
 ```bash
-composer create-project leafs/api-starter
+composer create-project leafs/api
 ```
 
 <br>
