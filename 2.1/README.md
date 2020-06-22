@@ -45,9 +45,9 @@ $app->run();
 <br>
 <hr>
 
-<a href="#/2.1intro/htaccess" style="margin: 0px;">Re-routing to index</a>
-<a href="#/2.1intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
-<a href="#/2.1routing/" style="margin: 0px 10px;">Routing</a>
+<a href="#/2.1/intro/htaccess" style="margin: 0px;">Re-routing to index</a>
+<a href="#/2.1/intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
+<a href="#/2.1/routing/" style="margin: 0px 10px;">Routing</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

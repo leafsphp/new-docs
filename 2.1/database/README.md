@@ -87,11 +87,11 @@ We've looked at making queries, but then `query()` still makes you type out what
 
 <hr>
 
-### [Retrieving Data](2.1database/select)
+### [Retrieving Data](2.1/database/select)
 
 <hr>
 
-### [Inserting Data](2.1database/insert)
+### [Inserting Data](2.1/database/insert)
 
 <hr>
 
@@ -159,11 +159,11 @@ $db->close();
 <br>
 <hr>
 
-<a href="#/2.1http/request" style="margin: 0px">Request</a>
-<a href="#/2.1http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.1http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.1environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.1database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.1/http/request" style="margin: 0px">Request</a>
+<a href="#/2.1/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/2.1/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/2.1/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/2.1/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

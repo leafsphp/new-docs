@@ -65,7 +65,7 @@ $leaf->deleteCookie('foo', '/', 'foo.com', true, true);
 
 <hr>
 
-## [Session Cookies](2.1http/session?id=sesison-cookies-span-stylebackground-rgb11-200-70-color-white-padding-3px-7px-font-size-14pxnew-in-v2)
+## [Session Cookies](2.1/http/session?id=sesison-cookies-span-stylebackground-rgb11-200-70-color-white-padding-3px-7px-font-size-14pxnew-in-v2)
 
 <br>
 <hr>

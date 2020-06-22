@@ -59,7 +59,7 @@ $user = $auth->login("users", ["username" => "mychi.darko", "password" => "test"
 
 Generally speaking, most logins/signups require a (username/email) + password combination, default checks allow you to validate data entered into these fields without you having to write any validation yourself.
 
-Default checks look for a `username` field and test it against the [ValidUsername](2.1core/forms?id=validate) rule, an `email` against the [email](2.1core/forms?id=validate) rule and a `password` field against the [required](2.1core/forms?id=validate) rule.
+Default checks look for a `username` field and test it against the [ValidUsername](2.1/core/forms?id=validate) rule, an `email` against the [email](2.1/core/forms?id=validate) rule and a `password` field against the [required](2.1/core/forms?id=validate) rule.
 
 To use default checks, you simply have to pass `true` as the 4th parameter to login
 
@@ -146,7 +146,7 @@ $leaf->post("/register", function() use($leaf) {
 
 Generally speaking, most logins/signups require a (username/email) + password combination, default checks allow you to validate data entered into these fields without you having to write any validation yourself.
 
-Default checks look for a `username` field and test it against the [ValidUsername](2.1core/forms?id=validate) rule, an `email` against the [email](2.1core/forms?id=validate) rule and a `password` field against the [required](2.1core/forms?id=validate) rule.
+Default checks look for a `username` field and test it against the [ValidUsername](2.1/core/forms?id=validate) rule, an `email` against the [email](2.1/core/forms?id=validate) rule and a `password` field against the [required](2.1/core/forms?id=validate) rule.
 
 To use default checks, you simply have to pass `true` as the 5th parameter to login
 
@@ -164,7 +164,7 @@ if ($auth->register("users", $leaf->request->getBody(), ["username", "email"], "
 
 <hr>
 
-### [Leaf Authentication Methods](2.1core/authentication)
+### [Leaf Authentication Methods](2.1/core/authentication)
 
 Leaf Auth now uses the `Leaf\Authentication` package to provide solutions for token authentication. This provides a simple way to work with manual authentication and tokens. All methods here are now available in `Leaf\Auth`, but are only accessible on the `$this` object.
 
@@ -172,7 +172,7 @@ Leaf Auth now uses the `Leaf\Authentication` package to provide solutions for to
 $payload = $this->validate($token);
 ```
 
-Read [authentication](2.1core/authentication) for more info
+Read [authentication](2.1/core/authentication) for more info
 
 <hr>
 
@@ -191,11 +191,11 @@ $auth->token->generateSimpleToken($user_id, $auth->getSecretKey());
 <br>
 <hr>
 
-<a href="#/2.1http/request" style="margin: 0px">Request</a>
-<a href="#/2.1http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.1http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.1environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.1database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.1/http/request" style="margin: 0px">Request</a>
+<a href="#/2.1/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/2.1/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/2.1/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/2.1/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
