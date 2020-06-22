@@ -7,4 +7,4 @@
 </p>
 
 [Get Started](2.0/intro/)
-[Checkout v2.1 alpha alpha](2.1-alpha/)
+[Checkout v2.1 alpha](2.1-alpha/)
