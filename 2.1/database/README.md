@@ -6,6 +6,8 @@ Leaf's "simple query builder" provides a convenient but usual way to quickly cre
 
 Leaf's "simple query builder" currently supports Mysqli and PDO connections, though we still recommend using Mysqli. There's no need to worry about SQL injection as parameter binding is also supported and easy to use😉💪
 
+**Note that Leaf v2.1 introduced a new Leaf\Db package which will replace this current query builder completely in later versions of Leaf. Not to worry, `Leaf\Db\Mysqli` and `Leaf\Db\PDO` would be made available through composer**
+
 The Leaf Mysqli package has been bound to the Leaf object, and can therefore be called without initialising the package.
 
 ```js
@@ -13,6 +15,7 @@ $leaf->db->connect();
 ```
 
 ## Initialising Leaf DB
+
 Leaf DB has 2 different packages, 1 for mysqli and the other for PDO. So you can import which ever package you wish to use. **Leaf recommends using the mysqli package.**
 
 ```js
@@ -24,6 +27,7 @@ use Leaf\Db\PDO;
 
 $db = new PDO();
 ```
+
 **You can also you any of the DB methods on `$leaf->db` as shown earlier.**
 
 **Both DB:PDO and DB:Mysqli use the same methods, so all the code below works the same for whichever you're using. We'll alert you if something works differently.**
@@ -35,12 +39,14 @@ $db = new PDO();
 The first thing you need to do to use Leaf DB is to connect to your database. This can be achieved with `connect()`
 
 #### On the leaf object
+
 ```js
 $leaf = new Leaf\App();
 $leaf->db->connect($host, $user, $password, $dbname);
 ```
 
 #### DB Mysqli
+
 ```js
 use Leaf\Db\Mysqli;
 
@@ -48,14 +54,22 @@ $db = new Mysqli();
 $db->connect($host, $user, $password, $dbname);
 ```
 
-#### DB 
+#### DB
+
 ```js
 use Leaf\Db\PDO;
 
 $db = new PDO();
 $db->connect($host, $dbname, $user, $password);
 ```
+
 This will set the connection for use within Leaf DB.
+
+Both packages now support `auto_connect` which allows you to connect to your database using variables set in a `.env` file.
+
+```js
+$db->auto_connect();
+```
 
 <hr>
 
