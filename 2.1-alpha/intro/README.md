@@ -1,6 +1,6 @@
 # Getting Started
 
-## What is Leaf?
+## What is Leaf
 
 Leaf is a PHP framework that helps you create clean, simple but powerful web apps and APIs quickly. Leaf introduces a cleaner and much simpler structure to the PHP language while maintaining it's flexibility.
 
@@ -19,7 +19,7 @@ Composer is a dependency manager for PHP, just like npm for javascript and ruby 
 After downloading composer, you can run this command to install leaf in your project folder
 
 ```bash
-composer require leafs/leaf
+composer require leafs/leaf ^v2.1-alpha
 ```
 
 ### Install with Github
