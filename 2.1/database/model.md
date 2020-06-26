@@ -1,4 +1,5 @@
 # Leaf MVC Models
+
 In LeafMVC, we don't really have anything to do with our models: Leaf Core has taken all the trouble out of using models, so all we have to do in LeafMVC is to generate the model and include it in our controller.
 
 Our Models are kept in `app/models`, but we won't need to create our models manually. Leaf MVC's command line tool covers this for us.
@@ -12,7 +13,8 @@ That's all we need to do with our model. LeafMVC's models have methods prepared 
 We can create, read, update and delete without writing any code to specially access our database.
 
 In our controller, we can do these:
-```javascript
+
+```js
 // return all rows
 ModelName::all();
 

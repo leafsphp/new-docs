@@ -35,6 +35,7 @@ $db->select("users", "username, email")->fetchAll();
 ```
 
 You can get all columns with:
+
 ```js
 $db->select("users")->fetchAll();
 //  or
@@ -62,11 +63,11 @@ $db->select("users", "username, email", "id = 2")->fetchObj();
 Limiting data is also very simple with Leaf DB
 
 ```js
-// get the latest 10 posts 
-$users = $leaf->db->select("posts ORDER BY id DESC LIMIT 10")->fetchAll();
+// get the latest 10 posts
+$users = $db->select("posts ORDER BY id DESC LIMIT 10")->fetchAll();
 
 // with parameters
-$books = $leaf->db->select("books", "*", "author = ? ORDER BY id DESC LIMIT 5", [$author])->fetchAll();
+$books = $db->select("books", "*", "author = ? ORDER BY id DESC LIMIT 5", [$author])->fetchAll();
 ```
 
 #### Using Prepared Statements
@@ -121,7 +122,7 @@ $db->choose("books", "*", ["author" => "mychi.darko", "published" => "2019"], "L
 
 `choose` also has inbuilt validation which validates parameters according to set rules. This uses the [`Leaf\Form->validate`](2.1/core/form) method. You can check it out for more information on validation.
 
-`choose` takes in a fifth parameter which is a boolean, this is whether of not to validate the data passed into `choose` using the default checks. 
+`choose` takes in a fifth parameter which is a boolean, this is whether of not to validate the data passed into `choose` using the default checks.
 
 By default, `choose` validates values with the keys: `email`, `username` and any other field is marked as `required`. If any of the validations fail, an error is raised. You can turn this feature off:
 
@@ -135,8 +136,8 @@ This is the sixth parameter of `choose`. These are custom rules that you set to 
 
 ```js
 $db->choose("books", "*", ["author" => "mychi.darko", "published" => "2019"], "LIMIT 5", false, [
-	"author" => "validUsername",
-	"published" => "number"
+  "author" => "validUsername",
+  "published" => "number"
 ]);
 ```
 
