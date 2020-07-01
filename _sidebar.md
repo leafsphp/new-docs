@@ -1,14 +1,14 @@
-* 📚 Getting started
+* Getting started
   * [Intro](2.1/intro/)
   * [Re-routing to index](2.1/intro/htaccess.md)
   * [First App](2.1/intro/first.md)
 
-* 🔌Configuration
+* Configuration
   * [Overview](2.1/config/)
   * [Settings](2.1/config/settings.md)
   * [Names, Scopes and Modes](2.1/config/nsm.md)
 
-* 📲 Routing
+* Routing
   * [Basic Routing & 404](2.1/routing/)
   * [Sub Routing](2.1/routing/sub-routing.md)
   * [Dynamic Routing](2.1/routing/dynamic.md)
@@ -17,14 +17,14 @@
   * [Using Controllers](2.1/routing/controller.md)
   * [Sub folder support](2.1/routing/sub-folder.md)
 
-* 📶 HTTP
+* HTTP
   * [Request](2.1/http/request.md)
   * [Response](2.1/http/response.md)
   * [Session](2.1/http/session.md)
   * [Cookies](2.1/http/cookies.md)
   * [Headers](2.1/http/headers.md)
 
-* 🍀 Core
+* Core
   * [Leaf Forms](2.1/core/forms.md)
   * [Leaf Mail](2.1/core/mail.md)
   * [Leaf Date](2.1/core/date.md)
@@ -39,22 +39,24 @@
   * [API Controller](2.1/core/api-controller.md)
   * [Model](2.1/core/model.md)
 
-* 👁‍🗨Leaf Views
+* Leaf Views
   * [Leaf Veins](2.1/views/veins.md)
   * [Leaf Blade](2.1/views/blade.md)
 
-* 📑 Leaf DB (NEW)
+* Leaf DB (NEW)
 
-* 📕 Leaf DB (old)
+* Leaf DB (old)
   * [Leaf DB Intro](2.1/database/)
   * [Retrieving Data](2.1/database/select)
   * [Inserting Data](2.1/database/insert)
 
-* [**🎨 Leaf UI**](ui/)
+* [**Leaf API**](leaf-api/)
 
-* [**🌌 Tilly**](tilly/)
+* [**Leaf UI**](ui/)
 
-* [**🛅 Beta Zone**](2.1/beta-zone/)
+* [**Tilly**](tilly/)
+
+* [**Beta Zone**](2.1/beta-zone/)
 
 * Code Labs
   * [Intro](codelabs/)
@@ -62,7 +64,7 @@
   * [AJAX Request Validation](codelabs/v2.x/form-validation/ajax/)
   * [Dynamic Mailing](codelabs/v2.x/mail/dynamic-mail-templating/)
   
-* ⌚ Versions
+* Versions
   * [Version 1.2.1](https://leaf-docs.netlify.com/v1.2.1/index.html)
   * [Version 1.3.0](https://leaf-docs.netlify.com/v1.3.0/index.html)
   * [Version 1.4.1](https://leaf-docs.netlify.com/v1.4.1/index.html)

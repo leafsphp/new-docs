@@ -70,8 +70,6 @@ That's it. Now, let's look at our controller
 <?php
 namespace App\Controllers;
 
-use Leaf\Core\Controller;
-
 class PagesController extends Controller {
   public function index() {
     $this->render("index", [
@@ -89,7 +87,7 @@ By default, Leaf API's controllers are set-up to use Leaf Blade. Leaf Blade is L
 php leaf g:template index
 ```
 
-This will generate a new template `index.blade.php` in `App/Views`. This view is simply just to introduce you to views, but we won't be using this in our API. We can delete this unused controller:
+This will generate a new template `index.blade.php` in `App/Views`. This view is simply just to introduce you to views, but we won't be using this in our API. We can delete this unused template:
 
 ```bash
 php leaf d:template index
@@ -337,3 +335,12 @@ $post->save();
 $post = Post::find($id);
 $post->delete();
 ```
+
+## Next Steps
+
+- [Routing](/leaf-api/routing/)
+- [Leaf Console](/leaf-api/console/)
+- [Controllers](/leaf-api/controllers/)
+- [Models](/leaf-api/models/)
+
+Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
