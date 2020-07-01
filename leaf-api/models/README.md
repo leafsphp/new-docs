@@ -1,5 +1,5 @@
 # Leaf MVC Models
-In LeafMVC, we don't really have anything to do with our models: Leaf Core has taken all the trouble out of using models, so all we have to do in LeafMVC is to generate the model and include it in our controller.
+In Leaf API, we don't really have anything to do with our models: Leaf Core has taken all the trouble out of using models, so all we have to do in Leaf API is to generate the model and include it in our controller.
 
 Our Models are kept in `app/models`, but we won't need to create our models manually. Leaf MVC's command line tool covers this for us.
 
@@ -7,7 +7,7 @@ Our Models are kept in `app/models`, but we won't need to create our models manu
 php leaf g:model <Name>
 ```
 
-That's all we need to do with our model. LeafMVC's models have methods prepared which allow us to manipulate out database without doing much.
+That's all we need to do with our model. Leaf API's models have methods prepared which allow us to manipulate out database without doing much.
 
 We can create, read, update and delete without writing any code to specially access our database.
 

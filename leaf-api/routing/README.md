@@ -2,7 +2,7 @@
 All Leaf MVC's routes are kept in `app/routes`. Leaf MVC uses Leaf Core's router for it's routing. This means that it's the same as Leaf's routing. You can check it out [here](https://leaf-docs.netlify.com/v1.4.2/routing/simple-routing.html). 
 
 
-LeafMVC has 2 route files, `web.php` and `api.php`. Routes are divided into web routes and API routes by the route config: all routes which begin with /api are considered API routes and a handled by `app/routes/api.php`, all others are handled in the `web.php` file.
+Leaf API has 2 route files, `web.php` and `api.php`. Routes are divided into web routes and API routes by the route config: all routes which begin with /api are considered API routes and a handled by `app/routes/api.php`, all others are handled in the `web.php` file.
 
 
 # Sample Routes

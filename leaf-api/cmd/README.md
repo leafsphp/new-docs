@@ -5,7 +5,7 @@ This is a simple tool to help with project scaffolding. With this tool, you don'
 In your console, you can run `php leaf` or `php leaf list` to view all supported commands. Alternatively, here are all supported commands:
 
 ```bash
-LeafMVC Framework v1.3.0
+Leaf API Framework v1.3.0
 Usage:
   command [options] [arguments]
 Options:

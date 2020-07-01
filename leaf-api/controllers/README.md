@@ -1,18 +1,18 @@
 # Working with controllers
-If you read [creating your first LeafMVC app](/first-app/), you should already have an idea on how to work with `controllers`, but in this section, we'll be going into details.
+If you read [creating your first Leaf API app](/first-app/), you should already have an idea on how to work with `controllers`, but in this section, we'll be going into details.
 
 
 So basically, we'll be looking at different kinds of controllers, creating controllers and controller methods provided by Leaf Core.
 
 
 # Generating Controllers
-With LeafMVC, all controllers are kept in the `app/controllers` directory. So you can manually create your own Controller there, but the recommended method is to use the leaf CMD tool. So, in the root of your leaf MVC project, openup your console and type:
+With Leaf API, all controllers are kept in the `app/controllers` directory. So you can manually create your own Controller there, but the recommended method is to use the leaf CMD tool. So, in the root of your leaf MVC project, openup your console and type:
 ```bash
 php leaf g:controller <Name>
 ```
 
 # A deep look at controllers
-As mentioned before, LeafMVC has 3 types of controllers: API controllers, resource controllers and normal controllers. Though they're both controllers,  they offer different base methods for different purposes. For instance, The web controllers come pre-packaged with Leaf Veins.
+As mentioned before, Leaf API has 3 types of controllers: API controllers, resource controllers and normal controllers. Though they're both controllers,  they offer different base methods for different purposes. For instance, The web controllers come pre-packaged with Leaf Veins.
 
 
 ## Normal Controllers
@@ -36,7 +36,7 @@ First, let's look at Normal Controllers.
         }
     }
 ```
-This is the default boilerplate generated for the web controller. As mentioned before, LeafMVC uses Leaf Core's controller packages which we extend to create our own controller. This provides us with Leaf Core's helper methods and Leaf Vein integration. Vein is Leaf's  default templating engine. You can read more on veins [here](/veins/).
+This is the default boilerplate generated for the web controller. As mentioned before, Leaf API uses Leaf Core's controller packages which we extend to create our own controller. This provides us with Leaf Core's helper methods and Leaf Vein integration. Vein is Leaf's  default templating engine. You can read more on veins [here](/veins/).
 
 
 To use this controller to resolve a route, you simply have to pass it into the route like this:
