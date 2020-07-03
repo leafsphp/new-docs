@@ -44,13 +44,12 @@
   * [Leaf Blade](2.1/views/blade.md)
 
 * Leaf DB (NEW)
+  * [Leaf Db Intro](2.1/db/)
 
 * Leaf DB (old)
   * [Leaf DB Intro](2.1/database/)
   * [Retrieving Data](2.1/database/select)
   * [Inserting Data](2.1/database/insert)
-
-* [**Leaf API**](leaf-api/)
 
 * [**Leaf UI**](ui/)
 
