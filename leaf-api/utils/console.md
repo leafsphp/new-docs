@@ -1,13 +1,21 @@
-# Leaf Console 
-This is a simple tool to help with project scaffolding. With this tool, you don't have to write your own models, migrations...from scratch. This console uses the `php` console, so you should have php path defined😉
+# Leaf Console 💻
+
+Leaf Console tools takes away the pain of doing simple tasks like creating models, controllers and interacting with your app.
+
+**This console uses the `php` console, so you should have php path defined😉**
 
 ## Console Commands
-In your console, you can run `php leaf` or `php leaf list` to view all supported commands. Alternatively, here are all supported commands:
+
+To access leaf console, open up your terminal of choice in the root of your project. You can then run `php leaf` or `php leaf list` to view all supported commands.
+
+You should see something like this:
 
 ```bash
-Leaf API Framework v1.3.0
+Leaf API Framework v1.1.0
+
 Usage:
   command [options] [arguments]
+
 Options:
   -h, --help            Display this help message
   -q, --quiet           Do not output any message
@@ -16,6 +24,7 @@ Options:
       --no-ansi         Disable ANSI output
   -n, --no-interaction  Do not ask any interactive question
   -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
 Available commands:
   example       Testing example command
   help          Displays help for a command
@@ -35,18 +44,14 @@ Available commands:
   g:helper      Create a new helper class
   g:migration   Create a new migration file
   g:model       Create a new model class
-  g:template    Create a new vein template
- ui
-  ui:auth       Scaffold basic login and registration views and routes
+  g:template    Create a new blade template
 ```
 
-<br>
-<br>
+## Next Steps
 
-# <a href="#/first-app/">Building your first leaf app</a>
-# <a href="#/routing/">Routing</a>
-# <a href="#/controllers/">Controllers</a>
-# <a href="#/models/">Models</a>
+- [Helper Functions](/leaf-api/utils/functions)
+- [Routing](/leaf-api/core/routing)
+- [Controllers](/leaf-api/core/controllers)
+- [Models](/leaf-api/core/models)
 
-<br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

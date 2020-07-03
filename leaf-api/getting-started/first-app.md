@@ -340,7 +340,7 @@ $post->delete();
 
 - [Routing](/leaf-api/core/routing)
 - [Leaf Console](/leaf-api/utils/console)
+- [Helper Functions](/leaf-api/utils/functions)
 - [Controllers](/leaf-api/core/controllers)
-- [Models](/leaf-api/core/models)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
