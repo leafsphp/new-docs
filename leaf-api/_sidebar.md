@@ -1,9 +1,9 @@
 * Intro
   * [Leaf API](leaf-api/ "Leaf API")
-  * [First App](leaf-api/first-app "Your First App")
+  * [First App](leaf-api/getting-started/first-app "Your First App")
 
 * Utils
-  * [Leaf Console](leaf-api/utils/console "Leaf Console Tool")
+  * [Leaf Console](leaf-api/utils/console "Leaf Console - Leaf API")
   * [Helper Functions](leaf-api/utils/functions "Helpers - Leaf API")
 
 * Main
@@ -14,7 +14,5 @@
   * [Views](leaf-api/core/views "Views - Leaf API")
 
 * [**Leaf Core**](/)
-
-* [**Beta Zone**](2.1/beta-zone/)
 
 * [**Code Labs**](codelabs/leaf-api/)

@@ -338,9 +338,9 @@ $post->delete();
 
 ## Next Steps
 
-- [Routing](/leaf-api/routing/)
-- [Leaf Console](/leaf-api/console/)
-- [Controllers](/leaf-api/controllers/)
-- [Models](/leaf-api/models/)
+- [Routing](/leaf-api/core/routing)
+- [Leaf Console](/leaf-api/utils/console)
+- [Controllers](/leaf-api/core/controllers)
+- [Models](/leaf-api/core/models)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
