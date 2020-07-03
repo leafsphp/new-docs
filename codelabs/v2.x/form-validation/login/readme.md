@@ -40,7 +40,7 @@ The final thing to note is that each of the fields has a corresponding `name` wh
 
 At the top of our file, we can have something like this.
 
-```js
+```php
 <?php
 require "vendor/autoload.php";
 
@@ -119,7 +119,7 @@ At the top of our file, we can have something like this.
 
 ### Our "Backend"
 
-```js
+```php
 <?php
 require "vendor/autoload.php";
 
@@ -135,7 +135,7 @@ I cut short because I'll like to explain something small here. Once our form is 
 
 In this case, our `login_key` holds either a username or email, but we don't know which it is since it's dictated by the user's preference. As such we'll have to go through a process here. First of all, we'll have to identify whether the `login_key` value is an email or password. Leaf Form holds a simple method for this `$form->isEmail($login_key)`. If this returns true, that means it's an email, else it's a username. With this, we can write dynamic validations.
 
-```js
+```php
 if ($form->isEmail($login_key)) {
 	$validation = $form->validate([
 		"login_key" => "email",
@@ -155,7 +155,7 @@ if ($form->isEmail($login_key)) {
 
 With this, we have successfully written our validations for both username and password, but you notice that this very repititive. Let's try to shorten this.
 
-```js
+```php
 $validation = $form->validate([
 	"login_key" => $form->isEmail($login_key) ? "email" : ["ValidUsername", "NoSpaces"],
 	"password" => "required"
@@ -166,7 +166,7 @@ if ($validation == false) $errors = $form->errors();
 
 So at the end of the day, we have this:
 
-```js
+```php
 <?php
 require "vendor/autoload.php";
 

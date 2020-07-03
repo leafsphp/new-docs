@@ -14,7 +14,7 @@ It takes in 2 parameters:
 
 - (array, optional) Attributes
 
-```js
+```php
 // external style import
 $ui::_style("./style.css");
 
@@ -39,7 +39,7 @@ It takes in 2 parameters:
 
 - (array, optional) Attributes
 
-```js
+```php
 // external script import
 $ui::_script("./main.js");
 
@@ -56,7 +56,7 @@ Makes all takes uppercase. It takes in 2 parameters:
 - (string|array) Child/Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::_uppercase("This is uppercase");
 ```
 
@@ -67,7 +67,7 @@ Makes all text lowercase. It takes in 2 parameters:
 - (string|array) Child/Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::_lowercase("This is a lowercase");
 ```
 
@@ -79,7 +79,7 @@ Container is an element inspired by bootstrap's `.container`. It pretty much cre
 
 - (array) Children
 
-```js
+```php
 $ui::_container([], [
 	// children here
 ]);
@@ -93,7 +93,7 @@ Row just as the name indicates, creates a row. It works using CSS Flexbox and th
 
 - (array) Children
 
-```js
+```php
 $ui::_row([], [
 	// children here
 ]);
@@ -107,7 +107,7 @@ This custom element creates a flex column. It takes in 2 parameters:
 
 - (array) Children
 
-```js
+```php
 $ui::_column([], [
 	// children here
 ]);
@@ -129,7 +129,7 @@ As mentioned before, with this method, you'd need to create a new class which ex
 
 **It is recommended that your custom components names start with `_`**
 
-```js
+```php
 // creating components
 class MyUI extends Leaf\UI {
 	public static function _shadowBox($children, $props = []) {
@@ -156,7 +156,7 @@ This method allows you to create custom elements on the current instance of Leaf
 
 - (callable) The handler to create the element
 
-```js
+```php
 $ui::make("_avatar", function() {
     $avatar = [];
     $avatar["style"] = "border-radius: 50%; border: 1px solid black; width: 50px; height: 50px";
@@ -170,7 +170,7 @@ As you see in this example, the callable/call-back function should return an arr
 
 As mentioned earlier, custom components return HTML (CSS/JS), as such, you are to specify the native element you want your custom element to return. You can do this with the `compile` selector on your array.
 
-```js
+```php
 $ui::make("_avatar", function() {
     return ["compile" => "img"];
 });
@@ -178,7 +178,7 @@ $ui::make("_avatar", function() {
 
 But simply returning a native HTML element doesn't make your component any different from the original element. This is where your styles come in. Using the `style` selector in the array, you can use any CSS you want.
 
-```js
+```php
 $ui::make("_avatar", function() {
     return [
 		"compile" => "img",
@@ -189,7 +189,7 @@ $ui::make("_avatar", function() {
 
 Finally, you can set some default attributes/props for your compiled HTML tag defined in `compile`. We do this using `props`.
 
-```js
+```php
 $ui::make("_avatar", function() {
     return [
 		"compile" => "img",
@@ -210,7 +210,7 @@ Custom is a method that allows you use custom defined components defined with `m
 - (array, optional) Children
 - (string, optional) Tag type, UI::SELF_CLOSING, UI::SINGLE_TAG.
 
-```js
+```php
 $ui::custom("_avatar", ["alt" => "User img"], [], $ui::SINGLE_TAG);
 ```
 

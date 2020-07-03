@@ -6,7 +6,7 @@ Authentication provides simple methods to help with manual authentication and wo
 
 Leaf provides you with the `JWT` object which includes various methods for creating and parsing token data....but we do not advice directly using the `JWT` object. For this reason, this object has been created to work with all the `JWT` data. You simply have to initialise it:
 
-```js
+```php
 $authentication = new Leaf\Helpers\Authentication();
 ```
 
@@ -19,7 +19,7 @@ This method generates a new JSON Web Token. It takes 2 arguments. check out JWT 
 - (int) - A user id to encode
 - (string) - A secret phrase to encode with the token
 
-```js
+```php
 $token = $authentication->generateSimpleToken(24', 'LEAF PHP SECRET CODE 1442');
 ```
 
@@ -30,7 +30,7 @@ This method generates a new JSON Web Token: the same as `generateSimpleToken`, t
 - (array) - JWT payload
 - (string) - A secret phrase to encode with the token
 
-```js
+```php
 $payload = [
 	'iat' => time(),
 	'iss' => 'localhost',
@@ -46,13 +46,13 @@ $token = $authentication->generateToken($payload, "secret phrase");
 
 This method is used to confirm the identity of a token from an authorization header.
 
-```js
+```php
 $payload = $authentication->validateToken("SECRET PHRASE");
 ```
 
 If the token is valid, it returns the decoded `payload`. So if we encode a payload:
 
-```js
+```php
 $payload = [
 	'iat' => time(),
 	'iss' => 'localhost',
@@ -64,7 +64,7 @@ $payload = [
 
 We can retrieve this payload by calling
 
-```js
+```php
 $payload = $authentication->validateToken("SECRET PHRASE");
 
 $username = $payload["username"];
@@ -72,7 +72,7 @@ $username = $payload["username"];
 
 If the validation fails, it returns `false`, you can get any error by calling the `errors` method.
 
-```js
+```php
 $payload = $authentication->validateToken("SECRET PHRASE"); // returns false if failed
 
 if ($payload == false) {
@@ -84,7 +84,7 @@ if ($payload == false) {
 
 This method is used to confirm the identity of a token. Unlike `validateToken`, the token to validate is directly passed into it. Just like `validateToken`, it returns the token's `payload`
 
-```js
+```php
 $payload = $authentication->validate($token, "SECRET PHRASE");
 
 $username = $payload["username"];
@@ -92,7 +92,7 @@ $username = $payload["username"];
 
 If the validation fails, it returns `false`, you can get any error by calling the `errors` method.
 
-```js
+```php
 $payload = $authentication->validate($token, "SECRET PHRASE"); // returns false if failed
 
 if ($payload == false) {
@@ -104,7 +104,7 @@ if ($payload == false) {
 
 This method is used to get the bearer token from an authorization header. It returns `false` if there's no token. You can then use the `errors` method to retrieve any errors.
 
-```js
+```php
 $token = $authentication->getBearerToken();
 
 // if there are any errors
@@ -117,7 +117,7 @@ if ($token == false) {
 
 This method is used to an authorization header. Returns `null` if anything goes wrong.
 
-```js
+```php
 $authHeader = $authentication->getAuthorizationHeader();
 ```
 

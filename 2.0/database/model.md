@@ -12,7 +12,7 @@ That's all we need to do with our model. LeafMVC's models have methods prepared 
 We can create, read, update and delete without writing any code to specially access our database.
 
 In our controller, we can do these:
-```javascript
+```php
 // return all rows
 ModelName::all();
 

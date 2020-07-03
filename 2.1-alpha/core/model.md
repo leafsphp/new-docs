@@ -13,7 +13,7 @@ Before getting started, be sure to configure a database connection with a `.env`
 ## Leaf Model Conventions
 Now, let's look at an example `Flight` model, which we will use to retrieve and store information from our `flights` database table:
 
-```js
+```php
 <?php
 
 use Leaf\Model;
@@ -27,7 +27,7 @@ class Flight extends Model
 #### Table Names
 Note that we did not tell Leaf which table to use for our `Flight` model. By convention, the "snake case", plural name of the class will be used as the table name unless another name is explicitly specified. So, in this case, Leaf will assume the `Flight` model stores records in the `flights` table. You may specify a custom `table` by defining a table property on your model:
 
-```js
+```php
 <?php
 
 use Leaf\Model;
@@ -46,7 +46,7 @@ class Flight extends Model
 #### Primary Keys
 Leaf will also assume that each table has a primary key column named id. You may define a protected `$primaryKey` property to override this convention:
 
-```js
+```php
 <?php
 
 use Leaf\Model;
@@ -64,7 +64,7 @@ class Flight extends Model
 
 In addition, Leaf assumes that the primary key is an incrementing integer value, which means that by default the primary key will automatically be cast to an int. If you wish to use a non-incrementing or a non-numeric primary key you must set the public `$incrementing` property on your model to false:
 
-```js
+```php
 /**
 * Indicates if the IDs are auto-incrementing.
 *
@@ -75,7 +75,7 @@ public $incrementing = false;
 
 If your primary key is not an integer, you should set the protected `$keyType` property on your model to string:
 
-```js
+```php
 /**
 * The "type" of the auto-incrementing ID.
 *
@@ -87,7 +87,7 @@ protected $keyType = 'string';
 #### Timestamps
 By default, Leaf expects `created_at` and `updated_at` columns to exist on your tables. If you do not wish to have these columns automatically managed by Leaf, set the $timestamps property on your model to false:
 
-```js
+```php
 <?php
 
 use Leaf\Model;
@@ -105,7 +105,7 @@ class Flight extends Model
 
 If you need to customize the format of your timestamps, set the `$dateFormat` property on your model. This property determines how date attributes are stored in the database, as well as their format when the model is serialized to an array or JSON:
 
-```js
+```php
 /**
 * The storage format of the model's date columns.
 *
@@ -116,7 +116,7 @@ protected $dateFormat = 'U';
 
 If you need to customize the names of the columns used to store the timestamps, you may set the `CREATED_AT` and `UPDATED_AT` constants in your model:
 
-```js
+```php
 class Flight extends Model
 {
     const CREATED_AT = 'creation_date';
@@ -127,7 +127,7 @@ class Flight extends Model
 #### Database Connection
 By default, all Leaf models will use the default database connection configured for your application. If you would like to specify a different connection for the model, use the `$connection` property:
 
-```js
+```php
 <?php
 
 use Leaf\Model;
@@ -148,7 +148,7 @@ class Flight extends Model
 ## Default Attribute Values
 If you would like to define the default values for some of your model's attributes, you may define an $attributes property on your model:
 
-```js
+```php
 <?php
 
 use Leaf\Model;
@@ -171,7 +171,7 @@ class Flight extends Model
 ## Retrieving Models
 Once you have created a model and its associated database table, you are ready to start retrieving data from your database. Think of each Leaf model as a powerful query builder allowing you to fluently query the database table associated with the model. For example:
 
-```js
+```php
 <?php
 
 $flights = Flight::all();
@@ -184,7 +184,7 @@ foreach ($flights as $flight) {
 #### Adding Additional Constraints
 The Leaf all method will return all of the results in the model's table. Since each Leaf model serves as a query builder, you may also add constraints to queries, and then use the get method to retrieve the results:
 
-```js
+```php
 $flights = Flight::where('active', 1)->orderBy('name', 'desc')->take(10)->get();
 ```
 
@@ -193,7 +193,7 @@ $flights = Flight::where('active', 1)->orderBy('name', 'desc')->take(10)->get();
 #### Refreshing Models
 You can refresh models using the `fresh` and `refresh` methods. The `fresh` method will re-retrieve the model from the database. The existing model instance will not be affected:
 
-```js
+```php
 $flight = Flight::where('number', 'FR 900')->first();
 
 $freshFlight = $flight->fresh();
@@ -201,7 +201,7 @@ $freshFlight = $flight->fresh();
 
 The `refresh` method will re-hydrate the existing model using fresh data from the database. In addition, all of its loaded relationships will be refreshed as well:
 
-```js
+```php
 $flight = Flight::where('number', 'FR 900')->first();
 
 $flight->number = 'FR 456';
@@ -218,7 +218,7 @@ $flight->number; // "FR 900"
 ### Inserts
 To create a new record in the database, create a new model instance, set attributes on the model, then call the save method:
 
-```js
+```php
 <?php
 
 // this is a controller file
@@ -249,7 +249,7 @@ In this example, we assign the name parameter from the incoming HTTP request to 
 ### Updates
 The save method may also be used to update models that already exist in the database. To update a model, you should retrieve it, set any attributes you wish to update, and then call the save method. Again, the updated_at timestamp will automatically be updated, so there is no need to manually set its value:
 
-```js
+```php
 $flight = Flight::find(1);
 
 $flight->name = 'New Flight Name';

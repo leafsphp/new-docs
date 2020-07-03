@@ -8,7 +8,7 @@ In this experiment, we'll be looking at how to validate a AJAX requests and send
 
 For this section, we'll be working at a request holding JSON encoded data of an email and a password.
 
-```js
+```php
 {
 	"email": "mychi.darko@gmail.com",
 	"passowrd": "@mY047dhj7"
@@ -23,7 +23,7 @@ In a "realworld app", such data is usually submitted to an [API endpoint](https:
 
 We'll use leaf's core router for this.
 
-```js
+```php
 require "vendor/autoload.php";
 
 $app = new Leaf\App;
@@ -40,7 +40,7 @@ This basic example sets up a POST route to "AppUrl/validate", read [routing docs
 
 For our validation, we'll simply want to make sure that our email is a valid email and our password is present
 
-```js
+```php
 $app->post("/validate", function() use($app, $form) {
 	$validation = $form->validate([
 		"email" => "email",
@@ -59,7 +59,7 @@ Dont forget to check [Leaf Form's documentation](2.0/core/forms)
 
 So at the end, we have an app looking like this.
 
-```js
+```php
 require "vendor/autoload.php";
 
 $app = new Leaf\App;

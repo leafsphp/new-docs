@@ -8,14 +8,14 @@ Leaf's "simple query builder" currently supports Mysqli and PDO connections, tho
 
 <span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span> The Leaf Mysqli package has been bound to the Leaf object, and can therefore be called without initialising the package.
 
-```js
+```php
 $leaf->db->connect();
 ```
 
 ## Initialising Leaf DB
 Leaf DB has 2 different packages, 1 for mysqli and the other for PDO. So you can import which ever package you wish to use. **Leaf recommends using the mysqli package.**
 
-```js
+```php
 use Leaf\Db\Mysqli;
 
 $db = new Mysqli();
@@ -35,13 +35,13 @@ $db = new PDO();
 The first thing you need to do to use Leaf DB is to connect to your database. This can be achieved with `connect()`
 
 #### On the leaf object <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
-```js
+```php
 $leaf = new Leaf\App();
 $leaf->db->connect($host, $user, $password, $dbname);
 ```
 
 #### DB Mysqli
-```js
+```php
 use Leaf\Db\Mysqli;
 
 $db = new Mysqli();
@@ -49,7 +49,7 @@ $db->connect($host, $user, $password, $dbname);
 ```
 
 #### DB 
-```js
+```php
 use Leaf\Db\PDO;
 
 $db = new PDO();
@@ -64,7 +64,7 @@ This will set the connection for use within Leaf DB.
 ### Making simple queries
 Queries with with Leaf DB are much like what you're used to. Though a query builder, we wan't to maintain the flexibility of normal database queries, hence, we provided the query() method to make your normal database queries.
 
-```js
+```php
 $leaf->db->connect($host, $user, $password, $dbname);
 
 $leaf->get('/users/all', function() use($leaf) {
@@ -74,7 +74,7 @@ $leaf->get('/users/all', function() use($leaf) {
 ```
 As normal as this seems, we take it a step further by providing you with a much simpler way to use prepared statements.
 
-```js
+```php
 $leaf->db->connect($host, $user, $password, $dbname);
 
 $leaf->get('/users/{id}', function($id) use($leaf) {
@@ -98,27 +98,27 @@ We've looked at making queries, but then `query()` still makes you type out what
 ### Updating Data
 This operation uses UPDATE. With Leaf DB:
 
-```js
+```php
 $db->update();
 ```
 
 ##### Update
 We use Leaf DB's update method which takes in a "table", a "column-value" to update and "conditions".
 
-```js
+```php
 $db->update("posts", "title = 'Post 1'", "title = 'Post One'");
 ```
 
 This will look for a post with the title of "Post One" and change it to "Post 1".
 You can also have multiple conditions:
 
-```js
+```php
 $db->update("posts", "title = 'Post 1' AND author = 'Mychi Darko'", "title = 'Post One'");
 ```
 
 ##### With Parameter Binding
 
-```js
+```php
 $db->update("posts", "title = ? AND author = ?", "title = ?", ["Post 1", "Mychi Darko", "Post One"]);
 ```
 
@@ -127,14 +127,14 @@ $db->update("posts", "title = ? AND author = ?", "title = ?", ["Post 1", "Mychi 
 ### Deleting Data
 This operation uses DELETE. With Leaf DB:
 
-```js
+```php
 $db->delete();
 ```
 
 ##### Delete
 We use Leaf DB's delete method which takes in a "table", and "conditions".
 
-```js
+```php
 $db->delete("posts", "title = 'Post 1'");
 ```
 
@@ -145,14 +145,14 @@ This will look for a post with the title of "Post 1" and delete it.
 ### Row Count
 Get the number of rows from select
 
-```js
+```php
 $db->select("posts")->count();
 ```
 
 ### Connection Close
 Close the connection
 
-```js
+```php
 $db->close();
 ```
 

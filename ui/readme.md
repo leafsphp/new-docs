@@ -4,7 +4,7 @@ Leaf UI is a simple UI library for PHP. Leaf UI lets you quickly scaffold webpag
 
 ## Simple Example
 
-```js
+```php
 $ui = new Leaf\UI;
 
 $ui::render($ui::form("method", "action", [
@@ -58,7 +58,7 @@ It takes in 4 parameters:
 
 	- If the value is not one of the above or this field is left blank, a normal HTML is created `<element attributes>children</element>`
 
-```js
+```php
 $ui::create_element("h2", ["id" => "title"], [], type)
 ```
 
@@ -72,7 +72,7 @@ It takes in 2 parameters:
 
 - Attributes for your style tag when Leaf UI renders in the browser. Leave blank or an empty array if there are no attributes (array)
 
-```js
+```php
 // no attributes/ class selector
 $ui::create_styles([
 	".home" => "background: #fefefe;"
@@ -107,7 +107,7 @@ This is an element created to handle loops in your Leaf UI. Since your entire Le
 
 The callable should return an element
 
-```js
+```php
 $users = [
 	["name" => "user 1", "rank" => "D"],
 	["name" => "user 2", "rank" => "F"],
@@ -126,7 +126,7 @@ $ui::_row([
 
 Also, you can access both the key and value of an array during the loop.
 
-```js
+```php
 $user = ["name" => "user 1", "rank" => "D"];
 
 $ui::_column([
@@ -145,7 +145,7 @@ This method as the name suggests, generates a random id. Under the hood Leaf UI 
 
 - A string to add to id, usually an element name (optional)
 
-```js
+```php
 $ui::random_id("div");
 ```
 
@@ -156,7 +156,7 @@ This method allows you to output the UI you've created into the browser. It take
 - The Leaf UI to render
 - A string to render before the Leaf UI (optional)
 
-```js
+```php
 $html = $ui::body([...]);
 $ui::render($html);
 

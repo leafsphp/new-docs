@@ -4,7 +4,7 @@ Out-of-the box Leaf's Core router will run in any (sub)folder you place it into 
 
 Say you have a server hosting the domain www.example.org using public_html/ as its document root, with this little entry script index.php:
 
-```js
+```php
 $leaf->get('/', function() { echo 'Index'; });
 $leaf->get('/hello', function() { echo 'Hello!'; });
 ```
@@ -16,7 +16,7 @@ $leaf->get('/hello', function() { echo 'Hello!'; });
 ## Disabling subfolder support
 In case you don't want Leaf's Core router to automatically adapt itself to the folder its being placed in, it's possible to manually override the basePath by calling `setBasePath()`. This is necessary in the (uncommon) situation where your entry script and your entry URLs are not tightly coupled (e.g. when the entry script is placed into a subfolder that does not need be part of the URLs it responds to)..
 
-```js
+```php
 // Override auto base path detection
 $leaf->setBasePath('/');
 

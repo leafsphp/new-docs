@@ -8,7 +8,7 @@ To directly access Leaf Views, you have to initialise the `Leaf\View` class, how
 
 You can use the Leaf application’s` render()` method to ask the current view object to render a template with a given set of variables. The Leaf application’s` render()` method will echo() the output returned from the view object to be captured by an output buffer and appended automatically to the response object’s body. This assumes nothing about how the template is rendered; that is delegated to the view object.
 
-```js
+```php
 $leaf->get('/books/:id', function ($id) use ($leaf) {
     $leaf->render('view.php', ['id' => $id]);
 });
@@ -16,18 +16,18 @@ $leaf->get('/books/:id', function ($id) use ($leaf) {
 
 If you need to pass data from the route callback into the view object, you must explicitly do so by passing an array as the second argument of the Leaf application’s `render()` method like this:
 
-```js
+```php
 $leaf->render('view.php', ['id' => $id]);
 ```
 
 You can also set the HTTP response status when you render a template:
 
-```js
+```php
 $leaf->render('500.php', ['id' => $id], 500);
 ```
 
 #### Example Template
-```js
+```php
 <p>This is user number <?php echo $id; ?></p>
 ```
 
@@ -37,13 +37,13 @@ $leaf->render('500.php', ['id' => $id], 500);
 
 A Leaf application delegates rendering of templates to its view object. A custom view is a subclass of `\Leaf\View` that implements this interface:
 
-```js
+```php
 public render(string $template);
 ```
 
 The view object’s `render` method must return the rendered content of the template specified by its `$template` argument. When the custom view’s render method is invoked, it is passed the desired template pathname (relative to the Leaf application’s “templates.path” setting) as its argument. Here’s an example custom view:
 
-```js
+```php
 <?php
 class CustomView extends \Leaf\View
 {
@@ -60,7 +60,7 @@ The custom view can do whatever it wants internally so long as it returns the te
 
 ### Example View
 
-```js
+```php
 <?php
 class CustomView extends \Leaf\View
 {
@@ -76,7 +76,7 @@ class CustomView extends \Leaf\View
 
 If the custom view is not discoverable by a registered autoloader, it must be required before the Leaf application is instantiated.
 
-```js
+```php
 <?php
 require 'CustomView.php';
 
@@ -102,13 +102,13 @@ The view object’s `setData()` and `appendData()` methods inject data into the 
 #### Setting Data
 The view object’s `setData()` instance method will overwrite existing view data. You may use this method to set a single variable to a given value:
 
-```js
+```php
 $leaf->view->setData('color', 'red');
 ```
 
 The view’s data will now contain a key “color” with value “red”. You may also use the view’s `setData()` method to batch assign an entire array of data:
 
-```js
+```php
 $leaf->view->setData([
     'color' => 'red',
     'size' => 'medium'
@@ -120,7 +120,7 @@ Remember, the view’s `setData()` method will replace all previous data.
 #### Appending Data
 The view object also has a `appendData()` method that appends data to the view’s existing data. This method accepts an array as its one and only argument:
 
-```js
+```php
 $leaf->view->appendData([
     'foo' => 'bar'
 ]);

@@ -3,7 +3,7 @@ As explained [before](2.1intro/htaccess), Leaf uses a single root file, to which
 
 The router module is tied directly to Leaf Core, so once you initialise leeaf, you can use routing
 
-```js
+```php
 $leaf = new Leaf\App();
 ```
 
@@ -15,7 +15,7 @@ Although Leaf provides you with a default router, you are free to import and use
 composer require imaginary/router
 ```
 2. Import and use it in your project
-```js
+```php
 $leaf = new Leaf\App();
 // initialise imaginary router
 $imr = new Imaginary\Router();
@@ -34,7 +34,7 @@ You can add a route that handles only GET HTTP requests with the Leaf router's g
 - The route pattern (with optional named placeholders or PCRE based patterns)
 - The route callback
 
-```js
+```php
 $leaf->get('/home', function() {
   // your code
 });
@@ -47,7 +47,7 @@ You can add a route that handles only POST HTTP requests with the Leaf router's 
 - The route pattern (with optional named placeholders or PCRE based patterns)
 - The route callback
 
-```js
+```php
 $leaf->post('/users/add', function() use($request) {
   $user = $request->get('user');
   // create a new user
@@ -62,7 +62,7 @@ You can add a route that handles only PUT HTTP requests with the Leaf router’s
 - The route pattern (with optional named placeholders or PCRE based patterns)
 - The route callback
 
-```js
+```php
 $leaf->put('/book/edit/{id}', function($id) {
   // your code
 });
@@ -74,7 +74,7 @@ You can add a route that handles only DELETE HTTP requests with the Leaf router'
 - The route pattern (with optional named placeholders or PCRE based patterns)
 - The route callback
 
-```js
+```php
 $leaf->delete('/quotes/{id}', function($id) {
   // delete quote
 });
@@ -86,7 +86,7 @@ You can add a route that handles only OPTIONS HTTP requests with the Leaf router
 - The route pattern (with optional named placeholders or PCRE based patterns)
 - The route callback
 
-```js
+```php
 $leaf->options('/quotes/{id}', function($id) {
   // return headers
 });
@@ -98,7 +98,7 @@ You can add a route that handles only PATCH HTTP requests with the Leaf router's
 - The route pattern (with optional named placeholders or PCRE based patterns)
 - The route callback
 
-```js
+```php
 $leaf->patch('/post/{id}', function($id) {
   // your code
 });
@@ -111,7 +111,7 @@ You can add a route that handles all HTTP requests with the Leaf router's all() 
 - The route pattern (with optional named placeholders or PCRE based patterns)
 - The route callback
 
-```js
+```php
 $leaf->all('/post/{id}', function($id) {
   // your code
 });
@@ -123,7 +123,7 @@ This section assumes you've read [working with controllers](2.1-alpha/routing/co
 
 A resource route simply creates all the routes needed to successfully handle a particular feature. This sounds a bit bleak, let's look at an example.
 
-```js
+```php
 $app = new Leaf\App;
 
 $app->resource("/posts", "PostsController");
@@ -133,7 +133,7 @@ $app->run();
 
 The code above is equivalent to this:
 
-```js
+```php
 $app = new Leaf\App;
 
 $this->match("GET|HEAD", "/posts", "$controller@index");
@@ -157,7 +157,7 @@ You can add a route that handles a couple of HTTP methods with the Leaf router's
 - The route pattern (with optional named placeholders or PCRE based patterns)
 - The route callback
 
-```js
+```php
 $leaf->match('GET|POST', '/people', function() {
   // your code
 });
@@ -167,7 +167,7 @@ $leaf->match('GET|POST', '/people', function() {
 
 After setting all the routes, you'll need to dispatch the routes. This is achieved through Leaf's run() method.
 
-```js
+```php
 $leaf->run();
 ```
 
@@ -179,7 +179,7 @@ Leaf's core router has specially prepared for 404 errors, and is bent on giving 
 
 For this reason, we've prepared the set404() method. In version 2, you can just call set404 without passing in any function, this will set the 404 handler to the default Leaf 404 page. You can change this at any time by passing in your custom page
 
-```js
+```php
 // will use default Leaf 404 page(new in v2.0)
 $leaf->set404();
 

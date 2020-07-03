@@ -10,7 +10,7 @@ The request object is an abstraction of the current HTTP request and allows you 
 
 Since Request is already bound to the Leaf instance, you can do this:
 
-```js
+```php
 $leaf = new Leaf\App();
 
 $leaf->post("/user/change-username", function() use($leaf) {
@@ -24,7 +24,7 @@ Although we've added this, we don't want to force you to do stuff in only one wa
 
 With this method, you manually initialise the Request object, and then pass it into your route. Note that in version 2, `\Leaf\Http\Request` has been shortened to `\Leaf\Http\Request`.
 
-```js
+```php
 $leaf = new Leaf\App();
 $request = new Leaf\Http\Request();
 
@@ -39,7 +39,7 @@ $leaf->post("/items/add", function() use($request) {
 
 `get()` is a general purpose method which retrieves a particular item from the request body. In simpler terms, it works like `$_POST['key']` but works for all request types. It takes in one parameter: the key of the parameter you wish to get.
 
-```js
+```php
 $leaf->post('/name/add', function() use($leaf) {
   $name = $leaf->request->get('name');
 });
@@ -60,7 +60,7 @@ $id = $leaf->request->get('id');
 
 `body()` is another general purpose method which retrieves the key => value pairs of the entire request body. In simpler terms, it works like `$_POST` but works for all request types.
 
-```js
+```php
 $leaf->post('/name/add', function() use($leaf) {
   $body = $leaf->request->body();
 });
@@ -76,7 +76,7 @@ $leaf->post('/name/add', function() use($leaf) {
 
 A Leaf application will automatically parse all HTTP request headers. You can access the request headers using the request object’s public headers property. The headers property is an instance of \Leaf\Helper\Set, meaning it provides a simple, standardized interface to interactive with the HTTP request headers.
 
-```js
+```php
 <?php
 $leaf = new \Leaf\App();
 
@@ -95,7 +95,7 @@ The HTTP specification states that HTTP header names may be uppercase, lowercase
 
 Every HTTP request has a method (e.g. GET or POST). You can obtain the current HTTP request method via the Leaf application’s request object:
 
-```js
+```php
 /**
  * What is the request method?
  * @return string (e.g. GET, POST, PUT, DELETE)
@@ -159,7 +159,7 @@ When using a Javascript framework like MooTools or jQuery to execute an XMLHttpR
 
 Use the request object’s `isAjax()` or `isXhr()` method to tell if the current request is an XHR/Ajax request:
 
-```js
+```php
 $isXHR = $leaf->request->isAjax();
 $isXHR = $leaf->request->isXhr();
 ```
@@ -174,7 +174,7 @@ The Leaf application’s request object provides several helper methods to fetch
 
 Fetch the request’s content type (e.g. “application/json;charset=utf-8”):
 
-```js
+```php
 <?php
 $leaf->request->getContentType();
 ```
@@ -183,7 +183,7 @@ $leaf->request->getContentType();
 
 Fetch the request’s media type (e.g. “application/json”):
 
-```js
+```php
 <?php
 $leaf->request->getMediaType();
 ```
@@ -192,7 +192,7 @@ $leaf->request->getMediaType();
 
 Fetch the request’s media type parameters (e.g. [charset => “utf-8”]):
 
-```js
+```php
 <?php
 $leaf->request->getMediaTypeParams();
 ```
@@ -201,7 +201,7 @@ $leaf->request->getMediaTypeParams();
 
 Fetch the request’s content character set (e.g. “utf-8”):
 
-```js
+```php
 <?php
 $leaf->request->getContentCharset();
 ```
@@ -210,7 +210,7 @@ $leaf->request->getContentCharset();
 
 Fetch the request’s content length:
 
-```js
+```php
 <?php
 $leaf->request->getContentLength();
 ```
@@ -219,7 +219,7 @@ $leaf->request->getContentLength();
 
 Fetch the request’s host (e.g. “leafphp.netlify.com”):
 
-```js
+```php
 <?php
 $leaf->request->getHost();
 ```
@@ -228,7 +228,7 @@ $leaf->request->getHost();
 
 Fetch the request’s host with port (e.g. “leafphp.netlify.com:80”):
 
-```js
+```php
 <?php
 $leaf->request->getHostWithPort();
 ```
@@ -237,7 +237,7 @@ $leaf->request->getHostWithPort();
 
 Fetch the request’s port (e.g. 80):
 
-```js
+```php
 <?php
 $leaf->request->getPort();
 ```
@@ -246,7 +246,7 @@ $leaf->request->getPort();
 
 Fetch the request’s scheme (e.g. “http” or “https”):
 
-```js
+```php
 <?php
 $leaf->request->getScheme();
 ```
@@ -255,7 +255,7 @@ $leaf->request->getScheme();
 
 Fetch the request’s path (root URI + resource URI):
 
-```js
+```php
 <?php
 $leaf->request->getPath();
 ```
@@ -264,7 +264,7 @@ $leaf->request->getPath();
 
 Fetch the request’s URL (scheme + host [ + port if non-standard ]):
 
-```js
+```php
 <?php
 $leaf->request->getUrl();
 ```
@@ -273,7 +273,7 @@ $leaf->request->getUrl();
 
 Fetch the request’s IP address:
 
-```js
+```php
 <?php
 $leaf->request->getIp();
 ```
@@ -282,7 +282,7 @@ $leaf->request->getIp();
 
 Fetch the request’s referrer:
 
-```js
+```php
 <?php
 $leaf->request->getReferrer();
 ```
@@ -291,7 +291,7 @@ $leaf->request->getReferrer();
 
 Fetch the request’s user agent string:
 
-```js
+```php
 <?php
 $leaf->request->getUserAgent();
 ```
@@ -314,7 +314,7 @@ Assume the Leaf application is installed in a physical subdirectory **/foo** ben
 
 You can get the HTTP request’s root URI and resource URI with the request object’s `getRootUri()` and `getResourceUri()` methods:
 
-```js
+```php
 $leaf = new \Leaf\App();
 
 //Get root URI

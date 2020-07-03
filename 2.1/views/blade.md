@@ -2,12 +2,12 @@
 
 This is Leaf's implementation of Laravel's blade templating engine. It is an independent package, but has been added and bound to Leaf Core. So just like other packages, you don't need to instanciate it if you don't want to.
 
-```js
+```php
 // on the leaf object
 $leaf->blade;
 ```
 
-```js
+```php
 // initialising the package
 $blade = new Leaf\Blade();
 ```
@@ -18,7 +18,7 @@ To further understand blade, you can view the official documentation [http://lar
 
 Leaf Blade only supports directory configurations, which can be passed as params on initialisation.
 
-```js
+```php
 use Leaf\Blade;
 
 // Blade("template dir", "cache dir");
@@ -27,7 +27,7 @@ $blade = new Blade('app/views', 'app/views/cache');
 
 Not to worry, you can configure blade at a later time after initialisation.
 
-```js
+```php
 $blade = new Leaf\Blade;
 
 // somewhere, maybe in a different file
@@ -36,20 +36,20 @@ $blade->configure("app/views", "app/views/cache");
 
 Since Blade is also bound directly to the Leaf object, you can directly do this
 
-```js
+```php
 $leaf->blade->configure("app/views", "app/views/cache");
 ```
 
 Now that this is done, we can render our blade template. This is done with `make`.
 
-```js
+```php
 // don't forget to chain the render method
 echo $blade->make('index', ['name' => 'Michael Darko'])->render(); // index.blade.php
 ```
 
 Alternatively you can use the shorthand method render:
 
-```js
+```php
 echo $blade->render('index', ['name' => 'Michael Darko']);
 ```
 
@@ -69,7 +69,7 @@ We can have this as our template index.blade.php
 
 You can also extend Blade using the `directive()` function:
 
-```js
+```php
 $blade->directive('datetime', function ($expression) {
     return "<?php echo with({$expression})->format('F d, Y g:i a'); ?>";
 });

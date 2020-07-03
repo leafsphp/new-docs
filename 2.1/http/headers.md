@@ -6,7 +6,7 @@ Leaf gives you simple methods to manage both request headers and response header
 
 A Leaf application will automatically parse all HTTP request headers. You can directly retrieve the request headers as an array using the `getRequestHeaders` method on the Leaf object.
 
-```js
+```php
 $leaf->getRequestHeaders();
 ```
 
@@ -14,7 +14,7 @@ $leaf->getRequestHeaders();
 
 You can access the request headers using the request object’s public `headers` property. The `headers` property is an instance of `\Leaf\Helper\Set`, meaning it provides a simple, standardized interface to interactive with the HTTP request headers.
 
-```js
+```php
 $request = new \Leaf\Http\Request();
 
 // Get request headers as associative array
@@ -32,13 +32,13 @@ The HTTP specification states that HTTP header names may be uppercase, lowercase
 
 The HTTP response returned to the HTTP client will have a header. The HTTP header is a list of keys and values that provide metadata about the HTTP response. You can use the Leaf application’s response object to set the HTTP response’s header. The response object has a public property `headers` that is an instance of `\Leaf\Helper\Set;` this provides a simple, standardized interface to manipulate the HTTP response headers.
 
-```js
+```php
 $leaf->response->headers->set('Content-Type', 'application/json');
 ```
 
 You may also fetch headers from the response object’s `headers` property, too:
 
-```js
+```php
 $contentType = $leaf->response->headers->get('Content-Type');
 ```
 
@@ -48,7 +48,7 @@ If a header with the given name does not exist, `null` is returned. You may spec
 
 To quickly set the content type of your response, leaf has provided some methods. Currently, there's only support for HTML and JSON, but you'll be seeing better support in future releases.
 
-```js
+```php
 // Quickly set the content-type of response to html
 $leaf->response->headers->contentHtml();
 

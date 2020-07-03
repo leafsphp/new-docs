@@ -6,7 +6,7 @@ Leaf's Core router supports Before Route Middlewares, which are executed before 
 
 Like route handling functions, you hook a handling function to a combination of one or more HTTP request methods and a specific route pattern.
 
-```js
+```php
 $leaf->before('GET|POST', '/admin/.*', function() {
     if (!isset($_SESSION['user'])) {
         header('location: /auth/login');
@@ -19,7 +19,7 @@ Unlike route handling functions, more than one before route middleware is execut
 ## Before Router Middlewares
 Before route middlewares are route specific. Using a general route pattern (viz. all URLs), they can become Before Router Middlewares (in other projects sometimes referred to as before app middlewares) which are always executed, no matter what the requested URL is.
 
-```js
+```php
 $leaf->before('GET', '/.*', function() {
     // ... this will always be executed
 });
@@ -28,7 +28,7 @@ $leaf->before('GET', '/.*', function() {
 ## After Router Middleware / Run Callback
 Run one (1) middleware function, name the After Router Middleware (in other projects sometimes referred to as after app middlewares) after the routing was processed. Just pass it along the $leaf->run() function. The run callback is route independent.
 
-```js
+```php
 $leaf->run(function() { … });
 ```
 Note: If the route handling function has exit()ed the run callback won't be run.

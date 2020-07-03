@@ -8,14 +8,14 @@ In later versions of Leaf, Leaf Db will be completely replacing the database pac
 
 There are 2 ways to use Leaf Db in your application. The first way would be to just call whatever method you need on the main db object.
 
-```js
+```php
 $app = new Leaf\App;
 $app->db->auto_connect();
 ```
 
 Alternatively, you could initialise it just like any other Leaf package, then call whatever method you need.
 
-```js
+```php
 $db = new Leaf\Db;
 $db->auto_connect();
 ```
@@ -30,7 +30,7 @@ There are 3 ways to connect your database.
 
 This method connects to the database when initializing Leaf Db.
 
-```js
+```php
 $db = new Leaf\Db("db_host", "user", "password", "db_name");
 ```
 
@@ -38,7 +38,7 @@ $db = new Leaf\Db("db_host", "user", "password", "db_name");
 
 Connect takes in 4 params just like the method above
 
-```js
+```php
 $db = new Leaf\Db;
 $db->connect("db_host", "user", "password", "db_name");
 ```
@@ -60,7 +60,7 @@ DB_PASSWORD=
 
 **App:**
 
-```js
+```php
 $db = new Leaf\Db;
 $db->auto_connect();
 ```
@@ -71,19 +71,19 @@ $db->auto_connect();
 
 Leaf Db provides a ton of functionality, with a bunch of powerful tools, but at the same time gives you a great deal of customizations with the `query` method.
 
-```js
+```php
 $users = $db->query("SELECT * FROM users")->fetchAll();
 ```
 
 You can also use parameter binding with `query`
 
-```js
+```php
 $db->query("SELECT * FROM users WHERE id = ?")->bind("1")->fetchObj();
 ```
 
 A shorter method would be to use `where`
 
-```js
+```php
 $db->query("SELECT * FROM users")->where("id", "1")->fetchObj();
 ```
 
@@ -91,7 +91,7 @@ You don't have to worry about security, where uses prepared statements by defaul
 
 You've seen all this, but guess what? There's something even shorter😵
 
-```js
+```php
 $db->select("users")->where("id", "1")->fetchObj();
 ```
 
@@ -106,7 +106,7 @@ It takes in 2 parameters:
 - The table to select items from
 - The columns to include (includes all by default)
 
-```js
+```php
 // returns all items
 $items = $db->select("items")->fetchAll();
 
@@ -118,7 +118,7 @@ $buyers = $db->select("buyers", "username, email")->fetchAll();
 
 `fetchAll` is a method that's used together with the `select` method. This method simply returns an array consisting of a lot of objects. It is mostly used when querying multiple rows.
 
-```js
+```php
 $items = $db->select("items")->fetchAll();
 ```
 
@@ -132,7 +132,7 @@ This method is used on queries which don't return anything like insert, update a
 
 This is just like `fetchAll` except that fetchObj is used on select queries usually involving one row
 
-```js
+```php
 $db->select("users")->where("id", "1")->fetchObj();
 ```
 
@@ -148,7 +148,7 @@ If `fetchAll` is used in this case, the result would look something like this:
 
 Also, note that `fetchObj` returns an object, so you can use the result like this
 
-```js
+```php
 $user = $db->select("users")->where("id", "1")->fetchObj();
 $user->id // not $user["id"]
 ```
@@ -157,7 +157,7 @@ $user->id // not $user["id"]
 
 This is just like the `fetchObj` method, except that it returns an associative array, not an object.
 
-```js
+```php
 $user = $db->select("users")->where("id", "1")->fetchAssoc();
 $user["id"]; // not $user->id
 ```
@@ -166,7 +166,7 @@ $user["id"]; // not $user->id
 
 `Insert` provides a much simpler syntax for making insert queries.
 
-```js
+```php
 $db->insert("users") // faster than $db->query("INSERT INTO users")
 ```
 
@@ -174,19 +174,19 @@ $db->insert("users") // faster than $db->query("INSERT INTO users")
 
 This method is used on `insert` and `update` just like how `where` is used on `select` and `delete`.
 
-```js
+```php
 $db->insert("users")->params("username", "mychi");
 ```
 
 To actually run this query, you have to call `execute`.
 
-```js
+```php
 $db->insert("users")->params("username", "mychi")->execute();
 ```
 
 This inserts a user with a username of mychi into the users table. But what if you wanted to add more params, simple!
 
-```js
+```php
 $db->insert("users")->params([
   "username" => "mychi",
   "email" => "mickdd22@gmail.com"
@@ -195,7 +195,7 @@ $db->insert("users")->params([
 
 You're free to arrange this query anyhow you see fit, it's still considered as a single chain.
 
-```js
+```php
 $db->insert("users")
    ->params([
      "username" => "mychi",
@@ -211,7 +211,7 @@ What if you already registered someone with the username mychi, this tiny flaw c
 
 Just as the name implies, `unique` helps prevent duplicates in your database, fun fact, just chain one more method for this functionality🤗
 
-```js
+```php
 $db->insert("users")
    ->params([
      "username" => "mychi",
@@ -224,13 +224,13 @@ $db->insert("users")
 
 If you have a 100 unique values, don't feel shy, just line them all up.
 
-```js
+```php
 ->unique("username", "email", "what-not", ...)
 ```
 
 Alternatively, you could just pack a truck load full of uniques in an array
 
-```js
+```php
 ->unique(["username", "email", "what-not", ...])
 ```
 
@@ -238,7 +238,7 @@ Alternatively, you could just pack a truck load full of uniques in an array
 
 Quickly write an update query.
 
-```js
+```php
 $db->update("users")->params("location", "Ghana")->where("id", "1")->execute();
 ```
 
@@ -248,13 +248,13 @@ This is generally how an update looks like. Just like with insert, you can add u
 
 Let's jump straight in for an example.
 
-```js
+```php
 $db->delete("users")->execute();// careful now🙂
 ```
 
 This code above, ladies and gentlemen, will wipe all your users resulting in 7 digit loses🤞
 
-```js
+```php
 $db->delete("users")->where("id", "1")->execute();
 ```
 
@@ -270,7 +270,7 @@ There are times when you have to insert data you don't know about. What happens 
 
 Validate makes sure that correct information is saved in your database. You simply need to chain the `validate` method.
 
-```js
+```php
 $db->insert("users")
    ->params([
      "username" => "mychi",
@@ -283,7 +283,7 @@ $db->insert("users")
 
 Validate takes in 2 parameters, a field to validate and a validation rule. You can find all the validation rules and what they do [here](2.1/core/forms?id=multiple-rule-validation). So what if you need to validate more than 1 parameter?
 
-```js
+```php
 $db->insert("users")
    ->params([
      "username" => "mychi",
@@ -303,11 +303,11 @@ Amazing right?!
 
 Not all information which is retrieved from the database is sent over to the client side or is added to the session or cookies. Usually, some fields are left out for "security" reasons. `hidden` returns the retrieved data without the `hidden` fields.
 
-```js
+```php
 $db->select("users")->hidden("remember_token", "reset_q_id")->fetchAll();
 ```
 
-```js
+```php
 $db->select("users")->where("id", "1")->hidden("remember_token", "reset_q_id")->fetchObj();
 ```
 
@@ -315,13 +315,13 @@ $db->select("users")->where("id", "1")->hidden("remember_token", "reset_q_id")->
 
 That's right, just imagine doing the opposite of `hidden`, instead of hiding fields from the query data, `add` lets you add your own fields into the query data.
 
-```js
+```php
 $db->select("users")->add("tx_id", gID())->fetchAll();
 ```
 
 This query adds a `tx_id` field with a value generated from `gID` to every user
 
-```js
+```php
 $db->select("users")->where("id", "1")->add("tx_id", "d362d7t2366")->fetchObj();
 ```
 
@@ -331,19 +331,19 @@ This is similar as the query above, except that this query is on the scale of a 
 
 We've already seen `bind` in action, but we've not actually talked about it. This method allows you to bind parameters into your query.
 
-```js
+```php
 $db->select("users WHERE username = ?")->bind("mychi")->fetchAssoc();
 ```
 
 And yet again another syntax🧐 As said above, Leaf  Db is highly customizable, and allows you to write queries in a way that suits you. This statement above binds `mychi` to the username. There's also a second parameter which you really won't be using: the type of parameter.
 
-```js
+```php
 $db->select("users WHERE username = ?")->bind("mychi", "s")->fetchAssoc();
 ```
 
 The `s` for the second parameter shows that the parameter you're binding to the username is a string.
 
-```js
+```php
 $db->select("users WHERE username = ?")->bind(["mychi" => "s"])->fetchAssoc();
 ```
 
@@ -353,7 +353,7 @@ You can also pass in an array with multiple values.
 
 When retrieving data from your database for use in applications, you might want to show only a specific number of values.
 
-```js
+```php
 $itemsPerPage = 15;
 $items = $db->select("items")->limit($itemsPerPage)->fetchAll();
 ```
@@ -362,14 +362,14 @@ $items = $db->select("items")->limit($itemsPerPage)->fetchAll();
 
 Errors come up all the time, user errors, that is. What happens when validation fails, or if someone has already registered a username. Leaf Db provides a simple way to track these errors.
 
-```js
+```php
 $res = $db->insert("users")->params("username", "mychi")->unique("username")->execute();
 if ($res === false) $app->response->throwErr($db->errors());
 ```
 
 Using `$db->errors()` returns an array holding any errors which caused the query to fail. eg:
 
-```js
+```php
 [
   "email" => "email already exists",
   "username" => "username can only contain characters 0-9, A-z and _

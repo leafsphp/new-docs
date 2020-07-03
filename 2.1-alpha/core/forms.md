@@ -4,7 +4,7 @@ Since v1.5.0 Leaf Form has totally replaced Simple Validation from v1.2.0 which 
 
 To use Leaf Form, you simply have to import it:
 
-```js
+```php
 $form = new Leaf\Form;
 ```
 
@@ -14,7 +14,7 @@ $form = new Leaf\Form;
 
 sanitizeInput offers basic security for input data, i.e. sanitizing input against SQL injection.
 
-```js
+```php
 $username = $form->sanitizeInput($username);
 ```
 
@@ -22,7 +22,7 @@ $username = $form->sanitizeInput($username);
 
 isEmpty checks a field to see if it's empty. If it's empty, it throws an error (the error message passed). It takes in 2 parameters: the data to test and the error message if it's empty(optional).
 
-```js
+```php
 $form->isEmpty($username); // error will be: This field is required
 $form->isEmpty($username, "Username is required");
 ```
@@ -31,7 +31,7 @@ $form->isEmpty($username, "Username is required");
 
 isNull checks a field to see if it's null. If it's null, it throws an error (the error message passed). It takes in 2 parameters: the data to test and the error message if it's null(optional).
 
-```js
+```php
 $form->isNull($username); // error will be: This field cannot be null
 $form->isNull($username, "Username can't be null");
 ```
@@ -40,7 +40,7 @@ $form->isNull($username, "Username can't be null");
 
 This creates a form and submits it. You can call it a virtual form.  It takes in 3 parameters, the request type, the form action and the form data. Currently, it only supports GET and POST requests.
 
-```js
+```php
 $form->submit("POST", "/book/create", [
 	"title" => "Book One",
 	"author" => "Mychi"
@@ -53,7 +53,7 @@ Leaf now provides a much simpler way to validate a parameter using Leaf Forms. I
 
 Parameters which fail the form validation are saved in the form's errors which can be accessed with errors(). So In case the validation fails, `validate` returns false, else true.
 
-```js
+```php
 $form->validate([
 	"username" => "validUsername",
 	"email" => "email",
@@ -65,7 +65,7 @@ $form->validate([
 
 You can now pass an array as the rule parameter. If there's more than one, rule, both of them will apply. Also, pls make sure not to use contradictory rules like `number` and `textOnly` or `validUsername` and `email`.
 
-```js
+```php
 $form->validate([
 	"username" => "validUsername",
 	"email" => "email",
@@ -89,7 +89,7 @@ This is a list of all supported validate rules
 
 Remember we talked about Leaf Form errors? Leaf Form holds errors for all failed tests, you get all these errors back with returnErrors
 
-```js
+```php
 $form->isNull($username, "username", "Username can't be null");
 
 $errors = $form->errors();

@@ -14,7 +14,7 @@ You can view installation for Leaf v2.1 [here](2.1/intro/)
 
 Leaf Db is a new lightweight but powerful query builder which allows you quickly write dynamic queries, validate and seperate data in just a single line of code.
 
-```js
+```php
 $db = new Leaf\Db;
 $db->auto_connect();
 
@@ -31,7 +31,7 @@ $user = $db->select("users")
 
 Just a little handy tool especially useful when building APIs. CORS errors are a very common thing for developers who work with APIs, and this method is just a basic bypass for these errors.
 
-```js
+```php
 $app = new Leaf\App();
 $app->response->cors();
 

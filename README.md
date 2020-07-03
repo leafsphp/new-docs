@@ -1,40 +1,39 @@
-```js
+```php
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-$leaf = new Leaf\App;
+$app = new Leaf\App;
 
-$leaf->set404();
+$app->set404();
+$app->db->auto_connect("host", "username", "password", "dbname");
 
-$leaf->db->connect("host", "username", "password", "dbname");
-					
-$leaf->get('/book/{id}', function($id) use($leaf) {
-	$leaf->response->respond(["id" => $id]);
+$app->get('/book/{id}', function($id) use($app) {
+  $app->response->respond(["id" => $id]);
 });
 
-$leaf->get('/home', function() use($leaf) {
-	$leaf->response->renderPage('./index.html');
+$app->get('/home', function() use($app) {
+  $app->response->renderPage('./index.html');
 });
 
-$leaf->post('/books/add', function() use($leaf) {
-	$title = $leaf->request->get('title');
-	$leaf->db->add("books", ["title" => $title], ["title"]);
-	$leaf->response->respond([
-		"books" => $leaf->db->select("books")->fetchAll()
-	]);
+$app->post('/books/add', function() use($app) {
+  $title = $app->request->get('title');
+  $app->db->add("books", ["title" => $title], ["title"]);
+  $app->response->respond([
+    "books" => $app->db->select("books")->fetchAll()
+  ]);
 });
 
 $leaf->run();
 ```
 
-# Quickly Create PHP Projects
+# ✨ Quickly Create PHP Projects
 
-Leaf is a PHP framework that helps you create clean, simple but powerful web apps and APIs quickly. Leaf introduces a cleaner and much simpler structure to the PHP language while maintaining it's flexibility. With a simple structure and a shallow learning curve, it's an excellent way to rapidly build powerful and high performant web apps and APIs.💪
+Leaf is a PHP framework that helps you create clean, simple but powerful web apps and APIs quickly. Leaf introduces a cleaner and much simpler structure to the PHP language while maintaining it's flexibility. With a simple structure and a shallow learning curve, it's an excellent way to rapidly build powerful and high performant web apps and APIs.
 <br>
 <br>
 <br>
 
-## Installation
+## 📂 Installation
 
 You can quickly get leaf installed in your application using composer. Simply run:
 
@@ -52,7 +51,16 @@ php -S localhost:8080
 
 Although leaf on it's own isn't an MVC framework, it contains useful tools and packages which allow you to use Leaf as any other MVC framework.
 
-If however, you want an already built MVC setup with scaffolding and a whole lot of other amazing features, you can try out [Leaf MVC](//leafmvc.netlify.app).
+If however, you want an already built MVC setup with scaffolding and a whole lot of other amazing features, you can try out [Leaf API](/leaf-api) or [Leaf MVC](//leafmvc.netlify.app).
+
+## Leaf API
+
+Leaf API is a lightweight PHP MVC framework for rapid API development. LeafAPI serves as minimal MVC wrapper around Leaf PHP Framework which allows you to use Leaf in an MVC environment. It also comes along with a bunch of handy tools which can speed up your development by leagues🙂
+
+**[Read the docs](/leaf-api/)**
+**Contribute to [Leaf API](https://github.com/leafsphp/leafAPI).**
+
+## Leaf MVC
 
 Leaf MVC provides an MVC wrapper around Leaf itself. So you can use all of Leaf's cool features alongside a nice set of development tools offered by Leaf MVC.
 
@@ -68,25 +76,25 @@ Leaf UI allows you to focus almost entirely on writing your php application. Ins
 
 Not only does it allow you skip annoying HTML, but also with integrations like [wynter](https://github.com/leafsphp/leaf-ui/tree/wynter), you can write fully-powered Leaf UI apps without touching HTML, CSS or JavaScript. Amazing, right?
 
-```js
+```php
 $ui = new Leaf\UI\Template;
 
 $users = [
-	["name" => "User 1"],
-	["name" => "User 2"],
-	["name" => "User 3"]
+  ["name" => "User 1"],
+  ["name" => "User 2"],
+  ["name" => "User 3"]
 ];
 
 $html = $ui::_template("Page Title", [
-	$ui::_container([
-		$ui::_row([
-			$ui::loop($users, function($user) use($ui) {
-				return $ui::div(["style" => "background: #fcfcfd;"], [
-					$ui::h3($user["name"])
-				]);
-			})
-		])
-	])
+  $ui::_container([
+    $ui::_row([
+      $ui::loop($users, function($user) use($ui) {
+        return $ui::div(["style" => "background: #fcfcfd;"], [
+          $ui::h3($user["name"])
+        ]);
+      })
+    ])
+  ])
 ]);
 
 $ui::render($html);
@@ -95,12 +103,6 @@ $ui::render($html);
 **[Read the docs](ui/)**
 
 As amazing as Leaf UI is, it's still under development and has a whole lot of work left to be done. [Contribute to the Leaf UI project on github.](https://github.com/leafsphp/leaf-ui)
-
-## Leaf API
-
-This is another project based on Leaf PHP. Just like Leaf MVC, Leaf API is a wrapper around Leaf which allows you use MVC features, but built with APIs in mind. This is like the [Lumen](https://lumen.laravel.com/) to [Laravel](https://laravel.com/)
-
-**Contribute to [Leaf API](https://github.com/leafsphp/leafAPI).**
 
 <br>
 <hr>
