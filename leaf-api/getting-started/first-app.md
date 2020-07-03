@@ -37,7 +37,7 @@ In Leaf API, all our routes are defined in `App/Routes.php`. You can check out L
 
 Now, let’s get started.
 
-```javascript
+```php
 <?php
 $app->get('/', function() {
   // Do something here
@@ -60,13 +60,13 @@ This will generate a controller in our `App/Controllers` directory
 
 Back in our `App/Routes.php` file, we can use this controller like so:
 
-```js
+```php
 $app->get('/home', '\App\Controllers\PagesController@index');
 ```
 
 That's it. Now, let's look at our controller
 
-```js
+```php
 <?php
 namespace App\Controllers;
 
@@ -97,7 +97,7 @@ php leaf d:template index
 
 Let's go back to our controller. Since this is an API, we'll want to output some sort of data to a client as a response. We can easily do this with [Leaf Response](/2.1/http/response). Note that `Response` is directly bound to the controller, so you can use all response methods on `$this`
 
-```js
+```php
 public function index() {
   $this->respond("Output over here");
 }
@@ -109,7 +109,7 @@ Response handles the way data goes out of our application, on the flip side, Req
 
 Let's look at a basic example. Inside our controller:
 
-```js
+```php
 public function search() {
   $keywords = $this->request->get("keywords");
 
@@ -140,7 +140,7 @@ php leaf g:model Post -m
 
 After this, you should find a new migration in `App\Database\Migrations` looking like `YYYY_MM_DD_TIME_create_posts.php`. So, in this file, we can create all the rows we want inside our table.
 
-```js
+```php
 <?php
 namespace App\Database\Migrations;
 
@@ -187,7 +187,7 @@ php leaf db:migrate
 
 So now we can work with the table we generated. Let's look at our model. You can read more on [Leaf Models](/2.1/core/model)
 
-```javascript
+```php
 <?php
 namespace App\Models;
 
@@ -208,7 +208,7 @@ We added the resource flag to it in order to generate a `resource controller`.
 
 When we look in `App/Controllers/PostsController`, we see:
 
-```js
+```php
 <?php
 namespace App\Controllers;
 
@@ -268,7 +268,7 @@ A resource controller is filled with resource methods which quickly help us perf
 
 So let's say we have a database named `blog` with a table named `posts` which has some data in it, to retrieve all the data in the `posts` table, we'll head to our controller. The first thing we'll have to do is to bring in our `Post` model. This will allow us to use our database.
 
-```js
+```php
 <?php
 namespace App\Controllers;
 
@@ -282,7 +282,7 @@ class PostsController extends Controller {
 
 Now let's head over to our index method and enter this:
 
-```js
+```php
 public function index() {
   $this->respond(Post::all());
 }
@@ -292,7 +292,7 @@ public function index() {
 
 All that's left now is to add a route for our controller. In `App\Routes.php`:
 
-```js
+```php
 $app->setNamespace('\App\Controllers');
 
 $app->get('/', 'PagesController@index');
@@ -303,7 +303,7 @@ So when we navigate to `/posts` in our browser, we see all our posts in JSON for
 
 For a blog app, we'd usually want to see our latest posts first, so we can order the posts by the time they were created. In our controller,
 
-```js
+```php
 public function index() {
   $this->respond(Post::orderBy('id', 'desc')->get());
 }
@@ -313,7 +313,7 @@ This will get the latest posts first.
 
 Next, we'll want to show a particular post when we navigate to `/post/{id}` eg: when we go to `/posts/2` in our browser, we would want to see the post 2...so, in our controller's show method, we simply have to get that particular post and pass it into the response. We can get the current post with `Post::find($id);`
 
-```javascript
+```php
 public function show($id) {
   $this->respond(Post::find($id));
 }
@@ -321,7 +321,7 @@ public function show($id) {
 
 Here are a bunch of other cool stuff you can do wiith the model in our controller,
 
-```js
+```php
 // find a post by title
 Post::where('title', 'Post Two')->get();
 

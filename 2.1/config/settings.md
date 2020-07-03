@@ -4,7 +4,7 @@ This is an identifier for the application’s current mode of operation. The mod
 
 The application mode is declared during instantiation, either as an environment variable or as an argument to the Leaf application constructor. It cannot be changed afterward. The mode may be anything you want — “development”, “test”, and “production” are typical, but you are free to use anything you want (e.g. “foo”).
 
-```js
+```php
 $leaf = new \Leaf\App([
     'mode' => 'development'
 ]);
@@ -15,7 +15,7 @@ $leaf = new \Leaf\App([
 ## debug
 If debugging is enabled, Leaf will use its built-in error handler to display diagnostic information for uncaught Exceptions. If debugging is disabled, Leaf will instead invoke your custom error handler, passing it the otherwise uncaught Exception as its first and only argument.
 
-```js
+```php
 $leaf = new \Leaf\App([
     'debug' => true
 ]);
@@ -25,7 +25,7 @@ $leaf = new \Leaf\App([
 
 ## log.writer
 Use a custom log writer to direct logged messages to the appropriate output destination. By default, Leaf’s logger will write logged messages to `STDERR`. If you use a custom log writer, it must implement this interface:
-```js
+```php
 public write(mixed $message, int $level);
 ```
 
@@ -33,7 +33,7 @@ The `write()` method is responsible for sending the logged message (not necessar
 
 To specify a custom log writer after instantiation you must access Leaf’s logger directly and use its `setWriter()` method:
 
-```js
+```php
 // During instantiation
 $leaf = new \Leaf\App([
     'log.writer' => new \My\LogWriter()
@@ -62,7 +62,7 @@ The `log.level` application setting determines which logged messages will be hon
 
 To change this setting after instantiation you must access Leaf’s logger directly and use its `setLevel()` method.
 
-```js
+```php
 // During instantiation
 $leaf = new \Leaf\App([
     'log.level' => \Leaf\Log::DEBUG
@@ -77,7 +77,7 @@ $log->setLevel(\Leaf\Log::WARN);
 
 ## log.enabled
 This enables or disables Leaf’s logger. To change this setting after instantiation you need to access Leaf’s logger directly and use its `setEnabled()` method.
-```js
+```php
 // During instantiation
 $leaf = new \Leaf\App([
     'log.enabled' => true
@@ -94,7 +94,7 @@ $log->setEnabled(true);
 The relative or absolute path to the filesystem directory that contains your Leaf application’s template files. This path is referenced by the Leaf application’s View to fetch and render templates.
 
 To change this setting after instantiation you need to access Leaf’s view directly and use its `setTemplatesDirectory()` method.
-```js
+```php
 // During instantiation
 $leaf = new \Leaf\App([
     'templates.path' => './templates'
@@ -109,7 +109,7 @@ $view->setTemplatesDirectory('./templates');
 
 ## view
 The View class or instance used by the Leaf application. To change this setting after instantiation you need to use the Leaf application’s `view()` method.
-```js
+```php
 // During instantiation
 $leaf = new \Leaf\App([
     'view' => new \My\View()
@@ -123,7 +123,7 @@ $leaf->view(new \My\View());
 
 ## cookies.encrypt
 Determines if the Leaf app should encrypt its HTTP cookies.
-```js
+```php
 $leaf = new \Leaf\App([
     'cookies.encrypt' => true
 ]);
@@ -133,7 +133,7 @@ $leaf = new \Leaf\App([
 
 ## cookies.encrypt
 Determines if the Leaf app should encrypt its HTTP cookies.
-```js
+```php
 $leaf = new \Leaf\App([
     'cookies.encrypt' => true
 ]);
@@ -143,7 +143,7 @@ $leaf = new \Leaf\App([
 
 ## cookies.lifetime
 Determines the lifetime of HTTP cookies created by the Leaf application. If this is an integer, it must be a valid UNIX timestamp at which the cookie expires. If this is a string, it is parsed by the strtotime() function to extrapolate a valid UNIX timestamp at which the cookie expires.
-```js
+```php
 $leaf = new \Leaf\App([
     'cookies.lifetime' => '20 minutes'
 ]);
@@ -156,7 +156,7 @@ $leaf->config('cookies.lifetime', '20 minutes');
 
 ## cookies.path
 Determines the default HTTP cookie path if none is specified when invoking the Leaf application’s `setCookie()` or `setEncryptedCookie()` methods.
-```js
+```php
 $leaf = new \Leaf\App([
   	'cookies.path' => '/'
 ));
@@ -169,7 +169,7 @@ $leaf->config('cookies.path', '/');
 
 ## cookies.domain
 Determines the default HTTP cookie domain if none specified when invoking the Leaf application’s `setCookie()` or `setEncryptedCookie()` methods.
-```js
+```php
 $leaf = new \Leaf\App([
   	'cookies.domain' => 'domain.com'
 ));
@@ -182,7 +182,7 @@ $leaf->config('cookies.domain', 'domain.com');
 
 ## cookies.secure
 Determines whether or not cookies are delivered only via HTTPS. You may override this setting when invoking the Leaf application’s `setCookie()` or `setEncryptedCookie()` methods
-```js
+```php
 $leaf = new \Leaf\App([
   	'cookies.secure' => false
 ));
@@ -195,7 +195,7 @@ $leaf->config('cookies.secure', false);
 
 ## cookies.httponly
 Determines whether cookies should be accessible through client side scripts (false = accessible). You may override this setting when invoking the Leaf application’s `setCookie()` or `setEncryptedCookie()` methods.
-```js
+```php
 $leaf = new \Leaf\App([
   	'cookies.httponly' => false
 ));
@@ -208,7 +208,7 @@ $leaf->config('cookies.httponly', false);
 
 ## cookies.secret_key
 The secret key used for cookie encryption. You should change this setting if you use encrypted HTTP cookies in your Leaf application.
-```js
+```php
 $leaf = new \Leaf\App([
   	'cookies.secret_key' => 'secret'
 ));
@@ -221,7 +221,7 @@ $leaf->config('cookies.secret_key', 'secret');
 
 ## cookies.cipher
 The mcrypt cipher used for HTTP cookie encryption. [See available ciphers.](http://php.net/manual/en/mcrypt.ciphers.php)
-```js
+```php
 $leaf = new \Leaf\App([
   	'cookies.cipher' => MCRYPT_RIJNDAEL_256
 ));
@@ -234,7 +234,7 @@ $leaf->config('cookies.cipher', MCRYPT_RIJNDAEL_256);
 
 ## cookies.cipher_mode
 The mcrypt cipher used for HTTP cookie encryption. [See available ciphers.](http://php.net/manual/en/mcrypt.ciphers.php)
-```js
+```php
 $leaf = new \Leaf\App([
   	'cookies.cipher_mode' => MCRYPT_MODE_CBC
 ));
@@ -247,7 +247,7 @@ $leaf->config('cookies.cipher_mode', MCRYPT_MODE_CBC);
 
 ## http.version
 By default, Leaf returns an HTTP/1.1 response to the client. Use this setting if you need to return an HTTP/1.0 response. This is useful if you use PHPFog or an nginx server configuration where you communicate with backend proxies rather than directly with the HTTP client.
-```js
+```php
 $leaf = new \Leaf\App([
   	'http.version' => '1.1'
 ));

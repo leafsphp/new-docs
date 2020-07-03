@@ -1,7 +1,7 @@
 # Sub-routing
 Use `$leaf->mount($baseroute, $fn)` to mount a collection of routes onto a subroute pattern. The subroute pattern is prefixed onto all following routes defined in the scope. e.g. Mounting a callback $fn onto /movies will prefix /movies onto all following routes.
 
-```js
+```php
 $leaf->mount('/movies', function() use ($leaf) {
 	// will result in '/movies/'
 	$leaf->get('/', function() {
@@ -17,7 +17,7 @@ $leaf->mount('/movies', function() use ($leaf) {
 
 Nesting of subroutes is possible, just define a second `$leaf->mount()` in the callback function that's already contained within a preceding `$leaf->mount()`. Also, Note that nested subroutes currently don't support dynamic url patterns, so, you can only do something like this.
 
-```js
+```php
 $leaf->mount('/user', function() use ($leaf) {
     $leaf->get('/', function() use($leaf) {
         echo $leaf->response->renderMarkup('no user id');

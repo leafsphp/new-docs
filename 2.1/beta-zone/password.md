@@ -10,14 +10,14 @@ Salt basically provides extra security for your passwords, making even weak pass
 
 The salt method can both be used to set and get the password salt.
 
-```js
+```php
 $password = new Leaf\Helpers\Password;
 $password->salt("THIS IS MY SALT");
 ```
 
 This set's the password salt which will be encrypted based on the hash chosen by the user.
 
-```js
+```php
 $salt = $password->salt();
 ```
 
@@ -31,7 +31,7 @@ This method basically creates a password hash. It takes in 3 parameters:
 - The encryption hash
 - An array of options for the password hash
 
-```js
+```php
 $hash = Leaf\Helpers\Password::hash("USER_PASSWORD", $password::BCRYPT);
 ```
 
@@ -45,7 +45,7 @@ The final options array differs based on the hash you're using. ee the [password
 
 Verifying a user’s password has been made really simple thanks to the `verify()` method. Simply pass the plaintext password supplied by the user and compare it to the stored hash, like so:
 
-```js
+```php
 if (Leaf\Helpers\Password::verify($password, $hash)) {
     // handle user login here
 }
@@ -59,7 +59,7 @@ Argon2 is one encryption method heavily used by a lot of developers. Although cr
 
 This is a simply method used to create an Argon2 hash for your password. It takes in 2 parameters, the password to encrypt and the options for the hashing.
 
-```js
+```php
 $hash = Leaf\Helpers\Password::argon2($password, $options);
 ```
 
@@ -69,7 +69,7 @@ The options parameter is optional, but in case you want to set your own options,
 
 This method simply checks the validity of an Argon2 hash. It takes in one option, the password to verify.
 
-```js
+```php
 if (Leaf\Helpers\Password::argon2_verify($password)) {
     // handle user login here
 }
@@ -83,7 +83,7 @@ BCRYPT is another hash used widely by a lot of developers, especially since supp
 
 This is a simply method used to create an BCRYPT hash for your password. It takes in 2 parameters, the password to encrypt and the options for the hashing.
 
-```js
+```php
 $hash = Leaf\Helpers\Password::bcrypt($password, $options);
 ```
 
@@ -93,7 +93,7 @@ The options parameter is optional, but in case you want to set your own options,
 
 This method simply checks the validity of an BCRYPT hash. It takes in one option, the password to verify.
 
-```js
+```php
 if (Leaf\Helpers\Password::brcypt_verify($password)) {
     // handle user login here
 }
@@ -107,13 +107,13 @@ Crux, instead of a functionality, is more of a new "design/architecture" added i
 
 This generates a hash based on Leaf's CRUX architecture. It takes in 3 methods: the password to hash, the stronger hash to use and the weaker, shorter hash.
 
-```js
+```php
 $password->crux($password_to_encode, $first_hash_strong, $second_hash_weaker);
 ```
 
 **Example**.
 
-```js
+```php
 $hashed_password = $password->crux("USER_PASSWORD", $password::BCRYPT, $password::MD5);
 ```
 

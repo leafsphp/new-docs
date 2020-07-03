@@ -4,7 +4,7 @@ This guide assumes you've read the [introduction to Leaf UI](ui/). As said befor
 
 A bunch of shorthand methods have been created which allow you use create elements with using the `create_element` we saw before. The mostly look like this:
 
-```js
+```php
 $ui::div([attributes], [
 	// children
 ]);
@@ -21,7 +21,7 @@ This is the equivalent of `<html>`, it also adds `<!doctype html>` at the begini
 - (array) Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::html([
 	// children here
 ]);
@@ -36,7 +36,7 @@ This is the equivalent of `<head>`. It takes in 2 parameters:
 - (array) Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::head([
 	// children here
 ]);
@@ -49,7 +49,7 @@ This is the equivalent of `<body>`. It takes in 2 parameters:
 - (array) Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::body([
 	// children here
 ]);
@@ -64,7 +64,7 @@ This is the equivalent of `<header>`. It takes in 2 parameters:
 - (array, optional) Attributes
 - (array) Children
 
-```js
+```php
 $ui::header([attributes], [
 	// children here
 ]);
@@ -77,7 +77,7 @@ This is the equivalent of `<nav>`. It takes in 2 parameters:
 - (array, optional) Attributes
 - (array) Children
 
-```js
+```php
 $ui::nav([attributes], [
 	// children here
 ]);
@@ -90,7 +90,7 @@ This is the equivalent of `<footer>`. It takes in 2 parameters:
 - (array, optional) Attributes
 - (array) Children
 
-```js
+```php
 $ui::footer([attributes], [
 	// children here
 ]);
@@ -103,7 +103,7 @@ This is the equivalent of `<aside>`. It takes in 2 parameters:
 - (array, optional) Attributes
 - (array) Children
 
-```js
+```php
 $ui::aside([attributes], [
 	// children here
 ]);
@@ -115,7 +115,7 @@ This is the equivalent of `<br>`. It takes in just 1 parameter:
 
 - (array, optional) Attributes
 
-```js
+```php
 $ui::br([attributes]);
 ```
 
@@ -125,7 +125,7 @@ This is the equivalent of `<hr>`. It takes in just 1 parameter:
 
 - (array, optional) Attributes
 
-```js
+```php
 $ui::hr([attributes]);
 ```
 
@@ -136,7 +136,7 @@ This is the equivalent of `<a>`. It takes in 2 parameters:
 - (array, optional) Attributes
 - (array) Children
 
-```js
+```php
 $ui::a([attributes], [
 	// children here
 ]);
@@ -149,7 +149,7 @@ This is the equivalent of `<div>`. It takes in 2 parameters:
 - (array, optional) Attributes
 - (array) Children
 
-```js
+```php
 $ui::div([attributes], [
 	// children here
 ]);
@@ -162,7 +162,7 @@ This is the equivalent of `<span>`. It takes in 2 parameters:
 - (array, optional) Attributes
 - (array) Children
 
-```js
+```php
 $ui::span([attributes], [
 	// children here
 ]);
@@ -175,7 +175,7 @@ This is the equivalent of `<section>`. It takes in 2 parameters:
 - (array, optional) Attributes
 - (array) Children
 
-```js
+```php
 $ui::section([attributes], [
 	// children here
 ]);
@@ -188,7 +188,7 @@ This is the equivalent of `<hgroup>`. It takes in 2 parameters:
 - (array) Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::hgroup([...], [attributes]);
 ```
 
@@ -199,7 +199,7 @@ This is the equivalent of `<h1>`...`<h6>`. It takes in 2 parameters:
 - (array) Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::h1([...], [attributes]);
 $ui::h3([...], [attributes]);
 $ui::h5([...], [attributes]);
@@ -212,7 +212,7 @@ This is the equivalent of `<blockquote>`. It takes in 2 parameters:
 - (array) Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::blockquote([...], [attributes]);
 ```
 
@@ -223,7 +223,7 @@ This is the equivalent of `<p>`. It takes in 2 parameters:
 - (array) Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::p([...], [attributes]);
 ```
 
@@ -234,7 +234,7 @@ This is the equivalent of `<article>`. It takes in 2 parameters:
 - (array, optional) Attributes
 - (array) Children
 
-```js
+```php
 $ui::article([attributes], [
 	// children here
 ]);
@@ -247,7 +247,7 @@ This is the equivalent of `<details>`. It takes in 2 parameters:
 - (array, optional) Attributes
 - (array) Children
 
-```js
+```php
 $ui::details([attributes], [
 	// children here
 ]);
@@ -260,7 +260,7 @@ This is the equivalent of `<summary>`. It takes in 2 parameters:
 - (array, optional) Attributes
 - (array) Children
 
-```js
+```php
 $ui::summary([attributes], [
 	// children here
 ]);
@@ -275,7 +275,7 @@ This is the equivalent of `<title>`. It takes in 2 parameters:
 - (string) Title
 - (array, optional) Attributes
 
-```js
+```php
 $ui::title("Home");
 ```
 
@@ -287,7 +287,7 @@ This is the equivalent of `<meta>`. It takes in 3 parameters:
 - (string) content `<meta content="">`
 - (array, optional) Attributes
 
-```js
+```php
 $ui::meta("viewport", "width=device-width;initial-scale=1");
 ```
 
@@ -299,7 +299,7 @@ This is the equivalent of `<link>`. It takes in 3 parameters:
 - (string) rel `<link rel="">`
 - (array, optional) Attributes
 
-```js
+```php
 $ui::link("./style.css", "stylesheet");
 ```
 
@@ -314,7 +314,7 @@ This is the equivalent of `<base>`. It takes in 2 parameters:
 - (string) href `<base href="">`
 - (array, optional) Attributes
 
-```js
+```php
 $ui::base("...");
 ```
 
@@ -327,7 +327,7 @@ This is the equivalent of `<tt>`. It takes in 2 parameters:
 - (string|array) Child/Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::tt("This is tt");
 ```
 
@@ -338,7 +338,7 @@ This is the equivalent of `<b>`. It takes in 2 parameters:
 - (string|array) Child/Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::b("...");
 ```
 
@@ -349,7 +349,7 @@ This is the equivalent of `<i>`. It takes in 2 parameters:
 - (string|array) Child/Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::i("...");
 ```
 
@@ -360,7 +360,7 @@ This is the equivalent of `<u>`. It takes in 2 parameters:
 - (string|array) Child/Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::u("...");
 ```
 
@@ -371,7 +371,7 @@ This is the equivalent of `<small>`. It takes in 2 parameters:
 - (string|array) Child/Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::small("...");
 ```
 
@@ -382,7 +382,7 @@ This is the equivalent of `<sub>`. It takes in 2 parameters:
 - (string|array) Child/Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::sub("...");
 ```
 
@@ -393,7 +393,7 @@ This is the equivalent of `<sup>`. It takes in 2 parameters:
 - (string|array) Child/Children
 - (array, optional) Attributes
 
-```js
+```php
 $ui::sup("...");
 ```
 
@@ -406,7 +406,7 @@ This is the equivalent of `<figure>`. It takes in 2 parameters:
 - (array, optional) Attributes
 - (array) Children
 
-```js
+```php
 $ui::figure([attributes], [
 	// children here
 ]);
@@ -419,7 +419,7 @@ This is the equivalent of `<img>`. It takes in 2 parameters:
 - The image to display
 - (array, optional) Attributes
 
-```js
+```php
 $ui::img("./img.jpg", ["style" => "width: 80px;"]);
 ```
 
@@ -434,7 +434,7 @@ This is the equivalent of `<form>`. It takes in 4 parameters:
 - (array) Form Fields
 - (array) attributes for form tag
 
-```js
+```php
 $ui::form("post", "/form/submit", [
 	// children here
 ]);
@@ -448,7 +448,7 @@ This is the equivalent of `<input>`. It takes in 3 parameters:
 - (string) name: Input name `name="..."`
 - (array, optional) attributes for input tag
 
-```js
+```php
 $ui::input("text", "username", [
 	"placeholder" => "mychi.darko"
 ]);
@@ -456,7 +456,7 @@ $ui::input("text", "username", [
 
 `input()` also takes in a `label` attribute which creates a label element.
 
-```js
+```php
 $ui::input("text", "username", [
 	"placeholder" => "mychi.darko",
 	"label" => "Enter Your Username"
@@ -471,7 +471,7 @@ This is the equivalent of `<label>`. It takes in 3 parameters:
 - (string, optional) for: `for="..."`
 - (array, optional) attributes for label tag
 
-```js
+```php
 $ui::label("Enter Your Password", "password");
 ```
 
@@ -482,7 +482,7 @@ This is the equivalent of `<button>`. It takes in 2 parameters:
 - (string) Text on button
 - (array, optional) Attributes
 
-```js
+```php
 $ui::button("Click Me!", ["style" => "background: gold;"]);
 ```
 

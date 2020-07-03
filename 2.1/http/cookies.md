@@ -6,13 +6,13 @@ The Leaf application provides helper methods to send cookies with the HTTP respo
 
 This example demonstrates how to use the Leaf application’s `setCookie()` method to create an HTTP cookie to be sent with the HTTP response:
 
-```js
+```php
 $leaf->setCookie('foo', 'bar', '2 days');
 ```
 
 This creates an HTTP cookie with the name `“foo”` and value `“bar”` that expires two days from now. You may also provide additional cookie properties, including its path, domain, secure, and httponly settings. The Leaf application’s setCookie() method uses the same signature as PHP’s native setCookie() function.
 
-```js
+```php
 $leaf->setCookie(
     $name,
     $value,
@@ -32,7 +32,7 @@ You can tell Leaf to encrypt the response cookies by setting the app’s cookies
 
 Here are the available Leaf app settings used for cookie encryption:
 
-```js
+```php
 $leaf = new \Leaf\App([
     'cookies.encrypt' => true,
     'cookies.secret_key' => 'my_secret_key',
@@ -47,19 +47,19 @@ $leaf = new \Leaf\App([
 
 You can delete a cookie using the Leaf application’s `deleteCookie()` method. This will remove the cookie from the HTTP client before the next HTTP request. This method accepts the same signature as the Leaf application’s `setCookie()` instance method, without the `$expires` argument. Only the first argument is required.
 
-```js
+```php
 $leaf->deleteCookie('foo');
 ```
 
 If you need to also specify the path and domain:
 
-```js
+```php
 $leaf->deleteCookie('foo', '/', 'foo.com');
 ```
 
 You may also further specify the secure and httponly properties:
 
-```js
+```php
 $leaf->deleteCookie('foo', '/', 'foo.com', true, true);
 ```
 

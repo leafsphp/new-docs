@@ -8,7 +8,7 @@ There are two ways to apply settings to the Leaf application. First during Leaf 
 
 ## During Instantiation
 To define settings upon instantiation, pass an associative array into the Leaf constructor.
-```js
+```php
 $leaf = new Leaf\App([
     'debug' => true
 ]);
@@ -16,13 +16,13 @@ $leaf = new Leaf\App([
 
 ## After Instantiation
 To define settings after instantiation, the majority can use the config application instance method; the first argument is the setting name and the second argument is the setting value.
-```js
+```php
 $leaf = new Leaf\App();
 $leaf->config('debug', false);
 ```
 
 You may also define multiple settings at once using an associative array:
-```js
+```php
 $leaf->config([
     'debug' => true,
     'templates.path' => '../templates'
@@ -30,7 +30,7 @@ $leaf->config([
 ```
 
 To retrieve the value of a setting, you also use the config application instance method; however, you only pass one argument - the name of the setting you wish to inspect. If the setting you request does not exist, null is returned.
-```js
+```php
 $settingValue = $leaf->config('templates.path'); //returns "../templates"
 ```
 

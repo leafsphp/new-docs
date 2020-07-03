@@ -14,7 +14,7 @@ hello.blade.php
 
 Since this view is stored in our `App/Views` directory, we may render it using the global `View` or `render` helper like so:
 
-```js
+```php
 Route('GET', '/', function () {
     echo View('hello', ['name' => 'Mike']);
 });
@@ -28,7 +28,7 @@ As you can see, the first argument passed to the view helper corresponds to the 
 
 Views may also be nested within subdirectories of the resources/views directory. "Dot" notation may be used to reference nested views. For example, if your view is stored at `App/Views/admin/profile.blade.php`, you may reference it like so:
 
-```js
+```php
 render('admin.profile', $data);
 render('admin/profile', $data);
 ```

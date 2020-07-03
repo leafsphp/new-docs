@@ -7,7 +7,7 @@ Instead of defining all of your request handling logic as Closures in route file
 Below is an example of a basic controller class. Note that the controller extends the base controller class included with Leaf(`Leaf\Controller`). The base class provides a few convenience methods 
 <!-- such as the middleware method, which may be used to attach middleware to controller actions: -->
 
-```js
+```php
 <?php
 
 // this is a model, view the model docx for more info
@@ -33,7 +33,7 @@ class UserController extends Controller
 
 You can define a route to this controller action like so:
 
-```js
+```php
 $leaf->get('user/{id}', 'UserController@show');
 ```
 
@@ -49,7 +49,7 @@ Now, when a request matches the specified route URI, the `show` method on the `U
 #### Default Templating
 Using the core controller, you already have access to templating with [Leaf Veins](2.0/views/veins). You can simply configure and render your template whenever you want to.
 
-```js
+```php
 use Leaf\Controller;
 
 class NameController extends Controller {
@@ -80,7 +80,7 @@ You can view more info on Veins [here](2.0/views/veins)
 Leaf Core controller contains methods to appropriately return data to the user.
 
 **respond**
-```js
+```php
 use Leaf\Controller;
 
 class NameController extends Controller {
@@ -99,7 +99,7 @@ You can view more on responses [here](2.0/http/response)
 #### file_upload
 file_upload is for simple file uploads. It takes in 3 parameters, the path to save the file, the file and the file type(optional). It returns an array `[true, $filename]` if successful and `[false, $error]` if the upload fails.
 
-```js
+```php
 use Leaf\Controller;
 
 class NameController extends Controller {
@@ -118,7 +118,7 @@ class NameController extends Controller {
 #### Forms
 The base controller also gives you a simple way to handle form data
 
-```js
+```php
 public function index() {
 	$name = $this->form->get("name");
 

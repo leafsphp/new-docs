@@ -1,4 +1,4 @@
-```js
+```php
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -68,7 +68,7 @@ Leaf UI allows you to focus almost entirely on writing your php application. Ins
 
 Not only does it allow you skip annoying HTML, but also with integrations like [wynter](https://github.com/leafsphp/leaf-ui/tree/wynter), you can write fully-powered Leaf UI apps without touching HTML, CSS or JavaScript. Amazing, right?
 
-```js
+```php
 $ui = new Leaf\UI\Template;
 
 $users = [

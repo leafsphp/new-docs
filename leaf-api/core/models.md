@@ -10,7 +10,7 @@ php leaf g:model <Name>
 
 A new model will be created in the `App\Models` directory which looks like this:
 
-```js
+```php
 <?php
 namespace App\Models;
 
@@ -27,7 +27,7 @@ We can create, read, update and delete without writing any code to specially acc
 
 As mentioned earlier, we include models in our controller to use them. We can do that by using the `use` keyword.
 
-```js
+```php
 <?php
 namespace App\Controllers;
 
@@ -45,7 +45,7 @@ class UserController extends Controller {
 
 In our controller, we can do these:
 
-```js
+```php
 // return all rows
 ModelName::all();
 

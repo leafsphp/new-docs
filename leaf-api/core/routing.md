@@ -4,7 +4,7 @@ All Leaf API's routes are kept in `App/Routes.php`. Leaf API uses Leaf Core's ro
 
 ## Sample Routes
 
-```js
+```php
 // get request
 $app->get('/user/{id}', function($id) {
   respond([

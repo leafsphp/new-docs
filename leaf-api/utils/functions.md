@@ -8,7 +8,7 @@ These are simple-to-use functions that are available everywhere in your applicat
 
 This method returns the base Leaf instance. You can perform whatever operation you need on the `App` method.
 
-```js
+```php
 App()->response->respond(...);
 App()->resource("/home", "HomeController");
 ```
@@ -17,7 +17,7 @@ App()->resource("/home", "HomeController");
 
 This outputs a blade view.
 
-```js
+```php
 function user() {
   render("user", ["username" => "Mychi"]);
 }
@@ -27,7 +27,7 @@ function user() {
 
 Outputs a JSON encoded response.
 
-```js
+```php
 $data = ["name" => "BMW", "data" => ["id" => "1", "driver" => "Mychi"]];
 respond($data);
 ```
@@ -40,7 +40,7 @@ This method creates a new route. It takes in 3 parameters:
 - The route
 - The handler
 
-```js
+```php
 Route("GET|POST", "/me", function() {...});
 ```
 
@@ -48,7 +48,7 @@ Route("GET|POST", "/me", function() {...});
 
 `View` returns a blade view.
 
-```js
+```php
 $output = View("user", ["username" => "Mychi"]);
 ```
 

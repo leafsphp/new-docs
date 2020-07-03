@@ -74,7 +74,7 @@ This section hold deployment config
 
 Variables defined in the `.env` file can be used in your app by calling the `env` or `getenv` methods.
 
-```js
+```php
 $app_name = env("APP_NAME");
 $db_name = getenv("DB_DATABASE");
 ```

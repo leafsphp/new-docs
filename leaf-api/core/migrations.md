@@ -18,7 +18,7 @@ A migration class contains two methods: up and down. The up method is used to ad
 
 You can create and modify tables in the both of these methods. In this example, we create a posts table:
 
-```js
+```php
 <?php
 namespace App\Database\Migrations;
 

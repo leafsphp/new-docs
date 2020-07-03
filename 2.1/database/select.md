@@ -10,13 +10,13 @@ Leaf has provided a new method to make retrieving data even simpler and more org
 
 To do this, we use the `select()` methode. All that we have to do is to pass in the table we want to retrieve. For example, to get all users from the "users" table, we simply do:
 
-```js
+```php
 $db->select("users");
 ```
 
 To actually get the results, we'll have to chain `fetchAll()` to the select method. `fetchAll()` does the same thing that `mysqli_fetch_all()` does to an mysqli result
 
-```js
+```php
 $db->select("users")->fetchAll();
 ```
 
@@ -24,19 +24,19 @@ $db->select("users")->fetchAll();
 
 Getting a single column, eg: getting all usernames from the users table
 
-```js
+```php
 $db->select("users", "username")->fetchAll();
 ```
 
 This is like saying `SELECT username FROM users`. You can also pass in multiple options
 
-```js
+```php
 $db->select("users", "username, email")->fetchAll();
 ```
 
 You can get all columns with:
 
-```js
+```php
 $db->select("users")->fetchAll();
 //  or
 $db->select("users", "*")->fetchAll();
@@ -46,7 +46,7 @@ $db->select("users", "*")->fetchAll();
 
 Getting a particular row, eg: getting the user with the id of 1 from the users table. You acan achieve this with:
 
-```js
+```php
 $db->select("users", "*", "id = 2")->fetchObj();
 ```
 
@@ -54,7 +54,7 @@ $db->select("users", "*", "id = 2")->fetchObj();
 
 If you don't need the whole row, you can use:
 
-```js
+```php
 $db->select("users", "username, email", "id = 2")->fetchObj();
 ```
 
@@ -62,7 +62,7 @@ $db->select("users", "username, email", "id = 2")->fetchObj();
 
 Limiting data is also very simple with Leaf DB
 
-```js
+```php
 // get the latest 10 posts
 $users = $db->select("posts ORDER BY id DESC LIMIT 10")->fetchAll();
 
@@ -74,7 +74,7 @@ $books = $db->select("books", "*", "author = ? ORDER BY id DESC LIMIT 5", [$auth
 
 Prepared statements help protect against SQL injection,...
 
-```js
+```php
 $db->select("users", "*", "username = ? AND password = ?", [$username, $password])->fetchObj();
 ```
 
@@ -86,7 +86,7 @@ $db->select("users", "*", "username = ? AND password = ?", [$username, $password
 
 For basic uses, we'll recommend you use `select`:
 
-```js
+```php
 $db->select("users")->fetchAll();
 
 $db->select("users", "username")->fetchAll();
@@ -98,13 +98,13 @@ $db->select("users", "username, email")->fetchAll();
 
 Getting a particular row, eg: getting the user with the id of 2 from the users table. You acan achieve this with:
 
-```js
+```php
 $db->choose("users", "*", ["id" => 2])->fetchObj();
 ```
 
 If you don't need the whole row, you can use:
 
-```js
+```php
 $db->choose("users", "username, mobile", ["email" => "mickdd22@gmail.com"])->fetchObj();
 ```
 
@@ -114,7 +114,7 @@ So unlike `select`, choose takes in an array, which is much clearner than writin
 
 Also, unlike select, you seperate data options like `LIMIT` and `ORDER` into a 4th parameter
 
-```js
+```php
 $db->choose("books", "*", ["author" => "mychi.darko", "published" => "2019"], "LIMIT 5");
 ```
 
@@ -126,7 +126,7 @@ $db->choose("books", "*", ["author" => "mychi.darko", "published" => "2019"], "L
 
 By default, `choose` validates values with the keys: `email`, `username` and any other field is marked as `required`. If any of the validations fail, an error is raised. You can turn this feature off:
 
-```js
+```php
 $db->choose("books", "*", ["author" => "mychi.darko", "published" => "2019"], "LIMIT 5", false);
 ```
 
@@ -134,7 +134,7 @@ $db->choose("books", "*", ["author" => "mychi.darko", "published" => "2019"], "L
 
 This is the sixth parameter of `choose`. These are custom rules that you set to validate.
 
-```js
+```php
 $db->choose("books", "*", ["author" => "mychi.darko", "published" => "2019"], "LIMIT 5", false, [
   "author" => "validUsername",
   "published" => "number"
@@ -145,7 +145,7 @@ Here, we're telling `choose` that the **author** parameter should be a valid use
 
 You can view all validation rules [here](2.1/core/form?id=validation)
 
-```js
+```php
 $db->choose($table, $fields, $params, $options, $defaultChecks, $validation);
 ```
 

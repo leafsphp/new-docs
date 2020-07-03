@@ -28,7 +28,7 @@ php leaf g:controller -w <Name>
 
 A web controller looks like this:
 
-```js
+```php
 <?php
 namespace App\Controllers;
 
@@ -41,7 +41,7 @@ This is the default boilerplate generated for the web controller. As mentioned b
 
 To use this controller to resolve a route, you simply have to pass it into the route like this:
 
-```js
+```php
 $app->get('/home', '\App\Controllers\ClassName@index');
 ```
 
@@ -49,7 +49,7 @@ $app->get('/home', '\App\Controllers\ClassName@index');
 
 Resource Controllers contain methods to handle CRUD functionality.
 
-```js
+```php
 <?php
 namespace App\Controllers;
 
@@ -113,7 +113,7 @@ php leaf g:controller <ControllerName> --resource
 
 To use this controller to resolve a route, you can map routes to each method manually, but a simpler way would be to use:
 
-```js
+```php
 $app->resource('/route', '\App\Controllers\ResourceControllerName');
 $app->resource('/articles', '\App\Controllers\ArticlesController');
 ```
@@ -126,7 +126,7 @@ API controllers are the default controllers used in Leaf API.
 php leaf g:controller <ControllerName>
 ```
 
-```js
+```php
 <?php
 namespace App\Controllers;
 

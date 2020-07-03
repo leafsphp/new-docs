@@ -30,7 +30,7 @@ We’ll be handling our routing in the web.php file. As mentioned before, LeafMV
 
 Now, let’s get started.
 
-```javascript
+```php
 <?php
 $leaf->get('/', function() {
 	// Do something here
@@ -50,12 +50,12 @@ This will generate a controller in our `app/controllers` directory
 
 
 Back in our `app/routes/web.php` file, we can use this controller like so:
-```javascript
+```php
 $leaf->get('/home', '\App\Controllers\PagesController@index');
 ```
 That's it. Now, let's look at our controller
 
-```javascript
+```php
 <?php
 namespace App\Controllers;
 use Leaf\Controller;
@@ -77,7 +77,7 @@ php leaf g:template index
 This will generate a new Vein, `index.vein` in `app/views`. Just reload your app to see the new vein. With this, we have set up a view and a controller. One major use of MVC(VC) is to be able to pass data to the view from the controller. Let's see how that works in LeafMVC.
 
 Let's go back to our controller. Let's say we have a new variable(object) which contains user info
-```javascript
+```php
 $user = (object) [
 	'name' => 'Jane Doe',
 	'email' => 'janedoe@gmail.com',
@@ -86,7 +86,7 @@ $user = (object) [
 ```
 and we want to pass this into our View, we can do this simply with by passing this variable through Leaf Core's already defined `set()`, let's see how that works.
 
-```javascript
+```php
 public function index() {
 	$user = (object) [
 		'name' => 'Jane Doe',
@@ -158,7 +158,7 @@ If we want to add a migration to the model, we can run
 php leaf g:model Post -m
 ```
 
-```javascript
+```php
 <?php
     namespace App\Models;
 
@@ -186,7 +186,7 @@ php leaf g:controller PostsController --resource
 We added the resource flag to it in order to generate a resource controller.
 
 When we look in `app/controllers/PostsController`, we see:
-```javascript
+```php
 <?php
 
 namespace App\Controllers;
@@ -254,7 +254,7 @@ A resource controller is filled with resource methods which quickly help us perf
 
 ***To use your database, you have to head to `.env` and configure your database: set the databse name, username, password...***
 So let's say we have a database named `blog` with a table named `posts` which has some data in it, to retrieve all the data in the `posts` table, we'll head to our controller. The first thing we'll have to do is to bring in our `Post` model. This will allow us to use our database.
-```javascript
+```php
 <?php
 
 namespace App\Controllers;
@@ -271,7 +271,7 @@ class PostsController extends Controller {
 ```
 
 Now let's head over to our index method and enter this:
-```javascript
+```php
 public function index() {
 	$this->set([
 		"posts" => Post::all()
@@ -285,7 +285,7 @@ php leaf g:template pages/posts
 ```
 
 So we can open up our new template and add:
-```javascript
+```php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -319,7 +319,7 @@ So we can open up our new template and add:
 </html>
 ```
 This is supposed to output all the posts from the database, but one thing's missing: we don't have a route to view all the posts we output. So we head back to our `app/routes/web.php` and add:
-```javascript
+```php
 $leaf->setNamespace('\App\Controllers');
 
 $leaf->get('/', 'PagesController@index');
@@ -330,7 +330,7 @@ So when we navigate to `/posts` in our browser, we see all our posts
 
 
 For a blog app, we'd usually want to see our latest posts first, so we can order the posts by the time they were created. In our controller,
-```javascript
+```php
 public function index() {
 	$this->set([
 		"posts" => Post::orderBy('created_at', 'desc')->get()
@@ -346,13 +346,13 @@ php leaf g:template pages/post
 ```
 
 We'll then render this in our show function in the PostsController
-```javascript
+```php
 public function show($id) {
     $this->render("pages/post");
 }
 ```
 Note that show() takes in an id, this id is the id of the post we want to show. This id will come from our route: `posts/id`. So, we need to set up a route for this.
-```javascript
+```php
 $leaf->setNamespace('\App\Controllers');
 
 $leaf->get('/', 'PagesController@index');
@@ -362,7 +362,7 @@ $leaf->get('/posts/{id}', 'PostsController@show');
 ```
 
 When we go to /posts/2 in our browser, we see the template we created before....but we'll want to actually see the post...so, in our controller's show method, we simply have to get that particular post and pass it into the view. We can get the current post with `Post::find($id);`
-```javascript
+```php
 public function show($id) {
     $this->set([
         "post" => Post::find($id)
@@ -396,7 +396,7 @@ Then, we can render this in our template
 </html>
 ```
 In our controller,
-```javascript
+```php
 // find a post by title
 Post::where('title', 'Post Two')->get();
 

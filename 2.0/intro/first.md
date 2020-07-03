@@ -4,7 +4,7 @@ First of all, we need to setup our .htaccess file. See [Re-routing to index.](2.
 
 To create a hello world project with Leaf, you simply need to initialise Leaf. This will spin up Leaf's core packages. Amongst the core packages is Leaf's router. This simply takes all requests coming into the application and handles them based on rules you define. Enough talk, let's get dirty.
 
-```js
+```php
 // import composer's autoloader
 require_once __DIR__ . "/vendor/autoload.php";
 

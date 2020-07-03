@@ -14,7 +14,7 @@ We can create, read, update and delete without writing any code to specially acc
 
 In our controller, we can do these:
 
-```js
+```php
 // return all rows
 ModelName::all();
 
