@@ -17,7 +17,7 @@ As mentioned before, LeafMVC has 3 types of controllers: API controllers, resour
 
 ## Normal Controllers
 First, let's look at Normal Controllers.
-```javascript
+```php
 <?php
     namespace App\Controllers;
 
@@ -40,14 +40,14 @@ This is the default boilerplate generated for the web controller. As mentioned b
 
 
 To use this controller to resolve a route, you simply have to pass it into the route like this:
-```javascript
+```php
 $leaf->get('/home', '\App\Controllers\ClassName@index');
 ```
 
 
 ## Resource Controllers
 Resource Controllers contain methods to handle CRUD functionality.
-```javascript
+```php
 <?php
 
 namespace App\Controllers;
@@ -119,7 +119,7 @@ php leaf g:controller <ControllerName> --resource
 
 
 ## API Controllers
-```javascript
+```php
 <?php
     namespace App\Controllers;
 

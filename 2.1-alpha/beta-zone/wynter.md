@@ -7,7 +7,7 @@ So basically wynter gives you the power of frontend frameworks, coupled with the
 
 Here's a real-time search component built with Wynter
 
-```js
+```php
 class SearchUsers extends \Leaf\Wynter\Component {
 	public $search;
 

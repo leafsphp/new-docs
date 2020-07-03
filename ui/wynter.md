@@ -18,7 +18,7 @@ composer require leafs/ui dev-wynter
 
 Since Leaf UI deals with static components, there's no need to initialise the class if you don't want to. So we simply call:
 
-```js
+```php
 Leaf\UI\WynterCSS::component();
 
 # or
@@ -49,7 +49,7 @@ Render just like the base `render` method renders a Leaf UI. However, unlike the
 - The Leaf UI to render
 - A string to render before the Leaf UI
 
-```js
+```php
 $ui::render($ui::p("This is a paragraph"), "Something here");
 ```
 
@@ -62,7 +62,7 @@ This is renders a wynter css based avatar component. It takes in 4 params
 - Avatar props (optional, array)
 - Children, if any (optional, array)
 
-```js
+```php
 $ui::_avatar("./image.jpg");
 $ui::_avatar("./image.jpg", "MD");
 $ui::_avatar("", "MD");
@@ -74,7 +74,7 @@ _avatar also takes in special props which add extra functionality to the avatar.
 - presence: Adds an "online indicator" to avatar. Available values (away, online, offline, busy)
 - badge: Adds a badge to avatar.
 
-```js
+```php
 $ui::_avatar("", "MD", ["size" => "xl", "presence" => "away", "badge" => "700"]);
 ```
 
@@ -86,7 +86,7 @@ This renders a badge component. It takes in 3 params:
 - Badge properties (optional, array)
 - Badge Children (optional, array|string)
 
-```js
+```php
 $ui::_badge("8000", [], "Notifications");
 ```
 
@@ -94,7 +94,7 @@ $ui::_badge("8000", [], "Notifications");
 
 Bars work together with the `_bar` component to create "progress bars".
 
-```js
+```php
 $ui::_bars([
 	$ui::_bar(["value" => "25", "tooltip" => "25"])
 ]);
@@ -102,7 +102,7 @@ $ui::_bars([
 
 _bars also takes in a special `variant` prop which allows you to configure the progress bars nested in it.
 
-```js
+```php
 $ui::_bars([
 	$ui::_bar(["value" => "25", "tooltip" => "25"])
 ], ["variant" => "sm"]); // creates a small progress bar
@@ -120,7 +120,7 @@ This creates a progress bar and is nested inside the `_bars` component. You can 
 - max: the maximum value
 - show-value: Whether to show the value inside the progressbar
 
-```js
+```php
 $ui::_bars([
 	$ui::_bar(["value" => "25", "tooltip" => "25"]),
 	$ui::_bar(["value" => "25", "tooltip" => "25", "style" => "background: grey;", "show-value" => true]),
@@ -134,7 +134,7 @@ This creates breadcrumbs. It takes in just one param:
 
 - A key value array of values and their links
 
-```js
+```php
 $ui::_breadcrumb([
 	"profile" => "/profile", 
 	"settings" => "/profile/settings",
@@ -165,7 +165,7 @@ Sizes:
 - sm
 - lg
 
-```js
+```php
 $ui::_button("Primary Button", ["variant" => "primary"]);
 $ui::_button("Primary Button", ["variant" => "sm"]);
 $ui::_button("Primary Button", ["variant" => "block"]);
@@ -175,7 +175,7 @@ $ui::_button("Primary Button", ["variant" => "block"]);
 
 This creates a container to merge buttons together.
 
-```js
+```php
 $ui::_btnGroup([
 	$ui::_button("Button 1"),
 	$ui::_button("Button 2"),
@@ -191,7 +191,7 @@ This creates a simple card surface. It takes in 2 parameters:
 - Props for card
 - Card children
 
-```js
+```php
 $ui::_card([], [
 	$ui::_container([
 		$ui::div([], "Something Interesting")
@@ -209,7 +209,7 @@ This is a bit more complicated than the components we've seen before. It creates
 - Carousel items ids: in order (array). By default, `["slide-1", "slide-2", "slide-3", "slide-4"]` is used.
 - Any additional props
 
-```js
+```php
 $ui::_carousel([
 	$ui::_carouselItem("slide-4", "slide-2", $ui::img("./1.jpg")),
 	$ui::_carouselItem("slide-1", "slide-3", $ui::img("./2.jpg")),
@@ -227,7 +227,7 @@ Carousel item as the name suggests is the item in a carousel. It takes in 4 para
 - carousel item children (element)
 - props for carousel item (array, optional)
 
-```js
+```php
 $ui::_carouselItem("slide-3", "slide-1", $ui::img("./2.jpg"), ["style" => "width: 100%"]);
 ```
 
@@ -238,13 +238,13 @@ This component returns a wynter css chip. It takes in 2 parameters:
 - Chip text
 - Children
 
-```js
+```php
 $ui::_chip("Something");
 ```
 
 You can use `btn-clear` to create a closeable chip
 
-```js
+```php
 $ui::_chip("Food", [
 	$ui::a(["href" => "#", "wyn:btn-clear" => "", "aria-label" => "Close", "role" => "button"])
 ]);
@@ -257,7 +257,7 @@ Container creates a little "breathing space" for your components. It takes in 2 
 - Children
 - Props (array, optional)
 
-```js
+```php
 $ui::_container([
 	$ui::div([], "Something Interesting")
 ], ["style" => "background: gold;"]);
@@ -269,7 +269,7 @@ This creates an empty state layout. It takes in only one param:
 
 - (array) properties of the empty state
 
-```js
+```php
 $ui::_emptyState([
 	"icon" => "mail icon-3x",
 	"title" => "You have no new messages",
@@ -284,7 +284,7 @@ $ui::_emptyState([
 
 This creates a simple fab
 
-```js
+```php
 $ui::_fab(["icon" => "people"]);
 ```
 
@@ -295,7 +295,7 @@ This creates a css icon. It takes in 2 params:
 - The icon to use "string"
 - Props for the icon (array, optional)
 
-```js
+```php
 $ui::_icon("people");
 ```
 
@@ -306,7 +306,7 @@ Creates a beautiful "toast" notification. It takes in 2 parameters:
 - Notification text/children
 - Notification props
 
-```js
+```php
 $ui::_notify("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
 $ui::_notify([
 	$ui::_button("", ["class" => "btn-clear float-right"]),
@@ -323,7 +323,7 @@ Creates a wynter css tile component. It takes in 2 params:
 - props (array)
 - children
 
-```js
+```php
 $ui::_tile([
 	"mode" => "auto",
 	"icon" => $ui::_avatar("./1.jpg", "", ["size" => "xl"]),
@@ -340,7 +340,7 @@ $ui::_tile([
 
 This creates a card component, but unlike `_card`, `_xCard` literally does everything for you and takes in special props to create your card.
 
-```js
+```php
 $ui::_xCard(["style" => "width: 300px"], [
 	"image" => "./1.jpg",
 	"title" => "Something",

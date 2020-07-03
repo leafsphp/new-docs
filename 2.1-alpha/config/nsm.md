@@ -9,7 +9,7 @@ When you build a Leaf application you will enter various scopes in your code (e.
 ## Application Names
 Every Leaf application may be given a name. **This is optional**. Names help you get a reference to a Leaf application instance in any scope throughout your code. Here is how you set and get an application’s name:
 
-```js
+```php
 <?php
 $leaf = new \Leaf\App();
 $leaf->setName('foo');
@@ -19,7 +19,7 @@ $name = $leaf->getName(); // "foo"
 ## Scope Resolution
 So how do you get a reference to your Leaf application? The example below demonstrates how to obtain a reference to a Leaf application within a route callback function. The `$leaf` variable is used in the global scope to define the HTTP GET route. But the `$leaf` variable is also needed within the route’s callback scope to render a template.
 
-```js
+```php
 $leaf = new \Leaf\App();
 
 $leaf->get('/foo', function () {
@@ -30,7 +30,7 @@ This example fails because the $leaf variable is unavailable inside the route ca
 
 ### Currying
 We can inject the `$leaf` variable into the callback function with the `use` keyword:
-```js
+```php
 $leaf = new \Leaf\App();
 
 $leaf->get('/foo', function () use ($leaf) {
@@ -51,13 +51,13 @@ Technically, an application mode is merely a string of text - like “developmen
 ## How do I set the application mode?
 ### Use an environment variable
 If Leaf sees an environment variable named “LEAF_MODE”, it will set the application mode to that variable’s value.
-```js
+```php
 $_ENV['LEAF_MODE'] = 'production';
 ```
 
 ### Use application setting
 If an environment variable is not found, Leaf will next look for the mode in the application settings.
-```js
+```php
 $leaf = new \Leaf\App([
     'mode' => 'production'
 ]);
@@ -71,7 +71,7 @@ After you instantiate a Leaf application, you may configure the Leaf application
 
 Assume the current application mode is “production”. Only the callable associated with the “production” mode will be invoked. The callable associated with the “development” mode will be ignored until the application mode is changed to “development”.
 
-```js
+```php
 <?php
 // Set the current mode
 $leaf = new \Leaf\App([

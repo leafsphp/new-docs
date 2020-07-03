@@ -14,7 +14,7 @@ You can view installation for Leaf v2.1 alpha [here](2.1-alpha/intro/)
 
 Leaf UI is a simple UI Framework for PHP. Okay, that sounds weird😂. Leaf UI simply lets you create user interfaces without leaving the comfort of PHP. With a [flutter](https://flutter.dev)-like structure, Leaf UI is really easy to pick up and use, even when compared with HTML.
 
-```js
+```php
 // Leaf UI Package (Not necessary to initialise)
 $ui = new Leaf\UI;
 
@@ -62,7 +62,7 @@ $ui::render($html);
 
 This is a new method inspired by [laravel](http://laravel.com/)'s resource route. This simply let's you create a route handled by a resource controller.
 
-```js
+```php
 $app = new Leaf\App();
 
 $app->resource("/posts", "PostController");
@@ -76,7 +76,7 @@ $app->run();
 
 Session retrieve allows you to return and immedietely remove a value from your session. This is like calling session `get` and `unset` immedietely.
 
-```js
+```php
 $session = new Leaf\Http\Session;
 
 $username = $session->retrieve("username");
@@ -84,7 +84,7 @@ $username = $session->retrieve("username");
 
 `retrieve` also allows you to set a default value for the value you're trying to get from the session. So in case `username` hasn't been set in the session, we can pass in a value to return to us.
 
-```js
+```php
 $username = $session->retrieve("username", "mick"); // returns mick if username is not found
 ```
 

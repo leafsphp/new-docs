@@ -3,7 +3,7 @@ Controllers are simply classes that serve as bridges between Models and the View
 
 In this section, we'll be looking at how to handle a route with a controller. So let's make an example controller: **remember it's just a php class**
 
-```js
+```php
 <?php
 class HomeController {
 	public function index() {
@@ -13,7 +13,7 @@ class HomeController {
 ```
 To handle a route using this controller, we'll have to import the controller, and then define a simple route
 
-```js
+```php
 $leaf = new Leaf\App;
 
 require "HomeController.php";
@@ -24,7 +24,7 @@ $leaf->get("/home");
 
 When using controllers, instead of defining a closure or function as the second parameter of your route, you rather pass in a string of the controller's class name and the function you want to use. In this case, `"HomeController@index"`, so remember, it's `Class@Method`
 
-```js
+```php
 $leaf = new Leaf\App;
 
 require "HomeController.php";
@@ -35,12 +35,12 @@ $leaf->get("/home", "HomeController@index");
 
 ## Controller Namespaces
 In case you're using an auto loader or using leaf in another framework and  you have your controllers in another directory, you can do sommething like this
-```js
+```php
 $leaf->get('/(\d+)', '\App\Controllers\User@showProfile');
 ```
 But this gets tedious if you have a lot of routes. So Leaf allows you to set a "general" namespace, you can set the default namespace to use on your router instance via `setNamespace()`
 
-```js
+```php
 $leaf->setNamespace('\App\Controllers');
 
 $leaf->get('/users/(\d+)', 'User@showProfile');

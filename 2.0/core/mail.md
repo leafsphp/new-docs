@@ -4,7 +4,7 @@ Leaf mail is a cool feature added in Leaf v2 after the main beta test. Leaf Mail
 ## Basic Usage
 Like most Leaf packages, you first need to import(initialise) Leaf Mail in order to use it, since it's not bound to the `Leaf` object.
 
-```js
+```php
 $mail = new Leaf\Mail();
 ```
 
@@ -12,26 +12,26 @@ This will allow you to use all Leaf Mail methods on the `$mail` variable.
 
 If you plan to use `SMTP` for handling your mailing, you can pass in your connection values on initialisation:
 
-```js
+```php
 $mail = new Leaf\Mail('smtp host', PORT: int);
 ```
 
 This initialises an smtp connection without authentication. To use authentication, you simply pass in an array of holding the smtp username and password
 
-```js
+```php
 $mail = new Leaf\Mail('smtp host', 0000, ['username' => 'user', 'password' => '***']);
 ```
 
 There's also a fourth parameter which accepts `boolean` values. It determines whether to run in debug mode. If this is set to `true`,  it allows you to run other types of debug modes on Leaf Mail eg: server debug mode.
 
 
-```js
+```php
 $mail = new Leaf\Mail('smtp host', 0000, [...], true);
 ```
 
 There's finally a fifth parameter which accepts `boolean` values. It determines whether to run in server debug mode. If this is set to `true`,  it shows logs from the SMTP host, making it easy to debug if the need arises.
 
-```js
+```php
 $mail = new Leaf\Mail('smtp host', 0000, [...], true, true);
 ```
 
@@ -51,7 +51,7 @@ Although you can initialise your SMTP connection on initialisation, you may also
 - Authentication Password  (Required if authentication is true)
 - The type of SMTP security (encryption) to use - default is 'STARTTLS' (Optional)
 
-```js
+```php
 // no auth example
 $mail->smtp_connect('localhost', 25);
 
@@ -78,33 +78,33 @@ This allows you to quickly create a simple mail. It takes in 8 parameters:
 - blank carbon copy (optional)
 
 **SYNTAX**
-```js
+```php
 $mail->basic($subject, $body, $recepient_email, $sender_name, $sender_email, $cc, $bcc);
 ```
 
 **Example**
 
-```js
+```php
 // Only required fields
 $email->basic("Subject", "Body", "user@mail.com", "sender name");
 ```
 
 This will create the email, but in order to actually send the email, we must call the `send` method.
 
-```js
+```php
 $mail->basic(...);
 $mail->send();
 ```
 
 For simplicity's sake, we can also call the `send` method on the `basic` method:
 
-```js
+```php
 $mail->basic(...)->send();
 ```
 
 You can catch errors with `$mail->errors()`
 
-```js
+```php
 if (!$mail->basic(...)) {
 	$mail->errors();
 } else {
@@ -132,7 +132,7 @@ Only specific values are accepted, any other values entered will be ignored. The
 - cc (optional)
 - bcc (optional)
 
-```js
+```php
 $email->write([
 	"subject" => "This is a full Write Test",
 	"template" => "./template.html",
@@ -144,7 +144,7 @@ $email->write([
 
 Like before, don't forget to call `send`.
 
-```js
+```php
 $email->write([...])->send();
 // or
 $email->write([...]);
@@ -159,11 +159,11 @@ Load Template is a method that allows you to use a prepared template as the emai
 - The name and/or PATH of the template
 - Boolean: Whether or not to return the template as a string - default is false (optional)
 
-```js
+```php
 $mail->loadTemplate("./template.html");
 ```
 
-```js
+```php
 $template = $mail->loadTemplate("./template.txt", true);
 ```
 
@@ -172,7 +172,7 @@ $template = $mail->loadTemplate("./template.txt", true);
 ### attach
 This is a method that allows you to add attachments to the email
 
-```js
+```php
 $mail->attach('./attachment');
 ```
 
@@ -185,7 +185,7 @@ As with any other script, something might go wrong, not with Leaf Mail per sey, 
 ### Mail::errors
 
 This method gives you a simple way to track errors caused by either the developer or the user. Let's look at this example.
-```js
+```php
 $email->write([
 	"subject" => "This is a full Write Test",
 	"template" => "./template.html",
@@ -196,7 +196,7 @@ $email->write([
 
 You notice that the `recepient_email` field is absent. Running this code will result in Leaf Mail catching the error and returning `false`. With this we can say that the request has failed, and to get back the error which was caught by Leaf Mail, we need to call the `errors()` method
 
-```js
+```php
 $email = $mail->write([
 	"subject" => "This is a full Write Test",
 	"template" => "./template.html",
@@ -217,13 +217,13 @@ We saw `Server Debug Mode` at the begining of this document. This simply allows 
 
 To get `SDM` working, you can set it on Leaf Mail initialisation like we saw before
 
-```js
+```php
 $mail = new Leaf\Mail('smtp host', PORT, [...], true, true);
 ```
 
 But this is sometimes not the 'preffered' way of doing things, so we have the `smtp_debug` method which simply set's `SMTPDebug` to `SMTP::DEBUG_SERVER`(PHPMailer). This is the default configuration for this method, however, you can pass in your own configuration too
 
-```js
+```php
 $mail = new Leaf\Mail;
 $mail->smtp_debug();
 
@@ -242,7 +242,7 @@ try {
 ## Other Methods
 Since Leaf Mail is built on [PHPMailer](https://github.com/PHPMailer/PHPMailer), all PHPMailer methods and variables are also valid on the `Leaf\Mail` object. 
 
-```js
+```php
 $mail = new Leaf\Mail;
 
 $mail->Subject = "...";
@@ -251,7 +251,7 @@ $mail->addAttachment("...");
 $mail->send();
 ```
 
-```js
+```php
 use Leaf\Mail\SMTP;
 use Leaf\Mail\Exception;
 ```

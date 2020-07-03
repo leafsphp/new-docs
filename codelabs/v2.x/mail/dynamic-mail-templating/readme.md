@@ -8,7 +8,7 @@ In this codelab experiment, we'll be using Leaf Mail, leaf's mail managing packa
 
 So first we'll to prepare our system, initialise any needed package before we continue.
 
-```js
+```php
 <?php
 require "vendor/autoload.php";
 
@@ -50,7 +50,7 @@ Basically, we've created a view which takes in a `$title`, `$name` and `$positio
 
 **Be sure to read [Leaf Blade docs](2.0/views/blade) and [Leaf Mail docs](2.0/core/mail)**
 
-```js
+```php
 <?php
 require "vendor/autoload.php";
 
@@ -67,7 +67,7 @@ So as you can see, all we have to do is to load the blade view into the `Body` s
 
 Note that rendering blade views doesn't output that view, it just returns it, to actually output the view, we have to explicitly use `echo` or Leaf's `renderMarkup`. Thus, we're taking advantage of this.
 
-```js
+```php
 $app->blade->configure("app/pages", "app/pages/cache");
 $body = $app->blade->render("mail", [
 	"title" => "Employment",
@@ -78,7 +78,7 @@ $body = $app->blade->render("mail", [
 
 Now, our complete view is saved in the `$body` variable, simple right? Now let's patch all what we've done together and send our email.
 
-```js
+```php
 <?php
 require "vendor/autoload.php";
 

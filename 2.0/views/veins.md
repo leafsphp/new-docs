@@ -28,12 +28,12 @@ Remember, all vein files end with `.vein.php`
 To use veins, you can initialise the `Leaf\Veins` class, or call it directly since it's bound on the Leaf object.
 
 ### Leaf\Veins init
-```js
+```php
 $veins = new Leaf\Veins();
 ```
 
 ### With Leaf Object <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 12px;">New in v2</span></sup>
-```js
+```php
 $veins = $leaf->veins;
 ```
 
@@ -41,7 +41,7 @@ $veins = $leaf->veins;
 This is a simple "tutorial" to get you up and going with Leaf Veins. The whole idea is to be able to pass items into our view(template).
 
 Imagine this object
-```js
+```php
 $user = (object) [
 	'name' => 'Michael Darko',
 	'email' => 'mickdd22@gmail.com',
@@ -50,7 +50,7 @@ $user = (object) [
 ```
 
 In order to use this object in our view(template), we'd have to pass this object through `set()` and then render our view. `set()` is a special method that passes values directly into out template.
-```js
+```php
 // pass single value to template
 $leaf->veins->set("name", $user->name);
 
@@ -60,7 +60,7 @@ $leaf->veins->set(["name" => $user->name, "email" => $user->email]);
 
 Now that our data has been set, we'll need to render this our template which the data is getting passed into. But before that, we'll have to tell Veins where to look for our templates and what directory to keep the template cache in. We can do this with `configure`.
 
-```js
+```php
 $leaf->veins->configure([
 	"veins_dir" => "views/",
 	"cache_dir" => "views/cache/"
@@ -69,7 +69,7 @@ $leaf->veins->configure([
 
 There are many more configurations available. This is an array of Veins default configurations, you can configure based on these.
 
-```js
+```php
 [
 	'checksum' => array(),
 	'charset' => 'UTF-8',
@@ -86,7 +86,7 @@ There are many more configurations available. This is an array of Veins default 
 
 Now that we've set the template and cache directories, we can now render our template
 
-```js
+```php
 $leaf->veins->render("homepage"); // homepage.vein.php
 ```
 
@@ -166,7 +166,7 @@ Or
 
 ## AutoEscape
 This has a lot of uses...but the most common use case is for rendering HTML
-```js
+```php
 $leaf->veins->set([
 	"post" => [
 		"body" => "<h2>This is the body</h2>"

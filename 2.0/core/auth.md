@@ -5,7 +5,7 @@ Setting up a login and sign-up system can sometimes be a very unpleasant experie
 
 Leaf Leaf Auth allows you to set-up authentication in just one line of code😅😅. Literally 1 line😎. To use Leaf Auth, you simply need to initialise the Leaf Auth package.
 
-```js
+```php
 $auth = new Leaf\Auth;
 ```
 
@@ -16,13 +16,13 @@ $auth = new Leaf\Auth;
 ### login() <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
 Login is used to create a simple, secure user login. It takes in a table for to search for users(so it's no longer limited to the users table) and a set of parameters for the login.
 
-```js
+```php
 $user = $auth->login("users", ["username" => "mychi.darko", "password" => md5("test")]);
 ```
 
 If the user is successfully found, the user data is returned, if not, `false` is returned. You can get any error by calling the `errors` method.
 
-```js
+```php
 $user = $auth->login("users", [
 	"username" => "mychi.darko",
 	"password" => md5("test")
@@ -36,7 +36,7 @@ if ($user == false) {
 example success response:
 **Note that the password field is removed**
 
-```js
+```php
 [
 	"id" => 1,
 	"username" => "mychi.darko",
@@ -50,7 +50,7 @@ example success response:
 
 If you use an `md5` encoded password, and the name of your password field is `password`, you can simply leave the password encoding to `login`. For now, only md5 is supported, don't worry, later versions of Leaf will support more encodings.
 
-```js
+```php
 $user = $auth->login("users", ["username" => "mychi.darko", "password" => "test"], "md5");
 ```
 
@@ -62,7 +62,7 @@ Default checks look for a `username` field and test it against the [ValidUsernam
 
 To use default checks, you simply have to pass `true` as the 4th parameter to login
 
-```js
+```php
 $user = $auth->login("users", [
 	"username" => "mychi.darko", 
 	"password" => "test"
@@ -71,7 +71,7 @@ $user = $auth->login("users", [
 
 To get any errors, you need to call the `errors` method
 
-```js
+```php
 $user = $auth->login("users", [
 	"username" => "mychi.darko", 
 	"password" => "test"
@@ -87,7 +87,7 @@ if ($user == false) {
 
 Register is a simple method used to create simple, secure user registrations. This option was `basicRegister` in earlier versions. It takes in a table to save users, the params(array) to save.
 
-```js
+```php
 $auth->register("users", [
 	"username" => "mychi.darko",
 	"email" => "mickdd22@gmail.com",
@@ -97,7 +97,7 @@ $auth->register("users", [
 
 If the user is successfully saved, the user data is returned, if not, `false` is returned. You can get any error by calling the `errors` method.
 
-```js
+```php
 $user = $auth->register("users", [
 	"username" => "mychi.darko",
 	"email" => "mickdd22@gmail.com",
@@ -115,7 +115,7 @@ Let's say you want to check whether the username a user just entered has been ta
 
 Well, `register` solves this problem smoothly. `register` has a 3rd parameter: an array of unique values which makes sure that the same value can't be saved twice.
 
-```js
+```php
 $db->register("users", ["name" => "mychi", "email" => "m@m.com", "pass" => "1234"], ["name", "email"]);
 ```
 
@@ -124,7 +124,7 @@ So, we're telling `register` to alert us if someone has already registered with 
 **With uniques, you can cut down on your whole app:**
 For instance, if you know the exact data you'll be receiving in your app, let's say a username, email and password from a register form, you can do something like this:
 
-```js
+```php
 $leaf->post("/register", function() use($leaf) {
 	$auth->register("users", $leaf->request->getBody(), ["username", "email"]);
 });
@@ -135,7 +135,7 @@ So, we pass in the entire request body, which contains the username, email and p
 ##### Password Encoding
 If you use an `md5` encoded password, and the name of your password field is `password`, you can simply leave the password encoding to `register`. For now, only md5 is supported, don't worry, later versions of Leaf will support more encodings.
 
-```js
+```php
 $leaf->post("/register", function() use($leaf) {
 	$auth->register("users", $leaf->request->getBody(), ["username", "email"], "md5");
 });
@@ -149,13 +149,13 @@ Default checks look for a `username` field and test it against the [ValidUsernam
 
 To use default checks, you simply have to pass `true` as the 5th parameter to login
 
-```js
+```php
 $auth->register("users", $leaf->request->getBody(), ["username", "email"], "md5", true);
 ```
 
 To get any errors, you need to call the `errors` method
 
-```js
+```php
 if ($auth->register("users", $leaf->request->getBody(), ["username", "email"], "md5", true) == false) {
 	$app->response->throwErr($auth->errors());
 }
@@ -167,7 +167,7 @@ if ($auth->register("users", $leaf->request->getBody(), ["username", "email"], "
 
 Leaf Auth now uses the `Leaf\Authentication` package to provide solutions for token authentication. This provides a simple way to work with manual authentication and tokens. All methods here are now available in `Leaf\Auth`, but are only accessible on the `$this` object.
 
-```js
+```php
 $payload = $this->validate($token);
 ```
 
@@ -181,7 +181,7 @@ Token Secrets are basically simple `strings` which are encoded into your Tokens 
 
 #### Basic Usage
 
-```js
+```php
 $auth->setSecretKey("tH1$_iS_MY_$3¢Ret");
 
 $auth->token->generateSimpleToken($user_id, $auth->getSecretKey());

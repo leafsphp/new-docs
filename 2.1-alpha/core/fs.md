@@ -10,7 +10,7 @@ Leaf FS allows you to read/write to file, create, rename, copy and paste files/d
 
 To include the FS object in a route, use this:
 
-```js
+```php
 $fs = new Leaf\FS;
 ```
 
@@ -29,7 +29,7 @@ Let's take this directory structure below, we initialise Leaf FS in our index.ph
 
 In our index.php file:
 
-```js
+```php
 $fs->create_folder("new_logs");
 ```
 
@@ -47,7 +47,7 @@ After running this code, this is our new directory structure
 
 rename_folder is used to rename a directory. It takes in two parameters: the directory you want to rename and it's new name/path.
 
-```js
+```php
 $fs->rename_folder("new");
 $fs->rename_folder("home/new", "home/items");
 ```
@@ -58,7 +58,7 @@ $fs->rename_folder("home/new", "home/items");
 
 delete_folder is used to delete a directory. It takes in two parameters: the directory you want to delete.
 
-```js
+```php
 $fs->delete_folder("new", "items");
 $fs->delete_folder("home/new", "home/items");
 ```
@@ -69,7 +69,7 @@ $fs->delete_folder("home/new", "home/items");
 
 list_dir returns an array of all the files/folders in a directory. It takes in the directory to list and a search pattern eg: `*.php`. Also note that all folders end with a '/'
 
-```js
+```php
 $fs->list_dir("new");
 $fs->list_dir("home/new", "*.txt");
 ```
@@ -82,7 +82,7 @@ $fs->list_dir("home/new", "*.txt");
 
 `create_file` is used to create a new file in the `current directory`. It takes in the filename or path+filename. If the file already exists, it gives the new file a different name.
 
-```js
+```php
 $fs->create_file("items.txt");
 $fs->create_file("home/items.txt");
 ```
@@ -91,7 +91,7 @@ $fs->create_file("home/items.txt");
 
 `write_file` is used to add content to a file, if the file already has content, all the content in there is replaced with the new content. Also, if the file doesn't exist, it will be created and all the content will be added to it. It takes in 2 parameters, the name/path+name of the file and the content;
 
-```js
+```php
 $fs->write_file("items.txt", "Hello");
 $fs->write_file("items.txt", [
   	"name" => "Item 1"
@@ -103,7 +103,7 @@ $fs->write_file("items.txt", 1);
 
 append_file is almost exactly the same as write_file, except that instead of replacing the content in a file, it adds to the end of it.
 
-```js
+```php
 $data = $fs->append_file("items.txt", "Item name");
 ```
 
@@ -111,7 +111,7 @@ $data = $fs->append_file("items.txt", "Item name");
 
 prepend_file is almost exactly the same as write_file, except that instead of replacing the content in a file, it adds to the begining.
 
-```js
+```php
 $data = $fs->prepend_file("items.txt", "Item name");
 ```
 
@@ -119,7 +119,7 @@ $data = $fs->prepend_file("items.txt", "Item name");
 
 read_file returns the data found in a file. It takes 1 parameter: the file name/path+file name.
 
-```js
+```php
 $data = $fs->read_file("./home/items.txt");
 ```
 
@@ -127,7 +127,7 @@ $data = $fs->read_file("./home/items.txt");
 
 rename_file renames a file. It takes 2 parameter: the file name/path+file name to rename and it's new name.
 
-```js
+```php
 $data = $fs->rename_file("./home/items.txt", "home/products.txt");
 ```
 
@@ -135,7 +135,7 @@ $data = $fs->rename_file("./home/items.txt", "home/products.txt");
 
 delete_file deletes a file. It takes 2 parameter: the file name/path+file name to delete.
 
-```js
+```php
 $data = $fs->delete_file("./home/items.txt");
 ```
 
@@ -143,7 +143,7 @@ $data = $fs->delete_file("./home/items.txt");
 
 copy_file copies a file from the current directory to another directory. It takes in 3 parameters: the filename, the new path + filename and whether to rename the file if it exists in the new directory. The 3rd parameter is optional, if nothing is passed for the 3rd parameter, it will rename the file. Pass in true to rename the file if it already exists, false to override the file content(default is true).
 
-```js
+```php
 $data = $fs->copy_file("items.txt", "./home/");
 $data = $fs->copy_file("items.txt", "./home/", false);
 ```
@@ -152,7 +152,7 @@ $data = $fs->copy_file("items.txt", "./home/", false);
 
 clone_file also copies a file from the current directory to another directory, but unlike copy_file, clone_file includes the filename, and it takes in 2 parameters: the filename and the path+filename to clone to.
 
-```js
+```php
 $data = $fs->clone_file("items.txt", "./home/products.txt");
 ```
 
@@ -160,7 +160,7 @@ $data = $fs->clone_file("items.txt", "./home/products.txt");
 
 move_file also moves a file from the current directory to another directory, it takes in 2 parameters: the filename and the path to move to.
 
-```js
+```php
 $data = $fs->move_file("items.txt", "./home/");
 ```
 
@@ -168,7 +168,7 @@ $data = $fs->move_file("items.txt", "./home/");
 
 upload is for simple file uploads. It takes in 3 parameters, the path to save the file, the file and the file type(optional). It returns an array `[true, $filename]` if successful and `[false, $error]` if the upload fails.
 
-```js
+```php
 $profilePic = $_FILES["profile_pic"];
 // file upload
 $fs->upload("./images/", $profilePic);
@@ -180,7 +180,7 @@ $fs->upload("./images/", $profilePic, "image");
 
 Get or set UNIX mode of a file or directory.
 
-```js
+```php
 $mode = $fs->chmod("items.txt");
 $fs->chmod("items.txt", ...);
 ```
@@ -188,7 +188,7 @@ $fs->chmod("items.txt", ...);
 <!-- ##### link
 Create a symlink to the target file or directory. On Windows, a hard link is created if the target is a file.
 
-```js
+```php
 $mode = $fs->link("items.txt", "");
 ``` -->
 
@@ -196,7 +196,7 @@ $mode = $fs->link("items.txt", "");
 
 ## FS Example
 
-```js
+```php
 $fs = new Leaf\FS;
 
 $leaf->post('/books/add', function() use($fs) {

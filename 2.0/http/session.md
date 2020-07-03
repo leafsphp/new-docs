@@ -5,7 +5,7 @@ Leaf offers simple session management to help you quickly build your apps and AP
 
 ## Using Session
 
-```js
+```php
 $leaf = new Leaf\App();
 $session = new Leaf\Http\Session();
 
@@ -16,7 +16,7 @@ $leaf->get("/text", function() use($session) {
 
 ### Initialising the Session object
 With this method, you manually initialise the Session object, and then pass it into your route. Note that in version 2, `\Leaf\Http\Session` has been shortened to `\Leaf\Http\Session`.
-```js
+```php
 $leaf = new Leaf\App();
 $session = new Leaf\Http\Session();
 
@@ -31,7 +31,7 @@ $leaf->post("/login", function() use($session) {
 ## Starting a new session
 A new session is started or an old one continued when you instanciate the `Leaf\Session`
 
-```js
+```php
 // more direct method
 $session = new Leaf\Http\Session;
 ```
@@ -42,13 +42,13 @@ This line of code checks for an active session....if none is found, it creates a
 ## set()
 set() simply sets new native session variables for your app.
 
-```js
+```php
 $session->set("username", $username);
 ```
 
 #### Setting multiple values <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 11px;">New in v2</span></sup>
 In v2.0, `set` can take in an array if you wish to set multiple values or just want to use one.
-```js
+```php
 $session->set(["username" => $username, "mobile_number" => $mobile_number]);
 ```
 
@@ -59,7 +59,7 @@ $session->set(["username" => $username, "mobile_number" => $mobile_number]);
 
 ## get()
 get is a simple method that returns a session value. It takes in one parameter: the name of the param passed into the app through the session It works just like how `$_SESSION['key']` does
-```js
+```php
 $username = $session>get("username");
 ```
 
@@ -68,7 +68,7 @@ $username = $session>get("username");
 ## getBody()
 getBody() returns the key => value pairs of all the session data including any CSRF data as an associative array.
 
-```js
+```php
 $body = $session->getBody();
 ```
 
@@ -79,7 +79,7 @@ $body = $session->getBody();
 
 `unset()` simply deletes a session variable.
 
-```js
+```php
 $session->unset('name');
 ```
 
@@ -87,7 +87,7 @@ $session->unset('name');
 
 In v2.0, `unset` can also take in an array if you wish to unset multiple values or just want to use one.
 
-```js
+```php
 $session->unset(["username", "mobile_number"]);
 ```
 
@@ -97,7 +97,7 @@ $session->unset(["username", "mobile_number"]);
 
 `reset()` simply re-initialises a session.
 
-```js
+```php
 $leaf->post('/session/reset', function() use($session) {
   	$session->reset();
 });
@@ -108,7 +108,7 @@ $leaf->post('/session/reset', function() use($session) {
 ## id()
 `id()` sets and/or returns the current session id. It takes in an **optional** parameter: the ID to overwrite the session id.
 
-```js
+```php
 $id = $session->id();
 ```
 
@@ -116,7 +116,7 @@ So if the session id is not set, this will generate and return a new session id.
 
 You can also set your own session id with this syntax below. It will be returned as well, so you can keep it in a variable.
 
-```js
+```php
 $id = $session->id("new session id");
 ```
 
@@ -125,7 +125,7 @@ $id = $session->id("new session id");
 ## regenerate()
 regenerate() simply generates a new session id. It takes in a boolean parameter which indicates whether to delete all session data or not(has a default of false)
 
-```js
+```php
 $session->regenerate(false);
 $session->regenerate(true); // will clear all session data
 ```
@@ -135,7 +135,7 @@ $session->regenerate(true); // will clear all session data
 ## Sesison Cookies <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
 You may also use the `\Leaf\Middleware\SessionCookie` middleware to persist session data in encrypted, hashed HTTP cookies. To enable the session cookie middleware, add the `\Leaf\Middleware\SessionCookie` middleware to your Leaf application:
 
-```js
+```php
 $leaf->add(new \Leaf\Middleware\SessionCookie(array(
     'expires' => '20 minutes',
     'path' => '/',

@@ -2,13 +2,13 @@
 
 Leaf Date makes formating date/time really easier, though the method names may appear weird, they're actually very easy to remeber😂.
 
-```js
+```php
 $date = new Leaf\Date();
 ```
 
 The Date object has been directly bound to the Leaf object, so we can use it without initialising it.
 
-```js
+```php
 $leaf = new Leaf\App();
 
 $leaf->date;
@@ -24,39 +24,39 @@ Basically, Date just gives you methods to manipulate the date and time, faster a
 ### random_timestamp
 random_timestamp as the name implies, generates a new random timestamp. This method was Timestamp in the previous version.
 
-```js
+```php
 $timestamp = $date->random_timestamp();
 ```
 
 random_timestamp is already configured to give a wide range of dates, but if you ever feel like customizing this range, just pass in params for random_timestamp
-```js
+```php
 $date->random_timestamp($start, $end);
 ```
 
 ### random_date
 random_date as the name implies, generates a new random date.
 
-```js
+```php
 $timestamp = $date->random_date();
 ```
 
 Just like randomTimestamp, random_date is already configured with a wide range of dates, but you can set a specific range with:
 
-```js
+```php
 $date->random_date($start, $end);
 ```
 
 ### get_timezone
 This method returns the current time zone of the user
 
-```js
+```php
 $timeZone = $date->get_timezone();
 ```
 
 ### set_timezone
 This method sets the timezone sets the timezone of the user. This method takes in one optional parameter, which is the timezone to set. If nothing is passed in there, the timezone is set to a GMT timezone.
 
-```js
+```php
 $timeZone = $date->set_timezone('Timezone');
 ```
 
@@ -66,7 +66,7 @@ You can get a list of all PHP supported timezones [here](https://www.w3schools.c
 
 now returns the timestamp of the current date and time. Now will return the date based on the timezone, therefore, it is recommended to use now together with `setTimeZone`
 
-```js
+```php
 $date->set_timezone('Africa/Accra');
 $timezone = $date->now();
 ```
@@ -75,14 +75,14 @@ $timezone = $date->now();
 
 This is used to get the date from some days ago.
 
-```js
+```php
 $now = $date->now(); // returns 2020-04-15 05:21:43 pm
 $date->days_ago(2); // returns 2020-04-13
 ```
 
 You can also pass in a particular date as a second parameter. This will be the date to start counting from.
 
-```js
+```php
 echo $date->days_ago(10, "2020-04-13"); // returns 2020-04-03
 ```
 
@@ -90,14 +90,14 @@ echo $date->days_ago(10, "2020-04-13"); // returns 2020-04-03
 
 This is used to get the date from some months ago.
 
-```js
+```php
 $now = $date->now(); // returns 2020-04-15 05:21:43 pm
 $date->months_ago(2); // returns 2020-02-15
 ```
 
 You can also pass in a particular date as a second parameter. This will be the date to start counting from.
 
-```js
+```php
 echo $date->months_ago(10, "2020-04-13"); // returns 2019-06-13
 ```
 
@@ -105,14 +105,14 @@ echo $date->months_ago(10, "2020-04-13"); // returns 2019-06-13
 
 This is used to get the date from some years ago.
 
-```js
+```php
 $now = $date->now(); // returns 2020-04-15 05:21:43 pm
 $date->years_ago(2); // returns 2018-04-15
 ```
 
 You can also pass in a particular date as a second parameter. This will be the date to start counting from.
 
-```js
+```php
 echo $date->years_ago(10, "2020-04-13"); // returns 2010-04-13
 ```
 
@@ -122,7 +122,7 @@ echo $date->years_ago(10, "2020-04-13"); // returns 2010-04-13
 
 This method gets the date in `YYYY-MM-DD` format from an existing timestamp
 
-```js
+```php
 $parsedDate = $date->ts_to_date($timestamp);
 ```
 
@@ -132,7 +132,7 @@ $parsedDate = $date->ts_to_date($timestamp);
 
 This gets the date in the format (MM DD, YYYY) from an existing timestamp
 
-```js
+```php
 $parsedDate = $date->ts_to_english_date($timestamp);
 ```
 
@@ -142,7 +142,7 @@ $parsedDate = $date->ts_to_english_date($timestamp);
 
 This gets the date in the format `(DD MM, YYYY HH:MM:SS)` from a timestamp
 
-```js
+```php
 $parsedDate = $date->ts_to_english_ts($timestamp);
 ```
 
@@ -152,7 +152,7 @@ $parsedDate = $date->ts_to_english_ts($timestamp);
 
 This gets the time in the format `(HH:MM:SS)` from a timestamp
 
-```js
+```php
 $parsedDate = $date->ts_to_time($timestamp);
 ```
 
@@ -160,7 +160,7 @@ $parsedDate = $date->ts_to_time($timestamp);
 
 Format a timestamp based on your own rules
 
-```js
+```php
 $parsedDate = $date->format($timestamp, "d-m-Y");
 ```
 
@@ -170,7 +170,7 @@ $parsedDate = $date->format($timestamp, "d-m-Y");
 
 This gets the month in words from a number (1-12)
 
-```js
+```php
 $month = $date->int_to_month($number);
 ```
 
@@ -180,7 +180,7 @@ $month = $date->int_to_month($number);
 
 This gets the day in words from a number (1-7)
 
-```js
+```php
 $month = $date->int_to_day($number);
 ```
 
@@ -188,7 +188,7 @@ $month = $date->int_to_day($number);
 
 Get current day
 
-```js
+```php
 $date = $date->day();
 ```
 
@@ -196,7 +196,7 @@ $date = $date->day();
 
 Get current month
 
-```js
+```php
 $month = $date->month();
 ```
 
@@ -204,7 +204,7 @@ $month = $date->month();
 
 Get current year
 
-```js
+```php
 $year = $date->year();
 ```
 

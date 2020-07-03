@@ -10,7 +10,7 @@ To use these scripts, you simply have to call whichever method you need on the `
 
 You might have guessed it😂. That's right, that's our `console.log`. It works exactly like how the javascript console.log works, so there's no need to speak much on this.
 
-```js
+```php
 Leaf\JS\Scripts::c_log("Text", ["message" => "Arrays are formatted into JSON"]);
 ```
 
@@ -18,7 +18,7 @@ Leaf\JS\Scripts::c_log("Text", ["message" => "Arrays are formatted into JSON"]);
 
 This one lets you style data you've logged to the console
 
-```js
+```php
 Leaf\JS\Scripts::c_style("Data, can be an array too", "css");
 Leaf\JS\Scripts::c_style("c_style data", "color: gold; font-size: 50px;");
 ```
@@ -27,7 +27,7 @@ Leaf\JS\Scripts::c_style("c_style data", "color: gold; font-size: 50px;");
 
 Tabulate array data in console **(console.table)**
 
-```js
+```php
 \Leaf\JS\Scripts::c_table([["name" => "Mychi", "age" => "18"], ["name" => "seth", "age" => "18"]]);
 ```
 
@@ -35,7 +35,7 @@ Tabulate array data in console **(console.table)**
 
 **console.debug**.
 
-```js
+```php
 \Leaf\JS\Scripts::c_debug();
 ```
 
@@ -43,7 +43,7 @@ Tabulate array data in console **(console.table)**
 
 **console.clear**.
 
-```js
+```php
 \Leaf\JS\Scripts::c_clear();
 ```
 
@@ -51,7 +51,7 @@ Tabulate array data in console **(console.table)**
 
 **console.trace**.
 
-```js
+```php
 \Leaf\JS\Scripts::c_trace("trace message");
 ```
 
@@ -61,25 +61,25 @@ Tabulate array data in console **(console.table)**
 
 Our version of `localstorage.setItem` works the same way too. Arrays are made json by default.
 
-```js
+```php
 Leaf\JS\Scripts::localstorage_set("name", "Mychi Darko");
 ```
 
 ### localstorage_get
 
-```js
+```php
 $name = Leaf\JS\Scripts::localstorage_get("name");
 ```
 
 ### localstorage_remove
 
-```js
+```php
 Leaf\JS\Scripts::localstorage_remove("name");
 ```
 
 ### localstorage_clear
 
-```js
+```php
 Leaf\JS\Scripts::clear();
 ```
 
