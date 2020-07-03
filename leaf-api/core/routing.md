@@ -18,8 +18,6 @@ $app->get('/user/{id}', 'Class@method');
 Route("GET", "/users", "Class@method");
 ```
 
-Read [Leaf Routing Docs](2.1/routing/).
-
 ## Next Steps
 
 - [Leaf Core Routing](/2.1/routing/)
