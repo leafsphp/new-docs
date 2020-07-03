@@ -3,5 +3,5 @@
 	A lightweight PHP MVC framework for rapid API development.
 </p>
 
-[Get Started](leaf-api/)
-[Leaf Core](/)
+[Get Started](leaf-api/?id=leafapi)
+[Leaf API on Github](https://github.com/leafsphp/leafAPI)
