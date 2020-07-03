@@ -1,8 +1,8 @@
-# 📕 Leaf MVC Models
+# 📕 Leaf API Models
 
 In Leaf API, we don't really have anything to do with our models: Leaf Core has taken all the trouble out of using models, so all we have to do in Leaf API is to generate the model and include it in our controller.
 
-Our Models are kept in `App/Models`, but we won't need to create our models manually. Leaf MVC's command line tool covers this for us.
+Our Models are kept in `App/Models`, but we won't need to create our models manually. Leaf API's command line tool covers this for us.
 
 ```bash
 php leaf g:model <Name>
