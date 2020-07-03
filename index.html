@@ -23,6 +23,8 @@
 	<div id="app"></div>
 </body>
 <script>
+	let path = String(window.location.hash);
+
 	window.$docsify = {
 		loadNavbar: true,
 		loadSidebar: true,
@@ -32,7 +34,6 @@
 		logo: 'https://leaf-docs.netlify.app/images/logo.png',
 		ga: 'UA-150463804-1',
 		name: 'Leaf PHP',
-		repo: "leafsphp/leaf",
 		search: {
 			noData: {
 				'/': 'No results!'
@@ -44,7 +45,12 @@
 				'leaf-ui': 'Search Leaf UI Docs',
 				'/tilly': 'Search Tilly Docs'
 			}
-		}
+		},
+		repo: path.includes("#/leaf-api/") ? (
+			"leafsphp/leafAPI"
+		) : path.includes("#/ui/") ? (
+			"leafsphp/leaf-ui"
+		) : path.includes("#/tilly/") ? "leafsphp/tilly" : "leafsphp/leaf"
 	}
 </script>
 <script src="prism.js"></script>

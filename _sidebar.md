@@ -51,6 +51,8 @@
   * [Retrieving Data](2.1/database/select)
   * [Inserting Data](2.1/database/insert)
 
+* [**Leaf API**](leaf-api/)
+
 * [**Leaf UI**](ui/)
 
 * [**Tilly**](tilly/)
