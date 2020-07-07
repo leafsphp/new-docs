@@ -5,7 +5,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 $app = new Leaf\App;
 
 $app->set404();
-$app->db->auto_connect("host", "username", "password", "dbname");
+$app->db->connect("host", "username", "password", "dbname");
 
 $app->get('/book/{id}', function($id) use($app) {
   $app->response->respond(["id" => $id]);
