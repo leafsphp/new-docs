@@ -120,7 +120,7 @@ $db->choose("books", "*", ["author" => "mychi.darko", "published" => "2019"], "L
 
 #### Validation
 
-`choose` also has inbuilt validation which validates parameters according to set rules. This uses the [`Leaf\Form->validate`](2.1/core/form) method. You can check it out for more information on validation.
+`choose` also has inbuilt validation which validates parameters according to set rules. This uses the [`Leaf\Form->validate`](2.2-beta/core/form) method. You can check it out for more information on validation.
 
 `choose` takes in a fifth parameter which is a boolean, this is whether of not to validate the data passed into `choose` using the default checks.
 
@@ -143,7 +143,7 @@ $db->choose("books", "*", ["author" => "mychi.darko", "published" => "2019"], "L
 
 Here, we're telling `choose` that the **author** parameter should be a valid username, and the **published** param should contain only numbers. If any of these conditions(rules) are not met, the application throws an error and breaks.
 
-You can view all validation rules [here](2.1/core/form?id=validation)
+You can view all validation rules [here](2.2-beta/core/form?id=validation)
 
 ```php
 $db->choose($table, $fields, $params, $options, $defaultChecks, $validation);
@@ -152,11 +152,11 @@ $db->choose($table, $fields, $params, $options, $defaultChecks, $validation);
 <br>
 <hr>
 
-<a href="#/2.1/http/request" style="margin: 0px">Request</a>
-<a href="#/2.1/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.1/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.1/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.1/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.2-beta/http/request" style="margin: 0px">Request</a>
+<a href="#/2.2-beta/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/2.2-beta/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/2.2-beta/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/2.2-beta/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

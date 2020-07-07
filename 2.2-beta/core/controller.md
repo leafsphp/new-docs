@@ -50,7 +50,7 @@ Now, when a request matches the specified route URI, the `show` method on the `U
 
 #### Default Templating
 
-Using the core controller, you already have access to templating with [Leaf Veins](2.1/views/veins). You can simply configure and render your template whenever you want to.
+Using the core controller, you already have access to templating with [Leaf Veins](2.2-beta/views/veins). You can simply configure and render your template whenever you want to.
 
 ```php
 use Leaf\Controller;
@@ -75,7 +75,7 @@ class NameController extends Controller {
 }
 ```
 
-You can view more info on Veins [here](2.1/views/veins)
+You can view more info on Veins [here](2.2-beta/views/veins)
 
 <hr>
 
@@ -97,7 +97,7 @@ class NameController extends Controller {
 }
 ```
 
-You can view more on responses [here](2.1/http/response)
+You can view more on responses [here](2.2-beta/http/response)
 
 <hr>
 
@@ -135,16 +135,16 @@ public function index() {
 }
 ```
 
-Read more on Leaf Forms [here](2.1/core/forms)
+Read more on Leaf Forms [here](2.2-beta/core/forms)
 
 <br>
 <hr>
 
-<a href="#/2.1/http/request" style="margin: 0px">Request</a>
-<a href="#/2.1/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.1/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.1/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.1/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.2-beta/http/request" style="margin: 0px">Request</a>
+<a href="#/2.2-beta/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/2.2-beta/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/2.2-beta/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/2.2-beta/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

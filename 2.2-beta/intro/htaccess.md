@@ -22,11 +22,11 @@ Save as `.htaccess` in your the same directory as your "root file"
 <br>
 <hr>
 
-<a href="#/2.1/intro/first" style="margin: 0px;">Your first leaf app</a>
-<a href="#/2.1/routing" style="margin: 0px 10px;">Routing</a>
-<a href="#/2.1/http/request" style="margin: 0px 10px;">Request</a>
-<a href="#/2.1/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.1/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.2-beta/intro/first" style="margin: 0px;">Your first leaf app</a>
+<a href="#/2.2-beta/routing" style="margin: 0px 10px;">Routing</a>
+<a href="#/2.2-beta/http/request" style="margin: 0px 10px;">Request</a>
+<a href="#/2.2-beta/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/2.2-beta/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

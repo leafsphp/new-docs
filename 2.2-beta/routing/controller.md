@@ -121,11 +121,11 @@ class ClassName extends Controller {
 <br>
 <hr>
 
-<a href="#/2.1/http/request" style="margin: 0px">Request</a>
-<a href="#/2.1/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.1/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.1/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.1/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/2.2-beta/http/request" style="margin: 0px">Request</a>
+<a href="#/2.2-beta/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/2.2-beta/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/2.2-beta/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/2.2-beta/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
