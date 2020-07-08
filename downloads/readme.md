@@ -5,7 +5,7 @@ Welcome to the stash. Here, we keep downloadable assets built/based on Leaf and 
 
 ## Adding to the stash
 
-The stash makes items like boilerplates and templates available for other users to use/base their projects on. To add to the stash, you can submit a new pull request (PR) tagged `stash` on our [docs repo](https://github.com/leafsphp/new-docs) together with a zipped version of the file and a link to download it on this page.
+The stash makes items like boilerplates and templates available for other users to use/base their projects on. To add to the stash, you can submit a new pull request (PR) tagged `stash` on our [docs repo](https://github.com/leafsphp/new-docs) together with a folder containing the zipped version of the file, possibly a preview image and a link to download it on this page.
 
 ## 📄 Available files
 

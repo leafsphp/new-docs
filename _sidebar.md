@@ -1,5 +1,7 @@
 * [**Leaf PHP Versions**](versions)
 
+* [**Leaf CLI**](cli)
+
 * [**Leaf Downloads**](downloads/ "Leaf Stash")
 
 * [**Leaf API**](leaf-api/)
