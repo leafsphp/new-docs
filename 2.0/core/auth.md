@@ -3,7 +3,7 @@
 ## Intro
 Setting up a login and sign-up system can sometimes be a very unpleasant experience, especially for new devs. For pro devs, the challenge is "the standard". For this, Leaf has prepared something really simple.
 
-Leaf Leaf Auth allows you to set-up authentication in just one line of code😅😅. Literally 1 line😎. To use Leaf Auth, you simply need to initialise the Leaf Auth package.
+Leaf Auth allows you to set-up authentication in just one line of code😅😅. Literally 1 line😎. To use Leaf Auth, you simply need to initialise the Leaf Auth package.
 
 ```php
 $auth = new Leaf\Auth;
@@ -14,7 +14,7 @@ $auth = new Leaf\Auth;
 ## Authentication methods:
 
 ### login() <sup><span style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2</span></sup>
-Login is used to create a simple, secure user login. It takes in a table for to search for users(so it's no longer limited to the users table) and a set of parameters for the login.
+Login is used to create a simple, secure user login. It takes in a table to search for users(so it's no longer limited to the users table) and a set of parameters for the login.
 
 ```php
 $user = $auth->login("users", ["username" => "mychi.darko", "password" => md5("test")]);
