@@ -1,71 +1,117 @@
 # 🍪 Cookies
 
-The Leaf application provides helper methods to send cookies with the HTTP response.
+The Leaf application provides helper methods to send cookies with the HTTP response. From version 2.2 beta, the old `Leaf\Http\Cookies` package has been replaced by `Leaf\Http\Cookie`. This change also fixes the bug which prevented use of `Leaf\Http\Cookies` inside route handlers and controllers.
 
-## Set Cookie
+## Init
 
-This example demonstrates how to use the Leaf application’s `setCookie()` method to create an HTTP cookie to be sent with the HTTP response:
+Unlike the former `Leaf\Http\Cookies` package, you can use `Leaf\Http\Cookie` methods without initialising the class:
 
 ```php
-$leaf->setCookie('foo', 'bar', '2 days');
+use Leaf\Http\Cookie;
+// ...
+Cookie::set("name", "Michael");
 ```
 
-This creates an HTTP cookie with the name `“foo”` and value `“bar”` that expires two days from now. You may also provide additional cookie properties, including its path, domain, secure, and httponly settings. The Leaf application’s setCookie() method uses the same signature as PHP’s native setCookie() function.
+## Set
+
+This method replaces the previous `setCookie` method. It takes in 3 params:
+
+- cookie name (string|array)
+- cookie value (optional - string)
+- cookie options (optional - array)
 
 ```php
-$leaf->setCookie(
-    $name,
-    $value,
-    $expiresAt,
-    $path,
-    $domain,
-    $secure,
-    $httponly
-);
+// normal method
+Cookie::set("name", "Michael");
+// using array
+Cookie::set(["name" => "Michael"]);
 ```
 
-<hr>
-
-## Set Encrypted Cookie
-
-You can tell Leaf to encrypt the response cookies by setting the app’s cookies.encrypt setting to true. When this setting is true, Leaf will encrypt the response cookies automatically before they are returned to the HTTP client.
-
-Here are the available Leaf app settings used for cookie encryption:
+You can also set multiple cookies at a time
 
 ```php
-$leaf = new \Leaf\App([
-    'cookies.encrypt' => true,
-    'cookies.secret_key' => 'my_secret_key',
-    'cookies.cipher' => MCRYPT_RIJNDAEL_256,
-    'cookies.cipher_mode' => MCRYPT_MODE_CBC
+Cookie::set([
+    "name" => "Michael",
+    "age" => "18"
 ]);
 ```
 
-<hr>
-
-## Delete Cookie
-
-You can delete a cookie using the Leaf application’s `deleteCookie()` method. This will remove the cookie from the HTTP client before the next HTTP request. This method accepts the same signature as the Leaf application’s `setCookie()` instance method, without the `$expires` argument. Only the first argument is required.
+Adding cookie options
 
 ```php
-$leaf->deleteCookie('foo');
+Cookie::set("name", "Michael", ["expire" => 0]);
 ```
 
-If you need to also specify the path and domain:
+Options for cookies are:
 
-```php
-$leaf->deleteCookie('foo', '/', 'foo.com');
-```
-
-You may also further specify the secure and httponly properties:
-
-```php
-$leaf->deleteCookie('foo', '/', 'foo.com', true, true);
-```
+- expire
+- path
+- domain
+- secure
+- httponly
 
 <hr>
 
-## [Session Cookies](2.2-beta/http/session?id=sesison-cookies-span-stylebackground-rgb11-200-70-color-white-padding-3px-7px-font-size-14pxnew-in-v2)
+## simpleCookie
+
+This method allows you to quickly set a cookie and it's expiry time. It takes in 3 params:
+
+- cookie name (string|array)
+- cookie value (optional - string)
+- cookie expiresAt (optional - string - default of 7 days)
+
+```php
+Cookie::simpleCookie("name", "Michael", "2 days");
+```
+
+<hr>
+
+## all
+
+`all` returns all set cookies.
+
+```php
+$cookies = Cookie::all();
+```
+
+<hr>
+
+## get
+
+`get` returns a particular set cookie
+
+```php
+$name = Cookie::get("name");
+```
+
+<hr>
+
+## unset
+
+This method replaces the previous `deleteCookie` method. It takes in the cookie to unset.
+
+```php
+// normal method
+Cookie::unset("name");
+// using array
+Cookie::unset(["name"]);
+```
+
+You can also unset multiple cookies at a time
+
+```php
+Cookie::unset(["name", "age"]);
+```
+
+<hr>
+
+## unsetAll
+
+This method removes all set cookies.
+
+```php
+Cookie::unsetAll();
+```
 
 <br>
 <hr>
