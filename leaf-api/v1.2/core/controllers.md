@@ -12,6 +12,12 @@ All Leaf API controllers are kept in the `App/Controllers` directory. So you can
 php leaf g:controller <Name>
 ```
 
+**From version 1.2 beta, you no llonger have to fully enter controller names; instead of TodosController, you can enter Todos, or even Todo:**
+
+```bash
+php leaf g:controller Todos
+```
+
 ## A deep look at controllers
 
 As mentioned before, Leaf API has 3 types of controllers: API controllers, resource controllers and web controllers. Though they're all controllers,  they offer different base methods for different purposes.
