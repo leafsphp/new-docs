@@ -6,7 +6,7 @@ So basically, we'll be looking at different kinds of controllers, creating contr
 
 ## Generating Controllers
 
-All Leaf API controllers are kept in the `App/Controllers` directory. So you can manually create your own Controller there, but the recommended method is to use the [leaf console tool](/leaf-api/utils/console). So, in the root of your leaf API project, open up your console and type:
+All Leaf API controllers are kept in the `App/Controllers` directory. So you can manually create your own Controller there, but the recommended method is to use the [leaf console tool](/leaf-api/v1.2/utils/console). So, in the root of your leaf API project, open up your console and type:
 
 ```bash
 php leaf g:controller <Name>
@@ -193,7 +193,7 @@ Options:
 
 - [Leaf Core APIControllers](/2.1/core/api-controller)
 - [Leaf Core Controllers](/2.1/core/controller)
-- [Models](/leaf-api/core/models)
-- [Migrations](/leaf-api/core/migrations)
+- [Models](/leaf-api/v1.2/core/models)
+- [Migrations](/leaf-api/v1.2/core/migrations)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

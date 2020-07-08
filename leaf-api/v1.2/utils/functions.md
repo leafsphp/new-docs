@@ -54,9 +54,9 @@ $output = View("user", ["username" => "Mychi"]);
 
 ## Next Steps
 
-- [Routing](/leaf-api/core/routing)
-- [Controllers](/leaf-api/core/controllers)
-- [Models](/leaf-api/core/models)
-- [Migrations](/leaf-api/core/migrations)
+- [Routing](/leaf-api/v1.2/core/routing)
+- [Controllers](/leaf-api/v1.2/core/controllers)
+- [Models](/leaf-api/v1.2/core/models)
+- [Migrations](/leaf-api/v1.2/core/migrations)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

@@ -4,7 +4,7 @@ For those who struggle with maintaining their database schema, or who have probl
 
 ## Generating a migration
 
-You can quickly generate a migration using the `g:migration` [Leaf Console](/leaf-api/utils/console) command:
+You can quickly generate a migration using the `g:migration` [Leaf Console](/leaf-api/v1.1/utils/console) command:
 
 ```bash
 php leaf g:migration <Name>
@@ -89,7 +89,7 @@ php leaf db:rollback all
 
 The idea for Leaf API migrations was based on Laravel migrations, so you can read [Laravel migrations](https://laravel.com/docs/7.x/migrations) for a better understanding.
 
-- [Views](/leaf-api/core/views)
+- [Views](/leaf-api/v1.1/core/views)
 - [Leaf Core Model](/2.1/core/model)
 - [Leaf Core API Controllers](/2.1/core/api-controller)
 - [Leaf Auth](/2.1/core/auth)

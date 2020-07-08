@@ -49,9 +49,9 @@ Available commands:
 
 ## Next Steps
 
-- [Helper Functions](/leaf-api/utils/functions)
-- [Routing](/leaf-api/core/routing)
-- [Controllers](/leaf-api/core/controllers)
-- [Models](/leaf-api/core/models)
+- [Helper Functions](/leaf-api/v1.1/utils/functions)
+- [Routing](/leaf-api/v1.1/core/routing)
+- [Controllers](/leaf-api/v1.1/core/controllers)
+- [Models](/leaf-api/v1.1/core/models)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
