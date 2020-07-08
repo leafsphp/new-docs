@@ -6,5 +6,6 @@
   Create clean, simple but powerful web applications and APIs quickly.
 </p>
 
-[Get Started](2.2-beta/)
+[Get Started](2.1/)
+[Try V2.2 BETA](2.2-beta/)
 [Checkout Leaf API](leaf-api/)
