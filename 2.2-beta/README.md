@@ -1,46 +1,35 @@
 # 📚 Getting Started
 
-## Leaf PHP v2.1
+## Leaf PHP v2.2 BETA
 
-Leaf v2.1 is the latest release of Leaf PHP Framework that comes along with a bunch of new features, better functionality and fixes from the previous version.
+Leaf v2.2 beta is the latest beta release of Leaf PHP Framework that comes along with a bunch of new features, better functionality and fixes from v2.1.
 
 ## 📁 Installation
 
-You can view installation for Leaf v2.1 [here](2.2-beta/intro/)
+You can view installation for Leaf v2.2 beta [here](2.2-beta/intro/)
 
 ## What's New
 
-### 📑Leaf Db <sup><small style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2.1</small></sup>
+### 📑 Added <sup class="new-tag-1">New in v2.2 beta</sup>
 
-Leaf Db is a new lightweight but powerful query builder which allows you quickly write dynamic queries, validate and seperate data in just a single line of code.
+- Added `Leaf\Auth::currentUser`
+- Added new cookies package relying on PHP's `setcookie`
 
-```php
-$db = new Leaf\Db;
-$db->auto_connect();
+### 🔧 Fixed
 
-$user = $db->select("users")
-   ->where("username", $username)
-   ->validate("username", "validUsername")
-   ->hidden("password")
-   ->fetchObj()
-```
+- fixed hidden fields on `Leaf\Auth::login`
+- Fixed multiple-request type data on `get` and `body` at `Leaf\Http\Request`
 
-[Read Leaf Db Docs](2.2-beta/db/)
+### 🎈 Changed
 
-### 🛫Cors Bypass
+- Switched cookies package in `Leaf\Http\Response`
+- Switched cookies package in `Leaf\App`
 
-Just a little handy tool especially useful when building APIs. CORS errors are a very common thing for developers who work with APIs, and this method is just a basic bypass for these errors.
+### 🚚 Removed
 
-```php
-$app = new Leaf\App();
-$app->response->cors();
-
-// your code...
-
-$app->run();
-```
-
-[Read Response Docs](2.2-beta/http/response)
+- Removed old cookies package and all it's methods
+- Removed `setEncryptedCookie` and `getEncryptedCookie` on `Leaf\App`
+- Slashed unnecessary code from `Leaf\Http\Request`
 
 <br>
 <hr>
