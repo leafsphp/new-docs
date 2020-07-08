@@ -117,6 +117,34 @@ If a header with the given name does not exist, `null` is returned. You may spec
 
 <hr>
 
+## 🍪 Cookies
+
+You can also add a cookie using the response object. This uses Leaf Cookies.
+
+### setCookie
+
+This method uses [Leaf Cookie's set](/2.2-beta/http/cookies?id=set)
+
+```php
+$app->response->setCookie("name", "Michael");
+```
+
+### simpleCookie
+
+This method uses [Leaf Cookie's simpleCookie](/2.2-beta/http/cookies?id=simplecookie)
+
+```php
+$app->response->simpleCookie("name", "Michael", "1 day");
+```
+
+### deleteCookie
+
+This method uses [Leaf Cookie's unset](/2.2-beta/http/cookies?id=unset)
+
+```php
+$app->response->deleteCookie("name");
+```
+
 ## 🛫cors()
 
 Just a little handy tool especially useful when building APIs. CORS errors are a very common thing for developers who work with APIs, and this method is just a basic bypass for these errors.
