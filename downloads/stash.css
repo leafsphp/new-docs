@@ -43,3 +43,11 @@
 		margin-left: 0 !important;
 	}
 }
+
+/* tags */
+.new-tag-1 {
+	background: rgb(11, 200, 70);
+	color: white !important;
+	padding: 3px 7px;
+	font-size: 14px;
+}

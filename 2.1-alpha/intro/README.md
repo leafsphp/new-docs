@@ -27,7 +27,7 @@ composer require leafs/leaf ^v2.1-alpha
 Download from github and run `composer install` to get all dependencies
 
 ```bash
-git clone --single-branch --branch 2.0 https://github.com/leafsphp/leaf.git
+git clone --single-branch --branch 2.x https://github.com/leafsphp/leaf.git
 ```
 
 OR

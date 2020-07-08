@@ -16,10 +16,24 @@ Leaf's has a very simple installation method. You can install directly with comp
 
 Composer is a dependency manager for PHP, just like npm for javascript and ruby gems. Therefore, you need to have PHP installed on your system. If you don't already have composer installed, you can download it [here](https://getcomposer.org/)
 
-After downloading composer, you can run this command to install leaf in your project folder
+After downloading composer, you can run this command to install leaf in your project folder.
 
 ```bash
 composer require leafs/leaf
+```
+
+This command will give you the latest stable release, however, if you want to use v2.2 beta, use this instead:
+
+```bash
+composer require leafs/leaf v2.2-beta
+```
+
+### New project with Leaf CLI <sup class="new-tag-1">NEW</sup>
+
+Leaf CLI is a console tool for creating and managing Leaf projects. Read the guide [here](/cli)
+
+```bash
+leaf create <project-name>
 ```
 
 ### Install with Github
@@ -27,7 +41,7 @@ composer require leafs/leaf
 Download from github and run `composer install` to get all dependencies
 
 ```bash
-git clone --single-branch --branch 2.0 https://github.com/leafsphp/leaf.git
+git clone --single-branch --branch 2.x https://github.com/leafsphp/leaf.git
 ```
 
 OR
@@ -40,20 +54,32 @@ OR
 	<a href="https://github.com/leafsphp/leaf/" style="background: #202020; color: white; text-decoration: none; padding: 8px 15px; border-radius: 3px;">Download Repo</a>
 </div>
 
-### Build with MVC
+### Build with Leaf API
+
+You can also try out our [LeafAPI](/leaf-api/) package. This is another framework built around the `Leaf` package. Leaf API provides you with tools to quickly and efficiently build an API. Leaf APIis built with what we call MRRC(Model Request Response Controller) architecture which is pretty much MVC without the V. It also has scaffolding, a custom terminal, migrations, an ORM and other cool features.
+
+```bash
+composer create-project leafs/api <project-name>
+```
+
+or
+
+```bash
+leaf create <project-name> --api
+```
+
+### Build with Leaf MVC
 
 You can also try out our [LeafMVC](https://leafmvc.netlify.com) package. This is a simple yet powerful MVC framework wrapped around the `Leaf` package which helps you build with Leaf in an MVC setup. It comes with a custom terminal, scafffolding, migrations, an ORM and many more features. You can install it with this command.
 
 ```bash
-composer create-project leafs/mvc
+composer create-project leafs/mvc <project-name>
 ```
 
-### Build with API
-
-You can also try out our [LeafAPI](https://github.com/leafsphp/leafAPI) package. This is another framework built around the `Leaf` package. Leaf API provides you with tools to quickly and efficiently build an API. Leaf APIis built with what we call MRRC(Model Request Response Controller) architecture which is pretty much MVC without the V. It also has scaffolding, a custom terminal, migrations, an ORM and other cool features.
+or
 
 ```bash
-composer create-project leafs/api
+leaf create <project-name> --mvc
 ```
 
 <br>
