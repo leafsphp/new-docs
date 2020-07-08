@@ -1,4 +1,4 @@
-# Leaf CLI
+# 💻 Leaf CLI
 
 [![Latest Stable Version](https://poser.pugx.org/leafs/cli/v/stable)](https://packagist.org/packages/leafs/cli)
 [![Total Downloads](https://poser.pugx.org/leafs/cli/downloads)](https://packagist.org/packages/leafs/cli)
@@ -6,7 +6,7 @@
 
 A simple command line tool for creating  and interacting with your leaf projects. You can do stuff like installing packages, interacting with your app, previewing your app...
 
-## Installation
+## 📂 Installation
 
 You can get this tool up and running on your system using composer:
 
@@ -22,9 +22,9 @@ Make sure to place Composer's system-wide vendor bin directory in your `$PATH` s
 
 You could also find the composer's global installation path by running `composer global about` and looking up from the first line.
 
-## Usage Guide
+## 📕 Usage Guide
 
-### Creating projects
+### 🚧 Creating projects
 
 To start a new project, simply open up your console or terminal in your directory
 for projects and enter:
@@ -59,7 +59,7 @@ or
 leaf create <project-name> -m
 ```
 
-### Installing packages
+### ➕ Installing packages
 
 This cli tool also adds a feature to install packages from composer
 
@@ -67,7 +67,7 @@ This cli tool also adds a feature to install packages from composer
 leaf install leafs/ui
 ```
 
-### Interactive Shell
+### 🧿 Interactive Shell
 
 You can also use the interactive shell to interact with your app.
 
@@ -81,7 +81,7 @@ $ leaf app:interact
 >>> $user->save();
 ```
 
-### Previewing your app
+### 📺 Previewing your app
 
 This opens up your app on the PHP local server.
 
@@ -124,7 +124,7 @@ Available commands:
 
 ## License
 
-Leaf CLI is open-sourced software licensed under the [MIT license](LICENSE.md).
+Leaf CLI is open-sourced software licensed under the MIT license.
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
