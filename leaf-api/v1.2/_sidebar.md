@@ -25,5 +25,3 @@
   * [Leaf Password](2.1/beta-zone/password "Leaf Password Helper")
 
 * [**Leaf Core**](/)
-
-* [**Code Labs**](codelabs/leaf-api/)

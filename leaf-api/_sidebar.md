@@ -26,4 +26,4 @@
 
 * [**Leaf Core**](/)
 
-* [**Code Labs**](codelabs/leaf-api/)
+* [**Checkout v1.2 BETA**](leaf-api/v1.2/)
