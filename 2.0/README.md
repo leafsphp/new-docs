@@ -41,7 +41,7 @@ OR
 
 ### Build with MVC
 
-You can also try out our [LeafMVC](https://leafmvc.netlify.com) package. This is a simple yet powerful MVC framework wrapped around the `Leaf` package which helps you build with Leaf in an MVC setup. It comes with a custom terminal, scafffolding, migrations, an ORM and many more features. You can install it with this command.
+You can also try out our [LeafMVC](https://leafmvc.netlify.app) package. This is a simple yet powerful MVC framework wrapped around the `Leaf` package which helps you build with Leaf in an MVC setup. It comes with a custom terminal, scafffolding, migrations, an ORM and many more features. You can install it with this command.
 
 ```bash
 composer create-project leafs/mvc
@@ -63,4 +63,4 @@ composer create-project leafs/api
 <a href="#/2.0/routing/" style="margin: 0px 10px;">Routing</a>
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

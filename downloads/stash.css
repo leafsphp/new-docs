@@ -51,3 +51,27 @@
 	padding: 3px 7px;
 	font-size: 14px;
 }
+
+.alert {
+	padding: 20px 22px;
+	border-radius: 4px;
+	font-weight: 500;
+}
+
+.alert.-info {
+	border: 1px solid rgba(10, 230, 150, 0.8);
+	color: rgb(5, 160, 70);
+	background: rgba(10, 230, 150, 0.05);
+}
+
+.alert.-error {
+	border: 1px solid rgba(230, 36, 10, 0.8);
+	color: rgb(160, 15, 5);
+	background: rgba(230, 25, 10, 0.05);
+}
+
+.alert.-warning {
+	border: 1px solid rgba(230, 160, 10, 0.8);
+	color: rgb(160, 93, 5);
+	background: rgba(230, 127, 10, 0.05);
+}

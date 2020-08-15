@@ -66,11 +66,11 @@
   * [Dynamic Mailing](codelabs/v2.x/mail/dynamic-mail-templating/)
   
 * Versions
-  * [Version 1.2.1](https://leaf-docs.netlify.com/v1.2.2-beta/index.html)
-  * [Version 1.3.0](https://leaf-docs.netlify.com/v1.3.0/index.html)
-  * [Version 1.4.1](https://leaf-docs.netlify.com/v1.4.1/index.html)
-  * [Version 1.4.2](https://leaf-docs.netlify.com/v1.4.2/index.html)
-  * [Version 1.5.0](https://leaf-docs.netlify.com/v1.5.0/index.html)
+  * [Version 1.2.1](https://leaf-docs.netlify.app/v1.2.2-beta/index.html)
+  * [Version 1.3.0](https://leaf-docs.netlify.app/v1.3.0/index.html)
+  * [Version 1.4.1](https://leaf-docs.netlify.app/v1.4.1/index.html)
+  * [Version 1.4.2](https://leaf-docs.netlify.app/v1.4.2/index.html)
+  * [Version 1.5.0](https://leaf-docs.netlify.app/v1.5.0/index.html)
   * [Version 2.0](2.0/)
   * [Version 2.1](2.1/)
   * [Version 2.2 beta](2.2-beta/)
