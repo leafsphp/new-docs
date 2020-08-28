@@ -2,7 +2,7 @@
 
 ## Leaf PHP: Lucky Charm🍀
 
-Lucky Charm🍀 is the latest beta release of Leaf PHP Framework. It comes with fixes for most known bugs, sharper and simpler looking methods, a smaller package size, better data handling and suggestions from our community. Note that changes from lucky charm will also be shiped in later versions of [LeafMVC](/), [LeafAPI](/) and [Skeleton](/).
+Lucky Charm🍀 is the latest stable release of Leaf PHP Framework. It comes with fixes for most known bugs, sharper and simpler looking methods, a smaller package size, better data handling and suggestions from our community. Note that changes from lucky charm will also be shiped in later versions of [LeafMVC](/), [LeafAPI](/) and [Skeleton](/).
 
 ## 📁 Installation
 
