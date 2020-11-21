@@ -9,7 +9,7 @@
 }
 
 .file-preview {
-	border-radius: 5px;
+	border-radius: 4px;
 }
 
 .filename {
@@ -27,7 +27,7 @@
 	text-decoration: none !important;
 	text-align: center;
 	padding: 5px 10px;
-	border-radius: 3px;
+	border-radius: 4px;
 }
 
 @media only screen and (min-width: 1000px) {
