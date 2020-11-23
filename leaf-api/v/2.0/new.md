@@ -1,19 +1,19 @@
-# New in v2.0 - Barnard 30
+# 🎉 New in v2.0 - Barnard 30
 
 Version 2 of Leaf API contains a bunch of new features, some inclusions and even some breaking changes which are geared to easy integration with other libraries, as well as bettering some internal features used by Leaf API and Leaf MVC.
 
-All of these changes are listed here, just so you have a reference and won't need to refer to the docs or open an issue on github.
+This page documents all those changes, just so you have a direct reference and won't need to go through the whole documentation to track these changes.
 
 This guide is divided into sections according to features. Those features are also divided into sections pertaining to:
 
-- Added FeaturesLeaf API
+- Added Features
 - Breaking Changes
 - Bug Fixes
 - Removed Features
 
-## Leaf Console
+## 🎮 Leaf Console Tool
 
-### New Features
+### NEW FEATURES
 
 Leaf console tool got some new features which enable faster development, better debuging and better support for console app integration.
 
@@ -81,9 +81,22 @@ php leaf d:command ClockCommand
 php leaf d:command Clock
 ```
 
+#### More detailed console output
+
+Although this is a small one, it's helpful to know exactly what the console tool is working on, as such more readable output messages have been prepared for you.
+
+```bash
+$ php leaf db:seed
+
+> UsersSeeder seeded successfully
+> TableNameSeeder seeded successfully
+
+Database seed complete
+```
+
 <hr>
 
-### Fixes
+### FIXES
 
 These group of features are fixes from previous versions. Enjoy!!
 
@@ -131,7 +144,7 @@ php leaf db:seed
 
 <hr>
 
-### Breaking Changes
+### BREAKING CHANGES
 
 A few changes which might need you to tweak you app a little bit. Don't worry, these aren't sharp, disastrous changes, just tweaking one or two lines of code.
 
@@ -169,7 +182,7 @@ $console->registerCustom(\App\Console\ExampleCommand::class);
 // multiple commands
 $console->registerCustom([
     \App\Console\CommandOne::class,
-    \App\Console\CommandOTwo::class
+    \App\Console\CommandTwo::class
 ]);
 ```
 
@@ -177,10 +190,41 @@ $console->registerCustom([
 
 All template commands and console options associated with views and templates have officially been discontinued. You can create your own templates or use any templating engine you prefer, however, default views have been removed.
 
-## Directory Structure
+## 📁 Directory Structure
 
-### Breaking Changes
+### BREAKING CHANGES
 
 #### Routes
 
 Routes were defined in `Routes.php` in previous versions, however, for 'scalability' reasons, routes have been grouped in the `Routes` directory in which other files can be created to group routes in. An example has already been created which you can refer to.
+
+## 🌱 Working with seeds
+
+### BREAKING CHANGES
+
+Leaf Console tool which initially didn't have a command to run seeds, now has included one. This change however has added a little twist to the way seeds are defined in Leaf API. Just as before, seeds are created in the `App\Database\Seeds` directory, but are registered in the `DatabaseSeeder` file. In the `DatabaseSeeder`, previous versions would need you to call `$this->call` to register your own seed files:
+
+```php
+public function run()
+{
+    $this->call(UsersSeeder::class);
+    // if there's more than 1 class
+    $this->call(TableNameSeeder::class);
+}
+```
+
+In this version however, in the `run` method, all you need to do is return an array of all the seeds you want to register.
+
+```php
+public function run() : array
+{
+    return [UsersSeeder::class, TableNameSeeder::class];
+}
+```
+
+## Next Steps
+
+- [First App](/leaf-api/v1.2/getting-started/first-app)
+- [Routing](/leaf-api/v1.2/core/routing)
+- [Leaf Console](/leaf-api/v1.2/utils/console)
+- [Controllers](/leaf-api/v1.2/core/controllers)
