@@ -8,17 +8,6 @@ Note that all your development is done in the `App` directory. By default, a few
 
 For this "tutorial", we'll be building a simple project to learn about Leaf in general. We’re going to be building a simple API to demonstrate how Leaf API works. We’ll be using models, request, response, controllers, migrations, leaf’s command line tool and a whole lot of other tools provided for us.😎
 
-<!-- **NB**
-If you want to generate an application from the finished blog, you can run
-```bash
-composer create-project leafs/mvc < AppName > --prefer-dist dev-blog
-```
-This will create the blog application for you, so you simply have to link your database and run
-```bash
-php leaf db:seed
-```
-That's all, simple right?😂🙌 -->
-
 ## Our First API
 
 In the [previous section](/leaf-api/v1.2/?id=Installation), we looked at installation, Leaf API's directory structure and running your project, it's assumed you've already read this section.
@@ -29,17 +18,21 @@ Now that that’s out of the way, we can start with our actual development. When
 
 As such, `index.php` serves as our project root. Every request/page load passes through `index.php` first and this is done because of the [.htaccess](/2.1/intro/htaccess) file.
 
-<!-- Leaf API’s route config seperates routes into 2 categories: web routes and API routes. All routes which start with `/api` are considered as API routes by route config and are handled in `app/routes/api.php` all other routes are handled in `app/routes/web.php` in the case of this article, all routes will be handled in `app/routes/web.php️` 🤷‍♂️ -->
-
 ### Routing
 
-In Leaf API, all our routes are defined in `App/Routes.php`. You can check out Leaf router's docs [here](/2.1/routing/).
+In v2, the `Routes.php` file has been replaced with the `Routes` directory. If you however want to continue using the `Routes.php`, you can create a `Routes.php` file and link it in the `index.php` file in the root directory.
+
+Example routes have been created to give you a fair idea on how to handle routing with Leaf. You can check out Leaf router's docs [here](/2.1/routing/).
 
 Now, let’s get started.
 
 ```php
 <?php
 $app->get('/', function() {
+  // Do something here
+});
+
+Route("GET", "/", function() {
   // Do something here
 });
 ```
@@ -62,50 +55,32 @@ Back in our `App/Routes.php` file, we can use this controller like so:
 
 ```php
 $app->get('/home', '\App\Controllers\PagesController@index');
+
+Route("GET", "/", "\App\Controllers\PagesController@index");
 ```
 
 That's it. Now, let's look at our controller
 
 ```php
 <?php
+
 namespace App\Controllers;
 
 class PagesController extends Controller {
-  public function index() {
-    $this->render("index", [
-      "title" => "Leaf Blade Integration"
+  public function index()
+  {
+    json([
+      "key" => "value"
     ]);
   }
 }
 ```
 
-### Templating
-
-By default, Leaf API's controllers are set-up to use Leaf Blade. Leaf Blade is Leaf's adaptation of the laravel blade engine(originally forked from [https://github.com/jenssegers/blade/](https://github.com/jenssegers/blade/)). Blade is flexible, popular and easy to use, making it a good choice for Leaf API. You can quickly get this to work by running
-
-```bash
-php leaf g:template index
-```
-
-This will generate a new template `index.blade.php` in `App/Views`. This view is simply just to introduce you to views, but we won't be using this in our API. We can delete this unused template:
-
-```bash
-php leaf d:template index
-```
-
-### Response
-
-Let's go back to our controller. Since this is an API, we'll want to output some sort of data to a client as a response. We can easily do this with [Leaf Response](/2.1/http/response). Note that `Response` is directly bound to the controller, so you can use all response methods on `$this`
-
-```php
-public function index() {
-  $this->respond("Output over here");
-}
-```
+`json` is a new method available in v2. `json` provides the functionality of both `respond` and `respondWithCode` which are both deprecated. Since most APIs output json, `json` is a method you'll be using a lot.
 
 ### Request
 
-Response handles the way data goes out of our application, on the flip side, Request handles the data that comes into our application. You can find Leaf Request docs [here](/2.1/http/request)
+Response handles the way data goes out of our application, on the flip side, Request handles the data that comes into our application. You can find Leaf Request docs [here](/2.1/http/request).
 
 Let's look at a basic example. Inside our controller:
 
@@ -114,7 +89,18 @@ public function search() {
   $keywords = $this->request->get("keywords");
 
   // ... handle search operation
-  $this->respond($results);
+  $this->json($results);
+}
+```
+
+There are however global methods like `json` we saw above. You can use these methods from anywhere within your app. There are also global methods for request as well: `requestData` or `request` and `requestBody`, using global methods, the example above will look like this:
+
+```php
+public function search() {
+  $keywords = requestData("keywords");
+
+  // ... handle search operation
+  json($results);
 }
 ```
 
@@ -124,7 +110,13 @@ Our models represent our data layer, usually from a database. Our models are kep
 
 ***To use your database, you have to head to `.env` and configure your database: set the databse name, username, password...***
 
-Let's first generate a model.
+In v2, after configuring your .env variables, if the database doesn't exist, you can create it with Leaf console`
+
+```bash
+php leaf db:install
+```
+
+Now, let's generate a model.
 
 ```bash
 php leaf g:model Post
@@ -284,11 +276,11 @@ Now let's head over to our index method and enter this:
 
 ```php
 public function index() {
-  $this->respond(Post::all());
+  json(Post::all());
 }
 ```
 
-`Post::all()` is a method which will query our database and retrieve all our `posts` for us, we're using `$this->respond()` to send all our posts to a client as JSON.
+`Post::all()` is a method which will query our database and retrieve all our `posts` for us, we're using `json()` to send all our posts to a client as JSON.
 
 All that's left now is to add a route for our controller. In `App\Routes.php`:
 
@@ -305,7 +297,7 @@ For a blog app, we'd usually want to see our latest posts first, so we can order
 
 ```php
 public function index() {
-  $this->respond(Post::orderBy('id', 'desc')->get());
+  json(Post::orderBy('id', 'desc')->get());
 }
 ```
 
@@ -315,7 +307,7 @@ Next, we'll want to show a particular post when we navigate to `/post/{id}` eg: 
 
 ```php
 public function show($id) {
-  $this->respond(Post::find($id));
+  json(Post::find($id));
 }
 ```
 
@@ -327,8 +319,8 @@ Post::where('title', 'Post Two')->get();
 
 // create a new post
 $post = new Post;
-$post->title = $this->request->get("title");
-$post->body = $this->request->get("body");
+$post->title = requestData("title");
+$post->body = requestData("body");
 $post->save();
 
 // delete a post
