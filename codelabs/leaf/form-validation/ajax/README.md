@@ -1,5 +1,9 @@
 # Ajax Request Validation
 
+## Version support
+
+This experiment supports all 2.x versions of Leaf, however, from `v2.4-beta` upwards, Leaf methods return `null` instead of `false` when there's an error or an operation couldn't be completed.
+
 ## Base Example
 
 Modern web app conventions have led to a lot of web apps relying on AJAX requests to a backend (API) using libraries like [axios](https://github.com/axios/axios). These backend APIs take in json encoded data from the frontend, perform some operations and send back a response.
@@ -10,8 +14,8 @@ For this section, we'll be working at a request holding JSON encoded data of an 
 
 ```php
 {
-	"email": "mychi.darko@gmail.com",
-	"passowrd": "@mY047dhj7"
+  "email": "mychi.darko@gmail.com",
+  "passowrd": "@mY047dhj7"
 }
 ```
 
@@ -30,7 +34,7 @@ $app = new Leaf\App;
 $form = new Leaf\Form;
 
 $app->post("/validate", function() use($app, $form) {
-	// validation happens here
+  // validation happens here
 });
 
 $app->run();
@@ -42,12 +46,12 @@ For our validation, we'll simply want to make sure that our email is a valid ema
 
 ```php
 $app->post("/validate", function() use($app, $form) {
-	$validation = $form->validate([
-		"email" => "email",
-		"password" => "required"
-	]);
+  $validation = $form->validate([
+    "email" => "email",
+    "password" => "required"
+  ]);
 
-	if ($validation == false) $app->response->throwErr($form->errors());
+  if ($validation == false) $app->response->throwErr($form->errors());
 });
 ```
 
@@ -66,12 +70,12 @@ $app = new Leaf\App;
 $form = new Leaf\Form;
 
 $app->post("/validate", function() use($app, $form) {
-	$validation = $form->validate([
-		"email" => "email",
-		"password" => "required"
-	]);
+  $validation = $form->validate([
+    "email" => "email",
+    "password" => "required"
+  ]);
 
-	if ($validation == false) $app->response->throwErr($form->errors());
+  if ($validation == false) $app->response->throwErr($form->errors());
 });
 
 $app->run();
