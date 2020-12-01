@@ -65,15 +65,15 @@ $leaf->deleteCookie('foo', '/', 'foo.com', true, true);
 
 <hr>
 
-## [Session Cookies](2.1/http/session?id=sesison-cookies-span-stylebackground-rgb11-200-70-color-white-padding-3px-7px-font-size-14pxnew-in-v2)
+## [Session Cookies](v/2.1/http/session?id=sesison-cookies-span-stylebackground-rgb11-200-70-color-white-padding-3px-7px-font-size-14pxnew-in-v2)
 
 <br>
 <hr>
 
-<a href="#/2.1/http/response" style="margin: 0px">Response</a>
-<a href="#/2.1/http/request" style="margin: 0px; 10px;">Request</a>
-<a href="#/2.1/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.1/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/2.1/http/response" style="margin: 0px">Response</a>
+<a href="#/v/2.1/http/request" style="margin: 0px; 10px;">Request</a>
+<a href="#/v/2.1/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/2.1/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

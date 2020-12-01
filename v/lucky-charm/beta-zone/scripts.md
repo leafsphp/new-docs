@@ -85,7 +85,7 @@ Leaf\JS\Scripts::clear();
 
 <hr>
 
-### [Back to beta zone](lucky-charm/beta-zone/)
+### [Back to beta zone](v/lucky-charm/beta-zone/)
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

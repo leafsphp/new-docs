@@ -1,6 +1,6 @@
 # 🧨 Leaf Authentication
 
-Authentication provides simple methods to help with manual authentication and working with tokens. In v2, Authentication has been added to Leaf Heplers, so it's now just an authentication helper. If you want a much simpler way, you can check out [Simple Auth](lucky-charm/core/auth).
+Authentication provides simple methods to help with manual authentication and working with tokens. In v2, Authentication has been added to Leaf Heplers, so it's now just an authentication helper. If you want a much simpler way, you can check out [Simple Auth](v/lucky-charm/core/auth).
 
 ## Working with tokens
 
@@ -124,11 +124,11 @@ $authHeader = $authentication->getAuthorizationHeader();
 <br>
 <hr>
 
-<a href="#/lucky-charm/http/request" style="margin: 0px">Request</a>
-<a href="#/lucky-charm/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/lucky-charm/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/lucky-charm/http/request" style="margin: 0px">Request</a>
+<a href="#/v/lucky-charm/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/lucky-charm/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/v/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

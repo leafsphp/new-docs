@@ -1,55 +1,55 @@
 * Getting started
-  * [Intro](2.2-beta/intro/)
-  * [Re-routing to index](2.2-beta/intro/htaccess.md)
-  * [First App](2.2-beta/intro/first.md)
+  * [Intro](v/2.2-beta/intro/)
+  * [Re-routing to index](v/2.2-beta/intro/htaccess.md)
+  * [First App](v/2.2-beta/intro/first.md)
 
 * Configuration
-  * [Overview](2.2-beta/config/)
-  * [Settings](2.2-beta/config/settings.md)
-  * [Names, Scopes and Modes](2.2-beta/config/nsm.md)
+  * [Overview](v/2.2-beta/config/)
+  * [Settings](v/2.2-beta/config/settings.md)
+  * [Names, Scopes and Modes](v/2.2-beta/config/nsm.md)
 
 * Routing
-  * [Basic Routing & 404](2.2-beta/routing/)
-  * [Sub Routing](2.2-beta/routing/sub-routing.md)
-  * [Dynamic Routing](2.2-beta/routing/dynamic.md)
-  * [Middleware](2.2-beta/routing/middleware.md)
-  * [Optional Sub patterns](2.2-beta/routing/sub-patterns.md)
-  * [Using Controllers](2.2-beta/routing/controller.md)
-  * [Sub folder support](2.2-beta/routing/sub-folder.md)
+  * [Basic Routing & 404](v/2.2-beta/routing/)
+  * [Sub Routing](v/2.2-beta/routing/sub-routing.md)
+  * [Dynamic Routing](v/2.2-beta/routing/dynamic.md)
+  * [Middleware](v/2.2-beta/routing/middleware.md)
+  * [Optional Sub patterns](v/2.2-beta/routing/sub-patterns.md)
+  * [Using Controllers](v/2.2-beta/routing/controller.md)
+  * [Sub folder support](v/2.2-beta/routing/sub-folder.md)
 
 * HTTP
-  * [Request](2.2-beta/http/request.md)
-  * [Response](2.2-beta/http/response.md)
-  * [Session](2.2-beta/http/session.md)
-  * [Cookies](2.2-beta/http/cookies.md)
-  * [Headers](2.2-beta/http/headers.md)
+  * [Request](v/2.2-beta/http/request.md)
+  * [Response](v/2.2-beta/http/response.md)
+  * [Session](v/2.2-beta/http/session.md)
+  * [Cookies](v/2.2-beta/http/cookies.md)
+  * [Headers](v/2.2-beta/http/headers.md)
 
 * Core
-  * [Leaf Forms](2.2-beta/core/forms.md)
-  * [Leaf Mail](2.2-beta/core/mail.md)
-  * [Leaf Date](2.2-beta/core/date.md)
-  * [Leaf FS](2.2-beta/core/fs.md)
-  * [Leaf Scripts](2.2-beta/core/scripts.md)
+  * [Leaf Forms](v/2.2-beta/core/forms.md)
+  * [Leaf Mail](v/2.2-beta/core/mail.md)
+  * [Leaf Date](v/2.2-beta/core/date.md)
+  * [Leaf FS](v/2.2-beta/core/fs.md)
+  * [Leaf Scripts](v/2.2-beta/core/scripts.md)
   
-  * [Simple Auth](2.2-beta/core/auth.md)
-  * [Leaf Token](2.2-beta/core/token.md)
-  * [Authentication](2.2-beta/core/authentication.md)
+  * [Simple Auth](v/2.2-beta/core/auth.md)
+  * [Leaf Token](v/2.2-beta/core/token.md)
+  * [Authentication](v/2.2-beta/core/authentication.md)
   
-  * [Controller](2.2-beta/core/controller.md)
-  * [API Controller](2.2-beta/core/api-controller.md)
-  * [Model](2.2-beta/core/model.md)
+  * [Controller](v/2.2-beta/core/controller.md)
+  * [API Controller](v/2.2-beta/core/api-controller.md)
+  * [Model](v/2.2-beta/core/model.md)
 
 * Leaf Views
-  * [Leaf Veins](2.2-beta/views/veins.md)
-  * [Leaf Blade](2.2-beta/views/blade.md)
+  * [Leaf Veins](v/2.2-beta/views/veins.md)
+  * [Leaf Blade](v/2.2-beta/views/blade.md)
 
 * Leaf DB (NEW)
-  * [Leaf Db Intro](2.2-beta/db/)
+  * [Leaf Db Intro](v/2.2-beta/db/)
 
 * Leaf DB (old)
-  * [Leaf DB Intro](2.2-beta/database/)
-  * [Retrieving Data](2.2-beta/database/select)
-  * [Inserting Data](2.2-beta/database/insert)
+  * [Leaf DB Intro](v/2.2-beta/database/)
+  * [Retrieving Data](v/2.2-beta/database/select)
+  * [Inserting Data](v/2.2-beta/database/insert)
 
 * [**Leaf API**](leaf-api/)
 
@@ -57,7 +57,7 @@
 
 * [**Tilly**](tilly/)
 
-* [**Beta Zone**](2.2-beta/beta-zone/)
+* [**Beta Zone**](v/2.2-beta/beta-zone/)
 
 * Code Labs
   * [Intro](codelabs/)
@@ -72,5 +72,5 @@
   * [Version 1.4.2](https://leaf-docs.netlify.app/v1.4.2/index.html)
   * [Version 1.5.0](https://leaf-docs.netlify.app/v1.5.0/index.html)
   * [Version 2.0](2.0/)
-  * [Version 2.1](2.1/)
-  * [Version 2.2 beta](2.2-beta/)
+  * [Version 2.1](v/2.1/)
+  * [Version 2.2 beta](v/2.2-beta/)

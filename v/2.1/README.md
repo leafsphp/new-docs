@@ -6,7 +6,7 @@ Leaf v2.1 is the latest release of Leaf PHP Framework that comes along with a bu
 
 ## 📁 Installation
 
-You can view installation for Leaf v2.1 [here](2.1/intro/)
+You can view installation for Leaf v2.1 [here](v/2.1/intro/)
 
 ## What's New
 
@@ -25,7 +25,7 @@ $user = $db->select("users")
    ->fetchObj()
 ```
 
-[Read Leaf Db Docs](2.1/db/)
+[Read Leaf Db Docs](v/2.1/db/)
 
 ### 🛫Cors Bypass
 
@@ -40,14 +40,14 @@ $app->response->cors();
 $app->run();
 ```
 
-[Read Response Docs](2.1/http/response)
+[Read Response Docs](v/2.1/http/response)
 
 <br>
 <hr>
 
-<a href="#/2.1/intro/htaccess" style="margin: 0px;">Re-routing to index</a>
-<a href="#/2.1/intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
-<a href="#/2.1/routing/" style="margin: 0px 10px;">Routing</a>
+<a href="#/v/2.1/intro/htaccess" style="margin: 0px;">Re-routing to index</a>
+<a href="#/v/2.1/intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
+<a href="#/v/2.1/routing/" style="margin: 0px 10px;">Routing</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

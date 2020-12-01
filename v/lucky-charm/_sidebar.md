@@ -1,55 +1,55 @@
 * Getting started
-  * [Intro](lucky-charm/intro/)
-  * [Re-routing to index](lucky-charm/intro/htaccess.md)
-  * [First App](lucky-charm/intro/first.md)
+  * [Intro](v/lucky-charm/intro/)
+  * [Re-routing to index](v/lucky-charm/intro/htaccess.md)
+  * [First App](v/lucky-charm/intro/first.md)
 
 * Configuration
-  * [Overview](lucky-charm/config/)
-  * [Settings](lucky-charm/config/settings.md)
-  * [Names, Scopes and Modes](lucky-charm/config/nsm.md)
+  * [Overview](v/lucky-charm/config/)
+  * [Settings](v/lucky-charm/config/settings.md)
+  * [Names, Scopes and Modes](v/lucky-charm/config/nsm.md)
 
 * Routing
-  * [Basic Routing & 404](lucky-charm/routing/)
-  * [Sub Routing](lucky-charm/routing/sub-routing.md)
-  * [Dynamic Routing](lucky-charm/routing/dynamic.md)
-  * [Middleware](lucky-charm/routing/middleware.md)
-  * [Optional Sub patterns](lucky-charm/routing/sub-patterns.md)
-  * [Using Controllers](lucky-charm/routing/controller.md)
-  * [Sub folder support](lucky-charm/routing/sub-folder.md)
+  * [Basic Routing & 404](v/lucky-charm/routing/)
+  * [Sub Routing](v/lucky-charm/routing/sub-routing.md)
+  * [Dynamic Routing](v/lucky-charm/routing/dynamic.md)
+  * [Middleware](v/lucky-charm/routing/middleware.md)
+  * [Optional Sub patterns](v/lucky-charm/routing/sub-patterns.md)
+  * [Using Controllers](v/lucky-charm/routing/controller.md)
+  * [Sub folder support](v/lucky-charm/routing/sub-folder.md)
 
 * HTTP
-  * [Request](lucky-charm/http/request.md)
-  * [Response](lucky-charm/http/response.md)
-  * [Session](lucky-charm/http/session.md)
-  * [Cookies](lucky-charm/http/cookies.md)
-  * [Headers](lucky-charm/http/headers.md)
+  * [Request](v/lucky-charm/http/request.md)
+  * [Response](v/lucky-charm/http/response.md)
+  * [Session](v/lucky-charm/http/session.md)
+  * [Cookies](v/lucky-charm/http/cookies.md)
+  * [Headers](v/lucky-charm/http/headers.md)
 
 * Core
-  * [Leaf Forms](lucky-charm/core/forms.md)
-  * [Leaf Mail](lucky-charm/core/mail.md)
-  * [Leaf Date](lucky-charm/core/date.md)
-  * [Leaf FS](lucky-charm/core/fs.md)
-  * [Leaf Scripts](lucky-charm/core/scripts.md)
+  * [Leaf Forms](v/lucky-charm/core/forms.md)
+  * [Leaf Mail](v/lucky-charm/core/mail.md)
+  * [Leaf Date](v/lucky-charm/core/date.md)
+  * [Leaf FS](v/lucky-charm/core/fs.md)
+  * [Leaf Scripts](v/lucky-charm/core/scripts.md)
   
-  * [Simple Auth](lucky-charm/core/auth.md)
-  * [Leaf Token](lucky-charm/core/token.md)
-  * [Authentication](lucky-charm/core/authentication.md)
+  * [Simple Auth](v/lucky-charm/core/auth.md)
+  * [Leaf Token](v/lucky-charm/core/token.md)
+  * [Authentication](v/lucky-charm/core/authentication.md)
   
-  * [Controller](lucky-charm/core/controller.md)
-  * [API Controller](lucky-charm/core/api-controller.md)
-  * [Model](lucky-charm/core/model.md)
+  * [Controller](v/lucky-charm/core/controller.md)
+  * [API Controller](v/lucky-charm/core/api-controller.md)
+  * [Model](v/lucky-charm/core/model.md)
 
 * Leaf Views
-  * [Leaf Veins](lucky-charm/views/veins.md)
-  * [Leaf Blade](lucky-charm/views/blade.md)
+  * [Leaf Veins](v/lucky-charm/views/veins.md)
+  * [Leaf Blade](v/lucky-charm/views/blade.md)
 
 * Leaf DB (NEW)
-  * [Leaf Db Intro](lucky-charm/db/)
+  * [Leaf Db Intro](v/lucky-charm/db/)
 
 * Leaf DB (old)
-  * [Leaf DB Intro](lucky-charm/database/)
-  * [Retrieving Data](lucky-charm/database/select)
-  * [Inserting Data](lucky-charm/database/insert)
+  * [Leaf DB Intro](v/lucky-charm/database/)
+  * [Retrieving Data](v/lucky-charm/database/select)
+  * [Inserting Data](v/lucky-charm/database/insert)
 
 * [**Leaf API**](leaf-api/)
 
@@ -57,7 +57,7 @@
 
 * [**Tilly**](tilly/)
 
-* [**Beta Zone**](lucky-charm/beta-zone/)
+* [**Beta Zone**](v/lucky-charm/beta-zone/)
 
 * Code Labs
   * [Intro](codelabs/)
@@ -71,6 +71,6 @@
   * [Version 1.4.1](https://leaf-docs.netlify.app/v1.4.1/index.html)
   * [Version 1.4.2](https://leaf-docs.netlify.app/v1.4.2/index.html)
   * [Version 1.5.0](https://leaf-docs.netlify.app/v1.5.0/index.html)
-  * [Version 2.0](2.0/)
-  * [Version 2.1](2.1/)
-  * [Version 2.2 beta](lucky-charm/)
+  * [Version 2.0](v/2.0/)
+  * [Version 2.1](v/2.1/)
+  * [Version 2.2 beta](v/lucky-charm/)

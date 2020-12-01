@@ -1,21 +1,21 @@
 * Intro
-  * [What's new in v2](leaf-api/v2.0/new "What's new in v2")
-  * [Leaf API](leaf-api/v2.0/ "Leaf API")
-  * [First App](leaf-api/v2.0/getting-started/first-app "Your First App")
+  * [What's new in v2](leaf-api/v/2.0/new "What's new in v2")
+  * [Leaf API](leaf-api/v/2.0/ "Leaf API")
+  * [First App](leaf-api/v/2.0/getting-started/first-app "Your First App")
 
 * Config
-  * [.env](leaf-api/v2.0/config/env "Environment Vars - Leaf API")
+  * [.env](leaf-api/v/2.0/config/env "Environment Vars - Leaf API")
 
 * Utils
-  * [Leaf Console](leaf-api/v2.0/utils/console "Leaf Console - Leaf API")
-  * [Helper Functions](leaf-api/v2.0/utils/functions "Helpers - Leaf API")
+  * [Leaf Console](leaf-api/v/2.0/utils/console "Leaf Console - Leaf API")
+  * [Helper Functions](leaf-api/v/2.0/utils/functions "Helpers - Leaf API")
 
 * Main
-  * [Routing](leaf-api/v2.0/core/routing "Routing - Leaf API")
-  * [Controllers](leaf-api/v2.0/core/controllers "Controllers - Leaf API")
-  * [Models](leaf-api/v2.0/core/models "Models - Leaf API")
-  * [Migrations](leaf-api/v2.0/core/migrations "Migrations - Leaf API")
-  * [Views](leaf-api/v2.0/core/views "Views - Leaf API")
+  * [Routing](leaf-api/v/2.0/core/routing "Routing - Leaf API")
+  * [Controllers](leaf-api/v/2.0/core/controllers "Controllers - Leaf API")
+  * [Models](leaf-api/v/2.0/core/models "Models - Leaf API")
+  * [Migrations](leaf-api/v/2.0/core/migrations "Migrations - Leaf API")
+  * [Views](leaf-api/v/2.0/core/views "Views - Leaf API")
 
 * Extras
   * [Simple Auth](2.1/core/auth)

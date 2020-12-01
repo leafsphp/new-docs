@@ -50,7 +50,7 @@ Now, when a request matches the specified route URI, the `show` method on the `U
 
 #### Default Templating
 
-Using the core controller, you already have access to templating with [Leaf Veins](lucky-charm/views/veins). You can simply configure and render your template whenever you want to.
+Using the core controller, you already have access to templating with [Leaf Veins](v/lucky-charm/views/veins). You can simply configure and render your template whenever you want to.
 
 ```php
 use Leaf\Controller;
@@ -75,7 +75,7 @@ class NameController extends Controller {
 }
 ```
 
-You can view more info on Veins [here](lucky-charm/views/veins)
+You can view more info on Veins [here](v/lucky-charm/views/veins)
 
 <hr>
 
@@ -97,7 +97,7 @@ class NameController extends Controller {
 }
 ```
 
-You can view more on responses [here](lucky-charm/http/response)
+You can view more on responses [here](v/lucky-charm/http/response)
 
 <hr>
 
@@ -135,16 +135,16 @@ public function index() {
 }
 ```
 
-Read more on Leaf Forms [here](lucky-charm/core/forms)
+Read more on Leaf Forms [here](v/lucky-charm/core/forms)
 
 <br>
 <hr>
 
-<a href="#/lucky-charm/http/request" style="margin: 0px">Request</a>
-<a href="#/lucky-charm/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/lucky-charm/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/lucky-charm/http/request" style="margin: 0px">Request</a>
+<a href="#/v/lucky-charm/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/lucky-charm/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/v/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

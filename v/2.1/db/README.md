@@ -281,7 +281,7 @@ $db->insert("users")
    ->execute();
 ```
 
-Validate takes in 2 parameters, a field to validate and a validation rule. You can find all the validation rules and what they do [here](2.1/core/forms?id=multiple-rule-validation). So what if you need to validate more than 1 parameter?
+Validate takes in 2 parameters, a field to validate and a validation rule. You can find all the validation rules and what they do [here](v/2.1/core/forms?id=multiple-rule-validation). So what if you need to validate more than 1 parameter?
 
 ```php
 $db->insert("users")
@@ -378,9 +378,9 @@ Using `$db->errors()` returns an array holding any errors which caused the query
 
 <br>
 
-[Auth](2.1/core/auth)
-[Response](2.1/http/response)
-[Request](2.1/http/request)
-[Session](2.1/http/session)
+[Auth](v/2.1/core/auth)
+[Response](v/2.1/http/response)
+[Request](v/2.1/http/request)
+[Session](v/2.1/http/session)
 
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

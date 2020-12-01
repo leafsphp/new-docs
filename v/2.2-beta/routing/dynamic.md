@@ -2,7 +2,7 @@
 
 ## 🐥 Named Params
 
-*This guide assumes you have read [Simple Routing](2.2-beta/routing)*
+*This guide assumes you have read [Simple Routing](v/2.2-beta/routing)*
 
 Basically, Dynamic Placeholder-based Route Patterns are just another way to use routes dynamically. This type of Route Patterns are the same as Dynamic PCRE-based Route Patterns, but with one difference: they don't use regexes to do the pattern matching but they use the more easy placeholders instead. Placeholders are strings surrounded by curly braces, e.g. {name}. You don't need to add parens around placeholders.
 
@@ -75,11 +75,11 @@ $leaf->get('/movies/(\d+)/photos/(\d+)', function($movieId, $photoId) {
 <br>
 <hr>
 
-<a href="#/2.2-beta/http/request" style="margin: 0px">Request</a>
-<a href="#/2.2-beta/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.2-beta/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.2-beta/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.2-beta/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/2.2-beta/http/request" style="margin: 0px">Request</a>
+<a href="#/v/2.2-beta/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/2.2-beta/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/v/2.2-beta/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/2.2-beta/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

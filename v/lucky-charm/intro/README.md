@@ -79,9 +79,9 @@ leaf create <project-name> --mvc
 <br>
 <hr>
 
-<a href="#/lucky-charm/intro/htaccess" style="margin: 0px;">Re-routing to index</a>
-<a href="#/lucky-charm/intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
-<a href="#/lucky-charm/routing/" style="margin: 0px 10px;">Routing</a>
+<a href="#/v/lucky-charm/intro/htaccess" style="margin: 0px;">Re-routing to index</a>
+<a href="#/v/lucky-charm/intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
+<a href="#/v/lucky-charm/routing/" style="margin: 0px 10px;">Routing</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

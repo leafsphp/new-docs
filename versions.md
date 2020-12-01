@@ -26,13 +26,14 @@
     <h2>v2.2</h2>
   </a>
   <a href="/#/v/lucky-charm/" class="version-card">
+    <div class="tag -stable">Latest (Stable)</div>
     <h2>v2.3</h2>
     <small>(Lucky Charm)</small>
   </a>
-  <a href="/#/v/2.4/" class="version-card">
-    <div class="latest-tag">Latest</div>
-    <h2>v2.4</h2>
-    <small>(Sandal wood)</small>
+  <a href="/#/v/2.4-beta/" class="version-card">
+    <div class="tag -beta">Latest (Beta)</div>
+    <h2>v2.4 Beta</h2>
+    <small>(New Roots)</small>
   </a>
 </div>
 

@@ -85,9 +85,9 @@ leaf create <project-name> --mvc
 <br>
 <hr>
 
-<a href="#/2.2-beta/intro/htaccess" style="margin: 0px;">Re-routing to index</a>
-<a href="#/2.2-beta/intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
-<a href="#/2.2-beta/routing/" style="margin: 0px 10px;">Routing</a>
+<a href="#/v/2.2-beta/intro/htaccess" style="margin: 0px;">Re-routing to index</a>
+<a href="#/v/2.2-beta/intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
+<a href="#/v/2.2-beta/routing/" style="margin: 0px 10px;">Routing</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

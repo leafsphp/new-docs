@@ -272,9 +272,9 @@ For more examples, check out [PHP Mailer's examples](https://github.com/leafsphp
 
 <a href="https://github.com/PHPMailer/PHPMailer" target="_blank" style="margin: 0px">PHPMailer on Github</a>
 <a href="http://phpmailer.github.io/PHPMailer" target="_blank" style="margin: 0px 10px;">PHPMailer Docs</a>
-<a href="#/lucky-charm/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/lucky-charm/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/v/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

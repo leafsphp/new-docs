@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="image_src" type="image/jpeg" href="https://leaf-docs.netlify.app/images/logo.png">
 	<link rel="shortcut icon" type="image/jpeg" href="https://leaf-docs.netlify.app/images/logo.png">
+	<link rel="manifest" href="manifest.json">
 	<link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
 	<link rel="stylesheet" href="./downloads/stash.css">
 	<link rel="stylesheet" href="./app.css">
@@ -32,6 +33,7 @@
 		coverpage: true,
 		coverpage: [
 			'/',
+			'/v/2.4-beta/',
 			'/ui/',
 			'/tilly/',
 			'/leaf-api/',
@@ -71,7 +73,7 @@
 
 <script>
 	if (typeof navigator.serviceWorker !== 'undefined') {
-		navigator.serviceWorker.register('sw.js')
+		// navigator.serviceWorker.register('sw.js')
 	}
 </script>
 </html>

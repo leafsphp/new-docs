@@ -1,6 +1,6 @@
 # 📲 Routing
 
-As explained [before](lucky-charm/intro/htaccess), Leaf uses a single root file, to which all the server requests are redirected. Leaf then takes these requests and matches them to rules you have defined. The results are then displayed to the user. It's actually a very simple concept.
+As explained [before](v/lucky-charm/intro/htaccess), Leaf uses a single root file, to which all the server requests are redirected. Leaf then takes these requests and matches them to rules you have defined. The results are then displayed to the user. It's actually a very simple concept.
 
 The router module is tied directly to Leaf Core, so once you initialise leeaf, you can use routing
 
@@ -62,7 +62,7 @@ $app->post('/users/add', function() use($request) {
 ```
 
 Using Post Params
-View [Request](lucky-charm/http/request) for more info on handling params
+View [Request](v/lucky-charm/http/request) for more info on handling params
 
 ### PUT requests
 
@@ -131,7 +131,7 @@ $app->all('/post/{id}', function($id) {
 
 ### Resource Routes
 
-This section assumes you've read [working with controllers](lucky-charm/routing/controller). In an MVC application, controllers play a major role as they're the bridge between your view and your model.
+This section assumes you've read [working with controllers](v/lucky-charm/routing/controller). In an MVC application, controllers play a major role as they're the bridge between your view and your model.
 
 A resource route simply creates all the routes needed to successfully handle a particular feature. This sounds a bit bleak, let's look at an example.
 
@@ -159,7 +159,7 @@ $this->match("GET|HEAD", "/posts/{id}", "$controller@show");
 $app->run();
 ```
 
-Resource routes are handled by a [resource controller](lucky-charm/routing/controller?id=resource-controller).
+Resource routes are handled by a [resource controller](v/lucky-charm/routing/controller?id=resource-controller).
 
 ### Route "Hooking"
 
@@ -204,11 +204,11 @@ $app->set404(function() use($app) {
 <br>
 <hr>
 
-<a href="#/lucky-charm/http/request" style="margin: 0px">Request</a>
-<a href="#/lucky-charm/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/lucky-charm/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/lucky-charm/http/request" style="margin: 0px">Request</a>
+<a href="#/v/lucky-charm/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/lucky-charm/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/v/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
