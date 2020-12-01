@@ -21,8 +21,8 @@ Route("GET", "/users", "Class@method");
 ## Next Steps
 
 - [Leaf Core Routing](/2.1/routing/)
-- [Controllers](/leaf-api/v1.2/core/controllers)
-- [Models](/leaf-api/v1.2/core/models)
-- [Migrations](/leaf-api/v1.2/core/migrations)
+- [Controllers](/leaf-api/v/1.2/core/controllers)
+- [Models](/leaf-api/v/1.2/core/models)
+- [Migrations](/leaf-api/v/1.2/core/migrations)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

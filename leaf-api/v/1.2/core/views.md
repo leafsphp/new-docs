@@ -38,8 +38,8 @@ render('admin/profile', $data);
 ## Next Steps
 
 - [Leaf Blade](/2.1/views/blade)
-- [Leaf API Helpers](/leaf-api/v1.2/utils/functions)
-- [Models](/leaf-api/v1.2/core/models)
-- [Migrations](/leaf-api/v1.2/core/migrations)
+- [Leaf API Helpers](/leaf-api/v/1.2/utils/functions)
+- [Models](/leaf-api/v/1.2/core/models)
+- [Migrations](/leaf-api/v/1.2/core/migrations)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

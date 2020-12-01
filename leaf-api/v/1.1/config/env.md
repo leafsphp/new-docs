@@ -81,8 +81,8 @@ $db_name = getenv("DB_DATABASE");
 
 ## Next Steps
 
-- [Models](/leaf-api/v1.1/core/models)
-- [Controllers](/leaf-api/v1.1/core/controllers)
-- [Views](/leaf-api/v1.1/core/views)
+- [Models](/leaf-api/v/1.1/core/models)
+- [Controllers](/leaf-api/v/1.1/core/controllers)
+- [Views](/leaf-api/v/1.1/core/views)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
