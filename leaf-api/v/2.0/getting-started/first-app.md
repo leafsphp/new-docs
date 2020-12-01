@@ -51,7 +51,7 @@ php leaf g:controller PagesController
 
 This will generate a controller in our `App/Controllers` directory
 
-Back in our `App/Routes.php` file, we can use this controller like so:
+Back in our routes file, we can use this controller like so:
 
 ```php
 $app->get('/home', '\App\Controllers\PagesController@index');
@@ -140,7 +140,7 @@ use Leaf\Database;
 
 class CreateUsers extends Database {
   public function __construct() {
-      parent::__construct();
+    parent::__construct();
   }
   
   /**
@@ -166,7 +166,7 @@ class CreateUsers extends Database {
     * @return void
     */
   public function down() {
-      $this->capsule::schema()->dropIfExists("posts");
+    $this->capsule::schema()->dropIfExists("posts");
   }
 }
 ```
@@ -282,7 +282,7 @@ public function index() {
 
 `Post::all()` is a method which will query our database and retrieve all our `posts` for us, we're using `json()` to send all our posts to a client as JSON.
 
-All that's left now is to add a route for our controller. In `App\Routes.php`:
+All that's left now is to add a route for our controller. In our `App\Routes` directory:
 
 ```php
 $app->setNamespace('\App\Controllers');

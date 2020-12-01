@@ -208,8 +208,12 @@ Leaf Console tool which initially didn't have a command to run seeds, now has in
 public function run()
 {
     $this->call(UsersSeeder::class);
+
     // if there's more than 1 class
-    $this->call(TableNameSeeder::class);
+    $this->call([
+        UsersSeeder::class,
+        TableNameSeeder::class
+    ]);
 }
 ```
 
@@ -218,7 +222,10 @@ In this version however, in the `run` method, all you need to do is return an ar
 ```php
 public function run() : array
 {
-    return [UsersSeeder::class, TableNameSeeder::class];
+    return [
+        UsersSeeder::class,
+        TableNameSeeder::class
+    ];
 }
 ```
 

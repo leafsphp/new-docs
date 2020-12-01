@@ -6,7 +6,7 @@ Lucky Charm🍀 is the latest stable release of Leaf PHP Framework. It comes wit
 
 ## 📁 Installation
 
-You can view installation for Lucky Charm🍀 [here](lucky-charm/intro/)
+You can view installation for Lucky Charm🍀 [here](v/lucky-charm/intro/)
 
 ## What's New
 
@@ -62,9 +62,9 @@ You can view installation for Lucky Charm🍀 [here](lucky-charm/intro/)
 <br>
 <hr>
 
-<a href="#/lucky-charm/intro/htaccess" style="margin: 0px;">Re-routing to index</a>
-<a href="#/lucky-charm/intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
-<a href="#/lucky-charm/routing/" style="margin: 0px 10px;">Routing</a>
+<a href="#/v/lucky-charm/intro/htaccess" style="margin: 0px;">Re-routing to index</a>
+<a href="#/v/lucky-charm/intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
+<a href="#/v/lucky-charm/routing/" style="margin: 0px 10px;">Routing</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

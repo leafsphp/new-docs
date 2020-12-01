@@ -73,16 +73,16 @@ With Leaf Token, you can save data in your token and retrieve it after validatin
 
 <hr>
 
-### [Back to beta zone](2.0/beta-zone/)
+### [Back to beta zone](v/2.0/beta-zone/)
 
 <br>
 <hr>
 
-<a href="#/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.0/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/2.0/http/request" style="margin: 0px">Request</a>
+<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

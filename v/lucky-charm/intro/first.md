@@ -2,7 +2,7 @@
 
 ## 📄 Hello World
 
-First of all, we need to setup our .htaccess file. See [Re-routing to index.](lucky-charm/intro/htaccess)
+First of all, we need to setup our .htaccess file. See [Re-routing to index.](v/lucky-charm/intro/htaccess)
 
 To create a hello world project with Leaf, you simply need to initialise Leaf. This will spin up Leaf's core packages. Amongst the core packages is Leaf's router. This simply takes all requests coming into the application and handles them based on rules you define. Enough talk, let's get dirty.
 
@@ -27,11 +27,11 @@ This is a very basic example, if you want to explore deeper, more useful example
 <br>
 <hr>
 
-<a href="#/lucky-charm/http/request" style="margin: 0px">Request</a>
-<a href="#/lucky-charm/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/lucky-charm/routing" style="margin: 0px; 10px;">Routing</a>
-<a href="#/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/lucky-charm/http/request" style="margin: 0px">Request</a>
+<a href="#/v/lucky-charm/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/lucky-charm/routing" style="margin: 0px; 10px;">Routing</a>
+<a href="#/v/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

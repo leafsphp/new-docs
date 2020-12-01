@@ -57,11 +57,11 @@ One of `SCRIPT_NAME` or `PATH_INFO` must be set. `PATH_INFO` should be “/” i
 <br>
 <hr>
 
-<a href="#/2.1http/request" style="margin: 0px">Request</a>
-<a href="#/2.1http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.1http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.1environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.1database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/2.1-alpha/http/request" style="margin: 0px">Request</a>
+<a href="#/v/2.1-alpha/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/2.1-alpha/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/v/2.1-alpha/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/2.1-alpha/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

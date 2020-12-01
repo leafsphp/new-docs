@@ -42,11 +42,11 @@ Note: If the route handling function has exit()ed the run callback won't be run.
 <br>
 <hr>
 
-<a href="#/lucky-charm/http/request" style="margin: 0px">Request</a>
-<a href="#/lucky-charm/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/lucky-charm/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/lucky-charm/http/request" style="margin: 0px">Request</a>
+<a href="#/v/lucky-charm/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/lucky-charm/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/v/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

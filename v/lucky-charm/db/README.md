@@ -281,7 +281,7 @@ $db->insert("users")
    ->execute();
 ```
 
-Validate takes in 2 parameters, a field to validate and a validation rule. You can find all the validation rules and what they do [here](lucky-charm/core/forms?id=multiple-rule-validation). So what if you need to validate more than 1 parameter?
+Validate takes in 2 parameters, a field to validate and a validation rule. You can find all the validation rules and what they do [here](v/lucky-charm/core/forms?id=multiple-rule-validation). So what if you need to validate more than 1 parameter?
 
 ```php
 $db->insert("users")
@@ -378,9 +378,9 @@ Using `$db->errors()` returns an array holding any errors which caused the query
 
 <br>
 
-[Auth](lucky-charm/core/auth)
-[Response](lucky-charm/http/response)
-[Request](lucky-charm/http/request)
-[Session](lucky-charm/http/session)
+[Auth](v/lucky-charm/core/auth)
+[Response](v/lucky-charm/http/response)
+[Request](v/lucky-charm/http/request)
+[Session](v/lucky-charm/http/session)
 
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

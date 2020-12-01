@@ -3,7 +3,7 @@
   Leaf API <span style="font-size: 30px;">v2.0</span>
 </h1>
 <p style="font-size: 25px; margin-top: -20px; margin-bottom: 40px;">
-  Built clean, simple but powerful APIs with PHP quickly.
+  Build clean, simple but powerful APIs with PHP quickly.
 </p>
 
 [Versions List](leaf-api/versions)

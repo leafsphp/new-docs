@@ -1,6 +1,6 @@
 # 🎐 Optional Route Subpatterns
 
-*This guide assumes you have read [Simple Routing](2.2-beta/routing) and [dynamic routing](2.2-beta/routing/dynamic)*
+*This guide assumes you have read [Simple Routing](v/2.2-beta/routing) and [dynamic routing](v/2.2-beta/routing/dynamic)*
 
 Route subpatterns can be made optional by making the subpatterns optional by adding a ? after them. Think of blog URLs in the form of /blog(/year)(/month)(/day)(/slug):
 
@@ -39,11 +39,11 @@ $leaf->get('/blog(/\d{4}(/\d{2}(/\d{2}(/[a-z0-9_-]+)?)?)?)?', function($year = n
 <br>
 <hr>
 
-<a href="#/2.2-beta/http/request" style="margin: 0px">Request</a>
-<a href="#/2.2-beta/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.2-beta/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.2-beta/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.2-beta/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/2.2-beta/http/request" style="margin: 0px">Request</a>
+<a href="#/v/2.2-beta/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/2.2-beta/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/v/2.2-beta/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/2.2-beta/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

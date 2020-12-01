@@ -12,6 +12,8 @@ hello.blade.php
 </html>
 ```
 
+In v2 of Leaf API, has removed default generation of templates, however, you can still create your own templates if the need arises.
+
 Since this view is stored in our `App/Views` directory, we may render it using the global `View` or `render` helper like so:
 
 ```php

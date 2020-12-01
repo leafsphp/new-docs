@@ -6,5 +6,6 @@
   Create clean, simple but powerful web applications and APIs quickly.
 </p>
 
-[Other Versions](versions)
-[Get Started](lucky-charm/)
+[All Versions](versions)
+[Get Started](v/lucky-charm/)
+[Checkout v2.4 beta](v/2.4-beta/)

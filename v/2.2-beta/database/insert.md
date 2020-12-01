@@ -67,7 +67,7 @@ So, we pass in the entire request body, which contains the username, email and p
 
 #### Validation
 
-`add` also has inbuilt validation which validates parameters according to set rules. This uses the [`Leaf\Form->validate`](2.2-beta/core/form) method. You can check it out for more information on validation.
+`add` also has inbuilt validation which validates parameters according to set rules. This uses the [`Leaf\Form->validate`](v/2.2-beta/core/form) method. You can check it out for more information on validation.
 
 `add` takes in a 4th parameter which is a boolean, this is whether of not to validate the data passed into `add` using the default checks.
 
@@ -89,7 +89,7 @@ $db->add("posts", ["title" => "Post One", "body" => "..."], ["title"], false, [
 
 Here, we're telling `add` that the **author** parameter should be a valid username. If thiscondition(rule) is not met, the application throws an error and breaks.
 
-You can view all validation rules [here](2.2-beta/core/form?id=validation)
+You can view all validation rules [here](v/2.2-beta/core/form?id=validation)
 
 ```php
 $db->add($table, $params, $uniques, $defaultChecks, $validation);
@@ -98,11 +98,11 @@ $db->add($table, $params, $uniques, $defaultChecks, $validation);
 <br>
 <hr>
 
-<a href="#/2.2-beta/http/request" style="margin: 0px">Request</a>
-<a href="#/2.2-beta/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.2-beta/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/2.2-beta/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.2-beta/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/2.2-beta/http/request" style="margin: 0px">Request</a>
+<a href="#/v/2.2-beta/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/2.2-beta/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/v/2.2-beta/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/2.2-beta/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

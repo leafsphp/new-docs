@@ -3,6 +3,7 @@
     justify-content: space-between;
     width: 100%;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 
 .version-card {
@@ -21,7 +22,7 @@
     margin-bottom: 10px;
 }
 
-.version-card .latest-tag {
+.version-card .tag {
     position: absolute;
     right: 0;
     top: 0;
@@ -29,6 +30,14 @@
     background-color: var(--theme-color, #42b983);
     color: white;
     font-weight: bold;
+}
+
+.tag {
+    font-size: 16px;
+}
+
+.tag.-beta {
+    background-color: #d6a812;
 }
 
 .version-cards small, h2 {

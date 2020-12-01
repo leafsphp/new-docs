@@ -17,11 +17,11 @@ Save as `.htaccess` in your the same directory as your "root file"
 <br>
 <hr>
 
-<a href="#/2.1intro/first" style="margin: 0px;">Your first leaf app</a>
-<a href="#/2.1routing" style="margin: 0px 10px;">Routing</a>
-<a href="#/2.1http/request" style="margin: 0px 10px;">Request</a>
-<a href="#/2.1http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/2.1database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/2.1-alpha/intro/first" style="margin: 0px;">Your first leaf app</a>
+<a href="#/v/2.1-alpha/routing" style="margin: 0px 10px;">Routing</a>
+<a href="#/v/2.1-alpha/http/request" style="margin: 0px 10px;">Request</a>
+<a href="#/v/2.1-alpha/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/2.1-alpha/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

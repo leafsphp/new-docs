@@ -6,7 +6,7 @@ Leaf v2.2 beta is the latest beta release of Leaf PHP Framework that comes along
 
 ## 📁 Installation
 
-You can view installation for Leaf v2.2 beta [here](2.2-beta/intro/)
+You can view installation for Leaf v2.2 beta [here](v/2.2-beta/intro/)
 
 ## What's New
 
@@ -34,9 +34,9 @@ You can view installation for Leaf v2.2 beta [here](2.2-beta/intro/)
 <br>
 <hr>
 
-<a href="#/2.2-beta/intro/htaccess" style="margin: 0px;">Re-routing to index</a>
-<a href="#/2.2-beta/intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
-<a href="#/2.2-beta/routing/" style="margin: 0px 10px;">Routing</a>
+<a href="#/v/2.2-beta/intro/htaccess" style="margin: 0px;">Re-routing to index</a>
+<a href="#/v/2.2-beta/intro/first" style="margin: 0px 10px;">Building your first leaf app</a>
+<a href="#/v/2.2-beta/routing/" style="margin: 0px 10px;">Routing</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

@@ -63,7 +63,7 @@ $user = $auth->login("users", ["username" => "mychi.darko", "password" => "test"
 
 Generally speaking, most logins/signups require a (username/email) + password combination, default checks allow you to validate data entered into these fields without you having to write any validation yourself.
 
-Default checks look for a `username` field and test it against the [ValidUsername](lucky-charm/core/forms?id=validate) rule, an `email` against the [email](lucky-charm/core/forms?id=validate) rule and a `password` field against the [required](lucky-charm/core/forms?id=validate) rule.
+Default checks look for a `username` field and test it against the [ValidUsername](v/lucky-charm/core/forms?id=validate) rule, an `email` against the [email](v/lucky-charm/core/forms?id=validate) rule and a `password` field against the [required](v/lucky-charm/core/forms?id=validate) rule.
 
 To use default checks, you simply have to pass `true` as the 4th parameter to login
 
@@ -152,7 +152,7 @@ $app->post("/register", function() use($app) {
 
 Generally speaking, most logins/signups require a (username/email) + password combination, default checks allow you to validate data entered into these fields without you having to write any validation yourself.
 
-Default checks look for a `username` field and test it against the [ValidUsername](lucky-charm/core/forms?id=validate) rule, an `email` against the [email](lucky-charm/core/forms?id=validate) rule and a `password` field against the [required](lucky-charm/core/forms?id=validate) rule.
+Default checks look for a `username` field and test it against the [ValidUsername](v/lucky-charm/core/forms?id=validate) rule, an `email` against the [email](v/lucky-charm/core/forms?id=validate) rule and a `password` field against the [required](v/lucky-charm/core/forms?id=validate) rule.
 
 To use default checks, you simply have to pass `true` as the 5th parameter to login
 
@@ -197,7 +197,7 @@ $user_id = $auth->useToken();
 
 <hr>
 
-### [Leaf Authentication Methods](lucky-charm/core/authentication)
+### [Leaf Authentication Methods](v/lucky-charm/core/authentication)
 
 Leaf Auth now uses the `Leaf\Helpers\Authentication` package to provide solutions for token authentication. This provides a simple way to work with manual authentication and tokens. All methods here are now available in `Leaf\Auth`.
 
@@ -205,7 +205,7 @@ Leaf Auth now uses the `Leaf\Helpers\Authentication` package to provide solution
 $payload = $auth->validate($token);
 ```
 
-Read [authentication](lucky-charm/core/authentication) for more info
+Read [authentication](v/lucky-charm/core/authentication) for more info
 
 <hr>
 
@@ -224,11 +224,11 @@ $auth->token->generateSimpleToken($user_id, $auth->getSecretKey());
 <br>
 <hr>
 
-<a href="#/lucky-charm/http/request" style="margin: 0px">Request</a>
-<a href="#/lucky-charm/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/lucky-charm/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/lucky-charm/http/request" style="margin: 0px">Request</a>
+<a href="#/v/lucky-charm/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/lucky-charm/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/v/lucky-charm/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/lucky-charm/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

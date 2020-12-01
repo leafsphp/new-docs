@@ -183,7 +183,7 @@ renderMarkup()
 
 **Note** `renderPage` has **NOTHING** to do with templating, it simply outputs an already defined web page.
 
-For templating with Leaf, [look here](2.2-beta/views/blade/)
+For templating with Leaf, [look here](v/2.2-beta/views/blade/)
 
 <hr>
 
@@ -279,10 +279,10 @@ $leaf->response->isServerError();
 <br>
 <hr>
 
-<a href="#/2.2-beta/http/response" style="margin: 0px">Response</a>
-<a href="#/2.2-beta/http/session" style="margin: 0px 10px;">Session</a>
-<a href="#/2.2-beta/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/2.2-beta/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/2.2-beta/http/response" style="margin: 0px">Response</a>
+<a href="#/v/2.2-beta/http/session" style="margin: 0px 10px;">Session</a>
+<a href="#/v/2.2-beta/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/2.2-beta/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
