@@ -107,7 +107,7 @@ Options:
 
 - [Leaf Core Model](/2.1/core/model)
 - [Leaf Core API Controllers](/2.1/core/api-controller)
-- [Migrations](/leaf-api/v1.2/core/migrations)
-- [Views](/leaf-api/v1.2/core/views)
+- [Migrations](/leaf-api/v/1.2/core/migrations)
+- [Views](/leaf-api/v/1.2/core/views)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
