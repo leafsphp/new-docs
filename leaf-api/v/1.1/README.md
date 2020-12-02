@@ -57,9 +57,16 @@ This will start the php web server and load your project at `http://localhost:55
 
 ## Next Steps
 
+<<<<<<< HEAD:leaf-api/v/1.1/README.md
 - [First App](/leaf-api/v1.1/getting-started/first-app)
 - [Routing](/leaf-api/v1.1/core/routing)
 - [Leaf Console](/leaf-api/v1.1/utils/console)
 - [Controllers](/leaf-api/v1.1/core/controllers)
+=======
+- [First App](/leaf-api/v/1.1/getting-started/first-app)
+- [Routing](/leaf-api/v/1.1/core/routing)
+- [Leaf Console](/leaf-api/v/1.1/utils/console)
+- [Controllers](/leaf-api/v/1.1/core/controllers)
+>>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v1.1/readme.md
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

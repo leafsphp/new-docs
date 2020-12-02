@@ -4,7 +4,15 @@ For those who struggle with maintaining their database schema, or who have probl
 
 ## Generating a migration
 
+<<<<<<< HEAD
+<<<<<<< HEAD:leaf-api/v/1.2/core/migrations.md
 You can quickly generate a migration using the `g:migration` [Leaf Console](/leaf-api/v1.2/utils/console) command:
+=======
+You can quickly generate a migration using the `g:migration` [Leaf Console](/leaf-api/v/1.1/utils/console) command:
+>>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v/1.1/core/migrations.md
+=======
+You can quickly generate a migration using the `g:migration` [Leaf Console](/leaf-api/v/1.2/utils/console) command:
+>>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693
 
 ```bash
 php leaf g:migration <Name>
@@ -89,7 +97,15 @@ php leaf db:rollback all
 
 The idea for Leaf API migrations was based on Laravel migrations, so you can read [Laravel migrations](https://laravel.com/docs/7.x/migrations) for a better understanding.
 
+<<<<<<< HEAD
+<<<<<<< HEAD:leaf-api/v/1.2/core/migrations.md
 - [Views](/leaf-api/v1.2/core/views)
+=======
+- [Views](/leaf-api/v/1.1/core/views)
+>>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v/1.1/core/migrations.md
+=======
+- [Views](/leaf-api/v/1.2/core/views)
+>>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693
 - [Leaf Core Model](/2.1/core/model)
 - [Leaf Core API Controllers](/2.1/core/api-controller)
 - [Leaf Auth](/2.1/core/auth)

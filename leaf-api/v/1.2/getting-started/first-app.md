@@ -21,9 +21,15 @@ That's all, simple right?😂🙌 -->
 
 ## Our First API
 
+<<<<<<< HEAD:leaf-api/v/1.2/getting-started/first-app.md
 In the [previous section](/leaf-api/v1.2/?id=Installation), we looked at installation, Leaf API's directory structure and running your project, it's assumed you've already read this section.
 
 Also, we'll be using Leaf's console to generate our files, so, it's recommended that you check out [this section](/leaf-api/v1.2/console/)
+=======
+In the [previous section](/leaf-api/v/1.2/?id=Installation), we looked at installation, Leaf API's directory structure and running your project, it's assumed you've already read this section.
+
+Also, we'll be using Leaf's console to generate our files, so, it's recommended that you check out [this section](/leaf-api/v/1.2/console/)
+>>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v1.2/getting-started/first-app.md
 
 Now that that’s out of the way, we can start with our actual development. When we take a look at our `index.php` file, we see that Leaf Core is initialised and a bunch of files including our routes are imported.
 
@@ -338,9 +344,16 @@ $post->delete();
 
 ## Next Steps
 
+<<<<<<< HEAD:leaf-api/v/1.2/getting-started/first-app.md
 - [Routing](/leaf-api/v1.2/core/routing)
 - [Leaf Console](/leaf-api/v1.2/utils/console)
 - [Helper Functions](/leaf-api/v1.2/utils/functions)
 - [Controllers](/leaf-api/v1.2/core/controllers)
+=======
+- [Routing](/leaf-api/v/1.2/core/routing)
+- [Leaf Console](/leaf-api/v/1.2/utils/console)
+- [Helper Functions](/leaf-api/v/1.2/utils/functions)
+- [Controllers](/leaf-api/v/1.2/core/controllers)
+>>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v1.2/getting-started/first-app.md
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

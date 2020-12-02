@@ -190,9 +190,16 @@ $output = view("user", ["username" => "Mychi"]);
 
 ## Next Steps
 
+<<<<<<< HEAD:leaf-api/v/1.2/utils/functions.md
 - [Routing](/leaf-api/v1.2/core/routing)
 - [Controllers](/leaf-api/v1.2/core/controllers)
 - [Models](/leaf-api/v1.2/core/models)
 - [Migrations](/leaf-api/v1.2/core/migrations)
+=======
+- [Routing](/leaf-api/v/1.2/core/routing)
+- [Controllers](/leaf-api/v/1.2/core/controllers)
+- [Models](/leaf-api/v/1.2/core/models)
+- [Migrations](/leaf-api/v/1.2/core/migrations)
+>>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v1.2/utils/functions.md
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

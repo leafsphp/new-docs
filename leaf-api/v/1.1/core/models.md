@@ -107,7 +107,12 @@ Options:
 
 - [Leaf Core Model](/2.1/core/model)
 - [Leaf Core API Controllers](/2.1/core/api-controller)
+<<<<<<< HEAD:leaf-api/v/1.1/core/models.md
 - [Migrations](/leaf-api/v1.1/core/migrations)
 - [Views](/leaf-api/v1.1/core/views)
+=======
+- [Migrations](/leaf-api/v/1.1/core/migrations)
+- [Views](/leaf-api/v/1.1/core/views)
+>>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v1.1/core/models.md
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
