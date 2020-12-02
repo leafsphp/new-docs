@@ -502,7 +502,7 @@ Errors come up all the time, user errors, that is. What happens when validation 
 
 ```php
 $res = $db->insert("users")->params("username", "mychi")->unique("username")->execute();
-if ($res === false) $app->response->throwErr($db->errors());
+if (!$res) $app->response->throwErr($db->errors());
 ```
 
 Using `$db->errors()` returns an array holding any errors which caused the query to fail. eg:

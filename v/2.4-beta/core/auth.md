@@ -161,9 +161,9 @@ $user = $auth->register("users", [
   "username" => "mychi.darko",
   "email" => "mickdd22@gmail.com",
   "field" => "value"
-]); // returns false if failed
+]); // returns null if failed
 
-if ($user == false) {
+if (!$user) {
   $response->throwErr($auth->errors());
 }
 ```
