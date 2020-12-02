@@ -5,7 +5,7 @@ You can find all codelab experiments for Leaf PHP here.
 ## Code Lab Experiments
 
 * Authentication
-  * [Login, signup, update](codelabs/leaf/authentication/v2.4-beta/)
+  * [Login, signup, update](codelabs/leaf/authentication/api/)
 
 * Forms
   * [Login Form Validation](codelabs/leaf/form-validation/login/)
