@@ -1,8 +1,4 @@
-# Leaf 2.3 (Lucky Charm🍀)
-
-## 🙏 Thank YOU
-
-Before you go on, we just want to thank you for all your support with Leaf and it's packages. Lucky Charm is a version filled with goodies and suggestions from you. This is our gift to you😎😎
+# Leaf PHP
 
 ```php
 <?php
@@ -31,6 +27,7 @@ Leaf is a PHP framework that helps you create clean, simple but powerful web app
 ## 📂 Installation
 
 #### 💻 Install with composer
+
 You can quickly get leaf installed in your application using composer. Simply run:
 
 ```bash
