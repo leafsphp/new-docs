@@ -28,7 +28,7 @@ $app->post("/login", function() use($app) {
 $app->run();
 ```
 
-Before we jump into the code, let's talk about the processes involved in modern API logins. APIs are **usually** powered by JWT which have some user data encoded into them. These tokens are used to verify a user's login status as well as get information about the user.
+Before we jump into the code, let's talk about the processes involved in modern API logins. Most people use JWT for their API auth and encode some user data encoded into them. These tokens are used to verify a user's login status as well as get information about the user.
 
 This means that we would have to generate a JWT, not forgetting to retrieve the data from the database. All this sounds pretty complex, but Leaf allows us to do all of this in just one line of code. Yes, just one line.
 
@@ -108,6 +108,8 @@ The output will look like this:
 }
 ```
 
+## Building Our Register
+
 It's this easy to create logins, so what about registrations? Even easier. Registration involvessaving the user in the database, if the user is returned immedietely, a token needs to be created as well. Since we've already configured Leaf Auth, let's just jump right into the code.
 
 ```php
@@ -124,6 +126,8 @@ $app->post("/register", function() use($app, $auth) {
 ```
 
 Here, we're creating a handler for our register method, getting the request data we need and saving it in the database using `register`. You might have noticed the 3rd parameter, `["username", "email"]`. This just makes sure that the same username and email don't already exist in the database. Leaf literally does everything for you. Now let's move on to editing the user.
+
+## Building Our Update User
 
 To edit a user, we have to find the user we want to edit. This means that the user should be logged in. Since we're using JWT, we'll need to pass the token into the request as a bearer token in the authorization header.
 
@@ -159,10 +163,52 @@ $where = ["id" => $auth->id() ?? $app->response()->throwErr($auth->errors())];
 // unique data
 $uniques = ["username", "email"];
 
-// validation
-$validation = ["username" => "ValidUsername", "email" => "email"];
+$user = $auth->update("users", $data, $where, $uniques);
+```
 
-$user = $auth->update("users", $data, $where, $uniques, $validation);
+## Putting it all together
+
+```php
+require "vendor/autoload.php";
+
+$app = new Leaf\App;
+$auth = new Leaf\Auth;
+
+$auth->connect("host", "user", "password", "dbName");
+$auth->config("PASSWORD_ENCODE", function($password) {
+  return \CustomPasswordHash::create($password);
+});
+
+$app->post("/login", function() use($app, $auth) {
+  $data = $app->request()->get(["username", "email"]);
+  $payload = $auth->login("users", $data);
+
+  if (!$payload) {
+    $app->response()->throwErr($auth->errors());
+  }
+
+  $app->response()->json($payload);
+});
+
+$app->post("/register", function() use($app, $auth) {
+  $data = $app->request()->get(["username", "email", "password"]);
+  $payload = $auth->register("users", $data, ["username", "email"]);
+
+  if (!$payload) {
+    $app->response()->throwErr($auth->errors());
+  }
+
+  $app->response()->json($payload);
+});
+
+$app->post("/update", function() use($app, $auth) {
+  $data = $request->get(["username", "email"]);
+  $where = ["id" => $auth->id() ?? $app->response()->throwErr($auth->errors())];
+
+  $user = $auth->update("users", $data, $where, ["username", "email"]);
+});
+
+$app->run();
 ```
 
 <br>
