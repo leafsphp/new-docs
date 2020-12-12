@@ -49,16 +49,9 @@ Available commands:
 
 ## Next Steps
 
-<<<<<<< HEAD:leaf-api/v/1.2/utils/console.md
-- [Helper Functions](/leaf-api/v1.2/utils/functions)
-- [Routing](/leaf-api/v1.2/core/routing)
-- [Controllers](/leaf-api/v1.2/core/controllers)
-- [Models](/leaf-api/v1.2/core/models)
-=======
 - [Helper Functions](/leaf-api/v/1.2/utils/functions)
 - [Routing](/leaf-api/v/1.2/core/routing)
 - [Controllers](/leaf-api/v/1.2/core/controllers)
 - [Models](/leaf-api/v/1.2/core/models)
->>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v1.2/utils/console.md
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

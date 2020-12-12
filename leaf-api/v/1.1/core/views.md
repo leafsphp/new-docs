@@ -37,21 +37,9 @@ render('admin/profile', $data);
 
 ## Next Steps
 
-- [Leaf Blade](/2.1/views/blade)
-<<<<<<< HEAD
-- [Leaf API Helpers](/leaf-api/v1.1/utils/functions)
-- [Models](/leaf-api/v1.1/core/models)
-- [Migrations](/leaf-api/v1.1/core/migrations)
-=======
-<<<<<<< HEAD:leaf-api/v/1.2/core/views.md
-- [Leaf API Helpers](/leaf-api/v1.2/utils/functions)
-- [Models](/leaf-api/v1.2/core/models)
-- [Migrations](/leaf-api/v1.2/core/migrations)
-=======
+- [Leaf Blade](/leaf/v/2.1/views/blade)
 - [Leaf API Helpers](/leaf-api/v/1.1/utils/functions)
 - [Models](/leaf-api/v/1.1/core/models)
 - [Migrations](/leaf-api/v/1.1/core/migrations)
->>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v/1.1/core/views.md
->>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

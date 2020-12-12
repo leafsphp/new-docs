@@ -17,7 +17,7 @@ app()->resource("/home", "HomeController");
 
 ### d
 
-This method returns the leaf date object. You can use any [Leaf Date](2.1/core/date) method on `d`.
+This method returns the leaf date object. You can use any [Leaf Date](leaf/v/2.1/core/date) method on `d`.
 
 ```php
 $timestamp = d()->random_timestamp();
@@ -38,7 +38,7 @@ $item = dbRow("items", 2, "name, user_id");
 
 ### fs
 
-This returns the [Leaf FS](2.1/core/fs) object. So you can use all it's methods on `fs`
+This returns the [Leaf FS](leaf/v/2.1/core/fs) object. So you can use all it's methods on `fs`
 
 ```php
 fs()->create_folder("new_logs");
@@ -46,7 +46,7 @@ fs()->create_folder("new_logs");
 
 ### email
 
-This method allows you to [write an email directly](2.1/core/mail?id=write)
+This method allows you to [write an email directly](leaf/v/2.1/core/mail?id=write)
 
 ```php
 email([
@@ -190,16 +190,9 @@ $output = view("user", ["username" => "Mychi"]);
 
 ## Next Steps
 
-<<<<<<< HEAD:leaf-api/v/1.2/utils/functions.md
-- [Routing](/leaf-api/v1.2/core/routing)
-- [Controllers](/leaf-api/v1.2/core/controllers)
-- [Models](/leaf-api/v1.2/core/models)
-- [Migrations](/leaf-api/v1.2/core/migrations)
-=======
 - [Routing](/leaf-api/v/1.2/core/routing)
 - [Controllers](/leaf-api/v/1.2/core/controllers)
 - [Models](/leaf-api/v/1.2/core/models)
 - [Migrations](/leaf-api/v/1.2/core/migrations)
->>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v1.2/utils/functions.md
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

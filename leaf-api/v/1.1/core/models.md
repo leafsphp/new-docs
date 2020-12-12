@@ -68,7 +68,7 @@ $model = ModelName::find($id);
 $model->delete();
 ```
 
-Read [Leaf Core Model docs](2.1/core/model) for more info on models.
+Read [Leaf Core Model docs](leaf/v/2.1/core/model) for more info on models.
 
 Checkout [building your first app](/getting-started/first-app) for more practical use cases.
 
@@ -105,14 +105,9 @@ Options:
 
 ## Next Steps
 
-- [Leaf Core Model](/2.1/core/model)
-- [Leaf Core API Controllers](/2.1/core/api-controller)
-<<<<<<< HEAD:leaf-api/v/1.1/core/models.md
-- [Migrations](/leaf-api/v1.1/core/migrations)
-- [Views](/leaf-api/v1.1/core/views)
-=======
+- [Leaf Core Model](/leaf/v/2.1/core/model)
+- [Leaf Core API Controllers](/leaf/v/2.1/core/api-controller)
 - [Migrations](/leaf-api/v/1.1/core/migrations)
 - [Views](/leaf-api/v/1.1/core/views)
->>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v1.1/core/models.md
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

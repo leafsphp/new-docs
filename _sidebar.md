@@ -1,21 +1,23 @@
-* [**Leaf PHP Versions**](versions)
+* [**🍀 Leaf Framework**](leaf/)
 
-* [**Leaf CLI**](cli)
+* [**🌿 Leaf API**](leaf-api/)
 
-* [**Leaf Downloads**](downloads/ "Leaf Stash")
+* [**🍁 Leaf MVC**](leaf-mvc/)
 
-* [**Leaf API**](leaf-api/)
+* [**🍂 Skeleton**](skeleton/)
 
-* [**Leaf UI**](ui/)
+* [**🎮 Leaf CLI**](cli)
 
-* [**Tilly**](tilly/)
+* [**🖥 Leaf Downloads**](downloads/ "Leaf Stash")
 
-* [**Beta Zone**](2.1/beta-zone/)
+* [**🎁 Leaf API**](leaf-api/)
 
-* Code Labs
-  * [Intro](codelabs/)
-  * [Login Form Validation](codelabs/v2.x/form-validation/login/)
-  * [AJAX Request Validation](codelabs/v2.x/form-validation/ajax/)
-  * [Dynamic Mailing](codelabs/v2.x/mail/dynamic-mail-templating/)
+* [**🎨 Leaf UI**](ui/)
 
-* [**Leaf on youtube**](https://www.youtube.com/channel/UCllE-GsYy10RkxBUK0HIffw)
+* [**🚙 Tilly**](tilly/)
+
+* [**🔤 Beta Zone**](2.1/beta-zone/)
+
+* [**🧪 Code Labs**](2.1/beta-zone/)
+
+* [**📺 Leaf on youtube**](https://www.youtube.com/channel/UCllE-GsYy10RkxBUK0HIffw)

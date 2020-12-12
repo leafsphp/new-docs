@@ -21,25 +21,19 @@ That's all, simple right?😂🙌 -->
 
 ## Our First API
 
-<<<<<<< HEAD:leaf-api/v/1.1/getting-started/first-app.md
-In the [previous section](/leaf-api/v1.1/?id=Installation), we looked at installation, Leaf API's directory structure and running your project, it's assumed you've already read this section.
-
-Also, we'll be using Leaf's console to generate our files, so, it's recommended that you check out [this section](/leaf-api/v1.1/console/)
-=======
 In the [previous section](/leaf-api/v/1.1/?id=Installation), we looked at installation, Leaf API's directory structure and running your project, it's assumed you've already read this section.
 
 Also, we'll be using Leaf's console to generate our files, so, it's recommended that you check out [this section](/leaf-api/v/1.1/console/)
->>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v1.1/getting-started/first-app.md
 
 Now that that’s out of the way, we can start with our actual development. When we take a look at our `index.php` file, we see that Leaf Core is initialised and a bunch of files including our routes are imported.
 
-As such, `index.php` serves as our project root. Every request/page load passes through `index.php` first and this is done because of the [.htaccess](/2.1/intro/htaccess) file.
+As such, `index.php` serves as our project root. Every request/page load passes through `index.php` first and this is done because of the [.htaccess](/leaf/v/2.1/intro/htaccess) file.
 
 <!-- Leaf API’s route config seperates routes into 2 categories: web routes and API routes. All routes which start with `/api` are considered as API routes by route config and are handled in `app/routes/api.php` all other routes are handled in `app/routes/web.php` in the case of this article, all routes will be handled in `app/routes/web.php️` 🤷‍♂️ -->
 
 ### Routing
 
-In Leaf API, all our routes are defined in `App/Routes.php`. You can check out Leaf router's docs [here](/2.1/routing/).
+In Leaf API, all our routes are defined in `App/Routes.php`. You can check out Leaf router's docs [here](/leaf/v/2.1/routing/).
 
 Now, let’s get started.
 
@@ -101,7 +95,7 @@ php leaf d:template index
 
 ### Response
 
-Let's go back to our controller. Since this is an API, we'll want to output some sort of data to a client as a response. We can easily do this with [Leaf Response](/2.1/http/response). Note that `Response` is directly bound to the controller, so you can use all response methods on `$this`
+Let's go back to our controller. Since this is an API, we'll want to output some sort of data to a client as a response. We can easily do this with [Leaf Response](/leaf/v/2.1/http/response). Note that `Response` is directly bound to the controller, so you can use all response methods on `$this`
 
 ```php
 public function index() {
@@ -111,7 +105,7 @@ public function index() {
 
 ### Request
 
-Response handles the way data goes out of our application, on the flip side, Request handles the data that comes into our application. You can find Leaf Request docs [here](/2.1/http/request)
+Response handles the way data goes out of our application, on the flip side, Request handles the data that comes into our application. You can find Leaf Request docs [here](/leaf/v/2.1/http/request)
 
 Let's look at a basic example. Inside our controller:
 
@@ -191,7 +185,7 @@ After that, we can run our migrations from the console with:
 php leaf db:migrate
 ```
 
-So now we can work with the table we generated. Let's look at our model. You can read more on [Leaf Models](/2.1/core/model)
+So now we can work with the table we generated. Let's look at our model. You can read more on [Leaf Models](/leaf/v/2.1/core/model)
 
 ```php
 <?php
@@ -344,16 +338,9 @@ $post->delete();
 
 ## Next Steps
 
-<<<<<<< HEAD:leaf-api/v/1.1/getting-started/first-app.md
-- [Routing](/leaf-api/v1.1/core/routing)
-- [Leaf Console](/leaf-api/v1.1/utils/console)
-- [Helper Functions](/leaf-api/v1.1/utils/functions)
-- [Controllers](/leaf-api/v1.1/core/controllers)
-=======
 - [Routing](/leaf-api/v/1.1/core/routing)
 - [Leaf Console](/leaf-api/v/1.1/utils/console)
 - [Helper Functions](/leaf-api/v/1.1/utils/functions)
 - [Controllers](/leaf-api/v/1.1/core/controllers)
->>>>>>> c4444eff90e57ffbe2066a11c61ad5d686b48693:leaf-api/v1.1/getting-started/first-app.md
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
