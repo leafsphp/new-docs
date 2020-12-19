@@ -26,15 +26,24 @@
     <h2>v2.2</h2>
   </a>
   <a href="/#/leaf/v/lucky-charm/" class="version-card">
-    <div class="tag -stable">Latest (Stable)</div>
     <h2>v2.3</h2>
     <small>(Lucky Charm)</small>
   </a>
   <a href="/#/leaf/v/2.4-beta/" class="version-card">
-    <div class="tag -beta">Latest (Beta)</div>
+    <!-- <div class="tag -beta">Latest (Beta)</div> -->
     <h2>v2.4 Beta</h2>
     <small>(New Roots)</small>
   </a>
+  <a href="/#/leaf/v/2.4/" class="version-card">
+    <div class="tag -stable">Latest</div>
+    <h2>v2.4</h2>
+    <small>(Christmas Tree)</small>
+  </a>
+  <div class="version-card" style="opacity: 0 !important; cursor:unset !important;">
+    <div class="tag -stable">Latest</div>
+    <h2>v2.4</h2>
+    <small>(Christmas Tree)</small>
+  </div>
 </div>
 
 ## Contributing

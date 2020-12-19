@@ -12,4 +12,4 @@
 
 [All versions](/leaf/versions)
 [Get Started](/leaf/?id=leaf-php)
-[Checkout v2.4 beta](/leaf/v/2.4-beta/)
+[Checkout v2.4](/leaf/v/2.4/)

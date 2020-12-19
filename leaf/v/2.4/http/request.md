@@ -14,7 +14,7 @@ Since Request is already bound to the Leaf instance, you can do this:
 $app = new Leaf\App;
 
 $app->post("/user/change-username", function() use($app) {
-  echo $app->request->get("username");
+  echo $app->request()->get("username");
 });
 ```
 
@@ -41,22 +41,22 @@ $app->post("/items/add", function() use($request) {
 
 ```php
 $app->post('/name/add', function() use($app) {
-  $name = $app->request->get('name');
+  $name = $app->request()->get('name');
 });
 
 // get: linkToApp?id=1
-$id = $app->request->get('id');
+$id = $app->request()->get('id');
 ```
 
-In v2.4 beta, `get` can also be used on files passed into the request.
+In v2.4, `get` can also be used on files passed into the request.
 
 ```php
 $picture = $request->get("image");
 ```
 
-#### Multiple select <sup class="new-tag-1">New in v2.4 beta</sup>
+#### Multiple select <sup class="new-tag-1">New in v2.4</sup>
 
-In v2.4 beta, you can retrieve a couple of fields you want, and not just one. You can also use this as a filter to return only the data you want in your app instead of using `body` which dumps all request data.
+In v2.4, you can retrieve a couple of fields you want, and not just one. You can also use this as a filter to return only the data you want in your app instead of using `body` which dumps all request data.
 
 ```php
 $loginData = $request->get(["username", "password"]);
@@ -74,7 +74,7 @@ echo $username;
 
 #### Security Fixes
 
-`get()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application. In v2.4 beta, you can choose not to sanitize data coming into your application by passing in `false` as the second parameter.
+`get()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application. In v2.4, you can choose not to sanitize data coming into your application by passing in `false` as the second parameter.
 
 ```php
 // data is sanitized
@@ -91,30 +91,30 @@ $blog = $request->get("blogBody", false);
 
 **Previously `getBody()`**
 
-`body()` is another general purpose method which retrieves the key => value pairs of the entire request body. In simpler terms, it works like `$_POST` but works for all request types. In v2.4 beta, `body` can also retrieve files passed into the request.
+`body()` is another general purpose method which retrieves the key => value pairs of the entire request body. In simpler terms, it works like `$_POST` but works for all request types. In v2.4, `body` can also retrieve files passed into the request.
 
 ```php
 $app->post('/name/add', function() use($app) {
-  $body = $app->request->body();
+  $body = $app->request()->body();
 });
 ```
 
 #### 🧐 Security Fixes
 
-`body()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application. Just like with `get`, v2.4 beta you the option to not sanitize data coming into your application by passing in `false`.
+`body()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application. Just like with `get`, v2.4 you the option to not sanitize data coming into your application by passing in `false`.
 
 ```php
 // data is sanitized
-$body = $app->request->body();
+$body = $app->request()->body();
 // data is sanitized
-$body = $app->request->body(true);
+$body = $app->request()->body(true);
 // data is not sanitized
-$body = $app->request->body(false);
+$body = $app->request()->body(false);
 ```
 
 <hr>
 
-### files <sup class="new-tag-1">New in v2.4 beta</sup>
+### files <sup class="new-tag-1">New in v2.4</sup>
 
 Files returns an array holding key values pairs of files passed into your app.
 
@@ -152,10 +152,10 @@ A Leaf application will automatically parse all HTTP request headers. You can ac
 $app = new \Leaf\App;
 
 // Get request headers as associative array
-$headers = $app->request->headers();
+$headers = $app->request()->headers();
 
 // Get the ACCEPT_CHARSET header
-$charset = $app->request->headers('ACCEPT_CHARSET');
+$charset = $app->request()->headers('ACCEPT_CHARSET');
 ```
 
 The HTTP specification states that HTTP header names may be uppercase, lowercase, or mixed-case. Leaf is smart enough to parse and return header values whether you request a header value using upper, lower, or mixed case header name, with either underscores or dashes. So use the naming convention with which you are most comfortable.
@@ -166,26 +166,26 @@ The HTTP specification states that HTTP header names may be uppercase, lowercase
 
 Every HTTP request has a method (e.g. GET or POST). You can obtain the current HTTP request method via the Leaf application’s request object:
 
-#### typeIs <sup class="new-tag-1">New in v2.4 beta</sup>
+#### typeIs <sup class="new-tag-1">New in v2.4</sup>
 
-In v2.4 beta, individual request methodtype checks have been replaced with `typeIs`. So you'll no longer be seeing any of these:
+In v2.4, individual request methodtype checks have been replaced with `typeIs`. So you'll no longer be seeing any of these:
 
 ```php
-$app->request->isGet();
-$app->request->isPost();
-$app->request->isPut();
-$app->request->isDelete();
-$app->request->isHead();
-$app->request->isOptions();
-$app->request->isPatch();
+$app->request()->isGet();
+$app->request()->isPost();
+$app->request()->isPut();
+$app->request()->isDelete();
+$app->request()->isHead();
+$app->request()->isOptions();
+$app->request()->isPatch();
 ```
 
 instead, you'll be working with:
 
 ```php
-$isGetRequest = $app->request->typeIs("GET");
-$isPostRequest = $app->request->typeIs("post");
-$isDeleteRequest = $app->request->typeIs("Delete");
+$isGetRequest = $app->request()->typeIs("GET");
+$isPostRequest = $app->request()->typeIs("post");
+$isDeleteRequest = $app->request()->typeIs("Delete");
 
 if ($isGetRequest) $response->throwErr("GET method not allowed");
 ```
@@ -197,13 +197,13 @@ Here are some other functions you can use relating to the request method.
  * What is the request method?
  * @return string (e.g. GET, POST, PUT, DELETE)
  */
-$app->request->getMethod();
+$app->request()->getMethod();
 
 /**
  * Is this a XHR/AJAX request?
  * @return bool
  */
-$app->request->isAjax();
+$app->request()->isAjax();
 ```
 
 <hr>
@@ -215,8 +215,8 @@ When using a Javascript framework like MooTools or jQuery to execute an XMLHttpR
 Use the request object’s `isAjax()` or `isXhr()` method to tell if the current request is an XHR/Ajax request:
 
 ```php
-$isXHR = $app->request->isAjax();
-$isXHR = $app->request->isXhr();
+$isXHR = $app->request()->isAjax();
+$isXHR = $app->request()->isXhr();
 ```
 
 <hr>
@@ -231,7 +231,7 @@ Fetch the request’s content type (e.g. “application/json;charset=utf-8”):
 
 ```php
 <?php
-$app->request->getContentType();
+$app->request()->getContentType();
 ```
 
 ### Media Type
@@ -240,7 +240,7 @@ Fetch the request’s media type (e.g. “application/json”):
 
 ```php
 <?php
-$app->request->getMediaType();
+$app->request()->getMediaType();
 ```
 
 ### Media Type Params
@@ -249,7 +249,7 @@ Fetch the request’s media type parameters (e.g. [charset => “utf-8”]):
 
 ```php
 <?php
-$app->request->getMediaTypeParams();
+$app->request()->getMediaTypeParams();
 ```
 
 ### Content Charset
@@ -258,7 +258,7 @@ Fetch the request’s content character set (e.g. “utf-8”):
 
 ```php
 <?php
-$app->request->getContentCharset();
+$app->request()->getContentCharset();
 ```
 
 ### Content Length
@@ -267,7 +267,7 @@ Fetch the request’s content length:
 
 ```php
 <?php
-$app->request->getContentLength();
+$app->request()->getContentLength();
 ```
 
 ### Host
@@ -276,7 +276,7 @@ Fetch the request’s host (e.g. “leafphp.netlify.com”):
 
 ```php
 <?php
-$app->request->getHost();
+$app->request()->getHost();
 ```
 
 ### Host with Port
@@ -285,7 +285,7 @@ Fetch the request’s host with port (e.g. “leafphp.netlify.com:80”):
 
 ```php
 <?php
-$app->request->getHostWithPort();
+$app->request()->getHostWithPort();
 ```
 
 ### Port
@@ -294,7 +294,7 @@ Fetch the request’s port (e.g. 80):
 
 ```php
 <?php
-$app->request->getPort();
+$app->request()->getPort();
 ```
 
 ### Scheme
@@ -303,7 +303,7 @@ Fetch the request’s scheme (e.g. “http” or “https”):
 
 ```php
 <?php
-$app->request->getScheme();
+$app->request()->getScheme();
 ```
 
 ### Path
@@ -312,7 +312,7 @@ Fetch the request’s path (root URI + resource URI):
 
 ```php
 <?php
-$app->request->getPath();
+$app->request()->getPath();
 ```
 
 ### URL
@@ -321,7 +321,7 @@ Fetch the request’s URL (scheme + host [ + port if non-standard ]):
 
 ```php
 <?php
-$app->request->getUrl();
+$app->request()->getUrl();
 ```
 
 ### IP Address
@@ -330,7 +330,7 @@ Fetch the request’s IP address:
 
 ```php
 <?php
-$app->request->getIp();
+$app->request()->getIp();
 ```
 
 ### Referer
@@ -339,7 +339,7 @@ Fetch the request’s referrer:
 
 ```php
 <?php
-$app->request->getReferrer();
+$app->request()->getReferrer();
 ```
 
 ### User Agent
@@ -348,7 +348,7 @@ Fetch the request’s user agent string:
 
 ```php
 <?php
-$app->request->getUserAgent();
+$app->request()->getUserAgent();
 ```
 
 <hr>
@@ -373,10 +373,10 @@ You can get the HTTP request’s root URI and resource URI with the request obje
 $app = new \Leaf\App;
 
 //Get root URI
-$rootUri = $app->request->getRootUri();
+$rootUri = $app->request()->getRootUri();
 
 //Get resource URI
-$resourceUri = $app->request->getResourceUri();
+$resourceUri = $app->request()->getResourceUri();
 ```
 
 <br>

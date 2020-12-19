@@ -10,23 +10,44 @@ Simply install Leaf, and you're good to go.
 
 ## 📁 Installation
 
-At the moment, Beta releases of Leaf can only be installed through composer.
+### Composer installation
 
 Composer is a dependency manager for PHP, just like npm for javascript and ruby gems. Therefore, you need to have PHP installed on your system. If you don't already have composer installed, you can download it [here](https://getcomposer.org/)
 
 After downloading composer, you can run this command to install leaf in your project folder.
 
 ```bash
-composer require leafs/leaf ^2.4.0-beta
+composer require leafs/leaf
 ```
 
-<!-- <div style="border: 1px solid rgba(10, 230, 150, 0.8); border-radius: 4px; background: rgba(10, 230, 150, 0.05); padding: 20px 30px; padding-bottom: 32px;">
-	<div style="font-weight: bolder; font-size: 25px; margin-bottom: -18px !important;">Setup</div>
-	<p style="color: rgb(5, 160, 70); font-size: 18px;">
-		You can directly clone or download the git repo here.
-	</p>
-	<a href="https://github.com/leafsphp/leaf/" style="background: #202020; color: white; text-decoration: none; padding: 8px 15px; border-radius: 3px;">Download Repo</a>
-</div> -->
+### Github clone
+
+You can also clone the repo and setup your autoloader.
+
+<div style="border: 1px solid rgba(10, 230, 150, 0.8); border-radius: 4px; background: rgba(10, 230, 150, 0.05); padding: 20px 30px; padding-bottom: 32px;">
+  <div style="font-weight: bolder; font-size: 25px; margin-bottom: -18px !important;">Setup</div>
+    <p style="color: rgb(5, 160, 70); font-size: 18px;">
+       You can directly clone or download the git repo here.
+    </p>
+    <a
+      href="https://github.com/leafsphp/leaf/archive/v2.4.0.zip"
+      style="background: #202020; color: white; text-decoration: none; padding: 8px 15px; border-radius: 3px;"
+      download
+    >Download Repo</a>
+</div>
+
+**Example autoloader: `autoloader.php`**
+
+```php
+<?php
+spl_autoload_register(function ($class) {
+    $file = str_replace('\\', '/', $class);
+
+    if (!file_exists("leaf/src/$file.php")) return;
+
+    require "leaf/src/$file.php";
+});
+```
 
 <br>
 <hr>

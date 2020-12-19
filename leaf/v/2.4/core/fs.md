@@ -6,7 +6,7 @@ This is a simple functionality inspired by node js' FileSystem(fs) module. Leaf 
 Leaf FS allows you to read/write to file, create, rename, copy and paste files/directories all with just a few lines of code. All this is performed while maintaining Leaf's simplicity.
 
 <div class="alert -info">
-In v2.4 beta, all FS methods have been made static, and can now be called from anywhere in your application.
+In v2.4, all FS methods have been made static, and can now be called from anywhere in your application.
 </div>
 
 ## Including FS
@@ -167,13 +167,13 @@ move_file also moves a file from the current directory to another directory, it 
 $data = $fs->move_file("items.txt", "./home/");
 ```
 
-#### upload_file <sup class="new-tag-1">New in v2.4 beta</sup>
+#### upload_file <sup class="new-tag-1">New in v2.4</sup>
 
 <div class="alert -warning">
-This method was previously upload. In v2.4 beta, upload_file has received a lot of fixes and new features. Also the older upload method has been removed.
+This method was previously upload. In v2.4, upload_file has received a lot of fixes and new features. Also the older upload method has been removed.
 </div>
 
-`upload_file` as the name suggests is a method that makes file uploading a breeze. This is the main highlight of `Leaf\FS` in v2.4 beta. Also unlike in earlier versions, `upload_file` supports more type of files.
+`upload_file` as the name suggests is a method that makes file uploading a breeze. This is the main highlight of `Leaf\FS` in v2.4. Also unlike in earlier versions, `upload_file` supports more type of files.
 
 It takes in 3 parameters:
 
@@ -236,7 +236,7 @@ If the file upload is successful, it returns the filename, you can perform whate
 $filename = $fs->upload_file($profilePic, "./images/", []);
 ```
 
-#### upload_info <sup class="new-tag-1">New in v2.4 beta</sup>
+#### upload_info <sup class="new-tag-1">New in v2.4</sup>
 
 When the file successfully uploads, records on the file details are shelved. You can access these with the `upload_info` method. It takes in one optional parameter, the name of the file whose info you want to return.
 

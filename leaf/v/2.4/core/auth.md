@@ -19,7 +19,7 @@ $auth->connect("host", "user", "password", "dbname");
 $auth->autoConnect();
 ```
 
-## Auth Config <sup><small class="new-tag-1">New</small></sup>
+## Auth Config
 
 Auth Config was added in v2.4-beta to give you more control over how leaf handles authentication in your apps. Auth has been configured perfectly for most apps, but not all use cases are the same, hence, this brilliant addition.
 
@@ -31,31 +31,54 @@ This also includes various configurations for doing things like:
 - Changing the default password key
 - Setting custom password encode methods
 - Turning off password encoding totally
+- Setting custom password verify methods (NEW)
+- Hiding/Showing password field (NEW)
+- Adding custom validation messages (NEW)
 
-### config <sup><small class="new-tag-1">New</small></sup>
+### config
 
 To set a config variable, you can simply call the `config` method.
-
 
 ```php
 $auth->config("item", "value");
 ```
 
-### Settings <sup><small class="new-tag-1">New</small></sup>
+### Settings
 
 - **USE_TIMESTAMPS:** This determines whether Leaf should add the default `created_at` and `updated_at` timestamps on register and update. Default is `true`.
-- **PASSWORD_ENCODE** tells Leaf how to encode passwords and whether or not to. It's `null` by default, and so Leaf `md5` encodes the password. If the value is changed to `false`, Leaf will turn off password encoding, and perform operations on the raw password. The final variation for the password encode setting is setting a method to encode the password.
+- **PASSWORD_ENCODE** *This method has gone through a lot of changes since v2.4 beta, and may not work exactly the same way*. This setting is run when leaf wants to encode a password. It now uses `PASSWORD_DEFAULT` by defaullt for encryption.
 
 ```php
 // This turns off password encoding
 $auth->config("PASSWORD_ENCODE", false);
 
-// defult encoding (md5)
+// defult encoding (Leaf\Helpers\Password::hash)
 $auth->config("PASSWORD_ENCODE", null);
+
+// use md5. We're still keeping support for md5 :-)
+$auth->config("PASSWORD_ENCODE", Password::MD5);
 
 // use custom method
 $auth->config("PASSWORD_ENCODE", function($password) {
-  return md5($password);
+  return Password::hash($password);
+});
+```
+
+- **<small class="new-tag-1">New</small> PASSWORD_VERIFY** This setting is called when Leaf tries to verify a password. It works just like `PASSWORD_ENCODE` above.
+
+```php
+// This turns off password encoding
+$auth->config("PASSWORD_VERIFY", false);
+
+// defult encoding (Leaf\Helpers\Password::hash)
+$auth->config("PASSWORD_VERIFY", null);
+
+// use md5. We're still keeping support for md5 :-)
+$auth->config("PASSWORD_VERIFY", Password::MD5);
+
+// use custom method
+$auth->config("PASSWORD_VERIFY", function($password) {
+  return Password::verify($password);
 });
 ```
 
@@ -67,7 +90,21 @@ $auth->config("PASSWORD_KEY", "passcode");
 
 - **HIDE_ID** takes in a boolean, and determines whether to hide the id in the user object.
 
-### tokenLifetime <sup><small class="new-tag-1">New</small></sup>
+- **<small class="new-tag-1">New</small> HIDE_PASSWORD** Just as the name implies, allows you to hide or show the password in the final results returned from auth.
+
+- **<small class="new-tag-1">New</small> LOGIN_PARAMS_ERROR** This is the error to show if there's an error with any parameter which isn't the password eg: username:
+
+```php
+$auth->config("LOGIN_PARAMS_ERROR", "Username is incorrect!");
+```
+
+- **<small class="new-tag-1">New</small> LOGIN_PASSWORD_ERROR** This is the error to show if there's an error with the password
+
+```php
+$auth->config("LOGIN_PASSWORD_ERROR", "Password is incorrect!");
+```
+
+### tokenLifetime
 
 This method allows you to get or set the token lifetime value. In previous versions, the lifetime value was set by leaf, here you can customize it the way you want to.
 
@@ -201,7 +238,7 @@ $app->post("/register", function() use($app) {
 
 <hr>
 
-### update <sup class="new-tag-1">New in v2.4 beta</sup>
+### update
 
 There's a login method, a register method, so why not a user update method? This method takes the stress out of updating a user's information. Update takes in 5 parameters:
 
@@ -228,6 +265,8 @@ $user = $auth->update("users", $data, $where, $uniques, $validation);
 ```
 
 **Something little:** Uniques in `update` work a bit different from `register`, in `update`, Leaf tries to find another user which isn't the current user that has the same credentials. So if there's no other user with that same param value, the unique test passes. In short, **the current user is excluded from the users to check for same credentials**
+
+**`update` bugs found in v2.4 beta have all been addressed in this release.**
 
 <hr>
 
@@ -278,7 +317,7 @@ $user_id = $auth->id();
 
 <hr>
 
-### [Leaf Authentication Methods](leaf/v/2.4/core/authentication)
+### [Leaf Authentication Methods](leaf/v/2.4-beta/core/authentication)
 
 Leaf Auth now uses the `Leaf\Helpers\Authentication` package to provide solutions for token authentication. This provides a simple way to work with manual authentication and tokens. All methods here are now available in `Leaf\Auth`.
 
@@ -286,7 +325,7 @@ Leaf Auth now uses the `Leaf\Helpers\Authentication` package to provide solution
 $payload = $auth->validate($token);
 ```
 
-Read [authentication](leaf/v/2.4/core/authentication) for more info
+Read [authentication](leaf/v/2.4-beta/core/authentication) for more info
 
 <hr>
 

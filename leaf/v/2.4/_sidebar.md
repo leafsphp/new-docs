@@ -1,47 +1,46 @@
 * Getting started
   * [Intro](leaf/v/2.4/intro/)
-  * [Re-routing to index](leaf/v/2.4/intro/htaccess.md)
-  * [First App](leaf/v/2.4/intro/first.md)
+  * [Re-routing to index](leaf/v/2.4/intro/htaccess)
+  * [First App](leaf/v/2.4/intro/first)
 
 * Configuration
   * [Overview](leaf/v/2.4/config/)
-  * [Settings](leaf/v/2.4/config/settings.md)
-  * [Names, Scopes and Modes](leaf/v/2.4/config/nsm.md)
+  * [Settings](leaf/v/2.4/config/settings)
+  * [Names, Scopes and Modes](leaf/v/2.4/config/nsm)
 
 * Routing
   * [Basic Routing & 404](leaf/v/2.4/routing/)
-  * [Sub Routing](leaf/v/2.4/routing/sub-routing.md)
-  * [Dynamic Routing](leaf/v/2.4/routing/dynamic.md)
-  * [Middleware](leaf/v/2.4/routing/middleware.md)
-  * [Optional Sub patterns](leaf/v/2.4/routing/sub-patterns.md)
-  * [Using Controllers](leaf/v/2.4/routing/controller.md)
-  * [Sub folder support](leaf/v/2.4/routing/sub-folder.md)
+  * [Sub Routing](leaf/v/2.4/routing/sub-routing)
+  * [Dynamic Routing](leaf/v/2.4/routing/dynamic)
+  * [Middleware](leaf/v/2.4/routing/middleware)
+  * [Optional Sub patterns](leaf/v/2.4/routing/sub-patterns)
+  * [Using Controllers](leaf/v/2.4/routing/controller)
+  * [Sub folder support](leaf/v/2.4/routing/sub-folder)
 
 * HTTP
-  * [Request](leaf/v/2.4/http/request.md)
-  * [Response](leaf/v/2.4/http/response.md)
-  * [Session](leaf/v/2.4/http/session.md)
-  * [Cookies](leaf/v/2.4/http/cookies.md)
-  * [Headers](leaf/v/2.4/http/headers.md)
+  * [Request](leaf/v/2.4/http/request)
+  * [Response](leaf/v/2.4/http/response)
+  * [Session](leaf/v/2.4/http/session)
+  * [Cookies](leaf/v/2.4/http/cookies)
+  * [Headers](leaf/v/2.4/http/headers)
 
 * Core
-  * [Leaf Forms](leaf/v/2.4/core/forms.md)
-  * [Leaf Mail](leaf/v/2.4/core/mail.md)
-  * [Leaf Date](leaf/v/2.4/core/date.md)
-  * [Leaf FS](leaf/v/2.4/core/fs.md)
-  * [Leaf Scripts](leaf/v/2.4/core/scripts.md)
+  * [Leaf Forms](leaf/v/2.4/core/forms)
+  * [Leaf Mail](leaf/v/2.4/core/mail)
+  * [Leaf Date](leaf/v/2.4/core/date)
+  * [Leaf FS](leaf/v/2.4/core/fs)
   
-  * [Simple Auth](leaf/v/2.4/core/auth.md)
-  * [Leaf Token](leaf/v/2.4/core/token.md)
-  * [Authentication](leaf/v/2.4/core/authentication.md)
+  * [Simple Auth](leaf/v/2.4/core/auth)
+  * [Authentication](leaf/v/2.4/core/authentication)
   
-  * [Controller](leaf/v/2.4/core/controller.md)
-  * [API Controller](leaf/v/2.4/core/api-controller.md)
-  * [Model](leaf/v/2.4/core/model.md)
+  * [Factories](leaf/v/2.4/core/factories)
+  * [Controller](leaf/v/2.4/core/controller)
+  * [API Controller](leaf/v/2.4/core/api-controller)
+  * [Model](leaf/v/2.4/core/model)
 
 * Leaf Views
-  * [Leaf Veins](leaf/v/2.4/views/veins.md)
-  * [Leaf Blade](leaf/v/2.4/views/blade.md)
+  * [Leaf Veins](leaf/v/2.4/views/veins)
+  * [Leaf Blade](leaf/v/2.4/views/blade)
 
 * Leaf DB (NEW)
   * [Leaf Db Intro](leaf/v/2.4/db/)

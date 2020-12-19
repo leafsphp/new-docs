@@ -4,7 +4,7 @@
 Leaf Date makes formating date/time really easier, though the method names may appear weird, they're actually very easy to remeber😂
 
 <div class="alert -warning">
-All methods with deprecation warnings have been removed in v2.4 beta
+All methods with deprecation warnings have been removed in v2.4
 </div>
 
 ```php

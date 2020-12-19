@@ -10,7 +10,7 @@ The response object is an abstraction of your Leaf application’s HTTP response
 <br>
 
 <div class="alert -warning">
-All methods with deprecation warnings have been removed in v2.4 beta
+All methods with deprecation warnings have been removed in v2.4
 </div>
 
 ### 🎄 Response on the Leaf Instance
@@ -80,7 +80,7 @@ $response->throwErr("error", 500, true);
 
 ## json
 
-Json, a new method in v2.4 beta, just as the name suggests allows you output json as a reponse. It is supposed to be a replacement for the `respond` and `respondWithCode` methods, as such, comes with the functionality of both of them.
+Json, a new method in v2.4, just as the name suggests allows you output json as a reponse. It is supposed to be a replacement for the `respond` and `respondWithCode` methods, as such, comes with the functionality of both of them.
 
 It takes in 4 parameters:
 
@@ -150,7 +150,7 @@ For templating with Leaf, [look here](leaf/v/2.4/views/blade/)
 
 **Status Code**
 
-In v2.4 beta, you can add a status code to the page response as the second parameter.
+In v2.4, you can add a status code to the page response as the second parameter.
 
 ```php
 $response->page("404.html", 404);

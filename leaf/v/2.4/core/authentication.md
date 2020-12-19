@@ -7,7 +7,7 @@ Authentication provides simple methods to help with manual authentication and wo
 Leaf provides you with the `JWT` object which includes various methods for creating and parsing token data....but we do not advice directly using the `JWT` object. For this reason, this object has been created to work with all the `JWT` data.
 
 <p class="alert -warning">
-  In v2.4 beta, all authentication methods are static, and so no longer require you to initiali\e the whole module.
+  In v2.4, all authentication methods are static, and so no longer require you to initiali\e the whole module.
 </p>
 
 ```php

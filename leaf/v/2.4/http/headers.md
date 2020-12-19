@@ -1,7 +1,7 @@
 <!-- markdownlint-disable no-inline-html -->
-# 🏠 Application Headers <sup class="new-tag-1">New in v2.4 beta</sup>
+# 🏠 Application Headers <sup class="new-tag-1">New in v2.4</sup>
 
-In previous versions of Leaf, Headers have been added to the request and response objects and could not be fully accesed directly, however, v2.4 beta provides a Headers object which allows you perform all header operations smoothly. Another amazing thing is that all Leaf Header methods are static, and so can be called directly without initializing the Headers object.
+In previous versions of Leaf, Headers have been added to the request and response objects and could not be fully accesed directly, however, v2.4 provides a Headers object which allows you perform all header operations smoothly. Another amazing thing is that all Leaf Header methods are static, and so can be called directly without initializing the Headers object.
 
 <div class="alert -info">
 You can still use most header methods from within the response and request objects, you can refer to those if you want to, however, this package comes with ore features and better useability.  

@@ -1,55 +1,52 @@
 * Getting started
-  * [Intro](leaf/v/lucky-charm/intro/)
-  * [Re-routing to index](leaf/v/lucky-charm/intro/htaccess.md)
-  * [First App](leaf/v/lucky-charm/intro/first.md)
+  * [Intro](leaf/v/2.4/intro/)
+  * [Re-routing to index](leaf/v/2.4/intro/htaccess)
+  * [First App](leaf/v/2.4/intro/first)
 
 * Configuration
-  * [Overview](leaf/v/lucky-charm/config/)
-  * [Settings](leaf/v/lucky-charm/config/settings.md)
-  * [Names, Scopes and Modes](leaf/v/lucky-charm/config/nsm.md)
+  * [Overview](leaf/v/2.4/config/)
+  * [Settings](leaf/v/2.4/config/settings)
+  * [Names, Scopes and Modes](leaf/v/2.4/config/nsm)
 
 * Routing
-  * [Basic Routing & 404](leaf/v/lucky-charm/routing/)
-  * [Sub Routing](leaf/v/lucky-charm/routing/sub-routing.md)
-  * [Dynamic Routing](leaf/v/lucky-charm/routing/dynamic.md)
-  * [Middleware](leaf/v/lucky-charm/routing/middleware.md)
-  * [Optional Sub patterns](leaf/v/lucky-charm/routing/sub-patterns.md)
-  * [Using Controllers](leaf/v/lucky-charm/routing/controller.md)
-  * [Sub folder support](leaf/v/lucky-charm/routing/sub-folder.md)
+  * [Basic Routing & 404](leaf/v/2.4/routing/)
+  * [Sub Routing](leaf/v/2.4/routing/sub-routing)
+  * [Dynamic Routing](leaf/v/2.4/routing/dynamic)
+  * [Middleware](leaf/v/2.4/routing/middleware)
+  * [Optional Sub patterns](leaf/v/2.4/routing/sub-patterns)
+  * [Using Controllers](leaf/v/2.4/routing/controller)
+  * [Sub folder support](leaf/v/2.4/routing/sub-folder)
 
 * HTTP
-  * [Request](leaf/v/lucky-charm/http/request.md)
-  * [Response](leaf/v/lucky-charm/http/response.md)
-  * [Session](leaf/v/lucky-charm/http/session.md)
-  * [Cookies](leaf/v/lucky-charm/http/cookies.md)
-  * [Headers](leaf/v/lucky-charm/http/headers.md)
+  * [Request](leaf/v/2.4/http/request)
+  * [Response](leaf/v/2.4/http/response)
+  * [Session](leaf/v/2.4/http/session)
+  * [Cookies](leaf/v/2.4/http/cookies)
+  * [Headers](leaf/v/2.4/http/headers)
 
 * Core
-  * [Leaf Forms](leaf/v/lucky-charm/core/forms.md)
-  * [Leaf Mail](leaf/v/lucky-charm/core/mail.md)
-  * [Leaf Date](leaf/v/lucky-charm/core/date.md)
-  * [Leaf FS](leaf/v/lucky-charm/core/fs.md)
-  * [Leaf Scripts](leaf/v/lucky-charm/core/scripts.md)
-  
-  * [Simple Auth](leaf/v/lucky-charm/core/auth.md)
-  * [Leaf Token](leaf/v/lucky-charm/core/token.md)
-  * [Authentication](leaf/v/lucky-charm/core/authentication.md)
-  
-  * [Controller](leaf/v/lucky-charm/core/controller.md)
-  * [API Controller](leaf/v/lucky-charm/core/api-controller.md)
-  * [Model](leaf/v/lucky-charm/core/model.md)
+  * [Leaf Forms](leaf/v/2.4/core/forms)
+  * [Leaf Mail](leaf/v/2.4/core/mail)
+  * [Leaf Date](leaf/v/2.4/core/date)
+  * [Leaf FS](leaf/v/2.4/core/fs)
+  * [Simple Auth](leaf/v/2.4/core/auth)
+  * [Leaf Token](leaf/v/2.4/core/token)
+  * [Authentication](leaf/v/2.4/core/authentication)
+  * [Controller](leaf/v/2.4/core/controller)
+  * [API Controller](leaf/v/2.4/core/api-controller)
+  * [Model](leaf/v/2.4/core/model)
 
 * Leaf Views
-  * [Leaf Veins](leaf/v/lucky-charm/views/veins.md)
-  * [Leaf Blade](leaf/v/lucky-charm/views/blade.md)
+  * [Leaf Veins](leaf/v/2.4/views/veins)
+  * [Leaf Blade](leaf/v/2.4/views/blade)
 
 * Leaf DB (NEW)
-  * [Leaf Db Intro](leaf/v/lucky-charm/db/)
+  * [Leaf Db Intro](leaf/v/2.4/db/)
 
 * Leaf DB (old)
-  * [Leaf DB Intro](leaf/v/lucky-charm/database/)
-  * [Retrieving Data](leaf/v/lucky-charm/database/select)
-  * [Inserting Data](leaf/v/lucky-charm/database/insert)
+  * [Leaf DB Intro](leaf/v/2.4/database/)
+  * [Retrieving Data](leaf/v/2.4/database/select)
+  * [Inserting Data](leaf/v/2.4/database/insert)
 
 * [**Leaf API**](leaf-api/)
 
@@ -57,7 +54,7 @@
 
 * [**Tilly**](tilly/)
 
-* [**Beta Zone**](leaf/v/lucky-charm/beta-zone/)
+* [**Beta Zone**](leaf/v/2.4/beta-zone/)
 
 * [**Code Labs**](codelabs/)
 

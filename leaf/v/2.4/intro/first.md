@@ -30,7 +30,9 @@ You might have seen it above, but you can use [response](leaf/v/2.4/http/respons
 $app->get("/user", function() use($app) {
   $name = $app->request()->get("name");
 
-  $app->response()->json(["name" => $name]);
+  $app->response()->json([
+    "name" => $name
+  ]);
 });
 ```
 

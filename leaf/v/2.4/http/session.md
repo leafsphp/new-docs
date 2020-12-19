@@ -47,7 +47,7 @@ $session = new Leaf\Http\Session;
 $session = new Leaf\Http\Session(true);
 ```
 
-Since we want to avoid sessions conflicting, v2.4 beta allows you to choose whether you want to start a new session on init. This also allows smooth integration with native PHP sessions, so you can always switch to Leaf sessions when you're ready.
+Since we want to avoid sessions conflicting, v2.4 allows you to choose whether you want to start a new session on init. This also allows smooth integration with native PHP sessions, so you can always switch to Leaf sessions when you're ready.
 
 <hr>
 
@@ -81,17 +81,17 @@ get is a simple method that returns a session value. It takes in one parameter: 
 $username = $session->get("username");
 ```
 
-#### Multiple Get <sup class="new-tag-1">New in v2.4 beta</sup>
+#### Multiple Get <sup class="new-tag-1">New in v2.4</sup>
 
-In v2.4 beta, you can return many fields at once from the session:
+In v2.4, you can return many fields at once from the session:
 
 ```php
 $user = $session->get(["username", "email"]);
 ```
 
-#### Security Fixes <sup class="new-tag-1">New in v2.4 beta</sup>
+#### Security Fixes <sup class="new-tag-1">New in v2.4</sup>
 
-`set()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application. In v2.4 beta, you can choose to turn this feature off, maybe for html values:
+`set()` has also received a bunch of security fixes which prevent maliscious scripts from being passed into your application. In v2.4, you can choose to turn this feature off, maybe for html values:
 
 ```php
 // turn off sanitize
@@ -189,15 +189,15 @@ Just as you cann start a session, you can also end a session with `destroy`.
 $session->destroy();
 ```
 
-### encode <sup class="new-tag-1">New in v2.4 beta</sup>
+### encode <sup class="new-tag-1">New in v2.4</sup>
 
-v2.4 beta comes with the encode feature which allows you to encode the current session data as a string.
+v2.4 comes with the encode feature which allows you to encode the current session data as a string.
 
 ```php
 $sessionString = $session->encode();
 ```
 
-### decode <sup class="new-tag-1">New in v2.4 beta</sup>
+### decode <sup class="new-tag-1">New in v2.4</sup>
 
 You can also decode a serialized session using the `decode` method. It takes in the string to decode.
 
@@ -205,9 +205,9 @@ You can also decode a serialized session using the `decode` method. It takes in 
 $phpSession = $session->decode($sessionString);
 ```
 
-## Error Handling <sup class="new-tag-1">New in v2.4 beta</sup>
+## Error Handling <sup class="new-tag-1">New in v2.4</sup>
 
-In previous versions of Leaf, sessions would always throw errors directly which made them not very suitable for web app development, however, v2.4 beta fixes that problem. If any of the above methods fail an operation, `false` is returned and an error is left in the `Leaf\Http\Session` local state. This error or errors can be returned by calling the `errors` method.
+In previous versions of Leaf, sessions would always throw errors directly which made them not very suitable for web app development, however, v2.4 fixes that problem. If any of the above methods fail an operation, `false` is returned and an error is left in the `Leaf\Http\Session` local state. This error or errors can be returned by calling the `errors` method.
 
 ```php
 $user = $session->get("user");
