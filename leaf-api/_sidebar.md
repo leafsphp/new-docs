@@ -1,4 +1,4 @@
-* [Back to Leaf API](leaf-api/)
+* [Back to Leaf API](leaf-api/ "Leaf API")
 
 * Intro
   * [Home](leaf-api/v/2.0-beta/ "Leaf API")
