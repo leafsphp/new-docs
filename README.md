@@ -10,9 +10,9 @@ Leaf is a PHP framework that helps you create clean, simple but powerful web app
 
 Leaf also has a bunch of tools which help you build **faster**, **more scaleable** solutions quicker than ever.
 
-<!-- <p class="alert -info">
-  Checkout the first release of Aloe CLI. Aloe replaces the standard console tools in Leaf API, Leaf MVC and SKeleton. <a href="/#/leaf/v/2.4/">Read the docs</a>
-</p> -->
+<p class="alert -info">
+  Checkout the first release of Aloe CLI. Aloe replaces the standard console tools in Leaf API, Leaf MVC and SKeleton. <a href="/#/aloe-cli/">Read the docs</a>
+</p>
 
 ### 🎮 Leaf CLI
 
@@ -20,9 +20,9 @@ Leaf CLI is a console tool for creating and managing Leaf projects. Read the gui
 
 ### 📄 Leaf API
 
-<!-- <p class="alert -info">
-  Leaf API v2 (Aloe) has just been released. Aloe builds on the changes from Leaf PHP and takes API development to a whole new level of ease. <a href="/#/leaf/v/2.4/">Read the docs</a>
-</p>  -->
+<p class="alert -info">
+  Leaf API v2 (Aloe) BETA has just been released. Aloe builds on the changes from Leaf PHP and takes API development to a whole new level of ease. <a href="/#/leaf-api/v/2.0-beta/">Read the docs</a>
+</p>
 
 Leaf API is a lightweight PHP MVC framework for rapid API development. LeafAPI serves as minimal MVC wrapper around Leaf PHP Framework which allows you to use Leaf in an MVC environment. It also comes along with a bunch of handy tools which can speed up your development by leagues🙂
 

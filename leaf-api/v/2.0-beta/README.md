@@ -20,7 +20,7 @@ Leaf API was created and polished by these amazing minds:
 You can quickly create a Leaf API project with [composer](https://getcomposer.org).
 
 ```bash
-composer create-project leafs/api <project-name>
+composer create-project leafs/api <project-name> v2.0-beta
 ```
 
 ## Directory Structure
