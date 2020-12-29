@@ -12,11 +12,11 @@ This is a list of all Leaf API versions
     <h2>v1.2</h2>
     <small>(Stick on fire)</small>
   </a>
-  <!-- <a href="/#/leaf-api/v/2.0-beta/" class="version-card">
+  <a href="/#/leaf-api/v/2.0-beta/" class="version-card">
     <div class="tag -beta">Latest (Beta)</div>
     <h2>v2.0 Beta</h2>
     <small>(Aloe Beta)</small>
-  </a> -->
+  </a>
 </div>
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
