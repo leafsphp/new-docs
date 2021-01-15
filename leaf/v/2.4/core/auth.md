@@ -104,6 +104,20 @@ $auth->config("LOGIN_PARAMS_ERROR", "Username is incorrect!");
 $auth->config("LOGIN_PASSWORD_ERROR", "Password is incorrect!");
 ```
 
+- **<small class="new-tag-1">New</small> USE_SESSION** Use session based authentication instead of the default JWT based auth. Without this setting enbled, you can't use any of the session methods below.
+
+- **<small class="new-tag-1">New</small> SESSION_ON_REGISTER** If true, a session will be created on a successful registration, else you it'll be created on login rather.
+
+- **<small class="new-tag-1">New</small> GUARD_LOGIN** The page route.
+
+- **<small class="new-tag-1">New</small> GUARD_REGISTER** The register page route.
+
+- **<small class="new-tag-1">New</small> GUARD_LOGOUT** Logout route handler.
+
+- **<small class="new-tag-1">New</small> GUARD_HOME** Home page route.
+
+- **<small class="new-tag-1">New</small> SAVE_SESSION_JWT** Add an auth token to the auth session? This allows you save a generated JWT to the session. You might want to use this if you want to extend your app into an API.
+
 ### tokenLifetime
 
 This method allows you to get or set the token lifetime value. In previous versions, the lifetime value was set by leaf, here you can customize it the way you want to.
@@ -115,6 +129,118 @@ $auth->tokenLifetime(24 * 24 * 24);
 // get token lifetime
 $lifetime = $auth->tokenLifetime();
 ```
+
+## Session support <sup class="new-tag-1">New in v2.4.1</sup>
+
+Leaf auth finally includes support for session based authentication in this version. Session based authentication as the name implies creates and manages a session during the authentication to manage the user's logged in state. And all of this is done in 1 or 2 lines of code to maintain the simplicity and flexibility Leaf auth has always given.
+
+To get started with session support, just set the `USE_SESSION` setting to true.
+
+```php
+$auth->config("USE_SESSION", true);
+```
+
+A much simpler way would be to simply call the `useSession` method.
+
+```php
+$auth->useSession();
+```
+
+## Session methods <sup class="new-tag-1">New in v2.4.1</sup>
+
+Enabling session support allows you to use some special methods and behaviours which are not available with the regular JWT authentication.
+
+### guard <sup class="new-tag-1">New in v2.4.1</sup>
+
+The guard method works sort of like authentication middleware. It takes in a single param, an array holding the authentication state or the type of guard to load up.
+
+```php
+$auth->guard(["hasAuth" => true]);
+
+// or
+
+$auth->guard("auth");
+
+// guest route redirects to home
+// route if you're logged in
+$auth->guard("guest");
+```
+
+### saveToSession <sup class="new-tag-1">New in v2.4.1</sup>
+
+This method is used to save a variable to the auth session.
+
+```php
+$auth->saveToSession("rememberLogin", false);
+
+// You can add multiple vars
+$auth->saveToSession([
+  "rememberLogin" => false,
+  "sessionActivity" => "login"
+]);
+```
+
+### sessionLength <sup class="new-tag-1">New in v2.4.1</sup>
+
+With sessionLength, you can get how long a user has been logged in. You can save the session time logs to your database in order to track users' login logs. The available logs are `SESSION_STARTED_AT` and `SESSION_LAST_ACTIVITY` which are automatically tracked by Leaf.
+
+```php
+// LoginsDB is a user defined method to save a login log
+
+// ...
+LoginsDB::params(
+  "logged_in_at",
+  date("D, d M Y H:i:s", $auth->sessionLength()),
+);
+
+LoginsDB::save();
+```
+
+### sessionActive <sup class="new-tag-1">New in v2.4.1</sup>
+
+sessionActive allows you to get how much time has passed since the last session activity.
+
+```php
+$userLastSeen = $auth->sessionActive();
+```
+
+### refresh <sup class="new-tag-1">New in v2.4.1</sup>
+
+As the name implies, you can refresh the session with this method. Refreshing sort of restarts the session, but you can keep the user's old session data if you wish to.
+
+```php
+if ($newAccountAdded) {
+  // will delete old session data
+  $auth->refresh();
+} else {
+  // will keep session data
+  $auth->refresh(false);
+}
+```
+
+### session <sup class="new-tag-1">New in v2.4.1</sup>
+
+session checks whether a user session is ongoing by looking for keys specific to Leaf session auth so it doesn't confuse a Leaf auth session with user defined sessions. Returns true if a session is found and false if there's no session found.
+
+```php
+if ($auth->session()) {
+  return "logged in";
+} else {
+  return "guest mode";
+}
+```
+
+### endSession <sup class="new-tag-1">New in v2.4.1</sup>
+
+Of course we'll need a method to logout/end our session. This is just the method for that.
+
+```php
+$auth->endSession();
+```
+
+**login, register and the other methods used in auth now integrate with auth when they're used. So login will start a session instead of returning a JWT.**
+
+Read the section below to learn more about the main authentication methods and what session support that has been added.
 
 ## Authentication methods
 
@@ -154,6 +280,39 @@ example success response:
   ],
   "token" => "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NzYxMzUzMjgsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTU3NjEzNjIyOCwidXNlcklkIjoxfQ.7FODXGGJKioGQVX4ic0DJLoMIQTVUlsd4zFAJA4DAkg"
 ]
+```
+
+#### session support <sup class="new-tag-1">New in v2.4.1</sup>
+
+Login received session support which allows login to create a session instead of returning aa JWT as done by default. To get started with session, just set the `USE_SESSION` setting or call the `useSession` method.
+
+```php
+$auth->useSession();
+
+$auth->login("users", [
+  "username" => $username,
+  "password" => $password
+]);
+```
+
+When the login succeeds, you'll be redirected to GUARD_HOME. You can configure the GUARD_HOME route to match the needs of your app.
+
+In case there's something wrong and Auth can't sign the user in, it returns a falsy value.
+
+```php
+$user = $auth->login("users", [
+  "username" => $username,
+  "password" => $password
+]);
+
+if (!$user) {
+  // you can pass the auth errors into a view
+  return $blade->render("pages.auth.login", [
+    "errors" => $auth->errors(),
+    "username" => $username,
+    "password" => $password,
+  ]);
+}
 ```
 
 #### Password Encoding
@@ -236,6 +395,49 @@ $app->post("/register", function() use($app) {
 });
 ```
 
+#### register session support <sup class="new-tag-1">New in v2.4.1</sup>
+
+Just as with login, register now integrates with session. To turn this feature on, just set the `USE_SESSION` setting or call the `useSession` method.
+
+```php
+$auth->useSession();
+
+$auth->register("users", $credentials, [
+  "username", "email"
+]);
+```
+
+After a successful registration, you can redirect to GUARD_HOME or rather GUARD_LOGIN if you want the user to login after registration.
+
+```php
+// set your login route...default is /auth/login
+$auth->config("GUARD_LOGIN", "/login");
+
+// Redirect to login after auth
+$auth->config("SESSION_ON_REGISTER", false);
+
+// Login automatically after registration
+$auth->config("SESSION_ON_REGISTER", true);
+```
+
+In case there's something wrong and Auth can't register the user, it returns a falsy value.
+
+```php
+$user = $auth->register("users", $credentials, [
+  "username", "email"
+]);
+
+if (!$user) {
+  // you can pass the auth errors into a view
+  return $blade->render("pages.auth.register", [
+    "errors" => $auth->errors(),
+    "username" => $username,
+    "email" => $email,
+    "password" => $password,
+  ]);
+}
+```
+
 <hr>
 
 ### update
@@ -266,7 +468,13 @@ $user = $auth->update("users", $data, $where, $uniques, $validation);
 
 **Something little:** Uniques in `update` work a bit different from `register`, in `update`, Leaf tries to find another user which isn't the current user that has the same credentials. So if there's no other user with that same param value, the unique test passes. In short, **the current user is excluded from the users to check for same credentials**
 
-**`update` bugs found in v2.4 beta have all been addressed in this release.**
+#### update session support <sup class="new-tag-1">New in v2.4.1</sup>
+
+Update also reeived session support. When a user is updated, the user is updated in the session and the updated user is also returned.
+
+```php
+$user = $this->auth->update("users", $data, $where, $uniques);
+```
 
 <hr>
 

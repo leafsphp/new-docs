@@ -37,7 +37,7 @@ $response = new Leaf\Http\Response;
 
 $app->post("/login", function() use($response) {
   // ...
-  $response->respond(["username" => $user]);
+  $response->json(["username" => $user]);
 });
 ```
 

@@ -8,6 +8,18 @@ The router module is tied directly to Leaf Core, so once you initialise leeaf, y
 $app = new Leaf\App;
 ```
 
+## Router class <sup style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2.4.1</sup>
+
+V2.4.1 includes an independent router class which you can use to handle routing and can be accessed staticly, so there's no need to initialize it.
+
+```php
+use Leaf\Router;
+
+Router::view("/home", "homepage");
+
+Router::run();
+```
+
 ## 👋 Using a different router
 
 Although Leaf provides you with a default router, you are free to import and use any router you want.
@@ -22,17 +34,19 @@ composer require imaginary/router
 
 ```php
 $app = new Leaf\App;
+
 // initialise imaginary router
 $imr = new Imaginary\Router();
 // you can still use leaf modules
+
 $imr->get("/", function() use($app) {
-  $app->response->respond(["title" => "hello"]);
+  $app->response()->json(["title" => "hello"]);
 });
 ```
 
 ## ⛳ Creating Routes
 
-Back to Leaf's router, You can define application routes using proxy methods on the Leaf\App instance. Leaf supports different types of requests, let's look at them.
+Back to the default router config, You can define application routes using proxy methods on the Leaf\App instance. Leaf supports different types of requests, let's look at them.
 
 ### GET
 
@@ -127,6 +141,16 @@ You can add a route that handles all HTTP requests with the Leaf router's all() 
 $app->all('/post/{id}', function($id) {
   // your code
 });
+```
+
+### View <sup style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2.4.1</sup>
+
+The view object allows you to directly return a blade view, however, it currently only works for Leaf MVC and Leaf API.
+
+```php
+# view defined App/Views/homepage.blade.php
+
+$app->view("/home", "homepage");
 ```
 
 ### Resource Routes

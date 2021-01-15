@@ -74,7 +74,7 @@ $db->connect($host, $user, $password, $dbname);
 
 $app->get('/users/all', function() use($app) {
 	$users = $db->query("SELECT username FROM users")->fetchAll();
-	$app->response->respond($users);
+	$app->response()->json($users);
 });
 ```
 As normal as this seems, we take it a step further by providing you with a much simpler way to use prepared statements.
@@ -84,7 +84,7 @@ $db->connect($host, $user, $password, $dbname);
 
 $app->get('/users/{id}', function($id) use($app) {
 	$user = $db->query("SELECT username FROM users WHERE id = ?", [$id])->fetchObj();
-	$app->response->respond($user);
+	$app->response()->json($user);
 });
 ```
 
