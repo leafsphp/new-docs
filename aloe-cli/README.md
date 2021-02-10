@@ -1,5 +1,10 @@
 # Aloe Cli <sup class="new-tag-1">New</sup>
 
+<p class="alert -warning">
+  Aloe CLI v1.1.0 beta (Sunset Aloe) has just been released.
+  <a href="/#/aloe-cli/v/1.1.0-beta/">Read the docs</a>
+</p>
+
 Aloe is a simple but powerful console service that makes building your leaf apps just a simple walk in the park. Aloe CLI ships with the default Leaf console tool in the newer versions of Leaf API, soon in Leaf MVC and Leaf API.
 
 Aloe comes with a predefined set of commands which provide project scaffolding, database and app management right from the console. It also introduces a much simpler and cleaner way to write your commands.
