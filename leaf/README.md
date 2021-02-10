@@ -52,10 +52,10 @@ leaf create <project-name>
 
 From here, you'll have Leaf installed in your project. You can jummp to one of these pages.
 
-- [Intro](leaf/v/2.4/)
-- [Your first leaf app](leaf/v/2.4/intro/first)
-- [Handling Request](leaf/v/2.4/http/request)
-- [Handling Responses](leaf/v/2.4/http/response)
+- [Intro](leaf/v/2.4.2/)
+- [Your first leaf app](leaf/v/2.4.2/intro/first)
+- [Handling Request](leaf/v/2.4.2/http/request)
+- [Handling Responses](leaf/v/2.4.2/http/response)
 
 <br>
 

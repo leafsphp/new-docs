@@ -30,7 +30,7 @@ You can also clone the repo and setup your autoloader.
        You can directly clone or download the git repo here.
     </p>
     <a
-      href="https://github.com/leafsphp/leaf/archive/v2.4.0.zip"
+      href="https://github.com/leafsphp/leaf/archive/v2.4.1.zip"
       style="background: #202020; color: white; text-decoration: none; padding: 8px 15px; border-radius: 3px;"
       download
     >Download Repo</a>

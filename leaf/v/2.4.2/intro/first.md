@@ -1,24 +1,28 @@
 # Your First Leaf App
 
-## 📄 Hello World
+As mentioned before, Leaf's main purpose is to help you easily and quickly create powerful web apps and APIs. This is a little demo created to give you an idea on the most used features leaf provides.
 
-First of all, we need to setup our .htaccess file. See [configuring .htaccess](leaf/v/2.4.2/intro/htaccess)
+## Getting started
 
-To create a hello world project with Leaf, you simply need to initialise Leaf. This will spin up Leaf's core packages. Amongst the core packages is Leaf's router. This simply takes all requests coming into the application and handles them based on rules you define. Enough talk, let's get dirty.
+First of all, we need to set up url rewriting. See [re-routing to index](leaf/v/2.4.2/intro/htaccess)
+
+To create a basic project with Leaf, you simply need to initialise Leaf. This will spin up Leaf's core packages. Amongst the core packages is Leaf's router. This simply takes all requests coming into the application and handles them based on rules you define. Enough talk, let's get dirty.
 
 ```php
 // import composer's autoloader
-require_once __DIR__ . "/vendor/autoload.php";
+require __DIR__ . "/vendor/autoload.php";
 
 // initialise leaf
 $app = new Leaf\App;
 
 $app->get('/', function() use($app) {
+  // response is initialized with leaf
   $app->response()->json([
     "message" => "Hello World"
   ]);
 });
 
+// run the defined routes
 $app->run();
 ```
 
@@ -37,6 +41,8 @@ $app->get("/user", function() use($app) {
 ```
 
 The example above retrieves a get request param: `name`, sets it into a variable and outputs it as a json object. The URI for the above example would be something like `/user?name=mychi`. You can read more on request and response for more functionality.
+
+## Working with databases
 
 Leaf also has a simple package for working with databases. It's really easy to use and doesn't even need you to know sql for basic use cases. Let's follow the example above, but this time, we'll save the name as a new user.
 
@@ -75,6 +81,8 @@ $app->response()->json(["name" => $user]);
 ```
 
 Leaf Db provides a ton of features ready for use anywhere in your app. [Read the docs here](leaf/v/2.4.2/db/)
+
+## Handling authentication
 
 Although Leaf Db is very easy, user authentication can get quite tricky depending on your app, there's also JWT concerns and stuff like that which Leaf Db can't handle...good news, Leaf has the right module for this.
 

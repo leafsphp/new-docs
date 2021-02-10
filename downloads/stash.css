@@ -75,3 +75,31 @@
 	color: rgb(160, 93, 5);
 	background: rgba(230, 127, 10, 0.05);
 }
+
+.download-alert {
+	border: 1px solid rgba(10, 230, 150, 0.8);
+	border-radius: 4px;
+	background: rgba(10, 230, 150, 0.05);
+	padding: 20px 30px;
+	padding-bottom: 32px;
+}
+
+.download-alert h3 {
+	font-weight: bolder;
+	font-size: 25px;
+	margin-top: 0 !important;
+	margin-bottom: -18px !important;
+}
+
+.download-alert p {
+	color: rgb(5, 160, 70);
+	font-size: 18px;
+}
+
+.download-alert a {
+	background: #202020;
+	color: white;
+	text-decoration: none;
+	padding: 8px 15px;
+	border-radius: 3px;
+}

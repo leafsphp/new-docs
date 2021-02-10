@@ -18,7 +18,7 @@ This command can also be run in your LeafMVC and LeafAPI projects to manually up
 
 Building a better experience for existing features doesn't necessarily mean that there's nothing new in Leaf. To view all the changes made to Leaf since the last release, you can check the [release notes](https://github.com/leafsphp/leaf/releases/tag/v2.4.1). However, the major additions include:
 
-- Added option to turn off experimental method warnings
+- Added option to turn off experimental method warnings in `Leaf\Auth`
 
 - Added `Form::rule` which allows you to create your own rules for form validation.
 
@@ -35,10 +35,11 @@ Form::rule("max", function($field, $value, $params) {
 
 ```php
 $validation = Form::validate([
-    // To pass a param to a rule, just use :
     "username" => "max:3",
 ]);
 ```
+
+The above example runs the max rule with a parameter of 3. It's sort of like running a method `max` with a parameter of 3. `max(3)`.
 
 - Added `Form::addError` which allows you to add errors to be returned in `Form::errors()`
 
