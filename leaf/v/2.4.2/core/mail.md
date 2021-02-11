@@ -268,13 +268,13 @@ For all other methods, check out [PHPMailer](https://github.com/PHPMailer/PHPMai
 For more examples, check out [PHP Mailer's examples](https://github.com/leafsphp/leaf-mailer/tree/master/examples)
 
 <br>
-<hr>
 
-<a href="https://github.com/PHPMailer/PHPMailer" target="_blank" style="margin: 0px">PHPMailer on Github</a>
-<a href="http://phpmailer.github.io/PHPMailer" target="_blank" style="margin: 0px 10px;">PHPMailer Docs</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [PHPMailer on Github](https://github.com/PHPMailer/PHPMailer)
+- [PHPMailer Docs](http://phpmailer.github.io/PHPMailer)
+- [Blade Templating](leaf/v/2.4.2/views/blade)
 
 <br>
+
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

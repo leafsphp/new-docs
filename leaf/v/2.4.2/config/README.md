@@ -40,6 +40,11 @@ To retrieve the value of a setting, you also use the config application instance
 $settingValue = $app->config('templates.path'); //returns "../templates"
 ```
 
-<hr>
+## Next Steps
+
+- [Routing](leaf/v/2.4.2/routing/)
+- [Request](leaf/v/2.4.2/http/request)
+- [Response](leaf/v/2.4.2/http/response)
+- [Blade Templating](leaf/v/2.4.2/views/blade)
 
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

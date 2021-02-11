@@ -114,12 +114,14 @@ Cookie::unsetAll();
 ```
 
 <br>
-<hr>
 
-<a href="#/v/2.0/http/response" style="margin: 0px">Response</a>
-<a href="#/v/2.0/http/request" style="margin: 0px; 10px;">Request</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [Request](leaf/v/2.4.2/http/request)
+- [Response](leaf/v/2.4.2/http/response)
+- [Headers](leaf/v/2.4.2/http/headers)
+- [Session](leaf/v/2.4.2/http/session)
 
 <br>
+
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

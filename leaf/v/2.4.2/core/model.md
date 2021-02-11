@@ -27,7 +27,7 @@ class Flight extends Model
 }
 ```
 
-#### Table Names
+### Table Names
 
 Note that we did not tell Leaf which table to use for our `Flight` model. By convention, the "snake case", plural name of the class will be used as the table name unless another name is explicitly specified. So, in this case, Leaf will assume the `Flight` model stores records in the `flights` table. You may specify a custom `table` by defining a table property on your model:
 
@@ -47,7 +47,7 @@ class Flight extends Model
 }
 ```
 
-#### Primary Keys
+### Primary Keys
 
 Leaf will also assume that each table has a primary key column named id. You may define a protected `$primaryKey` property to override this convention:
 
@@ -89,7 +89,7 @@ If your primary key is not an integer, you should set the protected `$keyType` p
 protected $keyType = 'string';
 ```
 
-#### Timestamps
+### Timestamps
 
 By default, Leaf expects `created_at` and `updated_at` columns to exist on your tables. If you do not wish to have these columns automatically managed by Leaf, set the $timestamps property on your model to false:
 
@@ -130,7 +130,7 @@ class Flight extends Model
 }
 ```
 
-#### Database Connection
+### Database Connection
 
 By default, all Leaf models will use the default database connection configured for your application. If you would like to specify a different connection for the model, use the `$connection` property:
 
@@ -190,7 +190,7 @@ foreach ($flights as $flight) {
 }
 ```
 
-#### Adding Additional Constraints
+### Adding Additional Constraints
 
 The Leaf all method will return all of the results in the model's table. Since each Leaf model serves as a query builder, you may also add constraints to queries, and then use the get method to retrieve the results:
 
@@ -200,7 +200,7 @@ $flights = Flight::where('active', 1)->orderBy('name', 'desc')->take(10)->get();
 
 > **You can check [here](https://laravel.com/docs/5.8/queries) for available queries on your models.**
 
-#### Refreshing Models
+### Refreshing Models
 
 You can refresh models using the `fresh` and `refresh` methods. The `fresh` method will re-retrieve the model from the database. The existing model instance will not be affected:
 
@@ -227,6 +227,7 @@ $flight->number; // "FR 900"
 ## Inserting & Updating Models
 
 ### Inserts
+
 To create a new record in the database, create a new model instance, set attributes on the model, then call the save method:
 
 ```php
@@ -272,16 +273,16 @@ $flight->save();
 
 Since Leaf Models use Eloquent, you can read more [here](https://laravel.com/docs/5.8/eloquent) to view available methods on the Eloquent object.
 
-Just remember, your models should extend `Leaf\Model` not `Eloquent`
+**Just remember, your models should extend `Leaf\Model` not `Eloquent`**
 
 <br>
-<hr>
 
-<a href="#/v/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [Eloquent](https://laravel.com/docs/5.8/eloquent)
+- [Forms](leaf/v/2.4.2/http/forms)
+- [Auth](leaf/v/2.4.2/core/auth)
 
 <br>
+
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

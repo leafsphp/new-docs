@@ -376,12 +376,14 @@ $resourceUri = $app->request()->getResourceUri();
 ```
 
 <br>
-<hr>
 
-<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [Leaf Form](leaf/v/2.4.2/core/forms)
+- [Response](leaf/v/2.4.2/http/response)
+- [Headers](leaf/v/2.4.2/http/headers)
+- [Session](leaf/v/2.4.2/http/session)
 
 <br>
+
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
