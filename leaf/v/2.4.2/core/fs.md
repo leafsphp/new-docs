@@ -6,20 +6,12 @@ This is a simple functionality inspired by node js' FileSystem(fs) module. Leaf 
 Leaf FS allows you to read/write to file, create, rename, copy and paste files/directories all with just a few lines of code. All this is performed while maintaining Leaf's simplicity.
 
 <div class="alert -info">
-In v2.4, all FS methods have been made static, and can now be called from anywhere in your application.
+  In v2.4, all FS methods have been made static, and can now be called from anywhere in your application.
 </div>
-
-## Including FS
-
-To include the FS object in a route, use this:
-
-```php
-$fs = new Leaf\FS;
-```
 
 ## FS Directory Methods
 
-### create_folder
+### createFolder
 
 This will create a new directory in the `current directory`
 
@@ -33,7 +25,7 @@ Let's take this directory structure below, we initialise Leaf FS in our index.ph
 In our index.php file:
 
 ```php
-$fs->create_folder("new_logs");
+FS::createFolder("new_logs");
 ```
 
 After running this code, this is our new directory structure
@@ -46,134 +38,167 @@ After running this code, this is our new directory structure
 
 <hr>
 
-### rename_folder
+### renameFolder
 
-rename_folder is used to rename a directory. It takes in two parameters: the directory you want to rename and it's new name/path.
+renameFolder is used to rename a directory. It takes in two parameters: the directory you want to rename and it's new name/path.
 
 ```php
-$fs->rename_folder("new");
-$fs->rename_folder("home/new", "home/items");
+FS::renameFolder("new");
+FS::renameFolder("home/new", "home/items");
 ```
 
 <hr>
 
-### delete_folder
+### deleteFolder
 
-delete_folder is used to delete a directory. It takes in two parameters: the directory you want to delete.
+deleteFolder is used to delete a directory. It takes in two parameters: the directory you want to delete.
 
 ```php
-$fs->delete_folder("new", "items");
-$fs->delete_folder("home/new", "home/items");
+FS::deleteFolder("new", "items");
+FS::deleteFolder("home/new", "home/items");
 ```
 
 <hr>
 
-### list_dir
+### listDir
 
-list_dir returns an array of all the files/folders in a directory. It takes in the directory to list and a search pattern eg: `*.php`. Also note that all folders end with a '/'
+listDir returns an array of all the files/folders in a directory. It takes in the directory to list and a search pattern eg: `*.php`. Also note that all folders end with a '/'
 
 ```php
-$fs->list_dir("new");
-$fs->list_dir("home/new", "*.txt");
+FS::listDir("new");
+FS::listDir("home/new", "*.txt");
+```
+
+### listFolders
+
+This method lists all the folders in a particular directory.
+
+```php
+FS::listDir("folder");
 ```
 
 <hr>
 
-### FS File Methods
+## FS File Methods
 
-#### create_file
+### createFile
 
-`create_file` is used to create a new file in the `current directory`. It takes in the filename or path+filename. If the file already exists, it gives the new file a different name.
+`createFile` is used to create a new file in the `current directory`. It takes in the filename or path+filename. If the file already exists, it gives the new file a different name.
 
 ```php
-$fs->create_file("items.txt");
-$fs->create_file("home/items.txt");
+FS::createFile("items.txt");
+FS::createFile("home/items.txt");
 ```
 
-#### write_file
+### writeFile
 
-`write_file` is used to add content to a file, if the file already has content, all the content in there is replaced with the new content. Also, if the file doesn't exist, it will be created and all the content will be added to it. It takes in 2 parameters, the name/path+name of the file and the content;
+`writeFile` is used to add content to a file, if the file already has content, all the content in there is replaced with the new content. Also, if the file doesn't exist, it will be created and all the content will be added to it. It takes in 2 parameters, the name/path+name of the file and the content;
 
 ```php
-$fs->write_file("items.txt", "Hello");
-$fs->write_file("items.txt", [
+FS::writeFile("items.txt", "Hello");
+FS::writeFile("items.txt", [
   "name" => "Item 1"
 ]);
-$fs->write_file("items.txt", 1);
+FS::writeFile("items.txt", 1);
 ```
 
-#### append_file
+### append
 
-append_file is almost exactly the same as write_file, except that instead of replacing the content in a file, it adds to the end of it.
+append is almost exactly the same as writeFile, except that instead of replacing the content in a file, it adds to the end of it.
 
 ```php
-$data = $fs->append_file("items.txt", "Item name");
+$data = FS::append("items.txt", "Item name");
 ```
 
-#### prepend_file
+### prepend
 
-prepend_file is almost exactly the same as write_file, except that instead of replacing the content in a file, it adds to the begining.
+prepend is almost exactly the same as writeFile, except that instead of replacing the content in a file, it adds to the begining.
 
 ```php
-$data = $fs->prepend_file("items.txt", "Item name");
+$data = FS::prepend("items.txt", "Item name");
 ```
 
-#### read_file
+### readFile
 
-read_file returns the data found in a file. It takes 1 parameter: the file name/path+file name.
+readFile returns the data found in a file. It takes 1 parameter: the file name/path+file name.
 
 ```php
-$data = $fs->read_file("./home/items.txt");
+$data = FS::readFile("./home/items.txt");
 ```
 
-#### rename_file
+### renameFile
 
-rename_file renames a file. It takes 2 parameter: the file name/path+file name to rename and it's new name.
+renameFile renames a file. It takes 2 parameter: the file name/path+file name to rename and it's new name.
 
 ```php
-$data = $fs->rename_file("./home/items.txt", "home/products.txt");
+$data = FS::renameFile("./home/items.txt", "home/products.txt");
 ```
 
-#### delete_file
+### deleteFile
 
-delete_file deletes a file. It takes 2 parameter: the file name/path+file name to delete.
+deleteFile deletes a file. It takes 2 parameter: the file name/path+file name to delete.
 
 ```php
-$data = $fs->delete_file("./home/items.txt");
+$data = FS::deleteFile("./home/items.txt");
 ```
 
-#### copy_file
+### copyFile
 
-copy_file copies a file from the current directory to another directory. It takes in 3 parameters: the filename, the new path + filename and whether to rename the file if it exists in the new directory. The 3rd parameter is optional, if nothing is passed for the 3rd parameter, it will rename the file. Pass in true to rename the file if it already exists, false to override the file content(default is true).
+copyFile copies a file from the current directory to another directory. It takes in 3 parameters: the filename, the new path + filename and whether to rename the file if it exists in the new directory. The 3rd parameter is optional, if nothing is passed for the 3rd parameter, it will rename the file. Pass in true to rename the file if it already exists, false to override the file content(default is true).
 
 ```php
-$data = $fs->copy_file("items.txt", "./home/");
-$data = $fs->copy_file("items.txt", "./home/", false);
+$data = FS::copyFile("items.txt", "./home/");
+$data = FS::copyFile("items.txt", "./home/", false);
 ```
 
-#### clone_file
+### deepCopy
 
-clone_file also copies a file from the current directory to another directory, but unlike copy_file, clone_file includes the filename, and it takes in 2 parameters: the filename and the path+filename to clone to.
+Recursively copy through a folder.
 
 ```php
-$data = $fs->clone_file("items.txt", "./home/products.txt");
+FS::deepCopy("source", "destination");
 ```
 
-#### move_file
+### superCopy
 
-move_file also moves a file from the current directory to another directory, it takes in 2 parameters: the filename and the path to move to.
+Copy a file, or recursively copy a folder and its contents. Based on [Aidan Lister's copyr](http://aidanlister.com/2004/04/recursively-copying-directories-in-php/)
 
 ```php
-$data = $fs->move_file("items.txt", "./home/");
+$permissions = 0755;
+FS::superCopy("source", "destination", $permissions);
 ```
 
-#### upload_file <sup class="new-tag-1">New in v2.4</sup>
+### cloneFile
+
+cloneFile also copies a file from the current directory to another directory, but unlike copyFile, cloneFile includes the filename, and it takes in 2 parameters: the filename and the path+filename to clone to.
+
+```php
+$data = FS::cloneFile("items.txt", "./home/products.txt");
+```
+
+### moveFile
+
+moveFile also moves a file from the current directory to another directory, it takes in 2 parameters: the filename and the path to move to.
+
+```php
+$data = FS::moveFile("items.txt", "./home/");
+```
+
+### allFiles
+
+This method allows you to get all of the files from the given directory (recursive). It takes in the directory to search and whether to show hidden files or not.
+
+```php
+$files = FS::allFiles("records", false);
+```
+
+### uploadFile
 
 <div class="alert -warning">
-This method was previously upload. In v2.4, upload_file has received a lot of fixes and new features. Also the older upload method has been removed.
+This method was previously upload. In v2.4, uploadFile has received a lot of fixes and new features. Also the older upload method has been removed.
 </div>
 
-`upload_file` as the name suggests is a method that makes file uploading a breeze. This is the main highlight of `Leaf\FS` in v2.4. Also unlike in earlier versions, `upload_file` supports more type of files.
+`uploadFile` as the name suggests is a method that makes file uploading a breeze. This is the main highlight of `Leaf\FS` in v2.4. Also unlike in earlier versions, `uploadFile` supports more type of files.
 
 It takes in 3 parameters:
 
@@ -185,7 +210,7 @@ It takes in 3 parameters:
 $profilePic = $request->files("profile_pic");
 
 // file upload
-Leaf\FS::upload_file($profilePic, "./images/");
+Leaf\FS::uploadFile($profilePic, "./images/");
 ```
 
 One amazing thing about FS is that it can detect the type of file you're trying to upload and handle it accordingly, so you don't need to worry about that. Below is a table of common file types which are automatically detected.
@@ -208,13 +233,13 @@ You can open an issue if you think there should be a new category or if an impor
 You can configure file uploads to behave the way you want it to, and that's the 3rd parameter it takes in.
 
 ```php
-Leaf\FS::upload_file($profilePic, "./images/", []);
+Leaf\FS::uploadFile($profilePic, "./images/", []);
 ```
 
 Config is an array that takes in particular properties:
 
 ```php
-Leaf\FS::upload_file($profilePic, "./images/", [
+Leaf\FS::uploadFile($profilePic, "./images/", [
   "verify_dir" => true
 ]);
 ```
@@ -233,65 +258,102 @@ This is a list of config options.
 If the file upload is successful, it returns the filename, you can perform whatever operation you need on the filename, if it fails you can access the errors through the `errors` method. Refer to error handling for this part.
 
 ```php
-$filename = $fs->upload_file($profilePic, "./images/", []);
+$filename = FS::uploadFile($profilePic, "./images/", []);
 ```
 
-#### upload_info <sup class="new-tag-1">New in v2.4</sup>
+### uploadInfo
 
-When the file successfully uploads, records on the file details are shelved. You can access these with the `upload_info` method. It takes in one optional parameter, the name of the file whose info you want to return.
+When the file successfully uploads, records on the file details are shelved. You can access these with the `uploadInfo` method. It takes in one optional parameter, the name of the file whose info you want to return.
 
 ```php
 // returns info on all uploaded files (associative array)
-$uploadInfo = Leaf\FS::upload_info();
+$uploadInfo = Leaf\FS::uploadInfo();
 
 // returns info on only selected file
-$profileInfo = $fs->upload_info($filename);
+$profileInfo = FS::uploadInfo($filename);
 ```
 
-#### chmod
+### chmod
 
 Get or set UNIX mode of a file or directory.
 
 ```php
-$mode = $fs->chmod("items.txt");
-$fs->chmod("items.txt", ...);
+$mode = FS::chmod("items.txt");
+FS::chmod("items.txt", ...);
 ```
 
-<!-- #### link
+### link
+
 Create a symlink to the target file or directory. On Windows, a hard link is created if the target is a file.
 
 ```php
-$mode = $fs->link("items.txt", "");
-``` -->
-
-<hr>
-
-## FS Example
-
-```php
-$fs = new Leaf\FS;
-
-$app->post('/books/add', function() use($fs) {
-  $book = [
-    "title" => "something.epub",
-    "content" => "something"
-  ];
-  $fs->create_folder("books");
-  $fs->create_file("books/".$book["title"]);
-  $fs->write_file("books/".$book["title"], $book["content"]);
-  $fs->read_file("books/".$book["title"]);
-});
+FS::link("items.txt", "items");
 ```
 
-This is a simple example where we create a folder, create a file in the new folder, add some data to that new file and read the data from the file.
+### name
+
+Extract the file name from a file path.
+
+```php
+$name = FS::name("works/log.txt");
+```
+
+### basename
+
+Extract the trailing name component from a file path.
+
+```php
+$name = FS::basename("works/log.txt");
+```
+
+### dirname
+
+Extract the parent directory from a file path.
+
+```php
+$dirname = FS::dirname("works/log.txt");
+```
+
+### extension
+
+Extract the file extension from a file path.
+
+```php
+$extension = FS::extension("works/log.txt");
+```
+
+### type
+
+Get the file type of a given file.
+
+```php
+$type = FS::type("works/log.txt");
+```
+
+### size
+
+Get the file size of a given file.
+
+```php
+$size = FS::size("works/log.txt");
+```
+
+## errors
+
+Just like most leaf modules, fs also has an errors method which returns any errors that fs might have run into during an operation.
+
+```php
+$errors = FS::errors();
+```
 
 <br>
-<hr>
 
-<a href="#/v/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [Request](leaf/v/2.4.2/http/request)
+- [Response](leaf/v/2.4.2/http/response)
+- [Session](leaf/v/2.4.2/http/session)
+- [Leaf Forms](leaf/v/2.4.2/core/forms)
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

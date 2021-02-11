@@ -88,4 +88,4 @@ Leaf\JS\Scripts::clear();
 ### [Back to beta zone](2.1beta-zone/)
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

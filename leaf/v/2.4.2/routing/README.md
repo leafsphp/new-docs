@@ -8,7 +8,7 @@ The router module is tied directly to Leaf Core, so once you initialise leeaf, y
 $app = new Leaf\App;
 ```
 
-## Router class <sup style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2.4.1</sup>
+## Router class
 
 V2.4.1 includes an independent router class which you can use to handle routing and can be accessed staticly, so there's no need to initialize it.
 
@@ -143,7 +143,7 @@ $app->all('/post/{id}', function($id) {
 });
 ```
 
-### View <sup style="background: rgb(11, 200, 70); color: white; padding: 3px 7px; font-size: 14px;">New in v2.4.1</sup>
+### View
 
 The view object allows you to directly return a blade view, however, it currently only works for Leaf MVC and Leaf API.
 
@@ -216,7 +216,7 @@ Leaf's core router has specially prepared for 404 errors, and is bent on giving 
 For this reason, we've prepared the set404() method. In version 2, you can just call set404 without passing in any function, this will set the 404 handler to the default Leaf 404 page. You can change this at any time by passing in your custom page
 
 ```php
-// will use default Leaf 404 page(new in v2.0)
+// will use default Leaf 404 page
 $app->set404();
 
 // custom 404 page
@@ -235,4 +235,4 @@ $app->set404(function() use($app) {
 <a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

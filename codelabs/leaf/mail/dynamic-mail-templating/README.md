@@ -103,4 +103,4 @@ Dont forget to check [Leaf Mail's documentation](2.0/core/mail)
 
 <br>
 
-Experiment by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Experiment by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

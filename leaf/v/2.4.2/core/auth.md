@@ -1,11 +1,9 @@
 <!-- markdownlint-disable no-inline-html -->
 # ✨ Leaf Simple Auth
 
-## Intro
+Simple auth is a module which takes away the pain involved with anything authentication related: logins, signups, updating users, tokens, ... The main focus of simple auth is to allow you do all of the above in nothing more than one line of code (unless of course you include customizations for how these features work).
 
-Setting up a login and sign-up system can sometimes be a very unpleasant experience, especially for new devs. For pro devs, the challenge is "the standard". For this, Leaf has prepared something really simple.
-
-This version of leaf uses static methods, so there's no need to initialize auth anymore. After connecting to your database, you can simply go ahead and use any method you want to.
+Auth in versions 2.4.2+ use static methods, so there's no need to initialize auth anymore. After connecting to your database, you can simply go ahead and use any method you want to.
 
 To connect to your database, you can add your db credentials in `connect` or use `autoConnect` if you've already configured your database in your `.env` file.
 
@@ -19,7 +17,7 @@ Auth::autoConnect();
 
 ## Auth Config
 
-Auth Config was added in v2.4-beta to give you more control over how leaf handles authentication in your apps. Auth has been configured perfectly for most apps, but not all use cases are the same, hence, this brilliant addition.
+Auth Config was added in v2.4.0-beta to give you more control over how leaf handles authentication in your apps. Auth has been configured perfectly for most apps, but not all use cases are the same, hence, this brilliant addition.
 
 This also includes various configurations for doing things like:
 
@@ -29,9 +27,10 @@ This also includes various configurations for doing things like:
 - Changing the default password key
 - Setting custom password encode methods
 - Turning off password encoding totally
-- Setting custom password verify methods (NEW)
-- Hiding/Showing password field (NEW)
-- Adding custom validation messages (NEW)
+- Setting custom password verify methods
+- Hiding/Showing password field
+- Adding custom validation messages
+- Turning off experimental feature warnings (NEW)
 
 ### config
 
@@ -44,6 +43,7 @@ Leaf\Auth::config("item", "value");
 ### Settings
 
 - **USE_TIMESTAMPS:** This determines whether Leaf should add the default `created_at` and `updated_at` timestamps on register and update. Default is `true`.
+
 - **PASSWORD_ENCODE** *This method has gone through a lot of changes since v2.4 beta, and may not work exactly the same way*. This setting is run when leaf wants to encode a password. It now uses `PASSWORD_DEFAULT` by defaullt for encryption.
 
 ```php
@@ -62,7 +62,7 @@ Leaf\Auth::config("PASSWORD_ENCODE", function($password) {
 });
 ```
 
-- **<small class="new-tag-1">New</small> PASSWORD_VERIFY** This setting is called when Leaf tries to verify a password. It works just like `PASSWORD_ENCODE` above.
+- **PASSWORD_VERIFY** This setting is called when Leaf tries to verify a password. It works just like `PASSWORD_ENCODE` above.
 
 ```php
 // This turns off password encoding
@@ -80,43 +80,49 @@ Leaf\Auth::config("PASSWORD_VERIFY", function($password) {
 });
 ```
 
-- **PASSWORD_KEY** allows you to change the password field name, maybe your's is passcode?
+- **PASSWORD_KEY** allows you to change the password field name, maybe yours is passcode? This tells leaf to look for a user's password in that field. The example below tells leaf to search for passwords in the `passcode` column. (the default field is password)
 
 ```php
 Leaf\Auth::config("PASSWORD_KEY", "passcode");
 ```
 
-- **HIDE_ID** takes in a boolean, and determines whether to hide the id in the user object.
+- **HIDE_ID** takes in a boolean, and determines whether to hide the id in the user object. Default is `true`.
 
-- **<small class="new-tag-1">New</small> HIDE_PASSWORD** Just as the name implies, allows you to hide or show the password in the final results returned from auth.
+- **HIDE_PASSWORD** Just as the name implies, allows you to hide or show the password in the final results returned from auth. Default is `true`.
 
-- **<small class="new-tag-1">New</small> LOGIN_PARAMS_ERROR** This is the error to show if there's an error with any parameter which isn't the password eg: username:
+- **LOGIN_PARAMS_ERROR** This is the error to show if there's an error with any parameter which isn't the password eg: username:
 
 ```php
 Leaf\Auth::config("LOGIN_PARAMS_ERROR", "Username is incorrect!");
 ```
 
-- **<small class="new-tag-1">New</small> LOGIN_PASSWORD_ERROR** This is the error to show if there's an error with the password
+Default is "Incorrect credntials!".
+
+- **LOGIN_PASSWORD_ERROR** This is the error to show if there's an error with the password.
+
+Default is "Password is incorrect!".
 
 ```php
 Leaf\Auth::config("LOGIN_PASSWORD_ERROR", "Password is incorrect!");
 ```
 
-- **<small class="new-tag-1">New</small> USE_SESSION** Use session based authentication instead of the default JWT based auth. Without this setting enbled, you can't use any of the session methods below.
+- **USE_SESSION** Use session based authentication instead of the default JWT based auth. Without this setting enbled, you can't use any of the session methods below. Default is `false`.
 
-- **<small class="new-tag-1">New</small> SESSION_ON_REGISTER** If true, a session will be created on a successful registration, else you it'll be created on login rather.
+- **SESSION_ON_REGISTER** If true, a session will be created on a successful registration, else you it'll be created on login rather. Default is `false`.
 
-- **<small class="new-tag-1">New</small> GUARD_LOGIN** The page route.
+- **GUARD_LOGIN** The page route. Default is `/auth/login`.
 
-- **<small class="new-tag-1">New</small> GUARD_REGISTER** The register page route.
+- **GUARD_REGISTER** The register page route. Default is `/auth/register`.
 
-- **<small class="new-tag-1">New</small> GUARD_LOGOUT** Logout route handler.
+<!-- - **GUARD_LOGOUT** Logout route handler. Default is `/auth/logout`. -->
 
-- **<small class="new-tag-1">New</small> GUARD_HOME** Home page route.
+- **GUARD_HOME** Home page route. Default is `/home`.
 
-- **<small class="new-tag-1">New</small> SAVE_SESSION_JWT** Add an auth token to the auth session? This allows you save a generated JWT to the session. You might want to use this if you want to extend your app into an API.
+- **SAVE_SESSION_JWT** Add an auth token to the auth session? This allows you save a generated JWT to the session. You might want to use this if you want to extend your app into an API. Default is `false`.
 
-### tokenLifetime
+- **<small class="new-tag-1">New</small> EXPERIMENTAL_WARNINGS** This option controls whether to show/hide experimental warnings from session components. Default is `true`. Turning this off allows you to use guards for JWT auth.
+
+## tokenLifetime
 
 This method allows you to get or set the token lifetime value. In previous versions, the lifetime value was set by leaf, here you can customize it the way you want to.
 
@@ -128,7 +134,19 @@ Leaf\Auth::tokenLifetime(24 * 24 * 24);
 $lifetime = Leaf\Auth::tokenLifetime();
 ```
 
-## Session support <sup class="new-tag-1">New in v2.4.1</sup>
+## Token Secrets
+
+Token Secrets are basically simple `strings` which are encoded into your Tokens to prevent others from logging into accounts with fake tokens. You simply need to set your own token secrets while encoding and decoding tokens.
+
+```php
+// set secret key
+Leaf\Auth::setSecretKey('tH1$_iS_MY_$3¢Ret');
+
+// get secret key
+Leaf\Auth::getSecretKey();
+```
+
+## Session support
 
 Leaf auth finally includes support for session based authentication in this version. Session based authentication as the name implies creates and manages a session during the authentication to manage the user's logged in state. And all of this is done in 1 or 2 lines of code to maintain the simplicity and flexibility Leaf auth has always given.
 
@@ -144,11 +162,11 @@ A much simpler way would be to simply call the `useSession` method.
 Leaf\Auth::useSession();
 ```
 
-## Session methods <sup class="new-tag-1">New in v2.4.1</sup>
+## Session methods
 
 Enabling session support allows you to use some special methods and behaviours which are not available with the regular JWT authentication.
 
-### guard <sup class="new-tag-1">New in v2.4.1</sup>
+### guard
 
 The guard method works sort of like authentication middleware. It takes in a single param, an array holding the authentication state or the type of guard to load up.
 
@@ -164,7 +182,7 @@ Leaf\Auth::guard("auth");
 Leaf\Auth::guard("guest");
 ```
 
-### saveToSession <sup class="new-tag-1">New in v2.4.1</sup>
+### saveToSession
 
 This method is used to save a variable to the auth session.
 
@@ -178,7 +196,7 @@ Leaf\Auth::saveToSession([
 ]);
 ```
 
-### sessionLength <sup class="new-tag-1">New in v2.4.1</sup>
+### sessionLength
 
 With sessionLength, you can get how long a user has been logged in. You can save the session time logs to your database in order to track users' login logs. The available logs are `SESSION_STARTED_AT` and `SESSION_LAST_ACTIVITY` which are automatically tracked by Leaf.
 
@@ -194,7 +212,7 @@ LoginsDB::params(
 LoginsDB::save();
 ```
 
-### sessionActive <sup class="new-tag-1">New in v2.4.1</sup>
+### sessionActive
 
 sessionActive allows you to get how much time has passed since the last session activity.
 
@@ -202,7 +220,7 @@ sessionActive allows you to get how much time has passed since the last session 
 $userLastSeen = Leaf\Auth::sessionActive();
 ```
 
-### refresh <sup class="new-tag-1">New in v2.4.1</sup>
+### refresh
 
 As the name implies, you can refresh the session with this method. Refreshing sort of restarts the session, but you can keep the user's old session data if you wish to.
 
@@ -216,7 +234,7 @@ if ($newAccountAdded) {
 }
 ```
 
-### session <sup class="new-tag-1">New in v2.4.1</sup>
+### session
 
 session checks whether a user session is ongoing by looking for keys specific to Leaf session auth so it doesn't confuse a Leaf auth session with user defined sessions. Returns true if a session is found and false if there's no session found.
 
@@ -228,7 +246,7 @@ if (Leaf\Auth::session()) {
 }
 ```
 
-### endSession <sup class="new-tag-1">New in v2.4.1</sup>
+### endSession
 
 Of course we'll need a method to logout/end our session. This is just the method for that.
 
@@ -280,7 +298,7 @@ example success response:
 ]
 ```
 
-#### session support <sup class="new-tag-1">New in v2.4.1</sup>
+#### session support
 
 Login received session support which allows login to create a session instead of returning aa JWT as done by default. To get started with session, just set the `USE_SESSION` setting or call the `useSession` method.
 
@@ -393,7 +411,7 @@ $app->post("/register", function() use($app) {
 });
 ```
 
-#### register session support <sup class="new-tag-1">New in v2.4.1</sup>
+#### register session support
 
 Just as with login, register now integrates with session. To turn this feature on, just set the `USE_SESSION` setting or call the `useSession` method.
 
@@ -466,7 +484,7 @@ $user = Leaf\Auth::update("users", $data, $where, $uniques, $validation);
 
 **Something little:** Uniques in `update` work a bit different from `register`, in `update`, Leaf tries to find another user which isn't the current user that has the same credentials. So if there's no other user with that same param value, the unique test passes. In short, **the current user is excluded from the users to check for same credentials**
 
-#### update session support <sup class="new-tag-1">New in v2.4.1</sup>
+#### update session support
 
 Update also reeived session support. When a user is updated, the user is updated in the session and the updated user is also returned.
 
@@ -477,10 +495,6 @@ $user = $this->auth->update("users", $data, $where, $uniques);
 <hr>
 
 ### user
-
-<p class="alert -warning">
-  This was previously <b>currentUser</b>
-</p>
 
 When tokens are added inside requests, you generally have to decode the token and query your database with the id returned to get the current user. Although Leaf Auth makes it really simple, it can get even simpler; by calling a single method. It takes in one parameter, the table to look for users.
 
@@ -523,7 +537,7 @@ $user_id = Leaf\Auth::id();
 
 <hr>
 
-### [Leaf Authentication Methods](leaf/v/2.4-beta/core/authentication)
+### [Leaf Authentication Methods](leaf/v/2.4.2/core/authentication)
 
 Leaf Auth now uses the `Leaf\Helpers\Authentication` package to provide solutions for token authentication. This provides a simple way to work with manual authentication and tokens. All methods here are now available in `Leaf\Auth`.
 
@@ -531,30 +545,17 @@ Leaf Auth now uses the `Leaf\Helpers\Authentication` package to provide solution
 $payload = Leaf\Auth::validate($token);
 ```
 
-Read [authentication](leaf/v/2.4-beta/core/authentication) for more info
-
-<hr>
-
-### Token Secrets
-
-Token Secrets are basically simple `strings` which are encoded into your Tokens to prevent others from logging into accounts with fake tokens. You simply need to set your own token secrets while encoding and decoding tokens.
-
-#### Basic Usage
-
-```php
-Leaf\Auth::setSecretKey('tH1$_iS_MY_$3¢Ret');
-
-Leaf\Auth::token->generateSimpleToken($user_id, Leaf\Auth::getSecretKey());
-```
+Read [authentication](leaf/v/2.4.2/core/authentication) for more info
 
 <br>
 <hr>
 
-<a href="#/v/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [authentication](leaf/v/2.4.2/core/authentication)
+- [Password Helper](leaf/v/2.4.2/core/passwords)
+- [Leaf Forms](leaf/v/2.4.2/core/forms)
+- [Leaf DB](leaf/v/2.4.2/db/)
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

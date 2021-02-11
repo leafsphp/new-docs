@@ -30,4 +30,4 @@ Save as `.htaccess` in your the same directory as your "root file"
 - [Response](leaf/v/2.4/http/response)
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

@@ -12,7 +12,7 @@ $app = new \Leaf\App([
 ]);
 ```
 
-**Mode Down <sup><small class="new-tag-1">New</small></sup>**
+**Mode Down.**
 
 You can now set the mode to `down`, and this will place the app in maintainance mode. In maintainance mode, no requests will be handled, and the maintainace page will be displayed. You can set your own template or reponse in place of the default app down page.
 
@@ -34,7 +34,7 @@ If debugging is enabled, Leaf will use its built-in error handler to display dia
 
 ```php
 $app = new \Leaf\App([
-    'debug' => true
+  'debug' => true
 ]);
 ```
 
@@ -55,7 +55,7 @@ To specify a custom log writer after instantiation you must access Leaf’s logg
 ```php
 // During instantiation
 $app = new \Leaf\App([
-    'log.writer' => new \My\LogWriter()
+  'log.writer' => new \My\LogWriter()
 ]);
 
 // After instantiation
@@ -296,4 +296,4 @@ $app->config('http.version', '1.1');
 
 <br>
 
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

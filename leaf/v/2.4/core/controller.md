@@ -147,4 +147,4 @@ Read more on Leaf Forms [here](leaf/v/2.4/core/forms)
 <a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

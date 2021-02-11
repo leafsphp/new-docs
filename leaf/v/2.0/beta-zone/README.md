@@ -16,4 +16,4 @@ A lot of changes have gone on in Leaf even since the beta release a month ago, a
 **Requires PHP 7.2+**
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

@@ -244,4 +244,4 @@ And with this we've successfully created our register functionality. Read the au
 
 <br>
 
-Experiment by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Experiment by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

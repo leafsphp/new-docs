@@ -3,95 +3,73 @@
 
 Since v1.5.0 Leaf Form has totally replaced Simple Validation from v1.2.0 which was discontinued in v1.3.0. Leaf Form contains methods to simply and quickly handle input from the user.
 
-To use Leaf Form, you simply have to import it:
+<div class="alert -info">
+  Leaf forms from leaf v2.4.2 now use static methods.
+</div>
 
-```php
-$form = new Leaf\Form;
-```
+<br>
 
-## Leaf Form Methods
-
-### sanitizeInput
+## sanitizeInput
 
 sanitizeInput offers basic security for input data, i.e. sanitizing input against SQL injection.
 
 ```php
-$username = $form->sanitizeInput($username);
+$username = Form::sanitizeInput($username);
 ```
 
-### isEmpty
-
-isEmpty checks a field to see if it's empty. If it's empty, it throws an error (the error message passed). It takes in 2 parameters: the data to test and the error message if it's empty(optional).
-
-```php
-$form->isEmpty($username); // error will be: This field is required
-$form->isEmpty($username, "Username is required");
-```
-
-### isNull
-
-isNull checks a field to see if it's null. If it's null, it throws an error (the error message passed). It takes in 2 parameters: the data to test and the error message if it's null(optional).
-
-```php
-$form->isNull($username); // error will be: This field cannot be null
-$form->isNull($username, "Username can't be null");
-```
-
-### Form Submit
+## Form Submit
 
 This creates a form and submits it. You can call it a virtual form.  It takes in 3 parameters, the request type, the form action and the form data. Currently, it only supports GET and POST requests.
 
 ```php
-$form->submit("POST", "/book/create", [
+Form::submit("POST", "/book/create", [
   "title" => "Book One",
   "author" => "Mychi"
 ]);
 ```
 
-### Validate
+## isEmail
 
-Leaf now provides a much simpler way to validate a parameter using Leaf Forms. In one line, you can create a bunch of rules to validate a parameter with. Validate simply makes sure that the passed selected parameters pass these validation tests. It's never been simpler😎
-
-Parameters which fail the form validation are saved in the form's errors which can be accessed with errors(). So In case the validation fails, `validate` returns false, else true.
+This checks if a field contains an email or not.
 
 ```php
-$form->validate([
-  "username" => "validUsername",
+if (Form::isEmail($field)) {
+  echo "This is an email";
+}
+```
+
+## body
+
+This returns all fields passed into a request as an array.
+
+```php
+$data = Form::body();
+```
+
+## Validation
+
+Validation is one of the most important features used in many different types of projects. Leaf Forms provides a very simple way to validate fields returned from forms, json data and even urls and files.
+
+### Validate
+
+Validate simply makes sure that the selected parameters pass these validation tests.
+
+Parameters which fail the form validation are saved in the form's errors which can be accessed with `errors()`. So In case the validation fails, `validate` returns false, else true.
+
+```php
+Form::validate([
+  "username" => "username",
   "email" => "email",
   "password" => "required"
 ]);
 ```
-
-#### Multiple Rule Validation
-
-You can now pass an array as the rule parameter. If there's more than one, rule, both of them will apply. Also, pls make sure not to use contradictory rules like `number` and `textOnly` or `validUsername` and `email`.
-
-```php
-$form->validate([
-  "username" => "validUsername",
-  "email" => "email",
-  "password" => ["required", "noSpaces"]
-]);
-```
-
-This is a list of all supported validate rules
-
-- required: field is required
-- number: must only contain numbers
-- textOnly: should be text **only**, no spaces allowed
-- validUsername: must only contain characters 0-9, A-Z and _
-- email: must be a valid email
-- NoSpaces: can't contain any spaces
-- text : must only contain text and spaces
-
-**Note that these rules aren't case-sensitive, so you can write them however you want, as long as the spelling is the same.**
 
 ### validateData
 
 validateData works pretty much the same way as `validate` except that instead of passing the name of the field you want to validate, you validate the data itself.
 
 ```php
-$form->validateData([
+Form::validateData([
   "mychi.darko" => "validUsername",
   "mickdd22@gmail.com" => "email"
 ]);
@@ -102,7 +80,80 @@ $form->validateData([
 This method also allows you validate data, but compared, to the method above, this is much faster.
 
 ```php
-$form->validateField("username", "michael", "validUsername");
+Form::validateField("username", "michael", "validUsername");
+```
+
+#### Multiple Rule Validation
+
+You can also pass an array as the rule parameter. If there's more than one rule, both of them will apply. Also, be sure not to use contradictory rules like `number` and `textOnly` or `username` and `email`.
+
+```php
+Form::validate([
+  "username" => "validUsername",
+  "email" => "email",
+  "password" => ["required", "noSpaces"]
+]);
+```
+
+This is a list of all supported validate rules
+
+- required: field is required
+- number: must only contain numbers
+- text : must only contain text and spaces
+- textOnly: should be text **only**, no spaces allowed
+- validUsername: must only contain characters 0-9, A-Z and _
+- username: alias for validUsername
+- email: must be a valid email
+- NoSpaces: can't contain any spaces
+- (NEW) max: max length of a string
+- (NEW) min: min length of a string
+
+**Note that these rules aren't case-sensitive, so you can type them anyway you prefer, as long as the spelling is the same.**
+
+### rule <sup class="new-tag-1">New</sup>
+
+Not every project is the same, as such, you might need validation rules which are not available by default in leaf. As such, the `rule` method has been created to give you leeway to write your own validation rules.
+
+*You will need to use `addError` to save error messages when the validation fails.*
+
+```php
+Form::rule("max", function($field, $value, $params) {
+  if (strlen($value) > $params) {
+    Form::addError($field, "$field can't be more than $params characters");
+    return false;
+  }
+});
+```
+
+This is an example rule that makes sure that a string isn't longer than it should be. It takes in a `$params` value which is the max length of the string.
+
+To use this rule, you can simply call max and pass a value into the `$params` field using `:`.
+
+```php
+Form::validate([
+  "username" => "max:10",
+  ...
+```
+
+Adding the params field is not compulsory, you can create a rule that doesn't take a params field like this:
+
+```php
+Form::rule("required", function ($field, $value) {
+  if (($value == "" || $value == null)) {
+    Form::addError($field, "$field is required");
+    return false;
+  }
+});
+```
+
+This example doesn't take in any parameters.
+
+### supportedRules <sup class="new-tag-1">New</sup>
+
+You can also get all the supported rules. This includes custom rules you've created.
+
+```php
+$formRules = Form::supportedRules();
 ```
 
 ### errors
@@ -110,23 +161,23 @@ $form->validateField("username", "michael", "validUsername");
 Remember we talked about Leaf Form errors? Leaf Form holds errors for all failed tests, you get all these errors back with `errors()`
 
 ```php
-$validation = $form->validate([
+$validation = Form::validate([
   "username" => "validUsername",
   "email" => "email",
   "password" => ["required", "noSpaces"]
 ]);
 
-if (!$validation) return $form->errors();
+if (!$validation) return Form::errors();
 ```
 
 <br>
-<hr>
 
-<a href="#/v/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [Request](leaf/v/2.4.2/http/request)
+- [Response](leaf/v/2.4.2/http/response)
+- [Session](leaf/v/2.4.2/http/session)
+- [Leaf Db](leaf/v/2.4.2/db/)
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

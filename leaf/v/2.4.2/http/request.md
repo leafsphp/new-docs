@@ -1,8 +1,6 @@
 # 🧿 Leaf Request
 
-The request object is an abstraction of the current HTTP request and allows you to easily interact with any data passed into your application. In v2.0, the request object has been directly bound to the main Leaf object, so there's no need to instanciate it anymore.
-
-**Note:** In version 2, `\Leaf\Core\Http\Request` has been shortened to `\Leaf\Http\Request`. Also the request object is available on `$app->request`.
+The request object is an abstraction of the current HTTP request and allows you to easily interact with any data passed into your application. In v2.0, the request object has been directly bound to the main Leaf object, so there's no need to instanciate it anymore, although you can do so if you want to use it independently.
 
 ## Using Request
 
@@ -54,7 +52,7 @@ In v2.4, `get` can also be used on files passed into the request.
 $picture = $request->get("image");
 ```
 
-#### Multiple select <sup class="new-tag-1">New in v2.4</sup>
+#### Multiple select
 
 In v2.4, you can retrieve a couple of fields you want, and not just one. You can also use this as a filter to return only the data you want in your app instead of using `body` which dumps all request data.
 
@@ -89,8 +87,6 @@ $blog = $request->get("blogBody", false);
 
 ### body()
 
-**Previously `getBody()`**
-
 `body()` is another general purpose method which retrieves the key => value pairs of the entire request body. In simpler terms, it works like `$_POST` but works for all request types. In v2.4, `body` can also retrieve files passed into the request.
 
 ```php
@@ -114,7 +110,7 @@ $body = $app->request()->body(false);
 
 <hr>
 
-### files <sup class="new-tag-1">New in v2.4</sup>
+### files
 
 Files returns an array holding key values pairs of files passed into your app.
 
@@ -166,7 +162,7 @@ The HTTP specification states that HTTP header names may be uppercase, lowercase
 
 Every HTTP request has a method (e.g. GET or POST). You can obtain the current HTTP request method via the Leaf application’s request object:
 
-#### typeIs <sup class="new-tag-1">New in v2.4</sup>
+#### typeIs
 
 In v2.4, individual request methodtype checks have been replaced with `typeIs`. So you'll no longer be seeing any of these:
 
@@ -388,4 +384,4 @@ $resourceUri = $app->request()->getResourceUri();
 <a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

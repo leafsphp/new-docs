@@ -32,6 +32,7 @@
   
   * [Simple Auth](leaf/v/2.4.2/core/auth)
   * [Authentication](leaf/v/2.4.2/core/authentication)
+  * [Passwords](leaf/v/2.4.2/core/passwords)
   
   * [Factories](leaf/v/2.4.2/core/factories)
   * [Controller](leaf/v/2.4.2/core/controller)

@@ -1,17 +1,9 @@
 <!-- markdownlint-disable no-inline-html -->
 # 📢 Leaf Response
 
-The response object is an abstraction of your Leaf application’s HTTP response that is returned to the HTTP client. In v2, the response object has been directly bound to the main Leaf object, so there's no need to instanciate it anymore.
-
-**Note:** Since version 2, `\Leaf\Core\Http\Response` has been shortened to `\Leaf\Http\Response`. Also the response object is available on `$app->response()`.
+The response object is an abstraction of your Leaf application’s HTTP response that is returned to the HTTP client. In v2, the response object has been directly bound to the main Leaf object.
 
 ## 🏂 Using Response
-
-<br>
-
-<div class="alert -warning">
-All methods with deprecation warnings have been removed in v2.4
-</div>
 
 ### 🎄 Response on the Leaf Instance
 
@@ -29,7 +21,7 @@ Although we've added this, we don't want to force you to do stuff in only one wa
 
 ### 🎎 Initialising the Response object
 
-With this method, you manually initialise the Response object, and then pass it into your route. Note that in version 2, `\Leaf\Core\Http\Response` has been shortened to `\Leaf\Http\Response`.
+With this method, you manually initialise the Response object, and then pass it into your route.
 
 ```php
 $app = new Leaf\App;
@@ -68,7 +60,7 @@ $app->post('/name', function() use($app) {
 
 If no code is passed in, throwErr will send a default `500` status code.
 
-**Use message**
+**Use message:**
 
 Just like with `respondWithCode`, `throwErr` also allows you to use messages instead of codes which most users don't understand.
 
@@ -148,7 +140,7 @@ renderMarkup()
 
 For templating with Leaf, [look here](leaf/v/2.4.2/views/blade/)
 
-**Status Code**
+**Status Code:**
 
 In v2.4, you can add a status code to the page response as the second parameter.
 
@@ -183,6 +175,16 @@ echo "<h1>hello</h1>";
 ```
 
 The reason is, Leaf has default headers which set the content type to JSON, in order to correctly output HTML, you need to change this....Leaf has taken care of this with a bunch of other things, all within `markup` and `page`
+
+## Redirect
+
+This feature just simply allows you to send a redirect response which redirects to a different route.
+
+```php
+// $userHasAuth: true
+
+if ($userHasAuth) return $response->redirect("/home");
+```
 
 <hr>
 
@@ -289,4 +291,4 @@ $app->evadeCors(true, "ORIGINS", "HEADERS");
 <a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

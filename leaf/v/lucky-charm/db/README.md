@@ -383,4 +383,4 @@ Using `$db->errors()` returns an array holding any errors which caused the query
 [Request](leaf/v/lucky-charm/http/request)
 [Session](leaf/v/lucky-charm/http/session)
 
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

@@ -124,4 +124,4 @@ We'd always advice you to use MD5 as the second encryption method because, MD5 s
 ### [Back to beta zone](leaf/v/2.4-beta/beta-zone/)
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

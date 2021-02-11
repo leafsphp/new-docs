@@ -1,5 +1,5 @@
 <!-- markdownlint-disable no-inline-html -->
-# 🏠 Application Headers <sup class="new-tag-1">New in v2.4</sup>
+# 🏠 Application Headers
 
 In previous versions of Leaf, Headers have been added to the request and response objects and could not be fully accesed directly, however, v2.4 provides a Headers object which allows you perform all header operations smoothly. Another amazing thing is that all Leaf Header methods are static, and so can be called directly without initializing the Headers object.
 
@@ -182,4 +182,4 @@ Leaf\Http\Headers::accessControl(["Allow-Origin" => "*", "Allow-Headers" => "*"]
 <a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
-Built with ❤ by <a href="https://mychi.netlify.com" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

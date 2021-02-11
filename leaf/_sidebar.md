@@ -29,9 +29,12 @@
   * [Leaf Mail](leaf/v/2.4.2/core/mail)
   * [Leaf Date](leaf/v/2.4.2/core/date)
   * [Leaf FS](leaf/v/2.4.2/core/fs)
+  
   * [Simple Auth](leaf/v/2.4.2/core/auth)
-  * [Leaf Token](leaf/v/2.4.2/core/token)
   * [Authentication](leaf/v/2.4.2/core/authentication)
+  * [Passwords](leaf/v/2.4.2/core/passwords)
+  
+  * [Factories](leaf/v/2.4.2/core/factories)
   * [Controller](leaf/v/2.4.2/core/controller)
   * [API Controller](leaf/v/2.4.2/core/api-controller)
   * [Model](leaf/v/2.4.2/core/model)
