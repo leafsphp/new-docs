@@ -132,7 +132,7 @@ You can also pass in a bunch of params to check for:
 $user = $db->select("users")->where(["username" => "mychi", "password" => "..."])->first();
 ```
 
-### orWhere <sup><small class="new-tag-1">New</small></sup>
+### orWhere
 
 `orWhere` also functions just like `where`, except that in the case of multiple parameters, `orWhere` returns results even if one of the conditions is met, but `where` only returns results if all the conditions are matched.
 
@@ -140,7 +140,7 @@ $user = $db->select("users")->where(["username" => "mychi", "password" => "..."]
 $users = $db->select("users")->orWhere(["username" => "mychi", "username" => "darko"])->all();
 ```
 
-### whereLike <sup><small class="new-tag-1">New</small></sup>
+### whereLike
 
 `whereLike` is technically the same as `where`, except that instead of comparing stuff "strictly equal", it finds something `like` the value, using the like operator.
 
@@ -164,11 +164,11 @@ whereLike("title", Db::includes("char"))
 whereLike("title", Db::word("char", "ter"))
 ```
 
-### like <sup><small class="new-tag-1">New</small></sup>
+### like
 
 This is an alias for `whereLike`. So you can use `like` instead of `whereLike`
 
-### orWhereLike <sup><small class="new-tag-1">New</small></sup>
+### orWhereLike
 
 This combines `orWhere` and `whereLike` in a sense that `orWhereLike` compares using `OR` instead of `AND`, just like `orWhere`, but instead uses the LIKE operator just as `whereLike` does. The interesting thing is that you can combine it with any other where block to make a more complex query.
 
@@ -180,7 +180,7 @@ $items = $db->select("items")
             ->all();
 ```
 
-### orLike <sup><small class="new-tag-1">New</small></sup>
+### orLike
 
 This is an alias for `orWhereLike`. So you can use `orLike` instead of `orWhereLike`
 
@@ -194,11 +194,11 @@ $items = $db->select("items")->fetchAll();
 
 Although the query here is `$db->select("items")`, running just this would return nothing. To actually get the result of this query, you'd need to call `execute`, `fetchObj`, `fetchAssoc` or `fetchAll`
 
-### all <sup><small class="new-tag-1">New</small></sup>
+### all
 
 `all` is an alias for `fetchAll`, but is shorter and more familiar with devs who have used other packages. Don't worry, `fetchAll` isn't getting deprecated, you can use it just as you've always done.
 
-### first <sup><small class="new-tag-1">New</small></sup>
+### first
 
 `first` returns the first entity of all matching results for a certain query.
 
@@ -210,7 +210,7 @@ function getFirstItem()
 }
 ```
 
-### last <sup><small class="new-tag-1">New</small></sup>
+### last
 
 `last` returns the last entity of all matching results for a certain query.
 
@@ -266,7 +266,7 @@ $user = $db->select("users")->where("id", "1")->fetchAssoc();
 $user["id"]; // not $user->id
 ```
 
-### table <sup><small class="new-tag-1">New</small></sup>
+### table
 
 `table` sets the table pointer for the db table being used. `table` can be combined with other methods like `search`.
 
@@ -274,7 +274,7 @@ $user["id"]; // not $user->id
 $db->table("items");
 ```
 
-### search <sup><small class="new-tag-1">New</small></sup>
+### search
 
 Just as the name implies, you can use this method to search for a value in the database table. It is used with the `table` method.
 

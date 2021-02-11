@@ -6,10 +6,6 @@ Authentication provides simple methods to help with manual authentication and wo
 
 Leaf provides you with the `JWT` object which includes various methods for creating and parsing token data....but we do not advice directly using the `JWT` object. For this reason, this object has been created to work with all the `JWT` data.
 
-<p class="alert -warning">
-  In v2.4, all authentication methods are static, and so no longer require you to initiali\e the whole module.
-</p>
-
 ```php
 use Leaf\Helpers\Authentication as Auth;
 
@@ -132,13 +128,14 @@ $authHeader = Auth::getAuthorizationHeader();
 ```
 
 <br>
-<hr>
 
-<a href="#/v/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [Auth](leaf/v/2.4.2/core/auth)
+- [Response](leaf/v/2.4.2/http/response)
+- [Request](leaf/v/2.4.2/http/request)
+- [Session](leaf/v/2.4.2/http/session)
 
 <br>
+
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

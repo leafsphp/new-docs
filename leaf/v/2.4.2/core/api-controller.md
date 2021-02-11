@@ -19,17 +19,17 @@ use Leaf\ApiController;
 
 class UserController extends ApiController
 {
-    /**
-     * Show the profile for the given user.
-     *
-     * @param  int  $id
-     * @return View
-     */
-    public function show($id)
-    {
-		$user = User::findOrFail($id);
-        $this->respond($user);
-    }
+  /**
+   * Show the profile for the given user.
+   *
+   * @param  int  $id
+   * @return View
+   */
+  public function show($id)
+  {
+    $user = User::findOrFail($id);
+    $this->respond($user);
+  }
 }
 ```
 
@@ -48,7 +48,7 @@ Now, when a request matches the specified route URI, the `show` method on the `U
 
 ## Base Controller Features
 
-#### Responses
+### Responses
 
 Leaf Core controller contains methods to appropriately return data to the user.
 
@@ -70,7 +70,7 @@ You can view more on responses [here](leaf/v/2.4.2/http/response)
 
 <hr>
 
-#### file_upload
+### file_upload
 
 file_upload is for simple file uploads. It takes in 3 parameters, the path to save the file, the file and the file type(optional). It returns an array `[true, $filename]` if successful and `[false, $error]` if the upload fails.
 
@@ -90,7 +90,7 @@ class NameController extends Controller {
 
 <hr>
 
-#### Forms
+### Forms
 
 The base controller also gives you a simple way to handle form data
 
@@ -107,13 +107,14 @@ public function index() {
 Read more on Leaf Forms [here](leaf/v/2.4.2/core/forms)
 
 <br>
-<hr>
 
-<a href="#/v/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [Request](leaf/v/2.4.2/http/request)
+- [Response](leaf/v/2.4.2/http/response)
+- [Auth](leaf/v/2.4.2/core/auth)
+- [Leaf Model](leaf/v/2.4.2/core/model)
 
 <br>
+
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

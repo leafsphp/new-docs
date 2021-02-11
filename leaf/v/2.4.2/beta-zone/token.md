@@ -38,9 +38,9 @@ As the name implies, generateToken also generates a base64 encoded token, the sa
 $token = new Leaf\Token;
 
 $data = [
-	"username" => "Mychi Darko",
-	"email" => "mickdd22@gmail.com",
-	"token_secret" => "tdt672d81d678"
+  "username" => "Mychi Darko",
+  "email" => "mickdd22@gmail.com",
+  "token_secret" => "tdt672d81d678"
 ];
 
 $userToken = $token->generateToken($data, (7 * 24 * 60 * 60));
@@ -59,16 +59,17 @@ $token = new Leaf\Token;
 
 // Token data encoded
 // $data = [
-// 	"username" => "Mychi Darko",
-// 	"email" => "mickdd22@gmail.com",
-// 	"token_secret" => "tdt672d81d678"
+//   "username" => "Mychi Darko",
+//   "email" => "mickdd22@gmail.com",
+//   "token_secret" => "tdt672d81d678"
 // ];
 
 $app->post('/login', function() use($token) {
-	$data = $token->validateToken('token gotten from user......');
-	$username = $data['username'];
+  $data = $token->validateToken('token gotten from user......');
+  $username = $data['username'];
 });
 ```
+
 With Leaf Token, you can save data in your token and retrieve it after validating the token, quite handy😎👌
 
 <hr>
@@ -76,13 +77,13 @@ With Leaf Token, you can save data in your token and retrieve it after validatin
 ### [Back to beta zone](leaf/v/2.4.2/beta-zone/)
 
 <br>
-<hr>
 
-<a href="#/v/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [Request](leaf/v/2.4.2/http/request)
+- [Response](leaf/v/2.4.2/http/response)
+- [Auth](leaf/v/2.4.2/core/auth)
+- [Leaf Db](leaf/v/2.4.2/db/)
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
