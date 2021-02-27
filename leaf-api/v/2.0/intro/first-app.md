@@ -12,7 +12,7 @@ This is a little "tutorial" put together to introduce you to Leaf API, and help 
 
 ## Our First API
 
-In the [previous section](/leaf-api/v/2.0-beta/?id=Installation), we looked at installation, Leaf API's directory structure and running your project, it's assumed you've already read this section. After following the installation instructions, your Leaf API structure should be initialized for you. You can run the intro app with
+In the [previous section](/leaf-api/v/2.0/?id=Installation), we looked at installation, Leaf API's directory structure and running your project, it's assumed you've already read this section. After following the installation instructions, your Leaf API structure should be initialized for you. You can run the intro app with
 
 ```bash
 php aloe serve
@@ -358,9 +358,9 @@ $post->delete();
 
 ## Next Steps
 
-- [Routing](/leaf-api/v/2.0-beta/core/routing)
-- [Leaf Console](/leaf-api/v/2.0-beta/utils/console)
-- [Helper Functions](/leaf-api/v/2.0-beta/utils/functions)
-- [Controllers](/leaf-api/v/2.0-beta/core/controllers)
+- [Routing](/leaf-api/v/2.0/core/routing)
+- [Leaf Console](/leaf-api/v/2.0/utils/console)
+- [Helper Functions](/leaf-api/v/2.0/utils/functions)
+- [Controllers](/leaf-api/v/2.0/core/controllers)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

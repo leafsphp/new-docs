@@ -25,11 +25,11 @@
   * [Factories](leaf-api/v/2.0/database/factories "Factories - Leaf API")
 
 * Extras
-  * [Simple Auth](leaf/v/2.4.3/core/auth)
-  * [Leaf Mail](leaf/v/2.4.3/core/mail)
-  * [Leaf Dates](leaf/v/2.4.3/core/date)
-  * [Leaf Forms](leaf/v/2.4.3/core/forms)
-  * [Leaf FS](leaf/v/2.4.3/core/fs "Leaf FileSystem")
+  * [Simple Auth](leaf/v/2.4-beta/core/auth)
+  * [Leaf Mail](leaf/v/2.4-beta/core/mail)
+  * [Leaf Dates](leaf/v/2.4-beta/core/date)
+  * [Leaf Forms](leaf/v/2.4-beta/core/forms)
+  * [Leaf FS](leaf/v/2.4-beta/core/fs "Leaf FileSystem")
   * [Leaf Password](2.1/beta-zone/password "Leaf Password Helper")
 
 * [**Leaf Core**](/leaf/)

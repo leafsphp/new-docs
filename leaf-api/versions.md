@@ -4,7 +4,6 @@ This is a list of all Leaf API versions
 
 <div class="version-cards">
   <a href="/#/leaf-api/v/1.1/" class="version-card">
-    <div class="tag -stable">Latest</div>
     <h2>v1.1</h2>
     <small>(Marie Bracey)</small>
   </a>
@@ -13,9 +12,14 @@ This is a list of all Leaf API versions
     <small>(Stick on fire)</small>
   </a>
   <a href="/#/leaf-api/v/2.0-beta/" class="version-card">
-    <div class="tag -beta">Latest (Beta)</div>
+    <!-- <div class="tag -beta">Latest (Beta)</div> -->
     <h2>v2.0 Beta</h2>
     <small>(Aloe Beta)</small>
+  </a>
+  <a href="/#/leaf-api/v/2.0/" class="version-card">
+    <div class="tag -latest">Latest</div>
+    <h2>v2.0</h2>
+    <small>(Aloe)</small>
   </a>
 </div>
 
