@@ -13,13 +13,13 @@ Instead of defining all of your request handling logic as closures in your route
 All Leaf API controllers are kept in the `App/Controllers` directory. So you can manually create your own Controller there, but the recommended method is to use the [aloe cli](/aloe-cli/). So, in the root of your leaf API project, open up your console and type:
 
 ```sh
-php aloe g:controller <Name>
+php leaf g:controller <Name>
 ```
 
 Aloe CLI always tries to make your job as simple as possible, hence, you don't even need to add the `Controller` part to the controller name, so instead of `AppsController`, you can just type `Apps`, aloe does the rest for you.
 
 ```sh
-php aloe g:controller Apps
+php leaf g:controller Apps
 ```
 
 Even better, you don't need to type out `g:controller`, just `g:con` or anything along those lines is fine.
@@ -27,9 +27,9 @@ Even better, you don't need to type out `g:controller`, just `g:con` or anything
 Aloe also includes support for other types of controllers like [resource controllers](/leaf-api/v/2.0-beta/core/controllers?id=resource-controllers). You can generate a resource controller like this:
 
 ```sh
-php aloe g:controller <Name> --resource
+php leaf g:controller <Name> --resource
 # or
-php aloe g:controller <Name> -r
+php leaf g:controller <Name> -r
 ```
 
 ### Basic Controllers
@@ -75,7 +75,7 @@ When an incoming request matches the specified route URI, the show method on the
 Leaf resource routing assigns the typical create, read, update, and delete ("CRUD") routes to a controller with a single line of code. To get started, we can use the `g:controller` command's `--resource` option to quickly create a controller to handle these actions:
 
 ```sh
-php aloe g:controller Photos --resource
+php leaf g:controller Photos --resource
 ```
 
 This command will generate a controller at `App/Controllers/PhotosController.php`. The controller will contain a method for each of the available resource operations. Next, you may register a resource route that points to the controller:
@@ -167,19 +167,19 @@ app()->apiResource("/photos", "PhotosController");
 You can also generate a model together with your controller.
 
 ```bash
-php aloe g:controller <ControllerName> -m
+php leaf g:controller <ControllerName> -m
 ```
 
 Create a template for your controller
 
 ```bash
-php aloe g:controller <ControllerName> -t
+php leaf g:controller <ControllerName> -t
 ```
 
 Create a model and migration for your  controller
 
 ```bash
-php aloe g:controller <ControllerName> -a
+php leaf g:controller <ControllerName> -a
 ```
 
 ### Controller Help (Aloe CLI)

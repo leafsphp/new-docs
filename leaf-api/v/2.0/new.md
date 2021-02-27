@@ -4,17 +4,21 @@ Version 2 of Leaf API contains a bunch of new features, some inclusions and even
 
 ## NEW IN LEAF API
 
+### Better configuration
+
+Leaf API now includes configurations in the `Config` folder which allows you to easily configure Leaf's features: things like views, authentication and aloe's directories. Editing the configuration allows you to customize the behaviour of Leaf's features.
+
+### Global Methods
+
+More global shortcut methods which can be called from anywhere in your app. These methods include things like session management, authentication management and authentication states...
+
 ### Aloe CLI
 
 Aloe is a simple but powerful console service that makes building your leaf apps just a simple walk in the park. Aloe CLI ships with the default Leaf console tool in the newer versions of Leaf API. Aloe doesn't just power all commands in your leaf app, but also includes a new, simpler and faster way to write your commands.
 
 What this means for the leaf console tool is that a bunch of changes have gone on through the whole system:
 
-#### NEW FEATURES
-
-Leaf console tool got some new features which enable faster development, better debuging and better support for console app integration.
-
-##### Database Install Command
+#### Database Install Command
 
 Before, databases would be created manually before linking them to the Leaf application, however now, from the comfort of your console, you can create the database defined in your `.env` file if it doesn't already exist.
 
@@ -22,7 +26,7 @@ Before, databases would be created manually before linking them to the Leaf appl
 php leaf db:install
 ```
 
-##### Rollback particular migration
+#### Rollback particular migration
 
 This is a little feature added to allow you rollback particular files instead of rolling back all migrations just to change 1 file. This can be achieved by adding the `-f` flag, then the migration to rollback.
 
@@ -32,7 +36,7 @@ This is a little feature added to allow you rollback particular files instead of
 php leaf db:rollback -f users
 ```
 
-##### Migrate single file
+#### Migrate single file
 
 Since you can rollback a single file, it only makes sense to be able to migrate a single file as well. Just like with with rollback, this can be achieved with the `-f` flag followed by the migration.
 
@@ -40,7 +44,7 @@ Since you can rollback a single file, it only makes sense to be able to migrate 
 php leaf db:migrate -f users
 ```
 
-##### Generate Console commands
+#### Generate Console commands
 
 You can also now generate console commands from the console directly. Leaf doesn't just generate the command file for you, but also registers it in the console, so you can use it right away, amazing right?
 
@@ -66,7 +70,7 @@ Leaf will create the `OrderItemsCommand`, add the order namespace in the console
 php leaf g:command ClockCommand
 ```
 
-##### Delete Console Commands
+#### Delete Console Commands
 
 Since you can create, you can delete as well. Leaf Console allows you to delete custom console commands. The command isn't only deleted, but it's also unregistered.
 
@@ -78,7 +82,7 @@ php leaf d:command ClockCommand
 php leaf d:command Clock
 ```
 
-##### More detailed console output
+#### More detailed console output
 
 Although this is a small one, it's helpful to know exactly what the console tool is working on, as such more readable output messages have been prepared for you.
 
@@ -93,11 +97,11 @@ Database seed complete
 
 <hr>
 
-#### FIXES
+### FIXES
 
 These group of features are fixes from previous versions. Enjoy!!
 
-##### Model sub directories
+#### Model sub directories
 
 Creating models in subdirectories before created a correct file structure, but a messed up class name, eg:
 
@@ -113,7 +117,7 @@ class Users/Notification extends Model ...
 
 This has been fixed, also, if the Users subdirectory doesn't exist, it is automatically created.
 
-##### Working with Seeds
+#### Working with Seeds
 
 This version also comes with extensive support for database seeds. There are now commands to create and delete seeds, as well as to seed the database with records, courtesy of [Mauro Callegari](https://github.com/MauMaxxa)
 
@@ -141,11 +145,11 @@ php leaf db:seed
 
 <hr>
 
-#### BREAKING CHANGES
+### BREAKING CHANGES
 
 A few changes which might need you to tweak you app a little bit. Don't worry, these aren't sharp, disastrous changes, just tweaking one or two lines of code.
 
-##### Registering console commands
+#### Registering console commands
 
 Before, in order to add a new console command, you would just need to head over to the `leaf` file in the root directory of your app and add your command, just like the example command.
 
@@ -243,9 +247,9 @@ return [
 
 ## CHANGED IN LEAF API v2
 
-## 📁 Directory Structure
+### 📁 Directory Structure
 
-### Routes
+#### Routes
 
 Routes were defined in `Routes.php` in previous versions, however, for 'scalability' reasons, routes have been grouped in the `Routes` directory in which other files can be created to group routes in. An example has already been created which you can refer to.
 

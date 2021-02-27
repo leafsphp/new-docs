@@ -1,7 +1,8 @@
 # Leaf PHP
 
 <p class="alert -info">
-  Leaf v2.4.2 (🥬 Desert Wishbone-bush) has just been released. <a href="/#/leaf/v/2.4.2/">Read the docs</a>
+  Leaf v2.4.3 (🎋 Giant Cane Grass) has just been released.
+  <a href="/#/leaf/v/2.4.3/">Read the docs</a>
 </p>
 
 Leaf is a PHP framework that helps you create clean, simple but powerful web apps and APIs quickly and easily. Leaf introduces a cleaner and much simpler structure to the PHP language while maintaining it's flexibility. With a simple structure and a shallow learning curve, it's an excellent way to rapidly build powerful and high performant web apps and APIs.
@@ -11,7 +12,7 @@ Leaf is a PHP framework that helps you create clean, simple but powerful web app
 Leaf also has a bunch of tools which help you build **faster**, **more scaleable** solutions quicker than ever.
 
 <p class="alert -info">
-  Checkout the first release of Aloe CLI. Aloe replaces the standard console tools in Leaf API, Leaf MVC and SKeleton. <a href="/#/aloe-cli/">Read the docs</a>
+  Checkout the new release of Aloe CLI. Aloe replaces the standard console tools in Leaf API, Leaf MVC and SKeleton. <a href="/#/aloe-cli/">Read the docs</a>
 </p>
 
 ### 🎮 Leaf CLI
@@ -21,7 +22,7 @@ Leaf CLI is a console tool for creating and managing Leaf projects. Read the gui
 ### 📄 Leaf API
 
 <p class="alert -info">
-  Leaf API v2 (Aloe) BETA has just been released. Aloe builds on the changes from Leaf PHP and takes API development to a whole new level of ease. <a href="/#/leaf-api/v/2.0-beta/">Read the docs</a>
+  Leaf API v2 (Aloe) has just been released. Aloe builds on the changes from Leaf PHP and takes API development to a whole new level of ease. <a href="/#/leaf-api/v/2.0/">Read the docs</a>
 </p>
 
 Leaf API is a lightweight PHP MVC framework for rapid API development. LeafAPI serves as minimal MVC wrapper around Leaf PHP Framework which allows you to use Leaf in an MVC environment. It also comes along with a bunch of handy tools which can speed up your development by leagues🙂
@@ -33,6 +34,10 @@ Leaf API is a lightweight PHP MVC framework for rapid API development. LeafAPI s
 You can also try out [**Skeleton**](//github.com/leafsphp/skeleton) which provides an easy to use, customizable structure for your Leaf apps. Skeleton gives you some advantages of full blown frameworks like Leaf MVC without the restrictions it comes with.
 
 #### 📕 Leaf MVC
+
+<p class="alert -info">
+  Leaf MVC v2 (👑 Basil, the ‘kingly’ herb) has just been released. Aloe builds on the changes from Leaf PHP and takes MVC development to a whole new level of ease. <a href="/#/leaf-mvc/v/2.0/">Read the docs</a>
+</p>
 
 Leaf MVC provides an MVC wrapper around Leaf itself. So you can use all of Leaf's cool features alongside a nice set of development tools offered by Leaf MVC.
 

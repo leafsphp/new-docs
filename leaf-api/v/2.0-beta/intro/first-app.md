@@ -15,7 +15,7 @@ This is a little "tutorial" put together to introduce you to Leaf API, and help 
 In the [previous section](/leaf-api/v/2.0-beta/?id=Installation), we looked at installation, Leaf API's directory structure and running your project, it's assumed you've already read this section. After following the installation instructions, your Leaf API structure should be initialized for you. You can run the intro app with
 
 ```bash
-php aloe serve
+php leaf serve
 ```
 
 When we take a look at our `index.php` file, we see that Leaf Core is initialised and a bunch of files including our routes are imported.
@@ -50,7 +50,7 @@ But in this case we're working in an MVC environment, we would want controllers 
 The first thing we need to do to use a controller is obviously to create the controller. Our controllers are kept in `App/Controllers`…you can manually create your controller in this directory, but there’s a better way😊. Remember we talked about the Leaf Console? We’re going to generate a controller now using the Leaf console tool. Open up your console and type:
 
 ```bash
-php aloe g:controller PagesController
+php leaf g:controller PagesController
 ```
 
 This will generate a controller in our `App/Controllers` directory
@@ -74,7 +74,7 @@ $app->get("/", "PagesController@index");
 Now, let's create a basic controller that just outputs some JSON. Leaf comes with a really powerful console tool which allows you to generate files, interact and run commands on your Leaf API. We can generate our controller like this:
 
 ```sh
-php aloe g:controller <name>
+php leaf g:controller <name>
 ```
 
 Leaf console tool is smart, and enforces naming conventions used by other frameworks like laravel, ruby on rails and django. Leaf console has a powerful file generation system that always seems to understand what you want to do, as such, it cuts down the amount of time working with files significantly.
@@ -141,13 +141,13 @@ Our models represent our data layer, usually from a database. Our models are kep
 In v2, after configuring your .env variables, if the database doesn't exist, you can create it with Leaf console`
 
 ```bash
-php aloe db:install
+php leaf db:install
 ```
 
 Now, let's generate a model.
 
 ```bash
-php aloe g:model Post
+php leaf g:model Post
 ```
 
 This will generate a simple model.
@@ -155,7 +155,7 @@ This will generate a simple model.
 If we don't have a `posts` table, we can create a migration along with the model. Migrations help us create database tables right off the bat without writing long SQL.
 
 ```bash
-php aloe g:model Post -m
+php leaf g:model Post -m
 ```
 
 After this, you should find a new migration in `App\Database\Migrations` looking like `YYYY_MM_DD_TIME_create_posts.php`. So, in this file, we can create all the rows we want inside our table.
@@ -202,7 +202,7 @@ class CreateUsers extends Database {
 After that, we can run our migrations from the console with:
 
 ```bash
-php aloe db:migrate
+php leaf db:migrate
 ```
 
 So now we can work with the table we generated. Let's look at our model. You can read more on [Leaf Models](/leaf/v/2.4-beta/core/model)
@@ -221,7 +221,7 @@ class Post extends Model {
 As mentioned before, we don't really do much in the model. The magic happens in our controller. Let's generate a new controller.
 
 ```bash
-php aloe g:controller PostsController --resource
+php leaf g:controller PostsController --resource
 ```
 
 We added the resource flag to it in order to generate a `resource controller`.

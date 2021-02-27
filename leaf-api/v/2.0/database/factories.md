@@ -9,13 +9,13 @@ Factories provide you with a quick way to populate your database with dummy but 
 You can generate a factory like this:
 
 ```sh
-php aloe g:factory <name>
+php leaf g:factory <name>
 ```
 
 Aloe CLI also allows you to generate a factory together with a seeder.
 
 ```sh
-php aloe g:seed <name> -f
+php leaf g:seed <name> -f
 ```
 
 ## Working with factories

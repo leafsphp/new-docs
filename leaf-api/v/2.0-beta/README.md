@@ -56,7 +56,7 @@ C:.
 In the project root, you can open up your console tool and type in
 
 ```bash
-php aloe serve
+php leaf serve
 ```
 
 This will start the php web server and load your project at `http://localhost:5500` by default.

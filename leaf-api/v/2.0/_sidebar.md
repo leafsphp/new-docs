@@ -2,7 +2,7 @@
 
 * Intro
   * [Home](leaf-api/v/2.0/ "Leaf API")
-  * [What's new in v2 beta](leaf-api/v/2.0/new "What's new in v2")
+  * [What's new in v2](leaf-api/v/2.0/new "What's new in v2")
   * [First App](leaf-api/v/2.0/intro/first-app "Your First App")
 
 * Config

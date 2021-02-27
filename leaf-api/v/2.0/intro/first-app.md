@@ -15,7 +15,7 @@ This is a little "tutorial" put together to introduce you to Leaf API, and help 
 In the [previous section](/leaf-api/v/2.0/?id=Installation), we looked at installation, Leaf API's directory structure and running your project, it's assumed you've already read this section. After following the installation instructions, your Leaf API structure should be initialized for you. You can run the intro app with
 
 ```bash
-php aloe serve
+php leaf serve
 ```
 
 When we take a look at our `index.php` file, we see that Leaf Core is initialised and a bunch of files including our routes are imported.
@@ -39,6 +39,13 @@ $app->get('/', function() {
 Route("GET", "/", function() {
   // Do something here
 });
+
+# New in leaf v2.4
+use Leaf\Router;
+
+Router::get("/", function() {
+  // Do something here
+});
 ```
 
 This is what a basic Leaf route looks like.
@@ -50,17 +57,28 @@ But in this case we're working in an MVC environment, we would want controllers 
 The first thing we need to do to use a controller is obviously to create the controller. Our controllers are kept in `App/Controllers`…you can manually create your controller in this directory, but there’s a better way😊. Remember we talked about the Leaf Console? We’re going to generate a controller now using the Leaf console tool. Open up your console and type:
 
 ```bash
-php aloe g:controller PagesController
+php leaf g:controller PagesController
+
+# aloe is smart, you can get away with this 
+php leaf g:controller pages
+
+# good console gone eeevil 😈
+php leaf g:con pages
 ```
 
-This will generate a controller in our `App/Controllers` directory
+This will generate `PagesController` in our `App/Controllers` directory
 
 Back in our routes file, we can use this controller like so:
 
 ```php
-$app->get('/home', '\App\Controllers\PagesController@index');
+$app->get('/', '\App\Controllers\PagesController@index');
 
 Route("GET", "/", "\App\Controllers\PagesController@index");
+
+# New in leaf v2.4
+use Leaf\Router;
+
+Router::get("/", "\App\Controllers\PagesController@index");
 ```
 
 Although this is perfectly fine, it's quite annoying to type `\App\Controllers` for every route, so we can set a namespace for all our routes.
@@ -69,15 +87,20 @@ Although this is perfectly fine, it's quite annoying to type `\App\Controllers` 
 $app->setNamespace("\App\Controllers");
 
 $app->get("/", "PagesController@index");
+
+# New in leaf v2.4
+use Leaf\Router;
+
+Router::get("/", "PagesController@index");
 ```
 
 Now, let's create a basic controller that just outputs some JSON. Leaf comes with a really powerful console tool which allows you to generate files, interact and run commands on your Leaf API. We can generate our controller like this:
 
 ```sh
-php aloe g:controller <name>
+php leaf g:controller <name>
 ```
 
-Leaf console tool is smart, and enforces naming conventions used by other frameworks like laravel, ruby on rails and django. Leaf console has a powerful file generation system that always seems to understand what you want to do, as such, it cuts down the amount of time working with files significantly.
+Aloe CLI tool is smart, and enforces naming conventions used by other frameworks like laravel, ruby on rails and django. Aloe CLI has a powerful file generation system that always seems to understand what you want to do, as such, it cuts down the amount of time working with files significantly.
 
 In this case, this particular controller @ method index, is supposed to output some json. We can do this with `json`. `json` is a new method available since Leaf v2.4 beta. `json` provides the functionality of both `respond` and `respondWithCode` which are both deprecated. Since most APIs output json, `json` is a method you'll be using a lot.
 
@@ -95,6 +118,8 @@ class PagesController extends Controller {
   }
 }
 ```
+
+`json` is just a global shortcut method which uses the functionality provided by [`Leaf\Http\Response::json`](/leaf/v/2.4.3/http/response?id=json)
 
 ### Request
 
@@ -132,45 +157,56 @@ $username = request("username");
 $username = request()->get("username");
 ```
 
+Leaf v2.4.3 allows you to use request methods statically which means you can also do this:
+
+```php
+use Leaf\Http\Request;
+
+public function search() {
+  $keywords = Request::get("keywords");
+
+  // ... handle search operation
+  json($results);
+}
+```
+
 ### Models & Migrations
 
 Our models represent our data layer, usually from a database. Our models are kept in the `App/Models` directory. Controllers get required information from models which is then passed into the response. We won't be doing much work in the model itself, since all the ground work has already been done by Leaf Core.
 
 ***To use your database, you have to head to `.env` and configure your database: set the databse name, username, password...***
 
-In v2, after configuring your .env variables, if the database doesn't exist, you can create it with Leaf console`
+In v2, after configuring your .env variables, if the database doesn't exist, you can create it with Leaf console instead of using some database management tool or writing some scripts.
 
 ```bash
-php aloe db:install
+php leaf db:install
 ```
 
 Now, let's generate a model.
 
 ```bash
-php aloe g:model Post
+php leaf g:model Post
 ```
 
 This will generate a simple model.
 
-If we don't have a `posts` table, we can create a migration along with the model. Migrations help us create database tables right off the bat without writing long SQL.
+If we don't have a `posts` table, we can create a migration along with the model. Migrations help us create/manage database tables right off the bat without writing long SQL.
 
 ```bash
-php aloe g:model Post -m
+php leaf g:model Post -m
 ```
 
 After this, you should find a new migration in `App\Database\Migrations` looking like `YYYY_MM_DD_TIME_create_posts.php`. So, in this file, we can create all the rows we want inside our table.
 
 ```php
 <?php
+
 namespace App\Database\Migrations;
 
 use Leaf\Database;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateUsers extends Database {
-  public function __construct() {
-    parent::__construct();
-  }
-  
   /**
    * Run the migrations.
    *
@@ -178,21 +214,22 @@ class CreateUsers extends Database {
    */
   public function up()  {
     if(!$this->capsule::schema()->hasTable("posts")):
-      $this->capsule::schema()->create("posts", function ($table) {
+      $this->capsule::schema()->create("posts", function (Blueprint $table) {
         $table->increments('id');
-        $table->string('author_id');
+        $table->unsignedBigInteger('user_id');
         $table->string('title');
         $table->text('body');
+        $table->timestamp('post_verified_at')->nullable();
         $table->timestamps();
       });
     endif;
   }
   
   /**
-    * Reverse the migrations.
-    *
-    * @return void
-    */
+   * Reverse the migrations.
+   *
+   * @return void
+   */
   public function down() {
     $this->capsule::schema()->dropIfExists("posts");
   }
@@ -202,7 +239,7 @@ class CreateUsers extends Database {
 After that, we can run our migrations from the console with:
 
 ```bash
-php aloe db:migrate
+php leaf db:migrate
 ```
 
 So now we can work with the table we generated. Let's look at our model. You can read more on [Leaf Models](/leaf/v/2.4-beta/core/model)
@@ -221,7 +258,7 @@ class Post extends Model {
 As mentioned before, we don't really do much in the model. The magic happens in our controller. Let's generate a new controller.
 
 ```bash
-php aloe g:controller PostsController --resource
+php leaf g:controller PostsController --resource
 ```
 
 We added the resource flag to it in order to generate a `resource controller`.

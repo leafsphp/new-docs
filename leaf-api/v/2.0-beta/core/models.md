@@ -14,7 +14,7 @@ Our Models are kept in `App/Models`, but we won't need to create our models manu
 </p>
 
 ```bash
-php aloe g:model <Name>
+php leaf g:model <Name>
 ```
 
 A new model will be created in the `App\Models` directory which looks like this:
@@ -86,7 +86,7 @@ Checkout [building your first app](/intro/first-app) for more practical use case
 You can create a migration for your model by including the `-m` flag
 
 ```bash
-php aloe g:model -m <ModelName>
+php leaf g:model -m <ModelName>
 ```
 
 ### Model Help (Leaf Console)

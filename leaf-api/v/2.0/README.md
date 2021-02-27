@@ -3,7 +3,7 @@
 
 Leaf API is a lightweight PHP MVC framework for rapid API development. Leaf API serves a minimal MVC wrapper around Leaf PHP which basically provides a more scalable and powerful setup. With a simple structure and a shallow learning curve, it's an excellent way to rapidly build powerful and high performant APIs.
 
-v2.0 packs in a bunch of fresh functionality, and also features added in [v2.4.3](leaf/v/2.4.3) of the core Leaf package. You can view all these [changes here](leaf-api/v/2.0/new).
+v2.0 packs in a bunch of fresh functionality, and also features added in [v2.4.3](leaf/v/2.4.3/) of the core Leaf package. You can view all these [changes here](leaf-api/v/2.0/new).
 
 Leaf API was created and polished by these amazing minds:
 
@@ -20,7 +20,7 @@ Leaf API was created and polished by these amazing minds:
 You can quickly create a Leaf API project with [composer](https://getcomposer.org).
 
 ```bash
-composer create-project leafs/api <project-name> v2.0-beta
+composer create-project leafs/api <project-name>
 ```
 
 ## Directory Structure
@@ -53,10 +53,16 @@ C:.
 └───vendor
 ```
 
+- **App**: This is where you will mostly be working. It houses all your controllers, command and db files.
+- **Config**: This holds all your configuration files.
+- **Lib**: You can place your libraries and piece files which you need for your app.
+- **storage**: Storage for your files, images, text...
+- **vendor**: This holds all your dependencies and installed files.
+
 In the project root, you can open up your console tool and type in
 
 ```bash
-php aloe serve
+php leaf serve
 ```
 
 This will start the php web server and load your project at `http://localhost:5500` by default.

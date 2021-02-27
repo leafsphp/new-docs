@@ -16,7 +16,27 @@ You can quickly create a Leaf API project with [composer](https://getcomposer.or
 composer create-project leafs/api <project-name>
 ```
 
-This will create a new Leaf API project named `<project-name>`. Inside the new directory, you should have a structure like this.
+That's it! This will create a new Leaf API project named `<project-name>`.
+
+### Github
+
+You can [download the source files](https://github.com/leafsphp/leafAPI/archive/v2.0.zip) from github and  extract it to get the LeafAPI files. All that's left is to install the dependencies.
+
+```sh
+composer install
+```
+
+After this has completed it's installation, you just need to generate your application env file. You can copy and rename your `.env.example` file to `.env`, but aloe cli provides a way easier approach.
+
+```sh
+php leaf env:generate
+```
+
+That's all!
+
+## Directory Structure
+
+In your project directory, you should have a structure like this.
 
 ```bash
 C:.

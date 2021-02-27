@@ -11,13 +11,13 @@ For those who struggle with maintaining their database schema, or who have probl
 You can quickly generate a migration using the `g:migration` [Aloe CLI](/aloe-cli/) command:
 
 ```bash
-php aloe g:migration <Name>
+php leaf g:migration <Name>
 ```
 
 Once again, aloe is smart, all you need to do is input the name of the table, or a reference to the file name you want to create, Aloe handles the rest.
 
 ```sh
-php aloe g:migration flights
+php leaf g:migration flights
 ```
 
 The new migration will be placed in your `App/Database/Migrations` directory. Each migration file name begins with a timestamp.
@@ -71,15 +71,15 @@ class CreateUsers extends Database {
 To run all of your outstanding migrations, execute the `db:migrate` command:
 
 ```bash
-php aloe db:migrate
+php leaf db:migrate
 ```
 
 You may also run seeds alongside your migrations if you wish to do so:
 
 ```sh
-php aloe db:migrate -s
+php leaf db:migrate -s
 # or
-php aloe db:migrate --seed
+php leaf db:migrate --seed
 ```
 
 ### Migrate single file <sup class="new-tag-1">New</sup>
@@ -87,7 +87,7 @@ php aloe db:migrate --seed
 Aloe also allows you to specify a particular migration to run. You can do this with the `-f`/`--file` option.
 
 ```sh
-php aloe db:migrate -f users
+php leaf db:migrate -f users
 ```
 
 ### Console help (db:migrate)
@@ -119,19 +119,19 @@ Help:
 To roll back the latest migration operation, you may use the `db:rollback` command.
 
 ```bash
-php aloe db:rollback
+php leaf db:rollback
 ```
 
 You may roll back a limited number of migrations by providing the `step` option to the `rollback` command. For example, the following command will roll back the last five migrations:
 
 ```bash
-php aloe db:rollback -s 2
+php leaf db:rollback -s 2
 ```
 
 To roll back all migrations, you can just pass `all` as the `step` option.
 
 ```bash
-php aloe db:rollback --step all
+php leaf db:rollback --step all
 ```
 
 ### Rollback single file <sup class="new-tag-1">New</sup>
@@ -139,7 +139,7 @@ php aloe db:rollback --step all
 Since you can migrate a single file, it only makes sense to be able to do otherwise:
 
 ```sh
-php aloe db:rollback -f users
+php leaf db:rollback -f users
 ```
 
 ### Console help (db:rollback)
