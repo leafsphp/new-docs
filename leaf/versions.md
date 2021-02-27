@@ -35,15 +35,14 @@
     <small>(New Roots)</small>
   </a>
   <a href="/#/leaf/v/2.4/" class="version-card">
-    <div class="tag -stable">Latest</div>
     <h2>v2.4</h2>
     <small>(Christmas Tree)</small>
   </a>
-  <div class="version-card" style="opacity: 0 !important; cursor:unset !important;">
+  <a href="/#/leaf/v/2.4.3/" class="version-card">
     <div class="tag -stable">Latest</div>
-    <h2>v2.4</h2>
-    <small>(Christmas Tree)</small>
-  </div>
+    <h2>v2.4.3</h2>
+    <small>(🎋 Giant Cane Grass)</small>
+  </a>
 </div>
 
 ## Contributing

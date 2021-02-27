@@ -59,6 +59,4 @@
 
 * [**Beta Zone**](leaf/v/2.4.3/beta-zone/)
 
-* [**Code Labs**](codelabs/)
-
-* [**Versions**](leaf/versions)
+* [**Code Labs**](codelabls/)
