@@ -2,7 +2,7 @@
 # 📕 Leaf API Models
 
 <p class="alert -warning">
-  Leaf API models extend thebase model, so read <a href="/#/leaf/v/2.4-beta/core/model">the docs</a> for full functionality.
+  Leaf API models extend thebase model, so read <a href="/#/leaf/v/2.4.3/core/model">the docs</a> for full functionality.
 </p>
 
 In Leaf API, we don't really have anything to do with our models: Leaf Core has taken all the trouble out of using models, so all we have to do in Leaf API is to generate the model and include it in our controller.
@@ -114,8 +114,8 @@ Options:
 
 ## Next Steps
 
-- [Leaf Core Model](/leaf/v/2.4-beta/core/model)
-- [Leaf Core API Controllers](/leaf/v/2.4-beta/core/api-controller)
+- [Leaf Core Model](/leaf/v/2.4.3/core/model)
+- [Leaf Core API Controllers](/leaf/v/2.4.3/core/api-controller)
 - [Migrations](/leaf-api/v/2.0/database/migrations)
 - [Views](/leaf-api/v/2.0/core/views)
 

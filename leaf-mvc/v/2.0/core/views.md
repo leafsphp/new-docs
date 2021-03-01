@@ -16,17 +16,17 @@ hello.blade.php
 </html>
 ```
 
-In v2 of Leaf API, has removed default generation of templates, however, you can still create your own templates or use aloe cli as you see fit.
+In v2 of leaf MVC, has removed default generation of templates, however, you can still create your own templates or use aloe cli as you see fit.
 
 Since this view is stored in our `App/Views` directory, we may render it using the global `View` or `render` helper like so:
 
 ```php
 Route('GET', '/', function () {
-    echo View('hello', ['name' => 'Mike']);
+    echo view('hello', ['name' => 'Mike']);
 });
 
 Route('GET', '/', function () {
-    markup(View('hello', ['name' => 'Mike']));
+    markup(view('hello', ['name' => 'Mike']));
 });
 
 Route('GET', '/dashboard', function () {
@@ -48,6 +48,6 @@ render('admin/profile', $data);
 ## Next Steps
 
 - [Leaf Blade](/leaf/v/2.4.3/views/blade)
-- [Leaf API Helpers](/leaf-api/v/2.0-beta/utils/functions)
+- [leaf MVC Helpers](/leaf-mvc/v/2.0/utils/functions)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

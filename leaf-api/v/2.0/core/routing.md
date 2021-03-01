@@ -1,13 +1,13 @@
 # Routing
 
-Leaf API uses Leaf's router so be sure [read the docs](/leaf/v/2.4-beta/routing/).
+Leaf API uses Leaf's router so be sure [read the docs](/leaf/v/2.4.3/routing/).
 
 Previously, all routes were kept in `App/Routes.php`, however, for "scaleability" and readability sake, a `Routes` directory has been added, you can have sub files holding routes as done in the example.
 
 ## Basic Routing
 
 <p class="alert -warning">
-  Routing is extensively covered in the <a href="/#/leaf/v/2.4-beta/routing/">base leaf docs</a>. You should refer to them for advanced uses.
+  Routing is extensively covered in the <a href="/#/leaf/v/2.4.3/routing/">base leaf docs</a>. You should refer to them for advanced uses.
 </p>
 
 In your routes file, you can define routes on the initialized `$app` variable or call `app()`. From version 1.2, the `Route` method is also available.
@@ -87,11 +87,11 @@ You simply need to create a file, eg: `_user.php` and add all your user specific
 
 After creating the sub file, you just need to require it in the main route file `index.php`.
 
-To view the complete routing documentation, check the [Leaf Core Routing docs](/leaf/v/2.4-beta/routing/)
+To view the complete routing documentation, check the [Leaf Core Routing docs](/leaf/v/2.4.3/routing/)
 
 ## Next Steps
 
-- [Leaf Core Routing](/leaf/v/2.4-beta/routing/)
+- [Leaf Core Routing](/leaf/v/2.4.3/routing/)
 - [Controllers](/leaf-api/v/2.0/core/controllers)
 - [Models](/leaf-api/v/2.0/core/models)
 - [Migrations](/leaf-api/v/2.0/database/migrations)

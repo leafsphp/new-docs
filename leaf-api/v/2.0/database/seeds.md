@@ -109,7 +109,7 @@ php leaf db:seed
 
 ## Next Steps
 
-- [Factories](/leaf/v/2.4-beta/database/factories)
+- [Factories](/leaf/v/2.4.3/database/factories)
 - [Migrations](/leaf-api/v/2.0/database/migrations)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

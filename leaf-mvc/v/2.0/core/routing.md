@@ -1,6 +1,6 @@
 # Routing
 
-Leaf API uses Leaf's router so be sure [read the docs](/leaf/v/2.4.3/routing/).
+leaf MVC uses Leaf's router so be sure [read the docs](/leaf/v/2.4.3/routing/).
 
 Previously, all routes were kept in `App/Routes.php`, however, for "scaleability" and readability sake, a `Routes` directory has been added, you can have sub files holding routes as done in the example.
 
@@ -92,8 +92,8 @@ To view the complete routing documentation, check the [Leaf Core Routing docs](/
 ## Next Steps
 
 - [Leaf Core Routing](/leaf/v/2.4.3/routing/)
-- [Controllers](/leaf-api/v/2.0-beta/core/controllers)
-- [Models](/leaf-api/v/2.0-beta/core/models)
-- [Migrations](/leaf-api/v/2.0-beta/database/migrations)
+- [Controllers](/leaf-mvc/v/2.0/core/controllers)
+- [Models](/leaf-mvc/v/2.0/core/models)
+- [Migrations](/leaf-mvc/v/2.0/database/migrations)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

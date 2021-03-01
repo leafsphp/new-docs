@@ -1,18 +1,18 @@
-# Your first Leaf API ✨
+# Your first leaf MVC app ✨
 
-Before you go on, Leaf API is powered by [Leaf](/leaf), so we'll recommend getting familiar with the core [Leaf package](/leaf) first. Not to worry, it takes just about 5-10 minutes to completely learn the basics if you've used any PHP framework before.
+Before you go on, leaf MVC is powered by [Leaf](/leaf), so we'll recommend getting familiar with the core [Leaf package](/leaf) first. Not to worry, it takes just about 5-10 minutes to completely learn the basics if you've used any PHP framework before.
 
-Note that all your development is done in the `App` directory. By default, a few demos have been created to give you a quick idea on how Leaf API works.
+Note that all your development is done in the `App` directory. By default, a few demos have been created to give you a quick idea on how leaf MVC works.
 
 ## Introduction 📖
 
-This is a little "tutorial" put together to introduce you to Leaf API, and help you learn all needed concepts. We'll be building a simple API to demonstrate how Leaf API works. We’ll be using models, request, response, controllers, migrations, leaf’s command line tool and a whole lot of other tools provided for us.😎
+This is a little "tutorial" put together to introduce you to leaf MVC, and help you learn all needed concepts. We'll be building a simple blog to demonstrate how leaf MVC works. We’ll be using models, request, views, controllers, migrations, leaf’s command line tool and a whole lot of other tools provided for us.😎
 
 **Note: If you are not familiar with PHP, we recommend that you check out the [W3Schools PHP Tutorial](https://www.w3schools.com/php/default.asp) before continuing.**
 
-## Our First API
+## Our First App
 
-In the [previous section](/leaf-api/v/2.0/?id=Installation), we looked at installation, Leaf API's directory structure and running your project, it's assumed you've already read this section. After following the installation instructions, your Leaf API structure should be initialized for you. You can run the intro app with
+In the [previous section](/leaf-mvc/v/2.0/?id=Installation), we looked at installation, leaf MVC's directory structure and running your project, it's assumed you've already read this section. After following the installation instructions, your leaf MVC structure should be initialized for you. You can run the intro app with
 
 ```bash
 php leaf serve
@@ -94,7 +94,7 @@ use Leaf\Router;
 Router::get("/", "PagesController@index");
 ```
 
-Now, let's create a basic controller that just outputs some JSON. Leaf comes with a really powerful console tool which allows you to generate files, interact and run commands on your Leaf API. We can generate our controller like this:
+Now, let's create a basic controller that just outputs some JSON. Leaf comes with a really powerful console tool which allows you to generate files, interact and run commands on your leaf MVC. We can generate our controller like this:
 
 ```sh
 php leaf g:controller <name>
@@ -102,7 +102,21 @@ php leaf g:controller <name>
 
 Aloe CLI tool is smart, and enforces naming conventions used by other frameworks like laravel, ruby on rails and django. Aloe CLI has a powerful file generation system that always seems to understand what you want to do, as such, it cuts down the amount of time working with files significantly.
 
-In this case, this particular controller @ method index, is supposed to output some json. We can do this with `json`. `json` is a new method available since Leaf v2.4 beta. `json` provides the functionality of both `respond` and `respondWithCode` which are both deprecated. Since most APIs output json, `json` is a method you'll be using a lot.
+In this case, this particular controller @ method index, is supposed to output a view. There are a bunch of ways to output views in Leaf MVC. You can simply output a bunch of markup with `markup`.
+
+```php
+markup("<h2>Hello</h2>");
+```
+
+Of course, this isn't that practical😆
+
+The next method is to output a static HTML/PHP page. Of course, this method is more practical.
+
+```php
+response()->page("./index.html");
+```
+
+The final method is to use a templating engine. This is the most common method people use when it comes to displaying views. Leaf comes with Leaf blade by default which you can utilize by simply calling `view` or `render`. Let's use that in our controller.
 
 ```php
 <?php
@@ -112,18 +126,22 @@ namespace App\Controllers;
 class PagesController extends Controller {
   public function index()
   {
-    json([
-      "key" => "value"
-    ]);
+    render("pages.home");
   }
 }
 ```
 
-`json` is just a global shortcut method which uses the functionality provided by [`Leaf\Http\Response::json`](/leaf/v/2.4.3/http/response?id=json)
+Now, we need to define `pages/home.blade.php` so we don't get an error when we load this route. We can do this quickly with aloe cli:
+
+```sh
+php leaf g:template pages/home
+```
+
+*Quick tip: Aloe allows you to generate templates for other systems too. You can pass a -t with any of these values (html, jsx, vue, blade) to specify what view you prefer. Defaults to blade if nothing is provided.*
 
 ### Request
 
-Response handles the way data goes out of our application, on the flip side, Request handles the data that comes into our application. You can find Leaf Request docs [here](/leaf/v/2.4.3/http/request).
+Response/Views send data out of our application, on the flip side, Request handles the data that comes into our application. You can find Leaf Request docs [here](/leaf/v/2.4.3/http/request).
 
 Let's look at a basic example. Inside our controller:
 
@@ -143,11 +161,11 @@ public function search() {
   $keywords = requestData("keywords");
 
   // ... handle search operation
-  json($results);
+  render("search", ["results" => $results]);
 }
 ```
 
-Now in Leaf API v2 beta, the whole request object is available on the `request` method. The `request` method can also be used to get items from the request.
+Now in leaf MVC v2, the whole request object is available on the `request` method. The `request` method can also be used to get items from the request.
 
 ```php
 // get username
@@ -166,7 +184,7 @@ public function search() {
   $keywords = Request::get("keywords");
 
   // ... handle search operation
-  json($results);
+  render("search", ["results" => $results]);
 }
 ```
 
@@ -347,7 +365,7 @@ Now let's head over to our index method and enter this:
 
 ```php
 public function index() {
-  json(Post::all());
+  render("posts", ["posts" => Post::all()]);
 }
 ```
 
@@ -359,7 +377,7 @@ For a blog app, we'd usually want to see our latest posts first, so we can order
 
 ```php
 public function index() {
-  json(Post::orderBy('id', 'desc')->get());
+  render("posts", ["posts" => Post::orderBy('id', 'desc')->get()]);
 }
 ```
 
@@ -369,7 +387,7 @@ Next, we'll want to show a particular post when we navigate to `/post/{id}` eg: 
 
 ```php
 public function show($id) {
-  json(Post::find($id));
+  render("post", ["posts" => Post::find($id)]);
 }
 ```
 
@@ -392,9 +410,9 @@ $post->delete();
 
 ## Next Steps
 
-- [Routing](/leaf-api/v/2.0/core/routing)
-- [Leaf Console](/leaf-api/v/2.0/utils/console)
-- [Helper Functions](/leaf-api/v/2.0/utils/functions)
-- [Controllers](/leaf-api/v/2.0/core/controllers)
+- [Routing](/leaf-mvc/v/2.0/core/routing)
+- [Leaf Console](/leaf-mvc/v/2.0/utils/console)
+- [Helper Functions](/leaf-mvc/v/2.0/utils/functions)
+- [Controllers](/leaf-mvc/v/2.0/core/controllers)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

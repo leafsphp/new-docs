@@ -210,8 +210,8 @@ Options:
 
 ## Next Steps
 
-- [Leaf Core APIControllers](/leaf/v/2.4-beta/core/api-controller)
-- [Leaf Core Controllers](/leaf/v/2.4-beta/core/controller)
+- [Leaf Core APIControllers](/leaf/v/2.4.3/core/api-controller)
+- [Leaf Core Controllers](/leaf/v/2.4.3/core/controller)
 - [Models](/leaf-api/v/2.0-beta/core/models)
 - [Migrations](/leaf-api/v/2.0-beta/database/migrations)
 

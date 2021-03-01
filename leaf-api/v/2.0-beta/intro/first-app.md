@@ -20,13 +20,13 @@ php leaf serve
 
 When we take a look at our `index.php` file, we see that Leaf Core is initialised and a bunch of files including our routes are imported.
 
-As such, `index.php` serves as our project root. Every request/page load passes through `index.php` first and this is done because of the [.htaccess](/leaf/v/2.4-beta/intro/htaccess) file.
+As such, `index.php` serves as our project root. Every request/page load passes through `index.php` first and this is done because of the [.htaccess](/leaf/v/2.4.3/intro/htaccess) file.
 
 ### Routing
 
 In v2, the `Routes.php` file has been replaced with the `Routes` directory. If you however want to continue using the `Routes.php`, you can create a `Routes.php` file and link it in the `index.php` file in the root directory.
 
-Example routes have been created to give you a fair idea on how to handle routing with Leaf. You can check out Leaf router's docs [here](/leaf/v/2.4-beta/routing/).
+Example routes have been created to give you a fair idea on how to handle routing with Leaf. You can check out Leaf router's docs [here](/leaf/v/2.4.3/routing/).
 
 Now, let’s get started.
 
@@ -98,7 +98,7 @@ class PagesController extends Controller {
 
 ### Request
 
-Response handles the way data goes out of our application, on the flip side, Request handles the data that comes into our application. You can find Leaf Request docs [here](/leaf/v/2.4-beta/http/request).
+Response handles the way data goes out of our application, on the flip side, Request handles the data that comes into our application. You can find Leaf Request docs [here](/leaf/v/2.4.3/http/request).
 
 Let's look at a basic example. Inside our controller:
 
@@ -205,7 +205,7 @@ After that, we can run our migrations from the console with:
 php leaf db:migrate
 ```
 
-So now we can work with the table we generated. Let's look at our model. You can read more on [Leaf Models](/leaf/v/2.4-beta/core/model)
+So now we can work with the table we generated. Let's look at our model. You can read more on [Leaf Models](/leaf/v/2.4.3/core/model)
 
 ```php
 <?php

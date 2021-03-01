@@ -1,4 +1,4 @@
-# 🏀 Leaf API Controllers
+# 🏀 leaf MVC Controllers
 
 Instead of defining all of your request handling logic as closures in your route files, you may wish to organize this behavior using "controller" classes. Controllers can group related request handling logic into a single class. For example, a `UserController` class might handle all incoming requests related to users, including showing, creating, updating, and deleting users. By default, controllers are stored in the `App/Controllers` directory.
 
@@ -7,10 +7,10 @@ Instead of defining all of your request handling logic as closures in your route
 ### Generating Controllers
 
 <p class="alert -warning">
-  v2 of Leaf API completely replaces Leaf's standard console tool with <a href="/#/aloe-cli/">aloe cli</a>
+  v2 of leaf MVC completely replaces Leaf's standard console tool with <a href="/#/aloe-cli/">aloe cli</a>
 </p>
 
-All Leaf API controllers are kept in the `App/Controllers` directory. So you can manually create your own Controller there, but the recommended method is to use the [aloe cli](/aloe-cli/). So, in the root of your leaf API project, open up your console and type:
+All leaf MVC controllers are kept in the `App/Controllers` directory. So you can manually create your own Controller there, but the recommended method is to use the [aloe cli](/aloe-cli/). So, in the root of your leaf MVC project, open up your console and type:
 
 ```sh
 php leaf g:controller <Name>
@@ -24,7 +24,7 @@ php leaf g:controller Apps
 
 Even better, you don't need to type out `g:controller`, just `g:con` or anything along those lines is fine.
 
-Aloe also includes support for other types of controllers like [resource controllers](/leaf-api/v/2.0/core/controllers?id=resource-controllers). You can generate a resource controller like this:
+Aloe also includes support for other types of controllers like [resource controllers](/leaf-mvc/v/2.0/core/controllers?id=resource-controllers). You can generate a resource controller like this:
 
 ```sh
 php leaf g:controller <Name> --resource
@@ -34,7 +34,7 @@ php leaf g:controller <Name> -r
 
 ### Basic Controllers
 
-Let's take a look at an example of a basic controller. Note that the controller extends the base controller class included with Leaf API. The base controller further extends Leaf's base controller, and since all your controllers extend that base controller, you can share behaviours and variables between all your controllers. A simple controller would look like this:
+Let's take a look at an example of a basic controller. Note that the controller extends the base controller class included with leaf MVC. The base controller further extends Leaf's base controller, and since all your controllers extend that base controller, you can share behaviours and variables between all your controllers. A simple controller would look like this:
 
 ```php
 <?php
@@ -212,7 +212,7 @@ Options:
 
 - [Leaf Core APIControllers](/leaf/v/2.4.3/core/api-controller)
 - [Leaf Core Controllers](/leaf/v/2.4.3/core/controller)
-- [Models](/leaf-api/v/2.0/core/models)
-- [Migrations](/leaf-api/v/2.0/database/migrations)
+- [Models](/leaf-mvc/v/2.0/core/models)
+- [Migrations](/leaf-mvc/v/2.0/database/migrations)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

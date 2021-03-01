@@ -6,7 +6,7 @@
   Note that v2+ will ship with <a href="/#/aloe-cli/">aloe cli</a> instead of the standard Leaf CLI
 </p>
 
-Aloe is CLI that comes with Leaf API and Leaf MVC v2 upwards. Aloe is integrated into the `leaf` script and provides a number of helpful commands that can assist you while you build your application. To view all available commands, you can use the `list` command or call `leaf`.
+Aloe is CLI that comes with leaf MVC and Leaf MVC v2 upwards. Aloe is integrated into the `leaf` script and provides a number of helpful commands that can assist you while you build your application. To view all available commands, you can use the `list` command or call `leaf`.
 
 ```bash
 php leaf list
@@ -36,7 +36,7 @@ Aside all the commands provided by aloe, you can also create your own commands a
 
 To create a new command, you may use the `g:command` aloe command. This command will create a new command class in the default commands directory.
 
-The default directory for commands in Leaf API and Leaf MVC is `App\Console`, with skeleton, you're free to decide where to place your commands.
+The default directory for commands in leaf MVC and Leaf MVC is `App\Console`, with skeleton, you're free to decide where to place your commands.
 
 ```sh
 php leaf g:command SendMail
@@ -134,13 +134,54 @@ $aloe->register([
 ]);
 ```
 
+## Commands
+
+```sh
+Available commands:
+  example        example command's description
+  help           Displays help for a command
+  interact       Interact with your application
+  list           Lists commands
+  serve          Start the leaf development server
+ aloe
+  aloe:config    Install aloe config
+ app
+  app:down       Place app in maintainance mode
+  app:up         Remove app from maintainance mode
+ d
+  d:command      Delete a console command
+  d:controller   Delete a controller
+  d:factory      Delete a model factory
+  d:migration    Delete a migration
+  d:model        Delete a model
+  d:seed         Delete a model seeder
+ db
+  db:install     Create new database from .env variables
+  db:migrate     Run the database migrations
+  db:rollback    Rollback all database migrations
+  db:seed        Seed the database with records
+ env
+  env:generate   Generate .env file
+ g
+  g:command      Create a new console command
+  g:controller   Create a new controller class
+  g:factory      Create a new model factory
+  g:helper       Create a new helper class
+  g:migration    Create a new migration file
+  g:model        Create a new model class
+  g:seed         Create a new seed file
+  g:template     Create a new view file
+ scaffold
+  scaffold:auth  Scaffold basic app authentication
+```
+
 **For the full documentation, you can refer to [aloe-cli docs](aloe-cli/)**
 
 ## Next Steps
 
-- [Helper Functions](/leaf-api/v/2.0/utils/functions)
-- [Routing](/leaf-api/v/2.0/core/routing)
-- [Controllers](/leaf-api/v/2.0/core/controllers)
-- [Models](/leaf-api/v/2.0/core/models)
+- [Helper Functions](/leaf-mvc/v/2.0/utils/functions)
+- [Routing](/leaf-mvc/v/2.0/core/routing)
+- [Controllers](/leaf-mvc/v/2.0/core/controllers)
+- [Models](/leaf-mvc/v/2.0/core/models)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

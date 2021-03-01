@@ -105,8 +105,8 @@ $randomUsers = (new UserFactory)->create(3)->get();
 ## Next Steps
 
 - [Leaf Views](/leaf-api/v/2.0/core/views)
-- [Leaf Core Model](/leaf/v/2.4-beta/core/model)
-- [Leaf Core API Controllers](/leaf/v/2.4-beta/core/api-controller)
-- [Leaf Auth](/leaf/v/2.4-beta/core/auth)
+- [Leaf Core Model](/leaf/v/2.4.3/core/model)
+- [Leaf Core API Controllers](/leaf/v/2.4.3/core/api-controller)
+- [Leaf Auth](/leaf/v/2.4.3/core/auth)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

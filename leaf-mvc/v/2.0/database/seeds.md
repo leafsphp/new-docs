@@ -1,6 +1,6 @@
 # Seeds <sup class="new-tag-1">New</sup>
 
-Leaf API includes the ability to seed your database with test data using seed classes. All seed classes are stored in the `App/Database/Seeds` directory. By default, a `DatabaseSeeder` class is defined for you. From this class, you simply return the seed classes you want to run in your prefered order.
+leaf MVC includes the ability to seed your database with test data using seed classes. All seed classes are stored in the `App/Database/Seeds` directory. By default, a `DatabaseSeeder` class is defined for you. From this class, you simply return the seed classes you want to run in your prefered order.
 
 <p class="alert -warning">
   Aloe CLI introduces extensive support for seeds hence, you no longer have to work with seeds manually.
@@ -74,7 +74,7 @@ public function run() : array
 
 ### Using Factories
 
-Of course, manually specifying the attributes for each model seed is cumbersome. Instead, you can use aloe factories to conveniently generate large amounts of database records. First, review the [factory documentation](/leaf-api/v/2.0-beta/database/factories) to learn how to define your factories.
+Of course, manually specifying the attributes for each model seed is cumbersome. Instead, you can use aloe factories to conveniently generate large amounts of database records. First, review the [factory documentation](/leaf-mvc/v/2.0/database/factories) to learn how to define your factories.
 
 This example below uses the defined factory to create 30 random users:
 
@@ -110,6 +110,6 @@ php leaf db:seed
 ## Next Steps
 
 - [Factories](/leaf/v/2.4.3/database/factories)
-- [Migrations](/leaf-api/v/2.0-beta/database/migrations)
+- [Migrations](/leaf-mvc/v/2.0/database/migrations)
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)
