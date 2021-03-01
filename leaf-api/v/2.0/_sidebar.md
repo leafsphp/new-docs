@@ -7,6 +7,10 @@
 
 * Config
   * [.env](leaf-api/v/2.0/config/env "Environment Vars - Leaf API")
+  * [aloe config](leaf-api/v/2.0/config/aloe "Aloe Config - Leaf API")
+  * [auth config](leaf-api/v/2.0/config/auth "Auth Config - Leaf API")
+  * [view config](leaf-api/v/2.0/config/views "View Config - Leaf API")
+  * [path config](leaf-api/v/2.0/config/paths "Path Config - Leaf API")
 
 * Utils
   * [Leaf Console](leaf-api/v/2.0/utils/console "Leaf Console - Leaf API")

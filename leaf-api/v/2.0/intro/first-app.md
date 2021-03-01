@@ -242,7 +242,7 @@ After that, we can run our migrations from the console with:
 php leaf db:migrate
 ```
 
-So now we can work with the table we generated. Let's look at our model. You can read more on [Leaf Models](/leaf/v/2.4-beta/core/model)
+So now we can work with the table we generated. Let's look at our model. You can read more on [Leaf Models](/leaf/v/2.4.3/core/model)
 
 ```php
 <?php
@@ -258,7 +258,7 @@ class Post extends Model {
 As mentioned before, we don't really do much in the model. The magic happens in our controller. Let's generate a new controller.
 
 ```bash
-php leaf g:controller PostsController --resource
+php leaf g:controller Posts --resource
 ```
 
 We added the resource flag to it in order to generate a `resource controller`.
@@ -323,7 +323,13 @@ class PostsController extends Controller {
 
 A resource controller is filled with resource methods which quickly help us perform CRUD functions.
 
-So let's say we have a database named `blog` with a table named `posts` which has some data in it, to retrieve all the data in the `posts` table, we'll head to our controller. The first thing we'll have to do is to bring in our `Post` model. This will allow us to use our database.
+So let's say we have a database named `blog` with a table named `posts` which has some data in it, to retrieve all the data in the `posts` table, we'll head to our controller. The first thing we'll have to do is link the resource controller to our routes. Leaf provides a simple way to do this:
+
+```php
+$app->resource("/posts", "PostsController");
+```
+
+With this, leaf will create all the required routes for your resource controller. Check out the [routing docs](/leaf/v/2.4.3/routing/?id=resource-routes) for a break down on resource routes. Next, we need to bring in our `Post` model so we can use our database.
 
 ```php
 <?php
@@ -346,15 +352,6 @@ public function index() {
 ```
 
 `Post::all()` is a method which will query our database and retrieve all our `posts` for us, we're using `json()` to send all our posts to a client as JSON.
-
-All that's left now is to add a route for our controller. In our `App\Routes` directory:
-
-```php
-$app->setNamespace('\App\Controllers');
-
-$app->get('/', 'PagesController@index');
-$app->resource('/posts', 'PostsController');
-```
 
 So when we navigate to `/posts` in our browser, we see all our posts in JSON format.
 
@@ -384,8 +381,8 @@ Post::where('title', 'Post Two')->get();
 
 // create a new post
 $post = new Post;
-$post->title = requestData("title");
-$post->body = requestData("body");
+$post->title = request("title");
+$post->body = request("body");
 $post->save();
 
 // delete a post
