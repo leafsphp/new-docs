@@ -6,4 +6,4 @@
   Super smart, easy to use console & commands for your Leaf apps.
 </p>
 
-[Get Started](aloe-cli/?id=aloe-cli-sup-classnew-tag-1new)
+[Get Started](aloe-cli/?id=aloe-cli)

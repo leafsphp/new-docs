@@ -1,5 +1,9 @@
 # Aloe CLI: Getting Started
 
+<div class="alert -warning">
+    If you're using Leaf MVC or Leaf API, you can skip this page.
+</div>
+
 Aloe CLI is a smart CLI that takes care of a lot of a whole lot of time consuming tasks during your development, allowing you to focus only on important stuff.
 
 **Aloe is based on the symfony console, with that, all symfony commands are also valid aloe commands and can be called through the aloe cli.**
