@@ -77,7 +77,7 @@ This will start the php web server and load your project at `http://localhost:55
 
 ## Next Steps
 
-- [First App](/leaf-mvc/v/2.0/getting-started/first-app)
+- [First App](/leaf-mvc/v/2.0/intro/first-app)
 - [Routing](/leaf-mvc/v/2.0/core/routing)
 - [Leaf Console](/leaf-mvc/v/2.0/utils/console)
 - [Controllers](/leaf-mvc/v/2.0/core/controllers)
