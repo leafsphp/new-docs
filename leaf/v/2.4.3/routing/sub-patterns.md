@@ -1,6 +1,6 @@
 # 🎐 Optional Route Subpatterns
 
-*This guide assumes you have read [Simple Routing](leaf/v/2.4.2/routing) and [dynamic routing](leaf/v/2.4.2/routing/dynamic)*
+*This guide assumes you have read [Simple Routing](leaf/v/2.4.3/routing) and [dynamic routing](leaf/v/2.4.3/routing/dynamic)*
 
 Route subpatterns can be made optional by making the subpatterns optional by adding a ? after them. Think of blog URLs in the form of /blog(/year)(/month)(/day)(/slug):
 

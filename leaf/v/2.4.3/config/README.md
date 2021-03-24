@@ -42,9 +42,9 @@ $settingValue = $app->config('templates.path'); //returns "../templates"
 
 ## Next Steps
 
-- [Routing](leaf/v/2.4.2/routing/)
-- [Request](leaf/v/2.4.2/http/request)
-- [Response](leaf/v/2.4.2/http/response)
-- [Blade Templating](leaf/v/2.4.2/views/blade)
+- [Routing](leaf/v/2.4.3/routing/)
+- [Request](leaf/v/2.4.3/http/request)
+- [Response](leaf/v/2.4.3/http/response)
+- [Blade Templating](leaf/v/2.4.3/views/blade)
 
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

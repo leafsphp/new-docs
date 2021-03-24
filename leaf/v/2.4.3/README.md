@@ -35,10 +35,10 @@ Building a better experience for existing features doesn't necessarily mean that
 
 ## Next steps
 
-- [Intro](leaf/v/2.4.2/intro/)
-- [Configuring .htaccess](leaf/v/2.4.2/intro/htaccess)
-- [Your first leaf app](leaf/v/2.4.2/intro/first)
-- [Routing](leaf/v/2.4.2/routing/)
+- [Intro](leaf/v/2.4.3/intro/)
+- [Configuring .htaccess](leaf/v/2.4.3/intro/htaccess)
+- [Your first leaf app](leaf/v/2.4.3/intro/first)
+- [Routing](leaf/v/2.4.3/routing/)
 
 <br>
 

@@ -223,10 +223,10 @@ $year = Date::year();
 
 ## Next Steps
 
-- [Request](leaf/v/2.4.2/http/request)
-- [Response](leaf/v/2.4.2/http/response)
-- [Auth](leaf/v/2.4.2/core/auth)
-- [Session](leaf/v/2.4.2/http/session)
+- [Request](leaf/v/2.4.3/http/request)
+- [Response](leaf/v/2.4.3/http/response)
+- [Auth](leaf/v/2.4.3/core/auth)
+- [Session](leaf/v/2.4.3/http/session)
 
 <br>
 

@@ -152,7 +152,7 @@ renderMarkup()
 
 **Note** `page` has **NOTHING** to do with templating, it simply outputs an already defined web page.
 
-For templating with Leaf, [look here](leaf/v/2.4.2/views/blade/)
+For templating with Leaf, [look here](leaf/v/2.4.3/views/blade/)
 
 **Status Code:**
 
@@ -300,10 +300,10 @@ $app->evadeCors(true, "ORIGINS", "HEADERS");
 
 ## Next Steps
 
-- [Request](leaf/v/2.4.2/http/request)
-- [Response](leaf/v/2.4.2/http/response)
-- [Routing](leaf/v/2.4.2/routing/)
-- [Blade Templating](leaf/v/2.4.2/views/blade)
+- [Request](leaf/v/2.4.3/http/request)
+- [Response](leaf/v/2.4.3/http/response)
+- [Routing](leaf/v/2.4.3/routing/)
+- [Blade Templating](leaf/v/2.4.3/views/blade)
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

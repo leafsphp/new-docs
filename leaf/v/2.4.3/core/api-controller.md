@@ -66,7 +66,7 @@ class NameController extends Controller {
 }
 ```
 
-You can view more on responses [here](leaf/v/2.4.2/http/response)
+You can view more on responses [here](leaf/v/2.4.3/http/response)
 
 <hr>
 
@@ -104,16 +104,16 @@ public function index() {
 }
 ```
 
-Read more on Leaf Forms [here](leaf/v/2.4.2/core/forms)
+Read more on Leaf Forms [here](leaf/v/2.4.3/core/forms)
 
 <br>
 
 ## Next Steps
 
-- [Request](leaf/v/2.4.2/http/request)
-- [Response](leaf/v/2.4.2/http/response)
-- [Auth](leaf/v/2.4.2/core/auth)
-- [Leaf Model](leaf/v/2.4.2/core/model)
+- [Request](leaf/v/2.4.3/http/request)
+- [Response](leaf/v/2.4.3/http/response)
+- [Auth](leaf/v/2.4.3/core/auth)
+- [Leaf Model](leaf/v/2.4.3/core/model)
 
 <br>
 

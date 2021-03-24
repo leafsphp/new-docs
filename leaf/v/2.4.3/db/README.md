@@ -403,7 +403,7 @@ $db->insert("users")
    ->execute();
 ```
 
-Validate takes in 2 parameters, a field to validate and a validation rule. You can find all the validation rules and what they do [here](leaf/v/2.4.2/core/forms?id=multiple-rule-validation). So what if you need to validate more than 1 parameter?
+Validate takes in 2 parameters, a field to validate and a validation rule. You can find all the validation rules and what they do [here](leaf/v/2.4.3/core/forms?id=multiple-rule-validation). So what if you need to validate more than 1 parameter?
 
 ```php
 $db->insert("users")
@@ -518,9 +518,9 @@ Using `$db->errors()` returns an array holding any errors which caused the query
 
 ## Next Steps
 
-- [Auth](leaf/v/2.4.2/core/auth)
-- [Response](leaf/v/2.4.2/http/response)
-- [Request](leaf/v/2.4.2/http/request)
-- [Session](leaf/v/2.4.2/http/session)
+- [Auth](leaf/v/2.4.3/core/auth)
+- [Response](leaf/v/2.4.3/http/response)
+- [Request](leaf/v/2.4.3/http/request)
+- [Session](leaf/v/2.4.3/http/session)
 
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

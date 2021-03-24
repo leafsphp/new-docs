@@ -280,8 +280,8 @@ Since Leaf Models use Eloquent, you can read more [here](https://laravel.com/doc
 ## Next Steps
 
 - [Eloquent](https://laravel.com/docs/5.8/eloquent)
-- [Forms](leaf/v/2.4.2/http/forms)
-- [Auth](leaf/v/2.4.2/core/auth)
+- [Forms](leaf/v/2.4.3/http/forms)
+- [Auth](leaf/v/2.4.3/core/auth)
 
 <br>
 

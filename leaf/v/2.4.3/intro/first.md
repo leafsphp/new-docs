@@ -4,7 +4,7 @@ As mentioned before, Leaf's main purpose is to help you easily and quickly creat
 
 ## Getting started
 
-First of all, we need to set up url rewriting. See [re-routing to index](leaf/v/2.4.2/intro/htaccess)
+First of all, we need to set up url rewriting. See [re-routing to index](leaf/v/2.4.3/intro/htaccess)
 
 To create a basic project with Leaf, you simply need to initialise Leaf. This will spin up Leaf's core packages. Amongst the core packages is Leaf's router. This simply takes all requests coming into the application and handles them based on rules you define. Enough talk, let's get dirty.
 
@@ -28,7 +28,7 @@ $app->run();
 
 That's all. It's this simple. Let's quickly run through some important parts of Leaf, you'll have to refer to the individual documentations to view all features.
 
-You might have seen it above, but you can use [response](leaf/v/2.4.2/http/response) on `$app`, you can also do the same with [request](leaf/v/2.4.2/http/request). Basically, response let's you deal with output, while request deals with input into your app.
+You might have seen it above, but you can use [response](leaf/v/2.4.3/http/response) on `$app`, you can also do the same with [request](leaf/v/2.4.3/http/request). Basically, response let's you deal with output, while request deals with input into your app.
 
 ```php
 $app->get("/user", function() use($app) {
@@ -80,13 +80,13 @@ $user = $db->select($table)->where($data)->hidden(["id"])->first();
 $app->response()->json(["name" => $user]);
 ```
 
-Leaf Db provides a ton of features ready for use anywhere in your app. [Read the docs here](leaf/v/2.4.2/db/)
+Leaf Db provides a ton of features ready for use anywhere in your app. [Read the docs here](leaf/v/2.4.3/db/)
 
 ## Handling authentication
 
 Although Leaf Db is very easy, user authentication can get quite tricky depending on your app, there's also JWT concerns and stuff like that which Leaf Db can't handle...good news, Leaf has the right module for this.
 
-[Auth](leaf/v/2.4.2/core/auth) is a module created to make authentication as simple as 1 line of code. Yes, 1 line😆
+[Auth](leaf/v/2.4.3/core/auth) is a module created to make authentication as simple as 1 line of code. Yes, 1 line😆
 
 Rewriting the example above will look like this:
 
@@ -125,10 +125,10 @@ This is a very basic example, if you want to explore deeper, more useful example
 
 ## Next steps
 
-- [Leaf Config](leaf/v/2.4.2/config/)
-- [Routing](leaf/v/2.4.2/routing/)
-- [Request](leaf/v/2.4.2/http/request)
-- [Response](leaf/v/2.4.2/http/response)
+- [Leaf Config](leaf/v/2.4.3/config/)
+- [Routing](leaf/v/2.4.3/routing/)
+- [Request](leaf/v/2.4.3/http/request)
+- [Response](leaf/v/2.4.3/http/response)
 
 <br>
 

@@ -67,7 +67,7 @@ So, we pass in the entire request body, which contains the username, email and p
 
 #### Validation
 
-`add` also has inbuilt validation which validates parameters according to set rules. This uses the [`Leaf\Form->validate`](leaf/v/2.4.2/core/forms) method. You can check it out for more information on validation.
+`add` also has inbuilt validation which validates parameters according to set rules. This uses the [`Leaf\Form->validate`](leaf/v/2.4.3/core/forms) method. You can check it out for more information on validation.
 
 `add` takes in a 4th parameter which is a boolean, this is whether of not to validate the data passed into `add` using the default checks.
 
@@ -89,7 +89,7 @@ $db->add("posts", ["title" => "Post One", "body" => "..."], ["title"], false, [
 
 Here, we're telling `add` that the **author** parameter should be a valid username. If thiscondition(rule) is not met, the application throws an error and breaks.
 
-You can view all validation rules [here](leaf/v/2.4.2/core/form?id=validation)
+You can view all validation rules [here](leaf/v/2.4.3/core/form?id=validation)
 
 ```php
 $db->add($table, $params, $uniques, $defaultChecks, $validation);

@@ -50,7 +50,7 @@ Now, when a request matches the specified route URI, the `show` method on the `U
 
 ### Default Templating
 
-Using the core controller, you already have access to templating with [Leaf Veins](leaf/v/2.4.2/views/veins). You can simply configure and render your template whenever you want to.
+Using the core controller, you already have access to templating with [Leaf Veins](leaf/v/2.4.3/views/veins). You can simply configure and render your template whenever you want to.
 
 ```php
 use Leaf\Controller;
@@ -75,7 +75,7 @@ class NameController extends Controller {
 }
 ```
 
-You can view more info on Veins [here](leaf/v/2.4.2/views/veins)
+You can view more info on Veins [here](leaf/v/2.4.3/views/veins)
 
 <hr>
 
@@ -97,7 +97,7 @@ class NameController extends Controller {
 }
 ```
 
-You can view more on responses [here](leaf/v/2.4.2/http/response)
+You can view more on responses [here](leaf/v/2.4.3/http/response)
 
 <hr>
 
@@ -135,16 +135,16 @@ public function index() {
 }
 ```
 
-Read more on Leaf Forms [here](leaf/v/2.4.2/core/forms)
+Read more on Leaf Forms [here](leaf/v/2.4.3/core/forms)
 
 <br>
 
 ## Next Steps
 
-- [Request](leaf/v/2.4.2/http/request)
-- [Response](leaf/v/2.4.2/http/response)
-- [Auth](leaf/v/2.4.2/core/auth)
-- [Leaf Model](leaf/v/2.4.2/core/model)
+- [Request](leaf/v/2.4.3/http/request)
+- [Response](leaf/v/2.4.3/http/response)
+- [Auth](leaf/v/2.4.3/core/auth)
+- [Leaf Model](leaf/v/2.4.3/core/model)
 
 <br>
 

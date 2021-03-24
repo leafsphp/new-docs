@@ -533,7 +533,7 @@ $user_id = Leaf\Auth::id();
 
 <hr>
 
-### [Leaf Authentication Methods](leaf/v/2.4.2/core/authentication)
+### [Leaf Authentication Methods](leaf/v/2.4.3/core/authentication)
 
 Leaf Auth now uses the `Leaf\Helpers\Authentication` package to provide solutions for token authentication. This provides a simple way to work with manual authentication and tokens. All methods here are now available in `Leaf\Auth`.
 
@@ -541,17 +541,17 @@ Leaf Auth now uses the `Leaf\Helpers\Authentication` package to provide solution
 $payload = Leaf\Auth::validate($token);
 ```
 
-Read [authentication](leaf/v/2.4.2/core/authentication) for more info
+Read [authentication](leaf/v/2.4.3/core/authentication) for more info
 
 <br>
 <hr>
 
 ## Next Steps
 
-- [authentication](leaf/v/2.4.2/core/authentication)
-- [Password Helper](leaf/v/2.4.2/core/passwords)
-- [Leaf Forms](leaf/v/2.4.2/core/forms)
-- [Leaf DB](leaf/v/2.4.2/db/)
+- [authentication](leaf/v/2.4.3/core/authentication)
+- [Password Helper](leaf/v/2.4.3/core/passwords)
+- [Leaf Forms](leaf/v/2.4.3/core/forms)
+- [Leaf DB](leaf/v/2.4.3/db/)
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

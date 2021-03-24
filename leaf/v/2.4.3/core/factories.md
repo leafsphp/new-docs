@@ -96,10 +96,10 @@ $randomUsers = (new UserFactory)->create(3)->get();
 
 ## Next Steps
 
-- [Request](leaf/v/2.4.2/http/request)
-- [Response](leaf/v/2.4.2/http/response)
-- [Forms](leaf/v/2.4.2/http/forms)
-- [Auth](leaf/v/2.4.2/core/auth)
+- [Request](leaf/v/2.4.3/http/request)
+- [Response](leaf/v/2.4.3/http/response)
+- [Forms](leaf/v/2.4.3/http/forms)
+- [Auth](leaf/v/2.4.3/core/auth)
 
 <br>
 

@@ -85,7 +85,7 @@ Leaf\JS\Scripts::clear();
 
 <hr>
 
-### [Back to beta zone](leaf/v/2.4.2/beta-zone/)
+### [Back to beta zone](leaf/v/2.4.3/beta-zone/)
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

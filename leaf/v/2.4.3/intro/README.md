@@ -67,9 +67,9 @@ This simply means you can use Leaf for projects of all sizes, no matter the envi
 
 ## Next steps
 
-- [Configuring .htaccess](leaf/v/2.4.2/intro/htaccess)
-- [Your first leaf app](leaf/v/2.4.2/intro/first)
-- [Routing](leaf/v/2.4.2/routing/)
+- [Configuring .htaccess](leaf/v/2.4.3/intro/htaccess)
+- [Your first leaf app](leaf/v/2.4.3/intro/first)
+- [Routing](leaf/v/2.4.3/routing/)
 
 <br>
 

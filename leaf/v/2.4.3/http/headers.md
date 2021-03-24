@@ -177,10 +177,10 @@ Leaf\Http\Headers::accessControl(["Allow-Origin" => "*", "Allow-Headers" => "*"]
 
 ## Next Steps
 
-- [Response](leaf/v/2.4.2/http/response)
-- [Cookies](leaf/v/2.4.2/http/cookies)
-- [Request](leaf/v/2.4.2/http/request)
-- [Session](leaf/v/2.4.2/http/session)
+- [Response](leaf/v/2.4.3/http/response)
+- [Cookies](leaf/v/2.4.3/http/cookies)
+- [Request](leaf/v/2.4.3/http/request)
+- [Session](leaf/v/2.4.3/http/session)
 
 <br>
 

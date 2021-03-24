@@ -112,9 +112,9 @@ if (Password::brcyptVerify($password, $hashedPassword)) {
 
 ## Next Steps
 
-- [Leaf Forms](leaf/v/2.4.2/core/forms)
-- [Auth](leaf/v/2.4.2/core/auth)
-- [Leaf DB](leaf/v/2.4.2/db/)
-- [Cookies](leaf/v/2.4.2/http/cookies)
+- [Leaf Forms](leaf/v/2.4.3/core/forms)
+- [Auth](leaf/v/2.4.3/core/auth)
+- [Leaf DB](leaf/v/2.4.3/db/)
+- [Cookies](leaf/v/2.4.3/http/cookies)
 
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

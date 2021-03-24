@@ -36,12 +36,24 @@
   </a>
   <a href="/#/leaf/v/2.4/" class="version-card">
     <h2>v2.4</h2>
-    <small>(Christmas Tree)</small>
+    <small>(New Roots)</small>
+  </a>
+  <a href="/#/leaf/v/2.4.1/" class="version-card">
+    <h2>v2.4.1</h2>
+    <small>(🍁 Marvel-of-peru)</small>
+  </a>
+  <a href="/#/leaf/v/2.4.2/" class="version-card">
+    <h2>v2.4.2</h2>
+    <small>(🥬 Desert Wishbone-bush)</small>
   </a>
   <a href="/#/leaf/v/2.4.3/" class="version-card">
-    <div class="tag -stable">Latest</div>
     <h2>v2.4.3</h2>
     <small>(🎋 Giant Cane Grass)</small>
+  </a>
+  <a href="/#/leaf/v/2.4.4/" class="version-card">
+    <div class="tag -stable">Latest</div>
+    <h2>v2.4.4</h2>
+    <small>(🎋 Common Reed)</small>
   </a>
 </div>
 

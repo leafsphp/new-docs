@@ -37,10 +37,10 @@ You can read below for an overview of url rewriting.
 
 ## Next steps
 
-- [Your first leaf app](leaf/v/2.4.2/intro/first)
-- [Routing](leaf/v/2.4.2/routing/)
-- [Request](leaf/v/2.4.2/http/request)
-- [Response](leaf/v/2.4.2/http/response)
+- [Your first leaf app](leaf/v/2.4.3/intro/first)
+- [Routing](leaf/v/2.4.3/routing/)
+- [Request](leaf/v/2.4.3/http/request)
+- [Response](leaf/v/2.4.3/http/response)
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

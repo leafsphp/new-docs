@@ -1,6 +1,6 @@
 # 📲 Routing
 
-As explained [before](leaf/v/2.4.2/intro/htaccess), Leaf uses a single root file, to which all the server requests are redirected. Leaf then takes these requests and matches them to rules you have defined. The results are then displayed to the user. It's actually a very simple concept.
+As explained [before](leaf/v/2.4.3/intro/htaccess), Leaf uses a single root file, to which all the server requests are redirected. Leaf then takes these requests and matches them to rules you have defined. The results are then displayed to the user. It's actually a very simple concept.
 
 The router module is tied directly to Leaf Core, so once you initialise leeaf, you can use routing
 
@@ -76,7 +76,7 @@ $app->post('/users/add', function() use($request) {
 ```
 
 Using Post Params
-View [Request](leaf/v/2.4.2/http/request) for more info on handling params
+View [Request](leaf/v/2.4.3/http/request) for more info on handling params
 
 ### PUT requests
 
@@ -155,7 +155,7 @@ $app->view("/home", "homepage");
 
 ### Resource Routes
 
-This section assumes you've read [working with controllers](leaf/v/2.4.2/routing/controller). In an MVC application, controllers play a major role as they're the bridge between your view and your model.
+This section assumes you've read [working with controllers](leaf/v/2.4.3/routing/controller). In an MVC application, controllers play a major role as they're the bridge between your view and your model.
 
 A resource route simply creates all the routes needed to successfully handle a particular feature. This sounds a bit bleak, let's look at an example.
 
@@ -183,7 +183,7 @@ $this->match("GET|HEAD", "/posts/{id}", "$controller@show");
 $app->run();
 ```
 
-Resource routes are handled by a [resource controller](leaf/v/2.4.2/routing/controller?id=resource-controller).
+Resource routes are handled by a [resource controller](leaf/v/2.4.3/routing/controller?id=resource-controller).
 
 ### Route "Hooking"
 
