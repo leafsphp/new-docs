@@ -1,5 +1,5 @@
 <h1 style="font-size: 60px; font-weight: 600;">
-  Leaf PHP  <span style="font-size: 30px;">v2.4.2</span>
+  Leaf PHP  <span style="font-size: 30px;">v2.4.4</span>
 </h1>
 <p style="font-size: 25px; margin-top: -20px; margin-bottom: 40px;">
   Rapidly develop powerful web apps and APIs, utilizing simple but powerful methods.
