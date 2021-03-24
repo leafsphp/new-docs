@@ -1,8 +1,8 @@
 # 📚 Getting Started
 
-## Leaf PHP: v2.4.3 (🎋 Common Reed)
+## Leaf PHP: v2.4.4 (🎋 Common Reed)
 
-Just like the previous version, v2.4.3 looks to build up on existing features, and improves their usage by providing compatability upgrades as well as new methods which compliment use cases of those features. As such, all new features still center around existing implementations. Note that changes from this release will also be shipped in later versions of [LeafMVC](/leaf-mvc/), [LeafAPI](/leaf-api/) and [Skeleton](/skeleton/).
+Just like the previous version, v2.4.4 looks to build up on existing features, and improves their usage by providing compatability upgrades as well as new methods which compliment use cases of those features. As such, all new features still center around existing implementations. Note that changes from this release will also be shipped in later versions of [LeafMVC](/leaf-mvc/), [LeafAPI](/leaf-api/) and [Skeleton](/skeleton/).
 
 ## 📁 Installation
 
@@ -16,7 +16,7 @@ This command can also be run in your LeafMVC and LeafAPI projects to manually up
 
 ## 💡 What's New
 
-Building a better experience for existing features doesn't necessarily mean that there's nothing new in Leaf. To view all the changes made to Leaf since the last release, you can check the [release notes](https://github.com/leafsphp/leaf/releases/tag/v2.4.3). However, the major additions include:
+Building a better experience for existing features doesn't necessarily mean that there's nothing new in Leaf. To view all the changes made to Leaf since the last release, you can check the [release notes](https://github.com/leafsphp/leaf/releases/tag/v2.4.4). However, the major additions include:
 
 - Added Leaf\Config for easier configuration
 - Added new leaf config options

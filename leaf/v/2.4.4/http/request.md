@@ -6,7 +6,7 @@ The request object is an abstraction of the current HTTP request and allows you 
 
 ### Static Request <sup class="new-tag-1">NEW</sup>
 
-v2.4.3 allows you to call request methods statically, which means you no longer need to initialize the whole package.
+v2.4.3+ allows you to call request methods statically, which means you no longer need to initialize the whole package.
 
 ```php
 Leaf\Http\Request::get("name");

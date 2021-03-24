@@ -7,7 +7,7 @@ The response object is an abstraction of your Leaf application’s HTTP response
 
 ### Static Response <sup class="new-tag-1">NEW</sup>
 
-v2.4.3 allows you to call response methods statically, which means you no longer need to initialize the whole package.
+v2.4.3+ allows you to call response methods statically, which means you no longer need to initialize the whole package.
 
 ```php
 Leaf\Http\Response::json(["name" => "mychi"]);
