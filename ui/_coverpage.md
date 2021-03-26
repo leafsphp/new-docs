@@ -3,4 +3,4 @@
 	A PHP library for building user interfaces.
 </p>
 
-[Get Started](ui/?id=leaf-ui-sup-stylebackground-rgb11-200-70-color-white-padding-3px-7px-font-size-14pxnew)
+[Get Started](ui/?id=leaf-ui-new)

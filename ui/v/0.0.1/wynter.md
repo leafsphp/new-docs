@@ -199,7 +199,7 @@ $ui::_card([], [
 ]);
 ```
 
-Checkout [_xCard](ui/wynter?id=_xCard) for an "automated" version.
+Checkout [_xCard](ui/v/0.1.0/wynter?id=_xCard) for an "automated" version.
 
 ### _carousel
 
@@ -352,4 +352,4 @@ $ui::_xCard(["style" => "width: 300px"], [
 ]);
 ```
 
-**WORK IN PROGRESS:** You can help build Leaf UI: Wynter. [Contribute on github](https://github.com/leafsphp/leaf-ui/tree/wynter).
+**WORK IN PROGRESS:** You can help build Leaf UI: Wynter. [Contribute on github](https://github.com/leafsphp/leaf-ui/v/0.1.0/tree/wynter).

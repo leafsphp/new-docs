@@ -1,8 +1,11 @@
-* Leaf UI
-	* [Leaf UI](ui/)
-	* [Basic Usage](ui/basic-usage)
-	* [Wynter Components](ui/wynter "Leaf UI + Wynter")
-	* [Custom Elements](ui/custom-elements)
+* Intro
+  * [Leaf UI](ui/)
+  * [First app](ui/v/0.1.0/first)
+  * [Basic Usage](ui/v/0.1.0/basic-usage)
+
+* Extras
+  * [Core](ui/v/0.1.0/core)
+  * [Custom Elements](ui/v/0.1.0/custom-elements)
 
 * [**Back to Leaf**](/?id=quickly-create-php-projects)
 

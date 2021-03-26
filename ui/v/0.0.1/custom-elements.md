@@ -6,7 +6,7 @@ One distinguishing feature is that all custom elements start with `_`. Also, alt
 
 ## _style
 
-This is a custom element which provides a simpler a simpler way to use stylesheets in your Leaf UI. `_style` unlike [`create_styles`](ui/?id=create_styles) allows you to also import external styles.
+This is a custom element which provides a simpler a simpler way to use stylesheets in your Leaf UI. `_style` unlike [`create_styles`](ui/v/0.1.0/?id=create_styles) allows you to also import external styles.
 
 It takes in 2 parameters:
 
@@ -217,8 +217,8 @@ $ui::custom("_avatar", ["alt" => "User img"], [], $ui::SINGLE_TAG);
 <br>
 <hr>
 
-<a href="#/ui/basic-usage" style="margin: 0px">Basic Usage</a>
-<a href="#/ui/custom-elements" style="margin: 0px 10px;">Custom Elements</a>
+<a href="#/ui/v/0.1.0/basic-usage" style="margin: 0px">Basic Usage</a>
+<a href="#/ui/v/0.1.0/custom-elements" style="margin: 0px 10px;">Custom Elements</a>
 <a href="#/2.1-alpha/views/blade" style="margin: 0px; 10px;">Blade Templating</a>
 <a href="#/2.1-alpha/http/session" style="margin: 0px 10px;">Session</a>
 <a href="#/2.1-alpha/database" style="margin: 0px 10px;">Using a database</a>

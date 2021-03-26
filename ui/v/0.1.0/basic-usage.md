@@ -1,6 +1,6 @@
 # Leaf UI: Basic Usage
 
-This guide assumes you've read the [introduction to Leaf UI](ui/). As said before, Leaf UI is a library for building user interfaces with PHP. In this section we'll be looking at using basic "HTML tags".
+This guide assumes you've read the [introduction to Leaf UI](ui/v/0.1.0/). As said before, Leaf UI is a library for building user interfaces with PHP. In this section we'll be looking at using basic "HTML tags".
 
 A bunch of shorthand methods have been created which allow you use create elements with using the `create_element` we saw before. The mostly look like this:
 
@@ -303,9 +303,9 @@ This is the equivalent of `<link>`. It takes in 3 parameters:
 $ui::link("./style.css", "stylesheet");
 ```
 
-### [Using Styles](ui/custom-elements?id=_style)
+### [Using Styles](ui/v/0.1.0/custom-elements?id=_style)
 
-### [Using Scripts](ui/custom-elements?id=_script)
+### [Using Scripts](ui/v/0.1.0/custom-elements?id=_script)
 
 ### base
 
@@ -486,13 +486,13 @@ This is the equivalent of `<button>`. It takes in 2 parameters:
 $ui::button("Click Me!", ["style" => "background: gold;"]);
 ```
 
-### [Custom Elements](ui/custom-elements)
+### [Custom Elements](ui/v/0.1.0/custom-elements)
 
 <br>
 <hr>
 
-<a href="#/ui/basic-usage" style="margin: 0px">Basic Usage</a>
-<a href="#/ui/custom-elements" style="margin: 0px 10px;">Custom Elements</a>
+<a href="#/ui/v/0.1.0/basic-usage" style="margin: 0px">Basic Usage</a>
+<a href="#/ui/v/0.1.0/custom-elements" style="margin: 0px 10px;">Custom Elements</a>
 <a href="#/2.1-alpha/views/blade" style="margin: 0px; 10px;">Blade Templating</a>
 <a href="#/2.1-alpha/http/session" style="margin: 0px 10px;">Session</a>
 <a href="#/2.1-alpha/database" style="margin: 0px 10px;">Using a database</a>
