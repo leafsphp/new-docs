@@ -6,8 +6,6 @@ Leaf is a PHP framework that helps you create clean, simple but powerful web app
 
 With a simple structure and a shallow learning curve, it's an excellent way to rapidly build powerful and high performant web apps and APIs.
 
-One thing that makes Leaf different from other libraries and frameworks is the ability leaf gives you to choose what features you want to use and those to ignore. Leaf is built with almost entirely isolated features which can be ignored if not needed.
-
 To get started, simply install Leaf, and you're good to go.
 
 ## 📁 Installation
@@ -31,7 +29,7 @@ You can also clone the repo and setup your autoloader.
 <div class="download-alert">
   <h3>Setup</h3>
   <p>
-    You can directly clone or download the git repo here.
+    You can directly download the v2.5.0-beta release here.
   </p>
   <a
     href="https://github.com/leafsphp/leaf/archive/v2.5.0-beta.zip"

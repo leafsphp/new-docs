@@ -1,28 +1,51 @@
 # App Settings
 
-## mode
+## app <sup class="new-tag-1">New</sup>
 
-This is an identifier for the application’s current mode of operation. The mode does not affect a Leaf application’s internal functionality. Instead, the mode is only for you to optionally invoke your own code for a given mode with the `configMode()` application method.
+This is a new configuration that allows you to get information about your Leaf app and it's instance. It is recommended to **set** anything on this config key as Leaf automatically sets up everything you might need.
 
-The application mode is declared during instantiation, either as an environment variable or as an argument to the Leaf application constructor. It cannot be changed afterward. The mode may be anything you want — “development”, “test”, and “production” are typical, but you are free to use anything you want (e.g. “foo”).
+After initializing Leaf with `new Leaf\App`, Leaf saves that instance with an `instance` key and the instance container as `container` inside the app config.
+
+```php
+$app = new Leaf\App;
+
+// somewhere else...
+
+$application = Leaf\Config::get("app");
+
+// get the $app instance defined above
+$leafApp = $application["instance"];
+
+// get $app container
+$container = $application["container"];
+
+// use container data
+$container->response->json("hello");
+
+// use the $app instance
+$leafApp->get("/", function() {
+  echo "something";
+});
+
+// you can also get information about that instance
+echo $leafApp->routes();
+```
+
+## app.down <sup class="new-tag-1">New</sup>
+
+A new `app.down` config was added to replace the `mode=down` which caused problems in earlier releases. You can set this to true to place your app in a maintainance like state.
 
 ```php
 $app = new \Leaf\App([
-    'mode' => 'development'
+  'app.down' => true
 ]);
 ```
 
-**Mode Down.**
-
-You can now set the mode to `down`, and this will place the app in maintainance mode. In maintainance mode, no requests will be handled, and the maintainace page will be displayed. You can set your own template or reponse in place of the default app down page.
+To top it all, you no longer need `setDown` unless you want to define a custom maintainance screen as Leaf's default app down screen is now automatically loaded.
 
 ```php
-$app = new \Leaf\App([
-    'mode' => 'down'
-]);
-
-$app->setDown(function() use($app) {
-    $app->response()->page("./templates/down.html");
+$app->setDown(function () {
+  echo "Custom Down Handler!";
 });
 ```
 
@@ -40,27 +63,51 @@ $app = new \Leaf\App([
 
 <hr>
 
-## log.writer
+## http.version
 
-Use a custom log writer to direct logged messages to the appropriate output destination. By default, Leaf’s logger will write logged messages to `STDERR`. If you use a custom log writer, it must implement this interface:
+By default, Leaf returns an HTTP/1.1 response to the client. Use this setting if you need to return an HTTP/1.0 response. This is useful if you use PHPFog or an nginx server configuration where you communicate with backend proxies rather than directly with the HTTP client.
 
 ```php
-public write(mixed $message, int $level);
+$app = new \Leaf\App([
+  'http.version' => '1.1'
+));
+
+// After instantiation
+$app->config('http.version', '1.1');
 ```
 
-The `write()` method is responsible for sending the logged message (not necessarily a string) to the appropriate output destination (e.g. a text file, a database, or a remote web service).
+<hr>
 
-To specify a custom log writer after instantiation you must access Leaf’s logger directly and use its `setWriter()` method:
+## log.dir <sup class="new-tag-1">New</sup>
+
+This tells leaf which directory to save and look for logs.
+
+```php
+Leaf\Config::set("log.dir", __DIR__ . "/logs/");
+```
+
+## log.enabled
+
+This enables or disables Leaf’s logger. To change this setting after instantiation you need to access Leaf’s logger directly and use its `setEnabled()` method.
 
 ```php
 // During instantiation
 $app = new \Leaf\App([
-  'log.writer' => new \My\LogWriter()
+  'log.enabled' => true
 ]);
 
 // After instantiation
-$log = $app->getLog();
-$log->setWriter(new \My\LogWriter());
+$app->logger()->enabled(true);
+```
+
+Note that if `log.enabled` is set to `false`. Leaf will skip initializing anything related to logs, as such, you won't have access to `$app->logger()`, `$app->log` or `$app->logWriter`.
+
+## log.file <sup class="new-tag-1">New</sup>
+
+This setting tells leaf which file to write logs to.
+
+```php
+Leaf\Config::set("log.file", "crashes.log");
 ```
 
 <hr>
@@ -85,7 +132,7 @@ To change this setting after instantiation you must access Leaf’s logger direc
 ```php
 // During instantiation
 $app = new \Leaf\App([
-    'log.level' => \Leaf\Log::DEBUG
+  'log.level' => \Leaf\Log::DEBUG
 ]);
 
 // After instantiation
@@ -95,204 +142,65 @@ $log->setLevel(\Leaf\Log::WARN);
 
 <hr>
 
-## log.enabled
+## log.open <sup class="new-tag-1">New</sup>
 
-This enables or disables Leaf’s logger. To change this setting after instantiation you need to access Leaf’s logger directly and use its `setEnabled()` method.
+This option takes in a boolean and determines whether Leaf should create the specified log file if it doesn't exist.
+
+<hr>
+
+## log.writer
+
+Use a custom log writer to direct logged messages to the appropriate output destination. By default, Leaf’s logger will write logged messages to `STDERR`. If you use a custom log writer, it must implement this interface:
+
+```php
+public write(mixed $message, int $level);
+```
+
+The `write()` method is responsible for sending the logged message (not necessarily a string) to the appropriate output destination (e.g. a text file, a database, or a remote web service).
+
+To specify a custom log writer after instantiation you must access Leaf’s logger directly and use its `setWriter()` method:
 
 ```php
 // During instantiation
 $app = new \Leaf\App([
-    'log.enabled' => true
+  'log.writer' => new \My\LogWriter()
 ]);
 
 // After instantiation
-$log = $app->getLog();
-$log->setEnabled(true);
+$app->logger()->setWriter(new \My\LogWriter());
 ```
 
 <hr>
 
-## templates.path
+## mode
 
-The relative or absolute path to the filesystem directory that contains your Leaf application’s template files. This path is referenced by the Leaf application’s View to fetch and render templates.
+This is an identifier for the application’s current mode of operation. The mode does not affect a Leaf application’s internal functionality. Instead, the mode is only for you to optionally invoke your own code for a given mode with the `configMode()` application method.
 
-To change this setting after instantiation you need to access Leaf’s view directly and use its `setTemplatesDirectory()` method.
-
-```php
-// During instantiation
-$app = new \Leaf\App([
-    'templates.path' => './templates'
-]);
-
-// After instantiation
-$view = $app->view();
-$view->setTemplatesDirectory('./templates');
-```
-
-<hr>
-
-## view
-
-The View class or instance used by the Leaf application. To change this setting after instantiation you need to use the Leaf application’s `view()` method.
-
-```php
-// During instantiation
-$app = new \Leaf\App([
-    'view' => new \My\View()
-]);
-
-// After instantiation
-$app->view(new \My\View());
-```
-
-<hr>
-
-## cookies.encrypt
-
-Determines if the Leaf app should encrypt its HTTP cookies.
+The application mode is declared during instantiation, either as an environment variable or as an argument to the Leaf application constructor. It cannot be changed afterward. The mode may be anything you want — “development”, “test”, and “production” are typical, but you are free to use anything you want (e.g. “foo”).
 
 ```php
 $app = new \Leaf\App([
-    'cookies.encrypt' => true
+  'mode' => 'development'
 ]);
 ```
 
 <hr>
 
-## cookies.lifetime
+## views.path
 
-Determines the lifetime of HTTP cookies created by the Leaf application. If this is an integer, it must be a valid UNIX timestamp at which the cookie expires. If this is a string, it is parsed by the strtotime() function to extrapolate a valid UNIX timestamp at which the cookie expires.
+The relative or absolute path to the filesystem directory that contains your Leaf application’s view files.
 
 ```php
 $app = new \Leaf\App([
-    'cookies.lifetime' => '20 minutes'
+  'views.path' => './views'
 ]);
-
-// After instantiation
-$app->config('cookies.lifetime', '20 minutes');
 ```
 
 <hr>
 
-## cookies.path
+## views.cachePath
 
-Determines the default HTTP cookie path if none is specified when invoking the Leaf application’s `setCookie()` or `setEncryptedCookie()` methods.
-
-```php
-$app = new \Leaf\App([
-  'cookies.path' => '/'
-));
-
-// After instantiation
-$app->config('cookies.path', '/');
-```
-
-<hr>
-
-## cookies.domain
-
-Determines the default HTTP cookie domain if none specified when invoking the Leaf application’s `setCookie()` or `setEncryptedCookie()` methods.
-
-```php
-$app = new \Leaf\App([
-  'cookies.domain' => 'domain.com'
-));
-
-// After instantiation
-$app->config('cookies.domain', 'domain.com');
-```
-
-<hr>
-
-## cookies.secure
-
-Determines whether or not cookies are delivered only via HTTPS. You may override this setting when invoking the Leaf application’s `setCookie()` or `setEncryptedCookie()` methods
-
-```php
-$app = new \Leaf\App([
-  'cookies.secure' => false
-));
-
-// After instantiation
-$app->config('cookies.secure', false);
-```
-
-<hr>
-
-## cookies.httponly
-
-Determines whether cookies should be accessible through client side scripts (false = accessible). You may override this setting when invoking the Leaf application’s `setCookie()` or `setEncryptedCookie()` methods.
-
-```php
-$app = new \Leaf\App([
-  'cookies.httponly' => false
-));
-
-// After instantiation
-$app->config('cookies.httponly', false);
-```
-
-<hr>
-
-## cookies.secret_key
-
-The secret key used for cookie encryption. You should change this setting if you use encrypted HTTP cookies in your Leaf application.
-
-```php
-$app = new \Leaf\App([
-  'cookies.secret_key' => 'secret'
-));
-
-// After instantiation
-$app->config('cookies.secret_key', 'secret');
-```
-
-<hr>
-
-## cookies.cipher
-
-The mcrypt cipher used for HTTP cookie encryption. [See available ciphers.](http://php.net/manual/en/mcrypt.ciphers.php)
-
-```php
-$app = new \Leaf\App([
-  'cookies.cipher' => MCRYPT_RIJNDAEL_256
-));
-
-// After instantiation
-$app->config('cookies.cipher', MCRYPT_RIJNDAEL_256);
-```
-
-<hr>
-
-## cookies.cipher_mode
-
-The mcrypt cipher used for HTTP cookie encryption. [See available ciphers.](http://php.net/manual/en/mcrypt.ciphers.php)
-
-```php
-$app = new \Leaf\App([
-  'cookies.cipher_mode' => MCRYPT_MODE_CBC
-));
-
-// After instantiation
-$app->config('cookies.cipher_mode', MCRYPT_MODE_CBC);
-```
-
-<hr>
-
-## http.version
-
-By default, Leaf returns an HTTP/1.1 response to the client. Use this setting if you need to return an HTTP/1.0 response. This is useful if you use PHPFog or an nginx server configuration where you communicate with backend proxies rather than directly with the HTTP client.
-
-```php
-$app = new \Leaf\App([
-  'http.version' => '1.1'
-));
-
-// After instantiation
-$app->config('http.version', '1.1');
-```
-
-<hr>
+This config tells leaf where to save cached and compiled views.
 
 <br>
 

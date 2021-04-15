@@ -55,14 +55,14 @@ You may also define multiple settings at once using an associative array:
 ```php
 $app->config([
     'debug' => true,
-    'templates.path' => '../templates'
+    'views.path' => '../views'
 ]);
 ```
 
 To retrieve the value of a setting, you also use the config application instance method; however, you only pass one argument - the name of the setting you wish to inspect. If the setting you request does not exist, null is returned.
 
 ```php
-$settingValue = $app->config('templates.path'); //returns "../templates"
+$settingValue = $app->config('views.path'); //returns "../views"
 ```
 
 ## Next Steps
