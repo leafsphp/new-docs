@@ -18,9 +18,15 @@ Make sure to place Composer's system-wide vendor bin directory in your `$PATH` s
 
 - Windows: `%USERPROFILE%\AppData\Roaming\Composer\vendor\bin`
 - macOS: `$HOME/.composer/vendor/bin`
-- GNU / Linux Distributions: `$HOME/.config/composer/vendor/bin or $HOME/.composer/vendor/bin`
+- GNU / Linux Distributions: `$HOME/.config/composer/vendor/bin` or `$HOME/.composer/vendor/bin`
 
 You could also find the composer's global installation path by running `composer global about` and looking up from the first line.
+
+Eg (Adding composer bin to path linux):
+
+```sh
+export PATH=$PATH:$HOME/.config/composer/vendor/bin
+```
 
 ## 📕 Usage Guide
 

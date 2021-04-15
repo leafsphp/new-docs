@@ -39,6 +39,8 @@
   * [Controller](leaf/v/2.5.0-beta/core/controller)
   * [API Controller](leaf/v/2.5.0-beta/core/api-controller)
   * [Model](leaf/v/2.5.0-beta/core/model)
+  
+  * [Logging](leaf/v/2.5.0-beta/core/logging)
 
 * Leaf Views
   * [Leaf View](leaf/v/2.5.0-beta/views/view)

@@ -9,7 +9,7 @@ Just like the previous version, v2.4.4 looks to build up on existing features, a
 You can install leaf quickly using composer.
 
 ```bash
-composer require leafs/leaf
+composer require leafs/leaf ^2.4.4
 ```
 
 This command can also be run in your LeafMVC and LeafAPI projects to manually update leaf.

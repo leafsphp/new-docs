@@ -14,7 +14,7 @@ composer create-project leafs/api <project-name>
 
 ### Leaf CLI <sup class="new-tag-1">NEW</sup>
 
-Leaf CLI is a console tool for creating and managing Leaf projects. Read the guide [here](/cli)
+Leaf CLI is a console tool for creating and managing Leaf projects. Read the guide [here](/cli/)
 
 ```bash
 leaf create <project-name> --api

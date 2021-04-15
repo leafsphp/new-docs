@@ -8,7 +8,7 @@
 
 * [**🍂 Skeleton**](skeleton/)
 
-* [**🎮 Leaf CLI**](cli)
+* [**🎮 Leaf CLI**](cli/)
 
 * [**🖥 Leaf Downloads**](downloads/ "Leaf Stash")
 
