@@ -1,5 +1,10 @@
 # 📲 Routing
 
+<p class="alert -info">
+  Leaf v2.5.0 BETA introduces Leaf router v2.
+  <a href="/#/leaf/v/2.5.0-beta/routing/new">See what's new</a>
+</p>
+
 As explained [before](leaf/v/2.5.0-beta/intro/htaccess), Leaf uses a single root file, to which all the server requests are redirected. Leaf then takes these requests and matches them to rules you have defined. The results are then displayed to the user. It's actually a very simple concept.
 
 The router module is tied directly to Leaf Core, so once you initialise leeaf, you can use routing
@@ -10,12 +15,14 @@ $app = new Leaf\App;
 
 ## Router class
 
-V2.4.1 includes an independent router class which you can use to handle routing and can be accessed staticly, so there's no need to initialize it.
+V2.5.0 introduces version 2 of the Leaf router which comes with bug fixes, usability improvements and a ton of new features with almost no change in it's API. This means you can use Leaf router as you've always used it but also enjoy a smoother ride and new features too.
+
+Just as with v2.4, you can use router with static methods, though that's not adviced for the just added features.
 
 ```php
 use Leaf\Router;
 
-Router::view("/home", "homepage");
+Router::get("/", "PagesController@index");
 
 Router::run();
 ```
@@ -37,9 +44,9 @@ $app = new Leaf\App;
 
 // initialise imaginary router
 $imr = new Imaginary\Router();
-// you can still use leaf modules
 
 $imr->get("/", function() use($app) {
+  // you can still use leaf modules
   $app->response()->json(["title" => "hello"]);
 });
 ```
@@ -145,13 +152,7 @@ $app->all('/post/{id}', function($id) {
 
 ### View
 
-The view object allows you to directly return a blade view, however, it currently only works for Leaf MVC and Leaf API.
-
-```php
-# view defined App/Views/homepage.blade.php
-
-$app->view("/home", "homepage");
-```
+**`view` is no longer supported, as Leaf Blade is no longer default in Leaf. You'll have to manually show your views using `get`**
 
 ### Resource Routes
 
@@ -207,9 +208,34 @@ After setting all the routes, you'll need to dispatch the routes. This is achiev
 $app->run();
 ```
 
+### Naming your routes <sup class="new-tag-1">New</sup>
+
+From v2.5.0-beta of Leaf, you can give route names which you can call them with instead of using the path (Inspired by vue-router). To name a route, simply call `name` followed by the route. **Note that `name` must only be used before the route you wish to name.**
+
+```php
+$app->name("home")->get("/home", function() {
+  echo "User Home";
+});
+```
+
+### Pushing to a route <sup class="new-tag-1">New</sup>
+
+This is simply redirecting to a route and can be done using `push`. `push` also allows you to reference the route by it's name instead of it's path.
+
+```php
+$app->router()->push("/profile");
+```
+
+When an array is passed into push, Leaf will search for a route name matching the string in the array and redirect to that route:
+
+```php
+// home was defined above
+$app->router()->push(["home"]);
+```
+
 <hr>
 
-# Handling 404
+## Handling 404
 
 Leaf's core router has specially prepared for 404 errors, and is bent on giving users full control over displaying this error
 

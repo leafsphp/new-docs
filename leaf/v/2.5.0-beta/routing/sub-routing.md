@@ -4,15 +4,15 @@ Use `$app->mount($baseroute, $fn)` to mount a collection of routes onto a subrou
 
 ```php
 $app->mount('/movies', function() use ($app) {
-	// will result in '/movies/'
-	$app->get('/', function() {
-		echo 'movies overview';
-	});
+    // will result in '/movies/'
+    $app->get('/', function() {
+        echo 'movies overview';
+    });
 
-	// will result in '/movies/id'
-	$app->get('/(\d+)', function($id) {
-		echo 'movie id ' . htmlentities($id);
-	});
+    // will result in '/movies/id'
+    $app->get('/(\d+)', function($id) {
+        echo 'movie id ' . htmlentities($id);
+    });
 });
 ```
 
@@ -33,6 +33,37 @@ $app->mount('/user', function() use ($app) {
         $app->get('/notification', function() use($app) {
             echo $app->response->renderMarkup("Notification Settings");
         });
+    });
+});
+```
+
+## Group Namespaces <sup class="new-tag-1">New</sup>
+
+You can now select namespaces for individual groups of routes. Usually, a namespace is given to all your routes, however, a group may need a different namespace for it's controllers and that is what Leaf gives you. To get started simply call `namespace` on the group you wish, it in no way affects the operations of `setNamespace`.
+
+**You should only use `namespace` infront of the group you want to use.**
+
+```php
+$app->setNamespace("App\Controllers");
+
+$app->namespace("Lib\Controllers")->group("/user", function() use($app) {
+    // controller here will be Lib\Controllers\FormsController
+    $app->get("/form", "FormsController@index");
+});
+
+// controller here will be App\Controllers\FormsController
+$app->get("/form", "FormsController@index");
+```
+
+## Group prefixes <sup class="new-tag-1">New</sup>
+
+Prefixes allow you to add to a group's base path.
+
+```php
+$app->prefix("/prefix")->group("/user", function() use($app) {
+    // --------> /prefix/user
+    $app->get("/", function() use($app) {
+        // ...
     });
 });
 ```
