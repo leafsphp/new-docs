@@ -11,7 +11,7 @@ However, unlike the v2.4 series, version 2.5 ships with new features, bug fixes 
 You can install leaf quickly using composer.
 
 ```bash
-composer require leafs/leaf
+composer require leafs/leaf ^2.5.0-beta
 ```
 
 This command can also be run in your LeafMVC and LeafAPI projects to manually update leaf.
