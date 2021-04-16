@@ -18,6 +18,11 @@ $app->get('/resources', function($id) use($app) {
 $app->run();
 ```
 
+<p class="alert -info">
+  Leaf v2.5.0 BETA (💠 Gladiolus BETA) has just been released.
+  <a href="/#/leaf/v/2.5.0-beta/">Read the docs</a>
+</p>
+
 ## ✨ Quickly Create PHP Projects
 
 Leaf is a PHP framework that helps you create clean, simple but powerful web apps and APIs quickly and easily. Leaf introduces a cleaner and much simpler structure to the PHP language while maintaining it's flexibility. With a simple structure and a shallow learning curve, it's an excellent way to rapidly build powerful and high performant web apps and APIs.
@@ -52,10 +57,10 @@ leaf create <project-name>
 
 From here, you'll have Leaf installed in your project. You can jummp to one of these pages.
 
-- [Intro](leaf/v/2.5.0-beta/)
-- [Your first leaf app](leaf/v/2.5.0-beta/intro/first)
-- [Handling Request](leaf/v/2.5.0-beta/http/request)
-- [Handling Responses](leaf/v/2.5.0-beta/http/response)
+- [Intro](leaf/v/2.4.4/)
+- [Your first leaf app](leaf/v/2.4.4/intro/first)
+- [Handling Request](leaf/v/2.4.4/http/request)
+- [Handling Responses](leaf/v/2.4.4/http/response)
 
 <br>
 
