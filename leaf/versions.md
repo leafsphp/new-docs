@@ -50,7 +50,7 @@
     <small>(🎋 Giant Cane Grass)</small>
   </a>
   <a href="/#/leaf/v/2.4.4/" class="version-card">
-    <div class="tag -stable">Latest</div>
+    <div class="tag -stable">Latest (Stable)</div>
     <h2>v2.4.4</h2>
     <small>(🎋 Common Reed)</small>
   </a>
