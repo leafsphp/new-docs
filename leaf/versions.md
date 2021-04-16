@@ -56,8 +56,8 @@
   </a>
   <a href="/#/leaf/v/2.5.0-beta/" class="version-card">
     <div class="tag -beta">Latest (Beta)</div>
-    <h2>v2.5.0 BETA</h2>
-    <small>(💠 Gladiolus BETA)</small>
+    <h2>v2.5.0 Beta</h2>
+    <small>(💠 Gladiolus Beta)</small>
   </a>
 </div>
 
