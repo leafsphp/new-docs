@@ -7,15 +7,15 @@ require_once __DIR__ . '/vendor/autoload.php';
 $app = new Leaf\App;
 
 $app->set404();
-$app->db->autoConnect();
+$app->db()->autoConnect();
 
 $app->get('/resources', function($id) use($app) {
-  $app->response->respond([
+  $app->response()->json([
     "resource" => $app->db()->select("resources")->all()
   ]);
 });
 
-$leaf->run();
+$app->run();
 ```
 
 ## ✨ Quickly Create PHP Projects
