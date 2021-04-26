@@ -49,7 +49,8 @@ Leaf headers also provides a helper to quickly set access control headers.
 
 ```php
 Headers::accessControl([
-    "Allow-Origin" => "*", "Allow-Headers" => "*"
+    "Allow-Origin" => "*",
+    "Allow-Headers" => "*"
 ]);
 
 // or
