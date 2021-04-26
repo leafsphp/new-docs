@@ -350,10 +350,10 @@ $errors = FS::errors();
 
 ## Next Steps
 
-- [Request](leaf/v/2.5.0-beta/http/request)
-- [Response](leaf/v/2.5.0-beta/http/response)
-- [Session](leaf/v/2.5.0-beta/http/session)
-- [Leaf Forms](leaf/v/2.5.0-beta/core/forms)
+- [Request](leaf/v/2.5.0/http/request)
+- [Response](leaf/v/2.5.0/http/response)
+- [Session](leaf/v/2.5.0/http/session)
+- [Leaf Forms](leaf/v/2.5.0/core/forms)
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

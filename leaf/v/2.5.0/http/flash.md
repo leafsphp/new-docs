@@ -103,8 +103,8 @@ echo Leaf\Flash::displaySaved();
 
 ## Next Steps
 
-- [Auth](leaf/v/2.5.0-beta/core/auth)
-- [Leaf DB](leaf/v/2.5.0-beta/db/)
-- [Cookies](leaf/v/2.5.0-beta/http/cookies)
+- [Auth](leaf/v/2.5.0/core/auth)
+- [Leaf DB](leaf/v/2.5.0/db/)
+- [Cookies](leaf/v/2.5.0/http/cookies)
 
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

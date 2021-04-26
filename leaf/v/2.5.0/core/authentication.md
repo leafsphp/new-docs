@@ -1,6 +1,6 @@
 # 🧨 Leaf Authentication
 
-Authentication provides simple methods to help with manual authentication and working with tokens. In v2, Authentication has been added to Leaf Heplers, so it's now just an authentication helper. If you want a much simpler way, you can check out [Simple Auth](leaf/v/2.5.0-beta/core/auth).
+Authentication provides simple methods to help with manual authentication and working with tokens. In v2, Authentication has been added to Leaf Heplers, so it's now just an authentication helper. If you want a much simpler way, you can check out [Simple Auth](leaf/v/2.5.0/core/auth).
 
 ## Working with tokens
 
@@ -131,10 +131,10 @@ $authHeader = Auth::getAuthorizationHeader();
 
 ## Next Steps
 
-- [Auth](leaf/v/2.5.0-beta/core/auth)
-- [Response](leaf/v/2.5.0-beta/http/response)
-- [Request](leaf/v/2.5.0-beta/http/request)
-- [Session](leaf/v/2.5.0-beta/http/session)
+- [Auth](leaf/v/2.5.0/core/auth)
+- [Response](leaf/v/2.5.0/http/response)
+- [Request](leaf/v/2.5.0/http/request)
+- [Session](leaf/v/2.5.0/http/session)
 
 <br>
 

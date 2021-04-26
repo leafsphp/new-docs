@@ -235,9 +235,9 @@ foreach (Session::errors() as $error => $value) {
 
 ## Next Steps
 
-- [Flash](leaf/v/2.5.0-beta/http/flash)
-- [Auth](leaf/v/2.5.0-beta/core/auth)
-- [Leaf DB](leaf/v/2.5.0-beta/db/)
-- [Cookies](leaf/v/2.5.0-beta/http/cookies)
+- [Flash](leaf/v/2.5.0/http/flash)
+- [Auth](leaf/v/2.5.0/core/auth)
+- [Leaf DB](leaf/v/2.5.0/db/)
+- [Cookies](leaf/v/2.5.0/http/cookies)
 
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

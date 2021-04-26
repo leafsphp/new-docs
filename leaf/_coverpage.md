@@ -11,4 +11,5 @@
 </p>
 
 [All versions](/leaf/versions)
-[Checkout v2.4.4](/leaf/v/2.4.4/)
+[v2.4.4](/leaf/v/2.4.4/)
+[v2.5.0](/leaf/v/2.5.0/)

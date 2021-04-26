@@ -66,10 +66,10 @@ Each log object method accepts one mixed argument. The argument is usually a str
 
 ## Next Steps
 
-- [Request](leaf/v/2.5.0-beta/http/request)
-- [Response](leaf/v/2.5.0-beta/http/response)
-- [Forms](leaf/v/2.5.0-beta/http/forms)
-- [Auth](leaf/v/2.5.0-beta/core/auth)
+- [Request](leaf/v/2.5.0/http/request)
+- [Response](leaf/v/2.5.0/http/response)
+- [Forms](leaf/v/2.5.0/http/forms)
+- [Auth](leaf/v/2.5.0/core/auth)
 
 <br>
 

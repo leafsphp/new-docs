@@ -2,7 +2,7 @@
 
 ## 🐥 Named Params
 
-*This guide assumes you have read [Simple Routing](leaf/v/2.5.0-beta/routing)*
+*This guide assumes you have read [Simple Routing](leaf/v/2.5.0/routing)*
 
 Basically, Dynamic Placeholder-based Route Patterns are just another way to use routes dynamically. This type of Route Patterns are the same as Dynamic PCRE-based Route Patterns, but with one difference: they don't use regexes to do the pattern matching but they use the more easy placeholders instead. Placeholders are strings surrounded by curly braces, e.g. {name}. You don't need to add parens around placeholders.
 

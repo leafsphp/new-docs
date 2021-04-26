@@ -92,11 +92,11 @@ We've looked at making queries, but then `query()` still makes you type out what
 
 <hr>
 
-### [Retrieving Data](leaf/v/2.5.0-beta/database/select)
+### [Retrieving Data](leaf/v/2.5.0/database/select)
 
 <hr>
 
-### [Inserting Data](leaf/v/2.5.0-beta/database/insert)
+### [Inserting Data](leaf/v/2.5.0/database/insert)
 
 <hr>
 

@@ -393,10 +393,10 @@ $resourceUri = $app->request()->getResourceUri();
 
 ## Next Steps
 
-- [Leaf Form](leaf/v/2.5.0-beta/core/forms)
-- [Response](leaf/v/2.5.0-beta/http/response)
-- [Headers](leaf/v/2.5.0-beta/http/headers)
-- [Session](leaf/v/2.5.0-beta/http/session)
+- [Leaf Form](leaf/v/2.5.0/core/forms)
+- [Response](leaf/v/2.5.0/http/response)
+- [Headers](leaf/v/2.5.0/http/headers)
+- [Session](leaf/v/2.5.0/http/session)
 
 <br>
 

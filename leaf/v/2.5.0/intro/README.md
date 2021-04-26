@@ -19,7 +19,7 @@ Composer is a dependency manager for PHP, just like npm for javascript and ruby 
 After downloading composer, you can run this command to install leaf in your project folder.
 
 ```bash
-composer require leafs/leaf ^2.5.0-beta
+composer require leafs/leaf
 ```
 
 ### Github clone
@@ -29,10 +29,10 @@ You can also clone the repo and setup your autoloader.
 <div class="download-alert">
   <h3>Setup</h3>
   <p>
-    You can directly download the v2.5.0-beta release here.
+    You can directly download the v2.5.0 release here.
   </p>
   <a
-    href="https://github.com/leafsphp/leaf/archive/v2.5.0-beta.zip"
+    href="https://github.com/leafsphp/leaf/archive/v2.5.0.zip"
     download
   >Download Repo</a>
 </div>
@@ -65,9 +65,9 @@ This simply means you can use Leaf for projects of all sizes, no matter the envi
 
 ## Next steps
 
-- [Configuring .htaccess](leaf/v/2.5.0-beta/intro/htaccess)
-- [Your first leaf app](leaf/v/2.5.0-beta/intro/first)
-- [Routing](leaf/v/2.5.0-beta/routing/)
+- [Configuring .htaccess](leaf/v/2.5.0/intro/htaccess)
+- [Your first leaf app](leaf/v/2.5.0/intro/first)
+- [Routing](leaf/v/2.5.0/routing/)
 
 <br>
 

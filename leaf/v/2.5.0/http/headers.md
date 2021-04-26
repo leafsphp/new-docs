@@ -238,9 +238,9 @@ $app->get("/", function () use ($app) {
 ## Next Steps
 
 - [W3 Headers Spec](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)
-- [Response](leaf/v/2.5.0-beta/http/response)
-- [Request](leaf/v/2.5.0-beta/http/request)
-- [Cookies](leaf/v/2.5.0-beta/http/cookies)
+- [Response](leaf/v/2.5.0/http/response)
+- [Request](leaf/v/2.5.0/http/request)
+- [Cookies](leaf/v/2.5.0/http/cookies)
 
 <br>
 

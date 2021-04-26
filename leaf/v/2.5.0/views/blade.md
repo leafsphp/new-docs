@@ -100,7 +100,7 @@ The Blade instances passes all methods to the internal view factory. So methods 
 ## Next Steps
 
 - [Laravel Blade](http://laravel.com/docs/5.8/blade)
-- [Response](leaf/v/2.5.0-beta/http/response)
+- [Response](leaf/v/2.5.0/http/response)
 
 <br>
 

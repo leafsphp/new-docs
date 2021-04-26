@@ -273,7 +273,7 @@ For more examples, check out [PHP Mailer's examples](https://github.com/leafsphp
 
 - [PHPMailer on Github](https://github.com/PHPMailer/PHPMailer)
 - [PHPMailer Docs](http://phpmailer.github.io/PHPMailer)
-- [Blade Templating](leaf/v/2.5.0-beta/views/blade)
+- [Blade Templating](leaf/v/2.5.0/views/blade)
 
 <br>
 

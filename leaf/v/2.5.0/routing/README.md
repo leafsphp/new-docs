@@ -1,11 +1,11 @@
 # 📲 Routing
 
 <p class="alert -info">
-  Leaf v2.5.0 BETA introduces Leaf router v2.
-  <a href="/#/leaf/v/2.5.0-beta/routing/new">See what's new</a>
+  Leaf v2.5.0 introduces Leaf router v2.
+  <a href="/#/leaf/v/2.5.0/routing/new">See what's new</a>
 </p>
 
-As explained [before](leaf/v/2.5.0-beta/intro/htaccess), Leaf uses a single root file, to which all the server requests are redirected. Leaf then takes these requests and matches them to rules you have defined. The results are then displayed to the user. It's actually a very simple concept.
+As explained [before](leaf/v/2.5.0/intro/htaccess), Leaf uses a single root file, to which all the server requests are redirected. Leaf then takes these requests and matches them to rules you have defined. The results are then displayed to the user. It's actually a very simple concept.
 
 The router module is tied directly to Leaf Core, so once you initialise leeaf, you can use routing
 
@@ -83,7 +83,7 @@ $app->post('/users/add', function() use($request) {
 ```
 
 Using Post Params
-View [Request](leaf/v/2.5.0-beta/http/request) for more info on handling params
+View [Request](leaf/v/2.5.0/http/request) for more info on handling params
 
 ### PUT requests
 
@@ -156,7 +156,7 @@ $app->all('/post/{id}', function($id) {
 
 ### Resource Routes
 
-This section assumes you've read [working with controllers](leaf/v/2.5.0-beta/routing/controller). In an MVC application, controllers play a major role as they're the bridge between your view and your model.
+This section assumes you've read [working with controllers](leaf/v/2.5.0/routing/controller). In an MVC application, controllers play a major role as they're the bridge between your view and your model.
 
 A resource route simply creates all the routes needed to successfully handle a particular feature. This sounds a bit bleak, let's look at an example.
 
@@ -184,7 +184,7 @@ $this->match("GET|HEAD", "/posts/{id}", "$controller@show");
 $app->run();
 ```
 
-Resource routes are handled by a [resource controller](leaf/v/2.5.0-beta/routing/controller?id=resource-controller).
+Resource routes are handled by a [resource controller](leaf/v/2.5.0/routing/controller?id=resource-controller).
 
 ### Route "Hooking"
 
@@ -210,7 +210,7 @@ $app->run();
 
 ### Naming your routes <sup class="new-tag-1">New</sup>
 
-From v2.5.0-beta of Leaf, you can give route names which you can call them with instead of using the path (Inspired by vue-router). To name a route, simply call `name` followed by the route. **Note that `name` must only be used before the route you wish to name.**
+From v2.5.0 of Leaf, you can give route names which you can call them with instead of using the path (Inspired by vue-router). To name a route, simply call `name` followed by the route. **Note that `name` must only be used before the route you wish to name.**
 
 ```php
 $app->name("home")->get("/home", function() {

@@ -122,8 +122,8 @@ echo UI::Scaffold([
 
 ## Next Steps
 
-- [Response](leaf/v/2.5.0-beta/http/response)
-- [View](leaf/v/2.5.0-beta/views/view)
+- [Response](leaf/v/2.5.0/http/response)
+- [View](leaf/v/2.5.0/views/view)
 
 <br>
 

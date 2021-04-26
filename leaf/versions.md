@@ -59,10 +59,11 @@
     <small>(💠 Gladiolus Beta)</small>
   </a>
   <a href="/#/leaf/v/2.5.0/" class="version-card">
-    <div class="tag -stable">Latest (Stable)</div>
+    <div class="tag -stable">Latest</div>
     <h2>v2.5.0</h2>
     <small>(💠 Gladiolus)</small>
   </a>
+  <div class="version-card" style="opacity: 0; cursor: default;"></div>
 </div>
 
 ## Contributing

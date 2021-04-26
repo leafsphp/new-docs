@@ -117,10 +117,10 @@ Cookie::unsetAll();
 
 ## Next Steps
 
-- [Request](leaf/v/2.5.0-beta/http/request)
-- [Response](leaf/v/2.5.0-beta/http/response)
-- [Headers](leaf/v/2.5.0-beta/http/headers)
-- [Session](leaf/v/2.5.0-beta/http/session)
+- [Request](leaf/v/2.5.0/http/request)
+- [Response](leaf/v/2.5.0/http/response)
+- [Headers](leaf/v/2.5.0/http/headers)
+- [Session](leaf/v/2.5.0/http/session)
 
 <br>
 

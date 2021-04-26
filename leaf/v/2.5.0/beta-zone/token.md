@@ -74,16 +74,16 @@ With Leaf Token, you can save data in your token and retrieve it after validatin
 
 <hr>
 
-### [Back to beta zone](leaf/v/2.5.0-beta/beta-zone/)
+### [Back to beta zone](leaf/v/2.5.0/beta-zone/)
 
 <br>
 
 ## Next Steps
 
-- [Request](leaf/v/2.5.0-beta/http/request)
-- [Response](leaf/v/2.5.0-beta/http/response)
-- [Auth](leaf/v/2.5.0-beta/core/auth)
-- [Leaf Db](leaf/v/2.5.0-beta/db/)
+- [Request](leaf/v/2.5.0/http/request)
+- [Response](leaf/v/2.5.0/http/response)
+- [Auth](leaf/v/2.5.0/core/auth)
+- [Leaf Db](leaf/v/2.5.0/db/)
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

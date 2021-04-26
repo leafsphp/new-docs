@@ -1,8 +1,8 @@
 # 📚 Getting Started
 
-## Leaf PHP: v2.5.0 BETA (💠 Gladiolus BETA)
+## Leaf PHP: v2.5.0 (💠 Gladiolus)
 
-v2.5.0 BETA continues to build up on existing features, and improves their usage by providing compatability upgrades as well as new methods which compliment use cases of those features.
+v2.5.0 continues to build up on existing features, and improves their usage by providing compatability upgrades as well as new methods which compliment use cases of those features.
 
 However, unlike the v2.4 series, version 2.5 ships with new features, bug fixes and a whole lot of stripped code (no breaking changes besides removing default blade integration). Note that changes from this release will also be shipped in later versions of [LeafMVC](/leaf-mvc/), [LeafAPI](/leaf-api/) and [Skeleton](/skeleton/).
 
@@ -11,14 +11,14 @@ However, unlike the v2.4 series, version 2.5 ships with new features, bug fixes 
 You can install leaf quickly using composer.
 
 ```bash
-composer require leafs/leaf ^2.5.0-beta
+composer require leafs/leaf
 ```
 
 This command can also be run in your LeafMVC and LeafAPI projects to manually update leaf.
 
 ## 💡 What's New
 
-Building a better experience for existing features doesn't necessarily mean that there's nothing new in Leaf. To view all the changes made to Leaf since the last release, you can check the [release notes](https://github.com/leafsphp/leaf/releases/tag/v2.5.0-beta). However, the major changes include:
+Building a better experience for existing features doesn't necessarily mean that there's nothing new in Leaf. To view all the changes made to Leaf since the last release, you can check the [release notes](https://github.com/leafsphp/leaf/releases/tag/v2.5.0). However, the major changes include:
 
 - Added Leaf flash for better flash message support
 - Added etag based http caching
@@ -42,10 +42,10 @@ Building a better experience for existing features doesn't necessarily mean that
 
 ## Next steps
 
-- [Intro](leaf/v/2.5.0-beta/intro/)
-- [Configuring .htaccess](leaf/v/2.5.0-beta/intro/htaccess)
-- [Your first leaf app](leaf/v/2.5.0-beta/intro/first)
-- [Routing](leaf/v/2.5.0-beta/routing/)
+- [Intro](leaf/v/2.5.0/intro/)
+- [Configuring .htaccess](leaf/v/2.5.0/intro/htaccess)
+- [Your first leaf app](leaf/v/2.5.0/intro/first)
+- [Routing](leaf/v/2.5.0/routing/)
 
 <br>
 
