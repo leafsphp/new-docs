@@ -1,6 +1,7 @@
 * Getting started
   * [Intro](leaf/v/2.5.0/intro/)
   * [Re-routing to index](leaf/v/2.5.0/intro/htaccess)
+  * [Cors](leaf/v/2.5.0/intro/cors)
   * [First App](leaf/v/2.5.0/intro/first)
 
 * Configuration
