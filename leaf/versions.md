@@ -50,14 +50,18 @@
     <small>(🎋 Giant Cane Grass)</small>
   </a>
   <a href="/#/leaf/v/2.4.4/" class="version-card">
-    <div class="tag -stable">Latest (Stable)</div>
     <h2>v2.4.4</h2>
     <small>(🎋 Common Reed)</small>
   </a>
   <a href="/#/leaf/v/2.5.0-beta/" class="version-card">
-    <div class="tag -beta">Latest (Beta)</div>
+    <!-- <div class="tag -beta">Latest (Beta)</div> -->
     <h2>v2.5.0 Beta</h2>
     <small>(💠 Gladiolus Beta)</small>
+  </a>
+  <a href="/#/leaf/v/2.5.0/" class="version-card">
+    <div class="tag -stable">Latest (Stable)</div>
+    <h2>v2.5.0</h2>
+    <small>(💠 Gladiolus)</small>
   </a>
 </div>
 

@@ -1,8 +1,9 @@
+<!-- markdownlint-disable no-inline-html -->
 # Leaf PHP
 
 <p class="alert -info">
-  Leaf v2.5.0 BETA (💠 Gladiolus BETA) has just been released.
-  <a href="/#/leaf/v/2.5.0-beta/">Read the docs</a>
+  Leaf v2.5.0 (💠 Gladiolus) has just been released.
+  <a href="/#/leaf/v/2.5.0/">Read the docs</a>
 </p>
 
 Leaf is a PHP framework that helps you create clean, simple but powerful web apps and APIs quickly and easily. Leaf introduces a cleaner and much simpler structure to the PHP language while maintaining it's flexibility. With a simple structure and a shallow learning curve, it's an excellent way to rapidly build powerful and high performant web apps and APIs.
@@ -12,6 +13,8 @@ Leaf is a PHP framework that helps you create clean, simple but powerful web app
 A big thank you to our sponsors on [open collective](https://opencollective.com/leaf).
 
 <object type="image/svg+xml" data="https://opencollective.com/leaf/tiers/backer.svg?avatarHeight=36&width=600" style="max-width: 100%;"></object>
+
+<br>
 
 ## ✨ The Leaf Ecosystem
 
