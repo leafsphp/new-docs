@@ -4,14 +4,83 @@ Leaf router has seen huge improvements, usability upgrades, bug fixes and of cou
 
 ## New Features
 
-### Named routes
+### Route options
 
-You can give route names which you can call them with instead of using the path (Inspired by vue-router). To name a route, simply call `name` followed by the route. **Note that `name` must only be used before the route you wish to name.**
+This is the biggest change Leaf router has seen over the period of a year. Route options simply allow you to configure the way groups and individual routes by passing in additional parameters. In actual sense, all new features were generated as a result of this single feature. Let's see how it works.
+
+Leaf route handlers are usually callable functions like this:
 
 ```php
-$app->name("home")->get("/home", function() {
+$app->get("/home", function() {
   echo "User Home";
 });
+```
+
+Or sometimes controllers, like this:
+
+```php
+$app->get("/home", "HomeController@index");
+```
+
+This means there was no space to chain additional items to the route, this is solved by route options.
+
+```php
+$app->get("/home", ["name" => "home", function() {
+    echo "User Home";
+}]);
+```
+
+When an array is passed into a leaf route as the handler, leaf will take all `key => value` as options for that route, the first non key-value `function` or `controller` in the array is taken as the handler.
+
+```php
+$app->get("/form", ["name" => "userForm", "FormsController@index"]);
+```
+
+As mentioned before, this feature is also available on groups:
+
+```php
+$app->group("/user", ["namespace" => "\\", function() use($app) {
+    // ...
+}]);
+```
+
+**This doesn't mean that you should always pass in an array, if you don't need the other options, you can pass in your function or controller directly as you've always done.**
+
+### Single route options
+
+These are the options available on individual routes.
+
+#### namespace
+
+This allows you to change the default controller namespace for a given route. Leaf router allows you to set a namespace to chain to all your controllers, however, some controllers may come from a third party library and may have a different namespace. This is when you use this option.
+
+```php
+$app->get("/form", ["namespace" => "\\", "FormsController@index"]);
+```
+
+#### middleware
+
+This is a new way to quickly setup middleware for a particular route. Leaf has the before method which allows you to set a route specific middleware, but that means defining the same route twice, not to mention, you may mistake the middleware for the main route as they have the same syntax. This problem is solved by the middleware option. **If your prefer using `before`, you can always do so.**
+
+```php
+// you can define it in a different file
+$homeMiddleware = function () {
+    echo "Home middleware";
+};
+
+$app->get("/home", ["middleware" => $homeMiddleware, function() {
+    echo "User Home";
+}]);
+```
+
+#### name
+
+You can give route names which you can call them with instead of using the path (Inspired by vue-router).
+
+```php
+$app->get("/home", ["name" => "profile", function() {
+    echo "User Home";
+}]);
 ```
 
 ### Router push
@@ -31,33 +100,18 @@ $app->router()->push(["home"]);
 
 ### Group Namespaces
 
-You can now select namespaces for individual groups of routes. Usually, a namespace is given to all your routes, however, a group may need a different namespace for it's controllers and that is what Leaf gives you. To get started simply call `namespace` on the group you wish, it in no way affects the operations of `setNamespace`.
-
-**You should only use `namespace` infront of the group you want to use.**
+As seen before, you can now select namespaces for individual groups of routes. Usually, a namespace is given to all your routes, however, a group may need a different namespace for it's controllers and that is what Leaf gives you.
 
 ```php
 $app->setNamespace("App\Controllers");
 
-$app->namespace("Lib\Controllers")->group("/user", function() use($app) {
+$app->group("/user", ["namespace" => "Lib\Controllers", function() use($app) {
     // controller here will be Lib\Controllers\FormsController
     $app->get("/form", "FormsController@index");
-});
+}]);
 
 // controller here will be App\Controllers\FormsController
 $app->get("/form", "FormsController@index");
-```
-
-### Group prefixes
-
-Prefixes allow you to add to a group's base path.
-
-```php
-$app->prefix("/prefix")->group("/user", function() use($app) {
-    // --------> /prefix/user
-    $app->get("/", function() use($app) {
-        // ...
-    });
-});
 ```
 
 ## Changes
@@ -68,7 +122,7 @@ In earlier versions of Leaf, you were required to call `set404`, `setError` and 
 
 ### No need for a constructor
 
-There's no longer a need for a constructor since Leaf router no longer takes in any parameters to set. Also, although you can use Leaf router with static methods, it's better to initilize it (if you want to use new features like `name` and `namespace`)
+There's no longer a need for a constructor since Leaf router no longer takes in any parameters to set. The easiest way to go with Leaf router now is with static methods. *Even internally, Leaf has switched to using static router methods...shhh, that's a secret!*
 
 ## Bug Fixes
 
@@ -168,3 +222,5 @@ $app->add(new Test);
 ```
 
 ## Removed Features
+
+No features have been removed!

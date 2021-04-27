@@ -1,13 +1,13 @@
 # 📲 Routing
 
 <p class="alert -info">
-  Leaf v2.5.0 introduces Leaf router v2.
+  Leaf v2.5.0 introduces Leaf router version 2.
   <a href="/#/leaf/v/2.5.0/routing/new">See what's new</a>
 </p>
 
 As explained [before](leaf/v/2.5.0/intro/htaccess), Leaf uses a single root file, to which all the server requests are redirected. Leaf then takes these requests and matches them to rules you have defined. The results are then displayed to the user. It's actually a very simple concept.
 
-The router module is tied directly to Leaf Core, so once you initialise leeaf, you can use routing
+The router module is tied directly to Leaf Core, so once you initialize leaf, you can use routing
 
 ```php
 $app = new Leaf\App;
@@ -17,7 +17,7 @@ $app = new Leaf\App;
 
 V2.5.0 introduces version 2 of the Leaf router which comes with bug fixes, usability improvements and a ton of new features with almost no change in it's API. This means you can use Leaf router as you've always used it but also enjoy a smoother ride and new features too.
 
-Just as with v2.4, you can use router with static methods, though that's not adviced for the just added features.
+***Issues generated from using Router methods staticly in v2.5.0-beta have all been resolved. With that, we guarantee 100% backward compatibility with previous versions' routers.***
 
 ```php
 use Leaf\Router;
