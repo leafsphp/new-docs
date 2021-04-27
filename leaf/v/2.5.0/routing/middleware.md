@@ -17,6 +17,21 @@ $app->before('GET|POST', '/admin/.*', function() {
 });
 ```
 
+## Middleware route option <sup class="new-tag-1">New</sup>
+
+This is a new way to quickly setup middleware for a particular route. Leaf has the before method which allows you to set a route specific middleware, but that means defining the same route twice, not to mention, you may mistake the middleware for the main route as they have the same syntax. This problem is solved by the middleware option. **If your prefer using `before`, you can always do so.**
+
+```php
+// you can define it in a different file
+$homeMiddleware = function () {
+    echo "Home middleware";
+};
+
+$app->get("/home", ["middleware" => $homeMiddleware, function() {
+    echo "User Home";
+}]);
+```
+
 Unlike route handling functions, more than one before route middleware is executed when more than one route match is found.
 
 ## ✨ Before Router Middlewares

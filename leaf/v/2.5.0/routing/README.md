@@ -208,14 +208,56 @@ After setting all the routes, you'll need to dispatch the routes. This is achiev
 $app->run();
 ```
 
-### Naming your routes <sup class="new-tag-1">New</sup>
+### Route options <sup class="new-tag-1">New</sup>
 
-From v2.5.0 of Leaf, you can give route names which you can call them with instead of using the path (Inspired by vue-router). To name a route, simply call `name` followed by the route. **Note that `name` must only be used before the route you wish to name.**
+This is the biggest change Leaf router has seen over the period of a year. Route options simply allow you to configure the way groups and individual routes by passing in additional parameters. In actual sense, all new features were generated as a result of this single feature. Let's see how it works.
+
+Leaf route handlers are usually callable functions like this:
 
 ```php
-$app->name("home")->get("/home", function() {
+$app->get("/home", function() {
   echo "User Home";
 });
+```
+
+Or sometimes controllers, like this:
+
+```php
+$app->get("/home", "HomeController@index");
+```
+
+This means there was no space to chain additional items to the route, this is solved by route options.
+
+```php
+$app->get("/home", ["name" => "home", function() {
+    echo "User Home";
+}]);
+```
+
+When an array is passed into a leaf route as the handler, leaf will take all `key => value` as options for that route, the first non key-value `function` or `controller` in the array is taken as the handler.
+
+```php
+$app->get("/form", ["name" => "userForm", "FormsController@index"]);
+```
+
+As mentioned before, this feature is also available on groups:
+
+```php
+$app->group("/user", ["namespace" => "\\", function() use($app) {
+    // ...
+}]);
+```
+
+**This doesn't mean that you should always pass in an array, if you don't need the other options, you can pass in your function or controller directly as you've always done.**
+
+### Naming your routes <sup class="new-tag-1">New</sup>
+
+From v2.5.0 of Leaf, you can give route names which you can call them with instead of using the path (Inspired by vue-router).
+
+```php
+$app->get("/home", ["name" => "home", function() {
+  echo "User Home";
+}]);
 ```
 
 ### Pushing to a route <sup class="new-tag-1">New</sup>
@@ -223,7 +265,7 @@ $app->name("home")->get("/home", function() {
 This is simply redirecting to a route and can be done using `push`. `push` also allows you to reference the route by it's name instead of it's path.
 
 ```php
-$app->router()->push("/profile");
+$app->router()->push("/home");
 ```
 
 When an array is passed into push, Leaf will search for a route name matching the string in the array and redirect to that route:
