@@ -37,9 +37,9 @@ $app = new Leaf\App;
 
 // initialise imaginary router
 $imr = new Imaginary\Router();
-// you can still use leaf modules
 
 $imr->get("/", function() use($app) {
+  // you can still use leaf modules
   $app->response()->json(["title" => "hello"]);
 });
 ```

@@ -4,7 +4,7 @@ The request object is an abstraction of the current HTTP request and allows you 
 
 ## Using Request
 
-### Static Request <sup class="new-tag-1">NEW</sup>
+### Static Request
 
 v2.4.3+ allows you to call request methods statically, which means you no longer need to initialize the whole package.
 
@@ -95,6 +95,45 @@ $username = $request->get("username");
 $title = $request->get("title", true);
 // data is not sanitized
 $blog = $request->get("blogBody", false);
+```
+
+<hr>
+
+### try() <sup class="new-tag-1">New</sup>
+
+`try()` works just like `get` above, except that it conditionally returns items in the request. Let's look at an example:
+
+```php
+// get request: linkToApp?name=mychi
+$data = $app->request()->try(["name", "email"]);
+
+// $data -> ["name" => "mychi"];
+```
+
+Unlike `get` and `body`, if the parameter to find in the request is not found, it will automatically be removed from the data returned. You can also remove empty strings from the request by passing `true` as a third parameter.
+
+The available parameters are:
+
+- array - The parameters to return
+- bool - Sanitize output? Default `true`
+- bool - Remove empty strings from return data? Default `false`
+
+#### Multiple select
+
+In v2.4, you can retrieve a couple of fields you want, and not just one. You can also use this as a filter to return only the data you want in your app instead of using `body` which dumps all request data.
+
+```php
+$loginData = $request->get(["username", "password"]);
+// ... do something with username
+echo $loginData["username"];
+```
+
+This allows you to set data you need dynamically.
+
+```php
+list($username, $password) = array_values($request->get(["username", "password"]));
+// ... do something with username
+echo $username;
 ```
 
 <hr>
