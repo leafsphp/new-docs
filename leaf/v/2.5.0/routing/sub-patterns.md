@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # 🎐 Optional Route Subpatterns
 
 *This guide assumes you have read [Simple Routing](leaf/v/2.5.0/routing) and [dynamic routing](leaf/v/2.5.0/routing/dynamic)*
@@ -39,11 +40,14 @@ $app->get('/blog(/\d{4}(/\d{2}(/\d{2}(/[a-z0-9_-]+)?)?)?)?', function($year = nu
 <br>
 <hr>
 
-<a href="#/v/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [Dynamic Routing](leaf/v/2.5.0/routing/dynamic)
+- [Sub Routing](leaf/v/2.5.0/routing/sub-routing)
+- [Error Handling](leaf/v/2.5.0/routing/errors)
+- [Middleware](leaf/v/2.5.0/routing/middleware)
+- [Using Controllers](leaf/v/2.5.0/routing/controller)
 
 <br>
+
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # 🎮 Using Controllers
 
 Controllers are simply classes that serve as bridges between Models and the View part of your application. Don't think too much of controllers, they're nothing but a class.
@@ -121,11 +122,13 @@ class ClassName extends Controller {
 <br>
 <hr>
 
-<a href="#/v/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [Dynamic Routing](leaf/v/2.5.0/routing/dynamic)
+- [Sub Routing](leaf/v/2.5.0/routing/sub-routing)
+- [Error Handling](leaf/v/2.5.0/routing/errors)
+- [Middleware](leaf/v/2.5.0/routing/middleware)
 
 <br>
+
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

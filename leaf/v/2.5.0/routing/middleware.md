@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # 🕛 Middleware
 
 Middleware are just methods that run before your code runs, be it a particular route or your whole application. Unlike many other frameworks and systems, Leaf gives you the opportunity to set global middleware that run before any and every route.
@@ -130,11 +131,13 @@ $app->add(new Test);
 <br>
 <hr>
 
-<a href="#/v/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+## Next Steps
+
+- [Dynamic Routing](leaf/v/2.5.0/routing/dynamic)
+- [Sub Routing](leaf/v/2.5.0/routing/sub-routing)
+- [Error Handling](leaf/v/2.5.0/routing/errors)
+- [Sub Folder Routing](leaf/v/2.5.0/routing/sub-folder)
+- [Using Controllers](leaf/v/2.5.0/routing/controller)
 
 <br>
 

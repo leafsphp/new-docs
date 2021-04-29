@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # Changes in Leaf router
 
 Leaf router has seen huge improvements, usability upgrades, bug fixes and of course new features. This page was created to give you a fair idea of what these changes are and how to use them.
@@ -224,3 +225,15 @@ $app->add(new Test);
 ## Removed Features
 
 No features have been removed!
+
+## Next Steps
+
+- [Routing](leaf/v/2.5.0/routing/)
+- [Dynamic Parameters](leaf/v/2.5.0/routing/dynamic)
+- [Sub Routing](leaf/v/2.5.0/routing/sub-routing)
+- [Error Handling](leaf/v/2.5.0/routing/errors)
+- [Middleware](leaf/v/2.5.0/routing/middleware)
+
+<br>
+
+Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>

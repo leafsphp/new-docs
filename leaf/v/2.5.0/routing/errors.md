@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # Error Handling
 
 In earlier versions, Leaf would always display default server error pages in case of errors like 404 and 500 errors, however, v2.5.0-beta introduced automatic displaying of error pages for both 404 and 500 errors. This simply means that by default, a pre-built error page will be shown in case of errors, however, you can also define your own error handlers.
@@ -43,4 +44,5 @@ $app->setErrorHandler(function() use($app) {
 - [Response](leaf/v/2.5.0/http/response)
 
 <br>
+
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
