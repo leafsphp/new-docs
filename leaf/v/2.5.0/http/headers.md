@@ -232,7 +232,6 @@ $app->get("/", function () use ($app) {
 });
 ```
 
-
 <br>
 
 ## Next Steps

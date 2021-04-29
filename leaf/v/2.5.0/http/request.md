@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # 🧿 Leaf Request
 
 The request object is an abstraction of the current HTTP request and allows you to easily interact with any data passed into your application. In v2.0, the request object has been directly bound to the main Leaf object, so there's no need to instanciate it anymore, although you can do so if you want to use it independently.

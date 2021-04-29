@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # Your First Leaf App
 
 As mentioned before, Leaf's main purpose is to help you easily and quickly create powerful web apps and APIs. This is a little demo created to give you an idea on the most used features leaf provides.

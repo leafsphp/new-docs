@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # Leaf JS Scripts <sup><span style="background: rgb(191, 200, 70); color: white; padding: 3px 7px; font-size: 12px;">BETA</span></sup>
 
 This is a funny idea we just sort of made up during development. This whole `Scripts` functionality lets us use some JavaScript methods from our PHP apps without having to write nasty PHP strings with with variables....

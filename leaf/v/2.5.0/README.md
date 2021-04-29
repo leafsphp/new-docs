@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # 📚 Getting Started
 
 ## Leaf PHP: v2.5.0 (💠 Gladiolus)

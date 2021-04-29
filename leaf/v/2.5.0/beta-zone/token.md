@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # Leaf Tokens <sup><span style="background: rgb(201, 150, 70); color: white; padding: 3px 7px; font-size: 12px;">BETA</span></sup>
 
 Leaf token is a simple token "service" that uses a much simpler and cleaner syntax, also, it's very easy to work with. As promised in version 1.5, Leaf Token is receiving updates for testing.

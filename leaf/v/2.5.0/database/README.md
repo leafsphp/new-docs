@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # Leaf DB
 
 ## Introduction
@@ -32,7 +33,7 @@ $db = new PDO();
 
 The first thing you need to do to use Leaf DB is to connect to your database. This can be achieved with `connect()`
 
-#### On the leaf object
+### On the leaf object
 
 In v2.1, the default `$app->db` object has been replaced with `Leaf\Db`, therefore, you have to initialise DB Mysqli to use it's methods.
 
@@ -67,24 +68,26 @@ $db->auto_connect();
 ## Queries
 
 ### Making simple queries
+
 Queries with with Leaf DB are much like what you're used to. Though a query builder, we wan't to maintain the flexibility of normal database queries, hence, we provided the query() method to make your normal database queries.
 
 ```php
 $db->connect($host, $user, $password, $dbname);
 
 $app->get('/users/all', function() use($app) {
-	$users = $db->query("SELECT username FROM users")->fetchAll();
-	$app->response()->json($users);
+  $users = $db->query("SELECT username FROM users")->fetchAll();
+  $app->response()->json($users);
 });
 ```
+
 As normal as this seems, we take it a step further by providing you with a much simpler way to use prepared statements.
 
 ```php
 $db->connect($host, $user, $password, $dbname);
 
 $app->get('/users/{id}', function($id) use($app) {
-	$user = $db->query("SELECT username FROM users WHERE id = ?", [$id])->fetchObj();
-	$app->response()->json($user);
+  $user = $db->query("SELECT username FROM users WHERE id = ?", [$id])->fetchObj();
+  $app->response()->json($user);
 });
 ```
 
@@ -101,13 +104,15 @@ We've looked at making queries, but then `query()` still makes you type out what
 <hr>
 
 ### Updating Data
+
 This operation uses UPDATE. With Leaf DB:
 
 ```php
 $db->update();
 ```
 
-##### Update
+#### Update
+
 We use Leaf DB's update method which takes in a "table", a "column-value" to update and "conditions".
 
 ```php
@@ -130,13 +135,15 @@ $db->update("posts", "title = ? AND author = ?", "title = ?", ["Post 1", "Mychi 
 <hr>
 
 ### Deleting Data
+
 This operation uses DELETE. With Leaf DB:
 
 ```php
 $db->delete();
 ```
 
-##### Delete
+#### Delete
+
 We use Leaf DB's delete method which takes in a "table", and "conditions".
 
 ```php
@@ -145,9 +152,10 @@ $db->delete("posts", "title = 'Post 1'");
 
 This will look for a post with the title of "Post 1" and delete it.
 
-
 ## Others
+
 ### Row Count
+
 Get the number of rows from select
 
 ```php
@@ -155,6 +163,7 @@ $db->select("posts")->count();
 ```
 
 ### Connection Close
+
 Close the connection
 
 ```php

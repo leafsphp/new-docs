@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # 📑 Leaf Db
 
 Leaf Db is a new lightweight but powerful query builder which allows you quickly write dynamic queries, validate and perform operations on the data in just a single line of code.

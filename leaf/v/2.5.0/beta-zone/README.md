@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # Leaf Framework Beta Zone
 
 A lot of changes have gone on in Leaf even since the beta release a month ago, a few additions, changes and removals, however, some of these are incomplete or not production ready, but have been added for 'general' feedback. Beta Zone is a collection of such components.

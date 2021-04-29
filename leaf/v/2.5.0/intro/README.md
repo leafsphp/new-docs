@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # 📚 Getting Started
 
 ## What is Leaf

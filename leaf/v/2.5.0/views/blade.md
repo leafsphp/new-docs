@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # 🔪 Blade Templating
 
 <div class="alert -warning">

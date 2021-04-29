@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # Leaf View <sup class="new-tag-1">New</sup>
 
 Leaf view is a view manager for your leaf apps. This simply gives you the platform to register, configure and use as many templating engines as you want within your app. This means you can now ship your app with various engines, or rewrite your UIs with a different engine without having to translate or pull down the whole app first.
@@ -11,7 +12,7 @@ View comes with only one method, `attach`. This method allows your to link UI en
 `attach` takes in 2 parameters:
 
 - The UI engine class to attach (required)
-- The key to save the engine as (optional). If it's not provided, it'll use the class' name. 
+- The key to save the engine as (optional). If it's not provided, it'll use the class' name.
 
 ```php
 View::attach(\Leaf\Veins\Template::class, "veins");

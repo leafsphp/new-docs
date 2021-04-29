@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # App Settings
 
 ## app <sup class="new-tag-1">New</sup>

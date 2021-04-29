@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # Retrieving Data
 
 If you're attempting to use this, you've probably seen or used `SELECT` statements before. Leaf DB has provided an even easier way to use select.
@@ -6,7 +7,7 @@ Leaf has provided a new method to make retrieving data even simpler and more org
 
 ## db select
 
-#### Getting all rows from a table
+### Getting all rows from a table
 
 To do this, we use the `select()` methode. All that we have to do is to pass in the table we want to retrieve. For example, to get all users from the "users" table, we simply do:
 
@@ -94,7 +95,7 @@ $db->select("users", "username")->fetchAll();
 $db->select("users", "username, email")->fetchAll();
 ```
 
-#### Getting a particular row from a table
+### Getting a particular row from a table
 
 Getting a particular row, eg: getting the user with the id of 2 from the users table. You acan achieve this with:
 

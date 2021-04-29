@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # Inserting Data
 
 Leaf DB has provided really simple, but very helpful methods for inserting data into the database.
@@ -6,7 +7,7 @@ Leaf DB has provided really simple, but very helpful methods for inserting data 
 
 ## db insert
 
-#### Saving data
+### Saving data
 
 We user `$db->insert` to save data in the database. `insert` takes in a "table" to insert data, "column(s)" and "value(s)":
 
@@ -42,7 +43,7 @@ $db->add("posts", ["title" => "Post One", "body" => "This is the body"]);
 // $db->add($table, $params_to_insert);
 ```
 
-#### Uniques
+### Uniques
 
 Let's say you want to check whether the username a user just entered has been taken, you'd have to write a bunch of conditional code, making the code count larger and more error prone, right?
 

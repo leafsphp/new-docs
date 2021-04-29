@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # Leaf Password Helper
 
 The password helper is a feature that was recently taken out of beta zone. This helper simply helps create and manage passwords, encrypt and verify without any security concerns. It is fully static, as such, can be used from anywhere in your application.

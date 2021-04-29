@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # Names and Scopes
 
 When you build a Leaf application you will enter various scopes in your code (e.g. global scope and function scope). You will likely need a reference to your Leaf application in each scope. There are several ways to do this:

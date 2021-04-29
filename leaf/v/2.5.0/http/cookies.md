@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # 🍪 Cookies
 
 The Leaf application provides helper methods to send cookies with the HTTP response. From version 2.2 beta, the old `Leaf\Http\Cookies` package has been replaced by `Leaf\Http\Cookie`. This change also fixes the bug which prevented use of `Leaf\Http\Cookies` inside route handlers and controllers.

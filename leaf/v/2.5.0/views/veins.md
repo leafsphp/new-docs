@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-inline-html -->
 # 🥒 Leaf Veins
 
 Leaf Veins templating engine is the official templating engine of Leaf PHP. It focuses on keeping things simple and elegant. For those who have used **Smarty** before, this will be really easy to get used to.
@@ -10,7 +11,7 @@ In v2.1.x veins has been seperated from the main leaf framework. If you want to 
 composer require leafs/veins
 ```
 
-### Sample Vein File
+## Sample Vein File
 
 ```html
 <!DOCTYPE html>

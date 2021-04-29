@@ -9,24 +9,25 @@ Here's a real-time search component built with Wynter
 
 ```php
 class SearchUsers extends \Leaf\Wynter\Component {
-	public $search;
+  public $search;
 
-	public function render() {
-		return $this->blade->render("users-search", [
-			'users' => $db->select("users", "username", "username LIKE ".$this->search."%")
-		]);
-	}
+  public function render() {
+    return $this->blade->render("users-search", [
+      'users' => $db->select("users", "username", "username LIKE ".$this->search."%")
+    ]);
+  }
 }
 ```
+
 ```html
 <div>
-	<input wynter:model="search" type="text" placeholder="Search Users...">
+  <input wynter:model="search" type="text" placeholder="Search Users...">
 
-	<ul>
-		@foreach($users as $user)
-			<li>{{ $user->username }}</li>
-		@endforeach
-	</ul>
+  <ul>
+    @foreach($users as $user)
+      <li>{{ $user->username }}</li>
+    @endforeach
+  </ul>
 </div>
 ```
 
