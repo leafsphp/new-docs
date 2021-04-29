@@ -9,7 +9,8 @@
   * [Names, Scopes and Modes](leaf/v/2.5.0/config/nsm)
 
 * Routing
-  * [Basic Routing & 404](leaf/v/2.5.0/routing/)
+  * [Basic Routing](leaf/v/2.5.0/routing/)
+  * [Error Handling](leaf/v/2.5.0/routing/errors)
   * [Sub Routing](leaf/v/2.5.0/routing/sub-routing)
   * [Dynamic Routing](leaf/v/2.5.0/routing/dynamic)
   * [Middleware](leaf/v/2.5.0/routing/middleware)

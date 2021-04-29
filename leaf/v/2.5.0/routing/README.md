@@ -277,30 +277,11 @@ $app->router()->push(["home"]);
 
 <hr>
 
-## Handling 404
-
-Leaf's core router has specially prepared for 404 errors, and is bent on giving users full control over displaying this error
-
-For this reason, we've prepared the set404() method. In version 2, you can just call set404 without passing in any function, this will set the 404 handler to the default Leaf 404 page. You can change this at any time by passing in your custom page
-
-```php
-// will use default Leaf 404 page
-$app->set404();
-
-// custom 404 page
-$app->set404(function() use($app) {
-  $app->response->renderPage("./pages/404.html");
-});
-```
-
-<br>
-<hr>
-
-<a href="#/v/2.0/http/request" style="margin: 0px">Request</a>
-<a href="#/v/2.0/http/response" style="margin: 0px 10px;">Response</a>
-<a href="#/v/2.0/http/session" style="margin: 0px; 10px;">Session</a>
-<a href="#/v/2.0/environment" style="margin: 0px 10px;">Environment</a>
-<a href="#/v/2.0/database" style="margin: 0px 10px;">Using a database</a>
+<a href="#/v/2.5.0/environment" style="margin: 0px 10px;">Environment</a>
+<a href="#/v/2.5.0/http/request" style="margin: 0px">Request</a>
+<a href="#/v/2.5.0/http/response" style="margin: 0px 10px;">Response</a>
+<a href="#/v/2.5.0/http/session" style="margin: 0px; 10px;">Session</a>
+<a href="#/v/2.5.0/database" style="margin: 0px 10px;">Using a database</a>
 
 <br>
 Built with ❤ by <a href="https://mychi.netlify.app" style="font-size: 20px; color: #111;" target="_blank">Mychi Darko</a>
