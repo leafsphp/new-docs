@@ -8,7 +8,7 @@ body.darkmode, body.darkmode aside.sidebar, body.darkmode .sidebar-toggle {
 }
 
 body.darkmode .cover-main {
-    color: rgb(204, 204, 204);
+    color: rgb(255, 255, 255);
 }
 
 body.darkmode .cover.show {
@@ -55,7 +55,9 @@ body.darkmode code .token.variable {
 }
 
 body.darkmode code .token.class-name,
-body.darkmode code .token.punctuation {
+body.darkmode code .token.punctuation,
+body.darkmode code .token.package
+{
     color: #cecece;
 }
 
@@ -63,7 +65,11 @@ body.darkmode code .token.function {
     color: #629bca;
 }
 
-body.darkmode code.lang-bash {
+body.darkmode code.lang-bash,
+body.darkmode code.lang-sh,
+body.darkmode code.lang-htaccess,
+body.darkmode code.lang-nginx
+{
     color: #cecece;
 }
 
