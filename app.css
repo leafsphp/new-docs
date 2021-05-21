@@ -1,3 +1,88 @@
+* {
+    transition: ease background .3s;
+}
+
+body.darkmode, body.darkmode aside.sidebar, body.darkmode .sidebar-toggle {
+    background-color: #2a2a2a !important;
+    color: #cecece !important;
+}
+
+body.darkmode .cover-main {
+    color: rgb(204, 204, 204);
+}
+
+body.darkmode .cover.show {
+    background: linear-gradient(to left bottom, hsl(17, 6%, 23%) 0%,hsl(177, 96%, 21%) 100%) !important;
+}
+
+body.darkmode aside.sidebar {
+    border-right: 1px solid #424242 !important;
+}
+
+body.darkmode aside.sidebar li > p {
+    color: #ffffff !important;
+}
+
+body.darkmode aside.sidebar li a {
+    color: #cecece !important;
+}
+
+body.darkmode h1 *,
+body.darkmode h2 *,
+body.darkmode h3 *,
+body.darkmode h4 *,
+body.darkmode h5 *,
+body.darkmode h6 *,
+body.darkmode strong {
+    color: #ffffff !important;
+}
+
+body.darkmode pre, body.darkmode code {
+    background-color: #3a3a3a;
+}
+
+body.darkmode code .token.constant,
+body.darkmode code .token.operator {
+    color: rgb(189, 143, 83);
+}
+
+body.darkmode code .token.keyword {
+    color: #a567be !important;
+}
+
+body.darkmode code .token.variable {
+    color: #f56363;
+}
+
+body.darkmode code .token.class-name,
+body.darkmode code .token.punctuation {
+    color: #cecece;
+}
+
+body.darkmode code .token.function {
+    color: #629bca;
+}
+
+body.darkmode code.lang-bash {
+    color: #cecece;
+}
+
+body.darkmode .input-wrap input {
+    color: #cecece;
+    background-color: #2a2a2a !important;
+}
+
+body.darkmode .input-wrap input::placeholder {
+    color: #7a7a7a;
+}
+
+.toggle-mode {
+    position: fixed;
+    bottom: 35px;
+    right: 30px;
+    z-index: 100;
+}
+
 .version-cards {
     display: flex;
     justify-content: space-between;

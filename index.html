@@ -22,10 +22,13 @@
 	<script id="flashWidgetScript" type="text/javascript" src="https://wallet.flashcoin.io/assets/widgets/donate.js"></script>
 </head>
 <body>
+	<button onclick="toggleMode()" class="toggle-mode">Toggle Mode</button>
 	<div id="app">Loading Leaf Docs...</div>
 </body>
 <script>
 	let path = String(window.location.hash);
+	var darkMode = window.localStorage["isDark"];
+	var body = document.body;
 
 	window.$docsify = {
 		loadNavbar: true,
@@ -66,6 +69,23 @@
 		) : path.includes("#/ui/") ? (
 			"leafsphp/leaf-ui"
 		) : path.includes("#/tilly/") ? "leafsphp/tilly" : "leafsphp/leaf"
+	}
+
+	if (darkMode === "true") {
+		body.classList.add("darkmode");
+	} else {
+		body.classList.remove("darkmode");
+	}
+
+	function toggleMode() {
+		var isDark = Array(...body.classList).includes("darkmode");
+		window.localStorage["isDark"] = !isDark;
+
+		if (isDark) {
+			body.classList.remove("darkmode");
+		} else {
+			body.classList.add("darkmode");
+		}
 	}
 </script>
 <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
