@@ -68,7 +68,8 @@ body.darkmode code .token.function {
 body.darkmode code.lang-bash,
 body.darkmode code.lang-sh,
 body.darkmode code.lang-htaccess,
-body.darkmode code.lang-nginx
+body.darkmode code.lang-nginx,
+body.darkmode code.lang-env
 {
     color: #cecece;
 }
