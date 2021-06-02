@@ -43,8 +43,8 @@
   * [Model](leaf/v/2.5.0/core/model)
 
 * Extras
-  * [Leaf Fetch](fetch)
-  * [Leaf Redis](redis)
+  * [Leaf Fetch](fetch/)
+  * [Leaf Redis](redis/)
 
 * Leaf Views
   * [Leaf View](leaf/v/2.5.0/views/view)
