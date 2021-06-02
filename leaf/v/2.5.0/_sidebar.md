@@ -33,17 +33,21 @@
   * [Leaf Mail](leaf/v/2.5.0/core/mail)
   * [Leaf Date](leaf/v/2.5.0/core/date)
   * [Leaf FS](leaf/v/2.5.0/core/fs)
-  
+
   * [Simple Auth](leaf/v/2.5.0/core/auth)
   * [Authentication](leaf/v/2.5.0/core/authentication)
   * [Passwords](leaf/v/2.5.0/core/passwords)
-  
+
   * [Factories](leaf/v/2.5.0/core/factories)
   * [Controller](leaf/v/2.5.0/core/controller)
   * [API Controller](leaf/v/2.5.0/core/api-controller)
   * [Model](leaf/v/2.5.0/core/model)
-  
+
   * [Logging](leaf/v/2.5.0/core/logging)
+
+* Extras
+  * [Leaf Fetch](fetch)
+  * [Leaf Redis](redis)
 
 * Leaf Views
   * [Leaf View](leaf/v/2.5.0/views/view)
