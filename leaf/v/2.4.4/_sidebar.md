@@ -39,6 +39,10 @@
   * [API Controller](leaf/v/2.4.4/core/api-controller)
   * [Model](leaf/v/2.4.4/core/model)
 
+* Extras
+  * [Leaf Fetch](fetch/)
+  * [Leaf Redis](redis/)
+
 * Leaf Views
   * [Leaf View](leaf/v/2.4.4/views/view)
   * [Bare UI](leaf/v/2.4.4/views/bareui)
