@@ -1,4 +1,8 @@
 <!-- markdownlint-disable no-inline-html -->
+# We need your thoughts😫
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">We’ve been considering a faster lighter version of leaf which only come with the core features all of us use in our web apps and APIs. All other features will be shipped as “serve-yourself” plugins. That way, you strictly control what goes in your app🚀<br><br>Do you like this idea?</p>&mdash; Leaf PHP (@leafphp) <a href="https://twitter.com/leafphp/status/1431783289396867076?ref_src=twsrc%5Etfw">August 29, 2021</a></blockquote>
+
 # Leaf PHP
 
 <p class="alert -info">
