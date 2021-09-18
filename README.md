@@ -1,7 +1,4 @@
 <!-- markdownlint-disable no-inline-html -->
-# We need your thoughts😫
-
-<blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">We’ve been considering a faster lighter version of leaf which only come with the core features all of us use in our web apps and APIs. All other features will be shipped as “serve-yourself” plugins. That way, you strictly control what goes in your app🚀<br><br>Do you like this idea?</p>&mdash; Leaf PHP (@leafphp) <a href="https://twitter.com/leafphp/status/1431783289396867076?ref_src=twsrc%5Etfw">August 29, 2021</a></blockquote>
 
 # Leaf PHP
 
@@ -17,6 +14,10 @@ Leaf is a PHP framework that helps you create clean, simple but powerful web app
 A big thank you to our sponsors on [open collective](https://opencollective.com/leaf).
 
 <object type="image/svg+xml" data="https://opencollective.com/leaf/tiers/backer.svg?avatarHeight=36&width=600" style="max-width: 100%;"></object>
+
+And to all our contributors, we love you all ❤️
+
+<a href="https://github.com/leafs/leaf/graphs/contributors"><img src="https://opencollective.com/leafphp/contributors.svg?width=890" /></a>
 
 <br>
 
