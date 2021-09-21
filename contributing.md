@@ -77,6 +77,6 @@ As a pure community-driven project without any corporate backing, we also welcom
 
 Thank you to all the people who have already contributed to Leaf!
 
-<a href="https://github.com/vuejs/vue/graphs/contributors">
+<a href="https://github.com/leafsphp/leaf/graphs/contributors">
     <img src="https://opencollective.com/leaf/contributors.svg?width=890" />
 </a>
