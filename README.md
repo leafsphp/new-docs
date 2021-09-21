@@ -17,7 +17,7 @@ A big thank you to our sponsors on [open collective](https://opencollective.com/
 
 And to all our contributors, we love you all ❤️
 
-<a href="https://github.com/leafsphp/leaf/graphs/contributors"><img src="https://opencollective.com/leafphp/contributors.svg?width=890" /></a>
+<a href="https://github.com/leafsphp/leaf/graphs/contributors" target="_blank"><img src="https://opencollective.com/leaf/contributors.svg?width=890" /></a>
 
 <br>
 
