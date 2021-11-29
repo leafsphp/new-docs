@@ -1,5 +1,10 @@
 # 💻 Leaf CLI
 
+<p class="alert -warning">
+  You are viewing the docs for the old leaf CLI.
+  <a href="https://cli.leafphp.dev/">Switch to new docs</a>
+</p>
+
 [![Latest Stable Version](https://poser.pugx.org/leafs/cli/v/stable)](https://packagist.org/packages/leafs/cli)
 [![Total Downloads](https://poser.pugx.org/leafs/cli/downloads)](https://packagist.org/packages/leafs/cli)
 [![License](https://poser.pugx.org/leafs/cli/license)](https://packagist.org/packages/leafs/cli)

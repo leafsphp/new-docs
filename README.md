@@ -3,7 +3,7 @@
 # Leaf PHP
 
 <p class="alert -info">
-  Leaf v3.0 alpha (👸🏼 Queen of the night) has just been released.
+  Leaf v3.0 beta (👸🏼 Queen of the night) has just been released.
   <a href="https://leafphp.dev">Read the docs</a>
 </p>
 
@@ -31,7 +31,7 @@ Leaf also has a bunch of tools which help you build **faster**, **more scaleable
 
 ### 🎮 Leaf CLI
 
-Leaf CLI is a console tool for creating and managing Leaf projects. Read the guide [here](/cli/)
+Leaf CLI is a console tool for creating and managing Leaf projects. Read the guide [here](https://cli.leafphp.dev)
 
 ### 📄 Leaf API
 

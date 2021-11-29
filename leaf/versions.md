@@ -63,7 +63,12 @@
     <h2>v2.5.0</h2>
     <small>(💠 Gladiolus)</small>
   </a>
-  <div class="version-card" style="opacity: 0; cursor: default;"></div>
+  <a href="https://leafphp.dev" class="version-card">
+    <div class="tag -beta">Latest (Beta)</div>
+    <h2>v3.0 Beta</h2>
+    <small>(👸🏼 Queen Of The Night Beta)</small>
+  </a>
+  <!-- <div class="version-card" style="opacity: 0; cursor: default;"></div> -->
 </div>
 
 ## Contributing

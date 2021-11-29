@@ -1,5 +1,10 @@
 # 💻 Leaf CLI
 
+<p class="alert -warning">
+  Leaf CLI v2.0.4 has just been released.
+  <a href="https://cli.leafphp.dev/">Read the docs</a> and upgrade immedietly! 😃
+</p>
+
 [![Latest Stable Version](https://poser.pugx.org/leafs/cli/v/stable)](https://packagist.org/packages/leafs/cli)
 [![Total Downloads](https://poser.pugx.org/leafs/cli/downloads)](https://packagist.org/packages/leafs/cli)
 [![License](https://poser.pugx.org/leafs/cli/license)](https://packagist.org/packages/leafs/cli)

@@ -1,5 +1,10 @@
 # Code Labs
 
+<p class="alert -warning">
+  Codelabs now has it's own website, independent of the leaf docs.
+  <a href="https://codelabs.leafphp.dev/">Check it out now</a>
+</p>
+
 Unlike the rest of the docs, Code Lab goes into details on features and builds real world examples with them as opposed to the simple examples given in the docs. So, in short, you can say Code Lab has a greater depth than the rest of the docs.
 
 ## Codelab experiments for

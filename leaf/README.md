@@ -19,8 +19,8 @@ $app->run();
 ```
 
 <p class="alert -info">
-  Leaf v2.5.0 (💠 Gladiolus) has just been released.
-  <a href="/#/leaf/v/2.5.0/">Read the docs</a>
+  Leaf v3.0 beta (👸🏼 Queen of the night) has just been released.
+  <a href="https://leafphp.dev">Read the docs</a>
 </p>
 
 ## ✨ Quickly Create PHP Projects
@@ -47,7 +47,7 @@ php -S localhost:8080
 
 ### 🎮 New project with Leaf CLI
 
-You may also create a Leaf project using [Leaf CLI](/cli/)
+You may also create a Leaf project using [Leaf CLI](https://cli.leafphp.dev)
 
 ```bash
 leaf create <project-name>

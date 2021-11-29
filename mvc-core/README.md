@@ -1,5 +1,10 @@
 # Leaf MVC Core
 
+<p class="alert -warning">
+  MVC Core is now available as a leaf module.
+  <a href="https://leafphp.dev/modules/mvc-core/">Read the docs</a>
+</p>
+
 <!-- [![Latest Stable Version](https://poser.pugx.org/leafs/leaf/v/stable)](https://packagist.org/packages/leafs/leaf)
 [![Total Downloads](https://poser.pugx.org/leafs/leaf/downloads)](https://packagist.org/packages/leafs/leaf)
 [![License](https://poser.pugx.org/leafs/leaf/license)](https://packagist.org/packages/leafs/leaf) -->

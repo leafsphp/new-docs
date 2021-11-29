@@ -4,6 +4,11 @@
 [![Total Downloads](https://poser.pugx.org/leafs/leaf/downloads)](https://packagist.org/packages/leafs/leaf)
 [![License](https://poser.pugx.org/leafs/leaf/license)](https://packagist.org/packages/leafs/leaf) -->
 
+<p class="alert -warning">
+  Leaf fetch is now shipped as a leaf module.
+  <a href="https://leafphp.dev/modules/fetch/">Read the docs</a>
+</p>
+
 Clean, simple, developer friendly interface for making network requests with PHP. Fetch is based on curl and uses elements from Unirest PHP and an API that closely resembles Axios. All of these combined makes Fetch the best and simplest way to make PHP network requests.
 
 ## fetch example
