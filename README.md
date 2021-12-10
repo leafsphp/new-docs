@@ -26,7 +26,7 @@ And to all our contributors, we love you all ❤️
 Leaf also has a bunch of tools which help you build **faster**, **more scaleable** solutions quicker than ever.
 
 <p class="alert -info">
-  Checkout the new release of Aloe CLI. Aloe replaces the standard console tools in Leaf API, Leaf MVC and SKeleton. <a href="/#/aloe-cli/">Read the docs</a>
+  Checkout the new release of Aloe CLI. Aloe replaces the standard console tools in Leaf API, Leaf MVC and SKeleton. <a href="https://leafphp.dev/aloe-cli/">Read the docs</a>
 </p>
 
 ### 🎮 Leaf CLI
@@ -67,7 +67,7 @@ Leaf UI allows you to focus almost entirely on writing your php application. Ins
 
 Not only does it allow you skip annoying HTML, but also with integrations like [wynter](https://github.com/leafsphp/leaf-ui/tree/wynter), you can write fully-powered Leaf UI relying on PHP alone.
 
-**[Read the docs](ui/)**
+**[Read the docs](https://ui.leafphp.dev/)**
 
 As amazing as Leaf UI is, it's still under development and has a whole lot of work left to be done. [Contribute to the Leaf UI](https://github.com/leafsphp/leaf-ui)
 
