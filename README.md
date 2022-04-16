@@ -4,7 +4,7 @@
 
 <p class="alert -info">
   Leaf v3.0 beta (👸🏼 Queen of the night) has just been released.
-  <a href="https://leafphp.dev">Read the docs</a>
+  <a target="_blank" href="https://leafphp.dev">Read the docs</a>
 </p>
 
 Leaf is a PHP framework that helps you create clean, simple but powerful web apps and APIs quickly and easily. Leaf introduces a cleaner and much simpler structure to the PHP language while maintaining it's flexibility. With a simple structure and a shallow learning curve, it's an excellent way to rapidly build powerful and high performant web apps and APIs.
@@ -16,7 +16,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/mychidarko">
+      <a target="_blank" href="https://github.com/mychidarko">
         <img
           src="https://avatars.githubusercontent.com/u/26604242?v=4"
           width="60px"
@@ -29,7 +29,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/matthewjamesr">
+      <a target="_blank" href="https://github.com/matthewjamesr">
         <img
           src="https://avatars.githubusercontent.com/u/303321?v=4"
           width="60px"
@@ -42,7 +42,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/ftonato">
+      <a target="_blank" href="https://github.com/ftonato">
         <img
           src="https://avatars.githubusercontent.com/u/5417662?v=4"
           width="60px"
@@ -53,7 +53,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/herber">
+      <a target="_blank" href="https://github.com/herber">
         <img
           src="https://avatars.githubusercontent.com/u/22559657?&v=4"
           width="60px"
@@ -66,7 +66,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
   </tr>
   <tr>
     <td align="center">
-      <a href="https://github.com/pjotrsavitski">
+      <a target="_blank" href="https://github.com/pjotrsavitski">
         <img
           src="https://avatars.githubusercontent.com/u/518331?&v=4"
           width="60px"
@@ -77,7 +77,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/pablouser1">
+      <a target="_blank" href="https://github.com/pablouser1">
         <img
           src="https://avatars.githubusercontent.com/u/17802865?&v=4"
           width="60px"
@@ -88,7 +88,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/monkeywithacupcake">
+      <a target="_blank" href="https://github.com/monkeywithacupcake">
         <img
           src="https://avatars.githubusercontent.com/u/7316730?v=4"
           width="60px"
@@ -99,7 +99,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Awilum">
+      <a target="_blank" href="https://github.com/Awilum">
         <img
           src="https://avatars.githubusercontent.com/u/477114?v=4"
           width="60px"
@@ -112,7 +112,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
   </tr>
   <tr>
     <td align="center">
-      <a href="https://github.com/AshleySymbolic">
+      <a target="_blank" href="https://github.com/AshleySymbolic">
         <img
           src="https://avatars.githubusercontent.com/u/93997546?v=4"
           width="60px"
@@ -123,7 +123,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/brykov">
+      <a target="_blank" href="https://github.com/brykov">
         <img
           src="https://avatars.githubusercontent.com/u/476516?v=4"
           width="60px"
@@ -134,7 +134,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/ngekoding">
+      <a target="_blank" href="https://github.com/ngekoding">
         <img
           src="https://avatars.githubusercontent.com/u/11625690?v=4"
           width="60px"
@@ -145,7 +145,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/MauMaxxa">
+      <a target="_blank" href="https://github.com/MauMaxxa">
         <img
           src="https://avatars.githubusercontent.com/u/10811652?v=4"
           width="60px"
@@ -160,7 +160,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
   </tr>
   <tr>
     <td align="center">
-      <a href="https://github.com/Aminur670">
+      <a target="_blank" href="https://github.com/Aminur670">
         <img
           src="https://avatars.githubusercontent.com/u/32174602?v=4"
           width="60px"
@@ -173,7 +173,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/divineniiquaye">
+      <a target="_blank" href="https://github.com/divineniiquaye">
         <img
           src="https://avatars.githubusercontent.com/u/53147395?v=4"
           width="60px"
@@ -186,7 +186,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Rai-Rai">
+      <a target="_blank" href="https://github.com/Rai-Rai">
         <img
           src="https://avatars.githubusercontent.com/u/2023869?v=4"
           width="60px"
@@ -199,7 +199,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Kristories">
+      <a target="_blank" href="https://github.com/Kristories">
         <img
           src="https://avatars.githubusercontent.com/u/774338?v=4"
           width="60px"
@@ -212,7 +212,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
   </tr>
   <tr>
     <td align="center">
-      <a href="https://github.com/ezhasyafaat">
+      <a target="_blank" href="https://github.com/ezhasyafaat">
         <img
           src="https://avatars.githubusercontent.com/u/49098343?v=4"
           width="60px"
@@ -225,7 +225,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/iamrameffort">
+      <a target="_blank" href="https://github.com/iamrameffort">
         <img
           src="https://avatars.githubusercontent.com/u/52138516?v=4"
           width="60px"
@@ -238,7 +238,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/pisyek">
+      <a target="_blank" href="https://github.com/pisyek">
         <img
           src="https://avatars.githubusercontent.com/u/10695986?v=4"
           width="60px"
@@ -251,7 +251,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/wfsdaj">
+      <a target="_blank" href="https://github.com/wfsdaj">
         <img
           src="https://avatars.githubusercontent.com/u/36911167?v=4"
           width="60px"
@@ -264,7 +264,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
   </tr>
   <tr>
     <td align="center">
-      <a href="https://opencollective.com/aaron-smith3">
+      <a target="_blank" href="https://opencollective.com/aaron-smith3">
         <img
           src="https://images.opencollective.com/aaron-smith3/08ee620/avatar/256.png"
           width="60px"
@@ -275,7 +275,7 @@ A big thank you to our code contributors and sponsors on [open collective](https
       </a>
     </td>
     <td align="center">
-      <a href="https://opencollective.com/peter-bogner">
+      <a target="_blank" href="https://opencollective.com/peter-bogner">
         <img
           src="https://images.opencollective.com/peter-bogner/avatar/256.png"
           width="60px"
