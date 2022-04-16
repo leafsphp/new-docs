@@ -17,10 +17,15 @@ This is a list of all Leaf API versions
     <small>(Aloe Beta)</small>
   </a>
   <a href="/#/leaf-api/v/2.0/" class="version-card">
-    <div class="tag -latest">Latest</div>
     <h2>v2.0</h2>
     <small>(Aloe)</small>
   </a>
+  <a href="https://api.leafphp.dev" class="version-card">
+    <div class="tag -latest">Latest</div>
+    <h2>v3.0</h2>
+    <small>(🎻 Stroh)</small>
+  </a>
+  <div class="version-card" style="opacity: 0; cursor: default;"></div>
 </div>
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

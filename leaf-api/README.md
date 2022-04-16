@@ -1,8 +1,8 @@
 # LeafAPI
 
-<!-- <p class="alert -info">
-  Leaf API v3.0 beta🎉🎉🎉. Read the docs <a href="/#/leaf-api/v/2.0/">here</a>
-</p> -->
+<p class="alert -info">
+  <b>Leaf MVC v3 (🎻 Stroh)</b> has just been released. "🎻 Stroh" builds on the changes from Leaf PHP and takes API development to a whole new level of ease. <a href="https://api.leafphp.dev">Read the docs</a>
+</p>
 
 Leaf API is a lightweight PHP MVC framework for rapid API development. LeafAPI serves as minimal MVC wrapper around Leaf PHP Framework which allows you to use Leaf in an MVC environment. With a simple structure and a shallow learning curve, it's an excellent way to rapidly build powerful and high performant APIs.
 

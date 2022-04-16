@@ -7,15 +7,18 @@ This is a list of all Leaf MVC versions
     <h2>v1</h2>
   </a>
   <a href="/#/leaf-mvc/v/2.0/" class="version-card">
+    <h2>v2.0</h2>
+    <small>(👑 Basil, the ‘kingly’ herb)</small>
+  </a><a href="https://mvc.leafphp.dev" class="version-card">
+    <div class="tag -latest">Latest</div>
+    <h2>v3.0</h2>
+    <small>(𝄫 Beethoven )</small>
+  </a>
+  <!-- <a href="/#/leaf-mvc/v/2.0/" class="version-card" style="opacity:0 !important;">
     <div class="tag -latest">Latest</div>
     <h2>v2.0</h2>
     <small>(👑 Basil, the ‘kingly’ herb)</small>
-  </a>
-  <a href="/#/leaf-mvc/v/2.0/" class="version-card" style="opacity:0 !important;">
-    <div class="tag -latest">Latest</div>
-    <h2>v2.0</h2>
-    <small>(👑 Basil, the ‘kingly’ herb)</small>
-  </a>
+  </a> -->
 </div>
 
 Built with ❤ by [**Mychi Darko**](//mychi.netlify.app)

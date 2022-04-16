@@ -1,7 +1,7 @@
 # leafMVC
 
 <p class="alert -info">
-  Leaf MVC v2.0 is finally here🎉🎉🎉. Read the docs <a href="/#/leaf-mvc/v/2.0/">here</a>
+  <b>Leaf MVC v3 (𝄫 Beethoven)</b> has just been released. "𝄫 Beethoven" builds on the changes from Leaf PHP and takes development to a whole new level of ease. <a href="https://mvc.leafphp.dev">Read the docs</a>
 </p>
 
 Leaf MVC is a lightweight PHP MVC framework that allows you to quickly build powerful web apps and APIs. LeafMVC serves as minimal MVC wrapper around Leaf PHP Framework which allows you to use Leaf in an MVC environment, as such you're still using Leaf.

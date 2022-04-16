@@ -12,4 +12,4 @@
 
 [All versions](/leaf/versions)
 [v2.5.0](/leaf/v/2.5.0/)
-[v3.0 Beta](https://leafphp.dev)
+[v3.0](https://leafphp.dev)

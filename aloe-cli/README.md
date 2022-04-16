@@ -1,7 +1,7 @@
 # Aloe Cli
 
 <p class="alert -warning">
-  Aloe CLI v1.2.6 (Sunset Aloe) has just been released.
+  Aloe CLI v1.2.11 (Art Aloe) has just been released.
   <a href="https://leafphp.dev/aloe-cli/">Read the docs</a>
 </p>
 

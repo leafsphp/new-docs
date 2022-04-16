@@ -14,6 +14,7 @@ composer create-project leafs/skeleton <project-name>
 
 - [v1.0](skeleton/v/1.0/)
 - [v2.0](skeleton/v/2.0/)
+- [**v3.0 <small class="new-tag-1">New</small>**](https://skeleton.leafphp.dev)
 
 <br>
 

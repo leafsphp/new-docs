@@ -3,7 +3,7 @@
 # Leaf PHP
 
 <p class="alert -info">
-  Leaf v3.0 beta (👸🏼 Queen of the night) has just been released.
+  Leaf v3.0 (👸🏼 Queen of the night) has just been released.
   <a target="_blank" href="https://leafphp.dev">Read the docs</a>
 </p>
 
@@ -327,28 +327,32 @@ Leaf CLI is a console tool for creating and managing Leaf projects. Read the gui
 ### 📄 Leaf API
 
 <p class="alert -info">
-  Leaf API v2 (Aloe) has just been released. Aloe builds on the changes from Leaf PHP and takes API development to a whole new level of ease. <a href="/#/leaf-api/v/2.0/">Read the docs</a>
+  Leaf API v3 (🎻 Stroh) has just been released. "🎻 Stroh" builds on the changes from Leaf PHP and takes API development to a whole new level of ease. <a href="https://api.leafphp.dev">Read the docs</a>
 </p>
 
 Leaf API is a lightweight PHP MVC framework for rapid API development. LeafAPI serves as minimal MVC wrapper around Leaf PHP Framework which allows you to use Leaf in an MVC environment. It also comes along with a bunch of handy tools which can speed up your development by leagues🙂
 
-[Read the docs](/leaf-api/) and contribute to [Leaf API](https://github.com/leafsphp/leafAPI).
+[Read v2 docs](/leaf-api/) and contribute to [Leaf API](https://github.com/leafsphp/leafAPI).
 
 ### 🦴 Skeleton
+
+<p class="alert -info">
+  Skeleton v3 has just been released. v3 builds on the changes from Leaf PHP and takes development to a whole new level of ease. <a href="https://skeleton.leafphp.dev">Read the docs</a>
+</p>
 
 You can also try out [**Skeleton**](//github.com/leafsphp/skeleton) which provides an easy to use, customizable structure for your Leaf apps. Skeleton gives you some advantages of full blown frameworks like Leaf MVC without the restrictions it comes with.
 
 #### 📕 Leaf MVC
 
 <p class="alert -info">
-  Leaf MVC v2 (👑 Basil, the ‘kingly’ herb) has just been released. Aloe builds on the changes from Leaf PHP and takes MVC development to a whole new level of ease. <a href="/#/leaf-mvc/v/2.0/">Read the docs</a>
+  <b>Leaf MVC v3 (𝄫 Beethoven)</b> has just been released. "𝄫 Beethoven" builds on the changes from Leaf PHP and takes development to a whole new level of ease. <a href="https://mvc.leafphp.dev">Read the docs</a>
 </p>
 
 Leaf MVC provides an MVC wrapper around Leaf itself. So you can use all of Leaf's cool features alongside a nice set of development tools offered by Leaf MVC.
 
 Although Leaf MVC is useable, there's still a lot of work to be done on it. You can also help with it's development.
 
-**Checkout [Leaf MVC](/leaf-mvc).**
+**Checkout [Leaf MVC v2](/leaf-mvc).**
 
 #### 😎 Leaf UI
 
