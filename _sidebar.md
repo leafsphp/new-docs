@@ -8,14 +8,14 @@
 
 * [**🍂 Skeleton**](skeleton/)
 
-* [**🎮 Leaf CLI**](cli/)
+* [**🎮 Leaf CLI**](https://cli.leafphp.dev)
 
 * [**🖥 Leaf Downloads**](downloads/ "Leaf Stash")
 
-* [**🎨 Leaf UI**](ui/)
+* [**🎨 Leaf UI**](https://ui.leafphp.dev)
 
 * [**🚙 Tilly**](tilly/)
 
-* [**🧪 Code Labs**](codelabs/)
+* [**🧪 Code Labs**](https://codelabs.leafphp.dev)
 
 * [**📺 Leaf on youtube**](https://www.youtube.com/channel/UCllE-GsYy10RkxBUK0HIffw)
